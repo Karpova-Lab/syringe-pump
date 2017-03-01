@@ -1,11 +1,11 @@
 /*
 Syringe pump
 By: Andy Lustig
-Date: 2017-02-25
+Date: 2017-03-01
 http://andybuilds.com/projects/Syringe%20Pump/syringe/
 */
 
-#define VERSION 1
+#define VERSION 2
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -13,7 +13,6 @@ http://andybuilds.com/projects/Syringe%20Pump/syringe/
 //for SD card
 #include <SPI.h>
 #include <SD.h>
-File root;
 
 //Display Variables
 Adafruit_SSD1306 display(9);
@@ -45,7 +44,6 @@ const unsigned int syringeVolume = 22599; // # of microsteps in 60 mL syringe (6
 
 //SD card
 #define chipSelect 7
-char readBuffer[100];
 
 //mbed pins
 const byte mbedPush = 14; //mbed output 1 (A)
@@ -62,13 +60,13 @@ void printDirectory(File directory, int numTabs);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() {
+  //OLED feather setup
   pinMode(btnPins[TOP],INPUT_PULLUP);
   pinMode(btnPins[MIDDLE], INPUT_PULLUP);
   pinMode(btnPins[BOTTOM], INPUT_PULLUP);
   pinMode(reedSwitch,INPUT_PULLUP);
   delay(300); //feather oled display charge pump needs time to stablize. see: https://forums.adafruit.com/viewtopic.php?f=57&t=100042&start=15
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
-  // Clear the buffer.
   display.clearDisplay();
   display_then_clearBuff();
 
@@ -78,30 +76,31 @@ void setup() {
   pinMode(MS1, OUTPUT);
   pinMode(MS2, OUTPUT);
   pinMode(EN, OUTPUT);
+  rstStepperPins(); //Set step, direction, microstep and enable pins to default states
 
+  //mbed setup
   pinMode(mbedPush,INPUT);
   pinMode(mbedRetract,INPUT);
   pinMode(refillStatus,OUTPUT);
   digitalWrite(refillStatus,LOW);
-  rstStepperPins(); //Set step, direction, microstep and enable pins to default states
 
-  //  //SD setup
-  //  if (!SD.begin(chipSelect)) {
-  //    display.println(F("No SD Card"));
-  //  }
-  //  else{
-  //    display.println(F("SD Iniitialized!"));
-  //    root = SD.open("/");
-  //    printDirectory(root, 0);
-  //    // getContents();
-  //  }
-  //  display_then_clearBuff();
-  //  delay(5000);
+
   display.print(F("Firmware Version:"));
   display.print(VERSION);
   display_then_clearBuff();
-  delay(2000);
-  mainMenu();
+  delay(1500);
+
+   //Read parameters from SD card
+   if (!SD.begin(chipSelect)) {
+     display.println(F("No SD Card"));
+   }
+   else{
+     display.println(F("SD Iniitialized!"));
+     getContents();
+   }
+   printParameters();
+   delay(2500);
+   mainMenu();
 }
 
 void loop() {
@@ -119,63 +118,40 @@ void loop() {
   }
 }
 
-void printDirectory(File directory, int numTabs) {
-  while (true) {
-    File entry =  directory.openNextFile();
-    if (! entry) {
-      // no more files
-      display.println("no files?");
-      break;
-    }
-    for (uint8_t i = 0; i < numTabs; i++) {
-      display.print('\t');
-    }
-    display.print(entry.name());
-    if (entry.isDirectory()) {
-      display.println("/");
-      printDirectory(entry, numTabs + 1);
-    } else {
-      // files have sizes, directories do not
-      display.print("\t\t");
-      display.println(entry.size(), DEC);
-    }
-    entry.close();
-  }
-}
 
 void getContents(){
-  File dataFile = SD.open("config.txt", FILE_READ);
+  File dataFile = SD.open("config.txt");
   if (dataFile) {
     //read in char data
-    byte count = 0;
-    while (dataFile.available()) {
-      readBuffer[count] = dataFile.read();
-      count++;
-    }
-    dataFile.close();
-    //parse buffer
+    char readBuffer;
     String contents = "";
     byte parameter = 0;
-    for (byte i = 0; i<count; i++){
-      if (isDigit(readBuffer[i])) {
-        contents += (char)readBuffer[i];
+    while (dataFile.available()) {
+      readBuffer = (char)dataFile.read();
+      if (isDigit(readBuffer)) {
+        contents += readBuffer;
       }
-      else if (readBuffer[i]==59){
+      else if (readBuffer==';'){
         volume[parameter] = contents.toInt();
         parameter++;
         contents = "";
       }
     }
-    display.println(F("\nValues read:"));
-    display.print(volume[0]);
-    for (byte i = 1; i <4; i++){
-      display.print(", ");
-      display.print(volume[i]);
-    }
+    dataFile.close();
   }
   else{
     display.println(F("Error: no config.txt"));
   }
+}
+
+void printParameters(){
+  display.println(F("\nClick Parameters:"));
+  display.print(volume[0]);
+  for (byte i = 1; i <4; i++){
+    display.print(", ");
+    display.print(volume[i]);
+  }
+  display_then_clearBuff();
 }
 
 void display_then_clearBuff(){
