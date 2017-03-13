@@ -5,14 +5,11 @@ Date: 2017-03-01
 http://andybuilds.com/projects/Syringe%20Pump/syringe/
 */
 
-#define VERSION 2
+#define VERSION 3
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD130632.h>
-//for SD card
-#include <SPI.h>
-#include <SD.h>
 
 //Display Variables
 Adafruit_SSD1306 display(9);
@@ -29,21 +26,14 @@ bool refresh = false;
 #define MS1 4
 #define MS2 5
 #define EN  6
-#define FULL    0  //Microstep Resolution Truth Table is on pg.3 of A3957 datasheet.
-#define HALF    2
-#define QTR     1
-#define EIGHTH  3
-#define TOP     0
-#define MIDDLE  1
-#define BOTTOM  2
-#define PUSH 1
-#define PULL 0
+
+enum stepResolution {FULL=0, HALF=2, QTR=1, EIGHTH=3};  //Microstep Resolution Truth Table is on pg.3 of A3957 datasheet.
+enum buttonLocation {TOP,MIDDLE,BOTTOM};
+enum motorDirection {PULL,PUSH};
 const float minResolution = 0.002655; //minimum resolution in mL
 float volumePushed = 0;
 const unsigned int syringeVolume = 22599; // # of microsteps in 60 mL syringe (60.0e^-3)/2.655e^-6)
-
-//SD card
-#define chipSelect 7
+const byte interStepDlay = 1;
 
 //mbed pins
 const byte mbedPush = 14; //mbed output 1 (A)
@@ -51,12 +41,10 @@ const byte mbedRetract = 15; //mbed output 2 (C)
 const byte refillStatus = 10; //mbed input 1 (B)
 
 //Syringe varibales
-#define click_push 2
-#define click_pull 3
-unsigned int volume[4] = {38,38,188,188};
+byte clickPushSteps = 38; //with 60 mL syringe and 1/8 microstepping, 38 steps ~ 0.1mL
+byte clickPullSteps = 188; // ~ .5mL
 
 void limitReached(bool isPushing=false);
-void printDirectory(File directory, int numTabs);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() {
@@ -89,18 +77,7 @@ void setup() {
   display.print(VERSION);
   display_then_clearBuff();
   delay(1500);
-
-   //Read parameters from SD card
-   if (!SD.begin(chipSelect)) {
-     display.println(F("No SD Card"));
-   }
-   else{
-     display.println(F("SD Iniitialized!"));
-     getContents();
-   }
-   printParameters();
-   delay(2500);
-   mainMenu();
+  mainMenu();
 }
 
 void loop() {
@@ -108,7 +85,7 @@ void loop() {
   checkButton(MIDDLE);
   checkButton(BOTTOM);
   if (digitalRead(mbedPush)){
-    turnMotor(EIGHTH,PUSH);
+    turnMotor(EIGHTH,PUSH); //turn motor with 1/8 microstepping until TTL pulse goes back low
     rstStepperPins();
     mainMenu();
   }
@@ -116,42 +93,6 @@ void loop() {
    clickAction(BOTTOM);
    mainMenu();
   }
-}
-
-
-void getContents(){
-  File dataFile = SD.open("config.txt");
-  if (dataFile) {
-    //read in char data
-    char readBuffer;
-    String contents = "";
-    byte parameter = 0;
-    while (dataFile.available()) {
-      readBuffer = (char)dataFile.read();
-      if (isDigit(readBuffer)) {
-        contents += readBuffer;
-      }
-      else if (readBuffer==';'){
-        volume[parameter] = contents.toInt();
-        parameter++;
-        contents = "";
-      }
-    }
-    dataFile.close();
-  }
-  else{
-    display.println(F("Error: no config.txt"));
-  }
-}
-
-void printParameters(){
-  display.println(F("\nClick Parameters:"));
-  display.print(volume[0]);
-  for (byte i = 1; i <4; i++){
-    display.print(", ");
-    display.print(volume[i]);
-  }
-  display_then_clearBuff();
 }
 
 void display_then_clearBuff(){
@@ -190,7 +131,7 @@ void holdAction(byte action){
     switch (action){
       case TOP: //Push
         if(volumePushed<syringeVolume){
-          volumePushed += turnMotor(QTR,5,PUSH);
+          volumePushed += turnMotor(EIGHTH,5,PUSH);
         }
         else{
           limitReached(1);
@@ -198,7 +139,7 @@ void holdAction(byte action){
         break;
       case MIDDLE: //Pull
         if (digitalRead(reedSwitch)){
-          volumePushed += turnMotor(QTR,5,PULL);
+          volumePushed += turnMotor(EIGHTH,5,PULL);
         }
         else{
           limitReached();
@@ -214,7 +155,7 @@ void clickAction(byte action){
   switch (action){
     case TOP: //Push
       if(volumePushed<syringeVolume){
-        volumePushed += turnMotor(EIGHTH,volume[click_push],PUSH);
+        volumePushed += turnMotor(EIGHTH,clickPushSteps,PUSH);
         rstStepperPins();
         delay(150);
       }
@@ -224,7 +165,7 @@ void clickAction(byte action){
       break;
     case MIDDLE: //Pull
       if (digitalRead(reedSwitch)){
-        volumePushed += turnMotor(EIGHTH,volume[click_pull],PULL);
+        volumePushed += turnMotor(EIGHTH,clickPullSteps,PULL);
         rstStepperPins();
         delay(150);
       }
@@ -242,7 +183,7 @@ void clickAction(byte action){
           break;
         }
         else{
-          volumePushed += turnMotor(QTR,10,PULL);
+          volumePushed += turnMotor(EIGHTH,5,PULL);
         }
       }
       break;
@@ -285,16 +226,16 @@ void mainMenu(){ //takes about 16ms to refresh the menu
   display_then_clearBuff();
 }
 
-float turnMotor(byte resolution, int steps,bool myDIR){
+float turnMotor(byte resolution, int steps, bool myDIR){
   digitalWrite(EN, LOW); //Pull enable pin low to allow motor control
   digitalWrite(dir, myDIR); //Pull direction pin low to move "forward"
   digitalWrite(MS1, resolution >> 1); //set resolution
   digitalWrite(MS2, resolution & 1);
   for(int x= 1; x<steps; x++){
     digitalWrite(stp,HIGH);
-    delay(1);
+    delay(interStepDlay);
     digitalWrite(stp,LOW);
-    delay(1);
+    delay(interStepDlay);
   }
   byte multiplier;
   switch (resolution){
@@ -326,9 +267,9 @@ void turnMotor(byte resolution,bool myDIR){
   digitalWrite(MS2, resolution & 1);
   while(digitalRead(mbedPush) && volumePushed<syringeVolume){ //at EIGHTH resolution we get 0.00265 mL / 2ms. for 100 microliter reward, turn on for 76ms
     digitalWrite(stp,HIGH);
-    delay(1);
+    delay(interStepDlay);
     digitalWrite(stp,LOW);
-    delay(1);
+    delay(interStepDlay);
     volumePushed++;
   }
 }
