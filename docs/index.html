@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to Syringe Pump’s documentation! &mdash; Syringe Pump 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Syringe Pump 0.0.1 documentation" href="#"/>
+        <link rel="next" title="Bill of Materials" href="bom.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> Syringe Pump
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Assembly Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Syringe Pump</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Welcome to Syringe Pump&#8217;s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-syringe-pump-s-documentation">
+<h1>Welcome to Syringe Pump&#8217;s documentation!<a class="headerlink" href="#welcome-to-syringe-pump-s-documentation" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="background">
+<h1>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h1>
+<p>Syringe pumps are excessively expensive. By leveraging micro-manufacturing services (OSH Park, Ponoko, Shapeways etc.) and low cost readily available 3D printer components,
+there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be replicated at 1/10th the cost. Therefore, my goal is to make an easy to assemble, open-source syringe pump that
+is an order of magnitude less expensive without sacrificing reliablity and resolution.</p>
+<div class="section" id="other-open-source-syringe-pumps">
+<h2>Other Open Source Syringe Pumps:<a class="headerlink" href="#other-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://hackaday.io/post/5681">Open Syringe Pump</a>  by naroom</li>
+<li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech&#8217;s Open Sustainability Technology Lab</li>
+<li><a class="reference external" href="http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html">Open source syringe pump</a> by Will Patrick</li>
+<li><a class="reference external" href="http://www.thingiverse.com/thing:1820146">SyriGo</a> by Ocram</li>
+</ul>
+</div>
+</div>
+<div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Lasercut is better than 3D printed<ul>
+<li>Lower Cost<ul>
+<li>A 3D printer is about $500 upfront cost. Alternatively, one could use a 3D printing service like Shapeways, but it would still be more expensive than lasercutting service like Ponoko.</li>
+</ul>
+</li>
+<li>Tighter tolerances</li>
+<li>No need for finishing/removing support material</li>
+</ul>
+</li>
+<li>Push and pull capable</li>
+<li>Limit switch prevents withdrawing the syringe too far and causing a big mess</li>
+<li>Easy to Assemble<ul>
+<li>No thread tapping required</li>
+</ul>
+</li>
+</ul>
+<p>Theoretical minimum volume resolution calculated to be <strong>2.65</strong> μL (calculation using Python below)</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="c1">#Acme rod specs</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#millimeters</span>
+<span class="n">numStarts</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">lead</span> <span class="o">=</span> <span class="n">numStarts</span><span class="o">*</span><span class="n">pitch</span><span class="o">/</span><span class="mf">10.0</span> <span class="c1">#cm</span>
+
+<span class="c1">#Syringe specs</span>
+<span class="n">syringeDiameter</span> <span class="o">=</span> <span class="mi">26</span> <span class="c1">#millimeters</span>
+<span class="n">syringeArea</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">syringeDiameter</span><span class="o">/</span><span class="mf">10.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">4.0</span> <span class="c1">#cm^2</span>
+
+<span class="c1">#Motor specs</span>
+<span class="n">numSteps</span> <span class="o">=</span> <span class="mi">200</span><span class="o">*</span><span class="mi">8</span> <span class="c1">#200 steps with 1/8 microstepping</span>
+
+<span class="c1">#Result</span>
+<span class="n">resolution</span> <span class="o">=</span> <span class="n">lead</span><span class="o">*</span><span class="n">syringeArea</span><span class="o">/</span><span class="n">numSteps</span> <span class="c1">#mL</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">u&quot;</span><span class="si">{:0.3f}</span><span class="s2"> </span><span class="se">\u03bc</span><span class="s2">L resolution&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resolution</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bom.html" class="btn btn-neutral float-right" title="Bill of Materials" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Andy Lustig.
+      Last updated on Apr 03, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

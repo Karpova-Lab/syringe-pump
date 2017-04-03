@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <center>
+        <form>
+            Syringe inner diameter:
+            <input id="syringeDia" type="text" value="26" onkeyup="showResult()" size="5"> (mm)
+        </form>
+
+        <form>
+            Reward Volume:
+            <input id="rewardVol" type="text" value="0.100" onkeyup="showResult()" size="5"> (mL)
+        </form>
+        <!-- <br></br> -->
+        <p id="result"></p>
+
+        <script>
+            window.onload = function() {
+                showResult();
+            }
+
+            //Acme rod specs
+            var pitch = 2 //millimeters
+            var numStarts = 4
+            var lead = numStarts * pitch / 10.0 //cm
+
+            //Motor specs
+            var numSteps = 200 * 8 //200 steps with 1/8 microstepping
+
+            function showResult() {
+                //Syringe specs
+                var syringeArea = Math.PI * (syringeDia.value / 10.0) ** 2 / 4.0 //#cm^2
+                // if (isNaN(gLength)){
+                var resolution = lead * syringeArea / numSteps //mL
+                var msPerStep = 2
+                var rewardTime = Math.round(rewardVol.value / resolution * msPerStep)
+                if (!isNaN(rewardTime)) {
+                    if (rewardVol.value < resolution) {
+                        document.getElementById("result").innerHTML = "Reward Volume must be greater than or equal to the minimum resolution of <b>" + Math.round(resolution * 1000000) / 1000 + " microliters</b>";
+                    } else {
+                        document.getElementById("result").innerHTML = "To deliver <b>" + rewardVol.value + " mL</b> of liquid, provide a logic high voltage for <b>" + rewardTime + "ms</b>";
+                    }
+                } else {
+                    document.getElementById("result").innerHTML = "The inputs above must be numbers";
+                }
+            }
+        </script>
+    </center>
+</body>
+
+</html>
