@@ -26,3 +26,9 @@ Required Tools
 --------------
 - Soldering Iron
 - Solder
+- wire strippers
+- wire cutters
+
+.. image:: connector_instructions.png
+  :align: center
+  :scale: 100 %

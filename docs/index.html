@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to Syringe Pump’s documentation! &mdash; Syringe Pump 0.0.1 documentation</title>
+  <title>Syringe Pump &mdash; Syringe Pump 0.0.1 documentation</title>
   
 
   
@@ -83,7 +83,7 @@
           
             
             
-                <p class="caption"><span class="caption-text">Contents:</span></p>
+                <p class="caption"><span class="caption-text">Sections:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assembly.html">Assembly Instructions</a></li>
@@ -118,7 +118,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Welcome to Syringe Pump&#8217;s documentation!</li>
+    <li>Syringe Pump</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -132,16 +132,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-syringe-pump-s-documentation">
-<h1>Welcome to Syringe Pump&#8217;s documentation!<a class="headerlink" href="#welcome-to-syringe-pump-s-documentation" title="Permalink to this headline">¶</a></h1>
-</div>
+  <div class="section" id="syringe-pump">
+<h1>Syringe Pump<a class="headerlink" href="#syringe-pump" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="background">
-<h1>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h1>
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>Syringe pumps are excessively expensive. By leveraging micro-manufacturing services (OSH Park, Ponoko, Shapeways etc.) and low cost readily available 3D printer components,
 there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be replicated at 1/10th the cost. Therefore, my goal is to make an easy to assemble, open-source syringe pump that
 is an order of magnitude less expensive without sacrificing reliablity and resolution.</p>
 <div class="section" id="other-open-source-syringe-pumps">
-<h2>Other Open Source Syringe Pumps:<a class="headerlink" href="#other-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h2>
+<h3>Other Open Source Syringe Pumps:<a class="headerlink" href="#other-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://hackaday.io/post/5681">Open Syringe Pump</a>  by naroom</li>
 <li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech&#8217;s Open Sustainability Technology Lab</li>
@@ -151,45 +150,19 @@ is an order of magnitude less expensive without sacrificing reliablity and resol
 </div>
 </div>
 <div class="section" id="features">
-<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Lasercut is better than 3D printed<ul>
-<li>Lower Cost<ul>
-<li>A 3D printer is about $500 upfront cost. Alternatively, one could use a 3D printing service like Shapeways, but it would still be more expensive than lasercutting service like Ponoko.</li>
-</ul>
-</li>
-<li>Tighter tolerances</li>
-<li>No need for finishing/removing support material</li>
+<li>Laser cut acrylic frame<ul>
+<li>Most other open source syringe pumps use 3D printed parts. Laser cut acrylic is more rigid and can be produced with superior dimensional accuracy than a 3D printed part. If one decides to make changes to the design, it is much faster to iterate through changes using a lasercutter than if you were to prototype with 3D printed parts. Of course if one doesn&#8217;t have access to a laser cutter, parts can easily be acquired through services like Ponoko.</li>
 </ul>
 </li>
 <li>Push and pull capable</li>
 <li>Limit switch prevents withdrawing the syringe too far and causing a big mess</li>
-<li>Easy to Assemble<ul>
-<li>No thread tapping required</li>
 </ul>
-</li>
-</ul>
-<p>Theoretical minimum volume resolution calculated to be <strong>2.65</strong> μL (calculation using Python below)</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
-<span class="c1">#Acme rod specs</span>
-<span class="n">pitch</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#millimeters</span>
-<span class="n">numStarts</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">lead</span> <span class="o">=</span> <span class="n">numStarts</span><span class="o">*</span><span class="n">pitch</span><span class="o">/</span><span class="mf">10.0</span> <span class="c1">#cm</span>
-
-<span class="c1">#Syringe specs</span>
-<span class="n">syringeDiameter</span> <span class="o">=</span> <span class="mi">26</span> <span class="c1">#millimeters</span>
-<span class="n">syringeArea</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">syringeDiameter</span><span class="o">/</span><span class="mf">10.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">4.0</span> <span class="c1">#cm^2</span>
-
-<span class="c1">#Motor specs</span>
-<span class="n">numSteps</span> <span class="o">=</span> <span class="mi">200</span><span class="o">*</span><span class="mi">8</span> <span class="c1">#200 steps with 1/8 microstepping</span>
-
-<span class="c1">#Result</span>
-<span class="n">resolution</span> <span class="o">=</span> <span class="n">lead</span><span class="o">*</span><span class="n">syringeArea</span><span class="o">/</span><span class="n">numSteps</span> <span class="c1">#mL</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">u&quot;</span><span class="si">{:0.3f}</span><span class="s2"> </span><span class="se">\u03bc</span><span class="s2">L resolution&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resolution</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
-</pre></div>
+<div style="text-align:center; margin-bottom:24px">
+  <a href="https://github.com/Karpova-Lab/syringe-pump" style="background-color: #2980b9;border: none;color: white;padding: 15px 15px;text-align:center;text-decoration: none;display: inline-block;font-size: 18px;border-radius:15px">All files available on Github</a>
+</div><div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -211,7 +184,7 @@ is an order of magnitude less expensive without sacrificing reliablity and resol
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Andy Lustig.
-      Last updated on Apr 03, 2017.
+      Last updated on Apr 04, 2017.
 
     </p>
   </div>

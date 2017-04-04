@@ -5,8 +5,18 @@
 
 .. include:: isogrk1.txt
 
-Welcome to Syringe Pump's documentation!
-========================================
+============
+Syringe Pump
+============
+
+.. .. raw:: html
+..
+..   <center>
+..   <figure>
+..     <iframe src="https://player.vimeo.com/video/196175543?portrait=0" width="595" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+..   </figure>
+..   </center>
+
 
 Background
 ==========
@@ -24,49 +34,48 @@ Other Open Source Syringe Pumps:
 
 Features
 ========
-- Lasercut is better than 3D printed
+- Laser cut acrylic frame
 
-  - Lower Cost
-
-    - A 3D printer is about $500 upfront cost. Alternatively, one could use a 3D printing service like Shapeways, but it would still be more expensive than lasercutting service like Ponoko.
-
-  - Tighter tolerances
-  - No need for finishing/removing support material
+  - Most other open source syringe pumps use 3D printed parts. Laser cut acrylic is more rigid and can be produced with superior dimensional accuracy than a 3D printed part. If one decides to make changes to the design, it is much faster to iterate through changes using a lasercutter than if you were to prototype with 3D printed parts. Of course if one doesn't have access to a laser cutter, parts can easily be acquired through services like Ponoko.
 
 
 - Push and pull capable
 - Limit switch prevents withdrawing the syringe too far and causing a big mess
-- Easy to Assemble
 
-  - No thread tapping required
+.. raw:: html
 
-Theoretical minimum volume resolution calculated to be **2.65** |mgr|\ L (calculation using Python below)
+  <div style="text-align:center; margin-bottom:24px">
+    <a href="https://github.com/Karpova-Lab/syringe-pump" style="background-color: #2980b9;border: none;color: white;padding: 15px 15px;text-align:center;text-decoration: none;display: inline-block;font-size: 18px;border-radius:15px">All files available on Github</a>
+  </div>
 
-.. code:: python
 
-  from math import pi
-  from __future__ import print_function
-  #Acme rod specs
-  pitch = 2 #millimeters
-  numStarts = 4
-  lead = numStarts*pitch/10.0 #cm
-
-  #Syringe specs
-  syringeDiameter = 26 #millimeters
-  syringeArea = pi*(syringeDiameter/10.0)**2/4.0 #cm^2
-
-  #Motor specs
-  numSteps = 200*8 #200 steps with 1/8 microstepping
-
-  #Result
-  resolution = lead*syringeArea/numSteps #mL
-  print (u"{:0.3f} \u03bcL resolution".format(resolution*1000))
+.. Theoretical minimum volume resolution calculated to be **2.65** |mgr|\ L (calculation using Python below)
+..
+.. .. code:: python
+..
+..   from math import pi
+..   from __future__ import print_function
+..   #Acme rod specs
+..   pitch = 2 #millimeters
+..   numStarts = 4
+..   lead = numStarts*pitch/10.0 #cm
+..
+..   #Syringe specs
+..   syringeDiameter = 26 #millimeters
+..   syringeArea = pi*(syringeDiameter/10.0)**2/4.0 #cm^2
+..
+..   #Motor specs
+..   numSteps = 200*8 #200 steps with 1/8 microstepping
+..
+..   #Result
+..   resolution = lead*syringeArea/numSteps #mL
+..   print (u"{:0.3f} \u03bcL resolution".format(resolution*1000))
 
 .. Empirical results from minimum volume resolution testing:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Sections:
    :hidden:
 
    bom.rst
