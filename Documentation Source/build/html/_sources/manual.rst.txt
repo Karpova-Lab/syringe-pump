@@ -57,4 +57,4 @@ You can use the form below to calculate the duration of the high pulse in order 
 
 Retract
 -------
-Providing a "High" TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syring until the reed switch detects the magnet.
+Providing a "High" TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syringe until the reed switch detects the magnet.

@@ -21,8 +21,7 @@ Syringe Pump
 Background
 ==========
 Syringe pumps are excessively expensive. By leveraging micro-manufacturing services (OSH Park, Ponoko, Shapeways etc.) and low cost readily available 3D printer components,
-there is no reason that the functionality of a $2500 Syringe pump can't be replicated at 1/10th the cost. Therefore, my goal is to make an easy to assemble, open-source syringe pump that
-is an order of magnitude less expensive without sacrificing reliablity and resolution.
+there is no reason that the functionality of a $2500 Syringe pump can't be replicated at 1/10th the cost. Therefore, the aim of this project is to provide an easy to assemble, open-source syringe pump that is an order of magnitude less expensive without sacrificing reliablity and resolution.
 
 Other Open Source Syringe Pumps:
 --------------------------------
