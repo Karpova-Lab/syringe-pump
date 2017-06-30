@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Assembly Instructions &mdash; Syringe Pump 0.0.1 documentation</title>
+  <title>Frame &mdash; Syringe Pump 0.0.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Syringe Pump 0.0.1 documentation" href="index.html"/>
         <link rel="next" title="User Guide" href="manual.html"/>
-        <link rel="prev" title="Bill of Materials" href="bom.html"/> 
+        <link rel="prev" title="Controller" href="bom.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,15 +86,13 @@
             
                 <p class="caption"><span class="caption-text">Sections:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="bom.html">Bill of Materials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Assembly Instructions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mechanical">Mechanical</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="bom.html">Controller</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#design-files">Design Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assembly-instructions">Assembly Instructions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#required-tools">Required Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#electronics">Electronics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Required Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -142,7 +140,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Assembly Instructions</li>
+      <li>Frame</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,38 +159,166 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="assembly-instructions">
-<h1>Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="mechanical">
-<h2>Mechanical<a class="headerlink" href="#mechanical" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="frame">
+<h1>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="design-files">
+<h2>Design Files<a class="headerlink" href="#design-files" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/Karpova-Lab/syringe-pump/tree/master/2D%20CAD">On GitHub</a></p>
+</div>
+<div class="section" id="bill-of-materials">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="2%" />
+<col width="13%" />
+<col width="3%" />
+<col width="76%" />
+<col width="6%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">QTY</th>
+<th class="head">Description</th>
+<th class="head">Price</th>
+<th class="head">Part Number</th>
+<th class="head">Supplier</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Lasercut Acrylic</td>
+<td>67.00</td>
+<td>` &lt;&gt;`_</td>
+<td>Ponoko</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>300 x 8mm lead screw</td>
+<td>9.99</td>
+<td><a class="reference external" href="https://www.servocity.com/lead-screws#371=448">634050</a></td>
+<td rowspan="3">ServoCity</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>8mm lead screw nut</td>
+<td>7.99</td>
+<td><a class="reference external" href="https://www.servocity.com/8mm-4-start-hub">545315</a></td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>200 x  8 mm shaft</td>
+<td>3.49</td>
+<td><a class="reference external" href="https://www.servocity.com/8mm-stainless-steel-precision-shafting#371=460">634310</a></td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>Nema 17  12v 26Ncm 200steps</td>
+<td>6.97</td>
+<td><a class="reference external" href="http://www.omc-stepperonline.com/nema-17-stepper-motor-34mm-12v-04a-26ncm37ozin-17hs130404s-p-166.html">17HS13-0404S</a></td>
+<td>STEPPERONLINE</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>5 mm to 8 mm coupler</td>
+<td>8.00</td>
+<td><a class="reference external" href="https://www.amazon.com/RepRap-Champion-Coupler-Routers-printers/dp/B01M287GNY/ref=sr_1_12?ie=UTF8&amp;qid=1488495177&amp;sr=8-12&amp;keywords=5+to+8mm+coupler">B01M287GNY</a></td>
+<td rowspan="2">Amazon</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>Flanged LMF8UU slide bearing</td>
+<td>7.00</td>
+<td><a class="reference external" href="https://www.amazon.com/uxcell-LMF8UU-Inside-Flange-Bearing/dp/B00NQ2H8YU/ref=sr_1_1?rps=1&amp;ie=UTF8&amp;qid=1488498852&amp;sr=8-1&amp;keywords=LMF8UU&amp;refinements=p_85%3A2470955011">B00NQ2H8YU</a></td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Grommet</td>
+<td>11.00</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#9600k54">9600k54</a></td>
+<td rowspan="7">McMaster-Carr</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>Flanged Sleeve Bearing</td>
+<td>3.32</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#5448T2">5448T2</a></td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>M4 x 16mm machine screws</td>
+<td>4.32</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#92005A226">92005A220</a></td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>M4  square nut</td>
+<td>10.00</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#96887A329">96887A329</a></td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>M3 x 12mm machine screws</td>
+<td>2.64</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#92005A122">92005A122</a></td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>M3 Threaded inserts</td>
+<td>7.20</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#94510A240">94510A240</a></td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Binder clips</td>
+<td>2.00</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#12755t73">12755t73</a></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/1_parts_overview.jpg"><img alt="_images/1_parts_overview.jpg" class="align-center" src="_images/1_parts_overview.jpg" style="width: 3024.0px; height: 2389.0px;" /></a>
+</div>
+<div class="section" id="assembly-instructions">
+<h2>Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="required-tools">
 <h3>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Phillips head screwdriver</li>
-<li>allen wrench</li>
+<li>Phillips screwdriver</li>
+<li>Allen wrench (included with shaft coupler)</li>
 </ul>
 </div>
 <div class="section" id="instructions">
 <h3>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="_images/2_mount_motor.jpg"><img alt="_images/2_mount_motor.jpg" class="align-center" src="_images/2_mount_motor.jpg" style="width: 3024.0px; height: 1862.0px;" /></a>
 <ol class="arabic simple">
-<li>Press fit threaded inserts into acrylic</li>
-<li>Attach the stepper motor to acrylic piece &#8220;A&#8221; using (4) M4 x 10 mm screws</li>
-<li>Use 5/64&#8221; allen wrench to secure shaft coupler to</li>
-<li>Use 3mm allen wrench to shaft support to the shaft</li>
+<li>Mount motor</li>
 </ol>
-</div>
-</div>
-<div class="section" id="electronics">
-<h2>Electronics<a class="headerlink" href="#electronics" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Required Tools<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Soldering Iron</li>
-<li>Solder</li>
-<li>wire strippers</li>
-<li>wire cutters</li>
-</ul>
-<a class="reference internal image-reference" href="_images/connector_instructions.png"><img alt="_images/connector_instructions.png" class="align-center" src="_images/connector_instructions.png" style="width: 1414.0px; height: 967.0px;" /></a>
+<a class="reference internal image-reference" href="_images/3_add_coupler.jpg"><img alt="_images/3_add_coupler.jpg" class="align-center" src="_images/3_add_coupler.jpg" style="width: 3024.0px; height: 1442.0px;" /></a>
+<ol class="arabic simple" start="2">
+<li>Add coupler</li>
+</ol>
+<a class="reference internal image-reference" href="_images/4_assemble_carriage.jpg"><img alt="_images/4_assemble_carriage.jpg" class="align-center" src="_images/4_assemble_carriage.jpg" style="width: 3024.0px; height: 2090.0px;" /></a>
+<ol class="arabic simple" start="3">
+<li>Assemble syringe carriage</li>
+</ol>
+<a class="reference internal image-reference" href="_images/5_assemble_stage.jpg"><img alt="_images/5_assemble_stage.jpg" class="align-center" src="_images/5_assemble_stage.jpg" style="width: 3024.0px; height: 2153.0px;" /></a>
+<ol class="arabic simple" start="4">
+<li>Assemble stage</li>
+</ol>
+<a class="reference internal image-reference" href="_images/6_mount_carriage_and_stage.jpg"><img alt="_images/6_mount_carriage_and_stage.jpg" class="align-center" src="_images/6_mount_carriage_and_stage.jpg" style="width: 3024.0px; height: 1950.0px;" /></a>
+<ol class="arabic simple" start="5">
+<li>Mount syringe carriage and stage</li>
+</ol>
+<a class="reference internal image-reference" href="_images/7_assemble_tail_support.jpg"><img alt="_images/7_assemble_tail_support.jpg" class="align-center" src="_images/7_assemble_tail_support.jpg" style="width: 3024.0px; height: 1905.0px;" /></a>
+<ol class="arabic simple" start="6">
+<li>Assemble end support</li>
+</ol>
+<a class="reference internal image-reference" href="_images/8_assemble_base.jpg"><img alt="_images/8_assemble_base.jpg" class="align-center" src="_images/8_assemble_base.jpg" style="width: 3024.0px; height: 2578.0px;" /></a>
+<ol class="arabic simple" start="7">
+<li>Attach rubber bumper to base</li>
+</ol>
+<a class="reference internal image-reference" href="_images/9_attach_to_base.jpg"><img alt="_images/9_attach_to_base.jpg" class="align-center" src="_images/9_attach_to_base.jpg" style="width: 3024.0px; height: 2641.0px;" /></a>
+<ol class="arabic simple" start="8">
+<li>Mount everything to the base</li>
+</ol>
+<a class="reference internal image-reference" href="_images/10_add_controller.jpg"><img alt="_images/10_add_controller.jpg" class="align-center" src="_images/10_add_controller.jpg" style="width: 3024.0px; height: 1881.0px;" /></a>
+<ol class="arabic simple" start="9">
+<li>Attach connector to wires, mount controller to end support, and attach magnet to linear bearing</li>
+</ol>
+<a class="reference internal image-reference" href="_images/11_add_syringe.jpg"><img alt="_images/11_add_syringe.jpg" class="align-center" src="_images/11_add_syringe.jpg" style="width: 3024.0px; height: 1875.0px;" /></a>
+<ol class="arabic simple" start="10">
+<li>Attache syringe</li>
+</ol>
+<a class="reference internal image-reference" href="_images/final_side_3.jpg"><img alt="_images/final_side_3.jpg" class="align-center" src="_images/final_side_3.jpg" style="width: 3024.0px; height: 996.0px;" /></a>
+<a class="reference internal image-reference" href="_images/final_top_3.jpg"><img alt="_images/final_top_3.jpg" class="align-center" src="_images/final_top_3.jpg" style="width: 3024.0px; height: 877.0px;" /></a>
+<ol class="arabic simple" start="11">
+<li>Done!</li>
+</ol>
 </div>
 </div>
 </div>
@@ -207,7 +333,7 @@
         <a href="manual.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bom.html" class="btn btn-neutral" title="Bill of Materials" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bom.html" class="btn btn-neutral" title="Controller" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -217,7 +343,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Andy Lustig.
-      Last updated on Jun 28, 2017.
+      Last updated on Jun 29, 2017.
 
     </p>
   </div>
