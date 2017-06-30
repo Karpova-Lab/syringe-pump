@@ -117,7 +117,7 @@ Instructions
   :align: center
   :scale: 100 %
 
-10. Attache syringe
+10. Attach syringe
 
 .. image:: frame_assembly/final_side_3.jpg
   :align: center
