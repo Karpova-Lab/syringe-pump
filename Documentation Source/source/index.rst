@@ -77,6 +77,6 @@ Features
    :caption: Sections:
    :hidden:
 
-   controller.rst
    frame.rst
+   controller.rst
    manual.rst

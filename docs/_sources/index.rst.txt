@@ -77,6 +77,6 @@ Features
    :caption: Sections:
    :hidden:
 
-   bom.rst
-   assembly.rst
+   frame.rst
+   controller.rst
    manual.rst
