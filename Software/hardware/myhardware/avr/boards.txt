@@ -1,0 +1,28 @@
+pro.name= Syringe Board
+
+pro.upload.tool=avrdude
+pro.upload.protocol=arduino
+
+pro.bootloader.tool=avrdude
+pro.bootloader.unlock_bits=0x3F
+pro.bootloader.lock_bits=0x0F
+
+pro.build.board=AVR_PRO
+pro.build.core=arduino
+pro.build.variant=eightanaloginputs
+
+##(3.3V, 8 MHz) w/ ATmega328
+## --------------------------------------------------
+pro.menu.cpu.8MHzatmega328=ATmega328 (3.3V, 8 MHz)
+
+pro.menu.cpu.8MHzatmega328.upload.maximum_size=30720
+pro.menu.cpu.8MHzatmega328.upload.maximum_data_size=2048
+pro.menu.cpu.8MHzatmega328.upload.speed=57600
+
+pro.menu.cpu.8MHzatmega328.bootloader.low_fuses=0xFF
+pro.menu.cpu.8MHzatmega328.bootloader.high_fuses=0xDA
+pro.menu.cpu.8MHzatmega328.bootloader.extended_fuses=0xFE
+pro.menu.cpu.8MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+pro.menu.cpu.8MHzatmega328.build.mcu=atmega328p
+pro.menu.cpu.8MHzatmega328.build.f_cpu=8000000L
