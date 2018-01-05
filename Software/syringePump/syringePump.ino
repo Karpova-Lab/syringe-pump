@@ -5,7 +5,7 @@ Date: 2017-03-01
 http://andybuilds.com/projects/Syringe%20Pump/syringe/
 */
 
-#define VERSION 3
+#define VERSION 4
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -13,7 +13,8 @@ http://andybuilds.com/projects/Syringe%20Pump/syringe/
 
 //Display Variables
 Adafruit_SSD1306 display(9);
-const byte reedSwitch = 17;
+const byte limit_pull = 17;
+const byte limit_push = 8;
 const byte btnPins[3] = {0,1,16};
 bool refresh = false;
 #define pushMSG F("A: Push")
@@ -52,7 +53,8 @@ void setup() {
   pinMode(btnPins[TOP],INPUT_PULLUP);
   pinMode(btnPins[MIDDLE], INPUT_PULLUP);
   pinMode(btnPins[BOTTOM], INPUT_PULLUP);
-  pinMode(reedSwitch,INPUT_PULLUP);
+  pinMode(limit_pull,INPUT_PULLUP);
+  pinMode(limit_push,INPUT_PULLUP);  
   delay(300); //feather oled display charge pump needs time to stablize. see: https://forums.adafruit.com/viewtopic.php?f=57&t=100042&start=15
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
   display.clearDisplay();
@@ -90,8 +92,11 @@ void loop() {
     mainMenu();
   }
   if (digitalRead(mbedRetract)){
-   clickAction(BOTTOM);
-   mainMenu();
+    while(digitalRead(mbedRetract)){
+      delay(10);  //wait for signal to go back low;
+    }
+    clickAction(BOTTOM);
+    mainMenu();
   }
 }
 
@@ -130,16 +135,16 @@ void holdAction(byte action){
   while(!digitalRead(btnPins[action])){
     switch (action){
       case TOP: //Push
-        if(volumePushed<syringeVolume){
-          volumePushed += turnMotor(EIGHTH,5,PUSH);
+        if(digitalRead(limit_push)){
+          volumePushed += turnMotor(EIGHTH,PUSH,5);
         }
         else{
           limitReached(1);
         }
         break;
       case MIDDLE: //Pull
-        if (digitalRead(reedSwitch)){
-          volumePushed += turnMotor(EIGHTH,5,PULL);
+        if (digitalRead(limit_pull)){
+          volumePushed += turnMotor(EIGHTH,PULL,5);
         }
         else{
           limitReached();
@@ -154,8 +159,8 @@ void clickAction(byte action){
   showChoice(action);
   switch (action){
     case TOP: //Push
-      if(volumePushed<syringeVolume){
-        volumePushed += turnMotor(EIGHTH,clickPushSteps,PUSH);
+      if(digitalRead(limit_push)){
+        volumePushed += turnMotor(EIGHTH,PUSH,clickPushSteps);
         rstStepperPins();
         delay(150);
       }
@@ -164,8 +169,8 @@ void clickAction(byte action){
       }
       break;
     case MIDDLE: //Pull
-      if (digitalRead(reedSwitch)){
-        volumePushed += turnMotor(EIGHTH,clickPullSteps,PULL);
+      if (digitalRead(limit_pull)){
+        volumePushed += turnMotor(EIGHTH,PULL,clickPullSteps);
         rstStepperPins();
         delay(150);
       }
@@ -176,14 +181,14 @@ void clickAction(byte action){
     case BOTTOM: //Retract
       digitalWrite(refillStatus,HIGH);
       while(1){
-        if (!digitalRead(reedSwitch)){
+        if (!digitalRead(limit_pull)){
           digitalWrite(refillStatus,LOW);
           rstStepperPins();
           limitReached();
           break;
         }
         else{
-          volumePushed += turnMotor(EIGHTH,5,PULL);
+          volumePushed += turnMotor(EIGHTH,PULL,5);
         }
       }
       break;
@@ -226,7 +231,7 @@ void mainMenu(){ //takes about 16ms to refresh the menu
   display_then_clearBuff();
 }
 
-float turnMotor(byte resolution, int steps, bool myDIR){
+float turnMotor(byte resolution, bool myDIR, int steps){
   digitalWrite(EN, LOW); //Pull enable pin low to allow motor control
   digitalWrite(dir, myDIR); //Pull direction pin low to move "forward"
   digitalWrite(MS1, resolution >> 1); //set resolution
@@ -265,12 +270,19 @@ void turnMotor(byte resolution,bool myDIR){
   digitalWrite(dir, myDIR); //Pull direction pin low to move "forward"
   digitalWrite(MS1, resolution >> 1); //set resolution
   digitalWrite(MS2, resolution & 1);
-  while(digitalRead(mbedPush) && volumePushed<syringeVolume){ //at EIGHTH resolution we get 0.00265 mL / 2ms. for 100 microliter reward, turn on for 76ms
-    digitalWrite(stp,HIGH);
-    delay(interStepDlay);
-    digitalWrite(stp,LOW);
-    delay(interStepDlay);
-    volumePushed++;
+  while(digitalRead(mbedPush)){ //at EIGHTH resolution we get 0.00265 mL / 2ms. for 100 microliter reward, turn on for 76ms
+    if(digitalRead(limit_push)){
+      digitalWrite(stp,HIGH);
+      delay(interStepDlay);
+      digitalWrite(stp,LOW);
+      delay(interStepDlay);
+      volumePushed++;
+    }
+    else{
+      while(digitalRead(mbedPush)){ //display limit reached message until push signal is gone
+        limitReached(1);
+      }
+    }
   }
 }
 
