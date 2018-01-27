@@ -34,8 +34,9 @@ def printContents(table,colWidths,isHeader=False):
     for cols in table:
         content =  cols if isHeader else table.loc[row,cols]
         if index == 0 and isHeader==False: #removes .0 if read in as number
-            print((content))
             # content = content[:-2]
+            print((content))
+
         if content=="":
             blankCols.append(True)
         else:
@@ -48,7 +49,7 @@ def printContents(table,colWidths,isHeader=False):
     return contentString,blankCols
 
 
-table = pd.read_excel(xlsFile,parse_cols=int(numCols)-1).fillna("").astype(str) #read in table from excel file
+table = pd.read_excel(xlsFile,usecols=int(numCols)-1).fillna("").astype(str) #read in table from excel file
 widths = getColWidths(table) # get the maximum content width of each column
 
 #print header

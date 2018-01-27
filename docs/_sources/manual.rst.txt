@@ -7,25 +7,25 @@ User Guide
 
 Pinout
 ======
-+----------+-------+-----------------------------------------+
-| RJ45 Pin | Label | Description                             |
-+==========+=======+=========================================+
-| 1        | B     | HIGH when syringe is retracting.        |
-+----------+-------+-----------------------------------------+
-| 2        | C     | HIGH-LOW pulse begins retraction        |
-+----------+-------+-----------------------------------------+
-| 3        | A     | Motor turns when pin is HIGH            |
-+----------+-------+-----------------------------------------+
-| 4        | *5V   | Provides power to Atmega328             |
-+----------+-------+-----------------------------------------+
-| 5        | *GND  |                                         |
-+----------+-------+-----------------------------------------+
-| 6        | *12V  | Provides power for Stepper Motor Driver |
-+----------+-------+-----------------------------------------+
-| 7        | *3V   | Provides power for OLED Display         |
-+----------+-------+-----------------------------------------+
-| 8        | D     |                                         |
-+----------+-------+-----------------------------------------+
++----------+-------+-----------------+-------------------------------------------+
+| RJ45 Pin | Label |    Function     |   Description                             |
++==========+=======+=================+===========================================+
+| 1        | B     |  Output         |   HIGH when syringe is retracting.        |
++----------+-------+-----------------+-------------------------------------------+
+| 2        | C     |  Output         |   HIGH-LOW pulse begins retraction        |
++----------+-------+-----------------+-------------------------------------------+
+| 3        | A     |  Input          |   Motor turns when pin is HIGH            |
++----------+-------+-----------------+-------------------------------------------+
+| 4        | 5V    |  not used       |                                           |
++----------+-------+-----------------+-------------------------------------------+
+| 5        |  GND  | Power           |                                           |
++----------+-------+-----------------+-------------------------------------------+
+| 6        |  12V  | Power           |   Provides power for Stepper Motor Driver |
++----------+-------+-----------------+-------------------------------------------+
+| 7        | 3V    |  not used       |                                           |
++----------+-------+-----------------+-------------------------------------------+
+| 8        | D     |  not used       |                                           |
++----------+-------+-----------------+-------------------------------------------+
 
 *Required
 
@@ -57,4 +57,4 @@ You can use the form below to calculate the duration of the high pulse in order 
 
 Retract
 -------
-Providing a "High" TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syringe until the reed switch detects the magnet.
+Providing a "High" TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syringe the limit switch is pressed.

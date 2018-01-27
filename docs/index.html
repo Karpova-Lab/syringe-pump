@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syringe Pump &mdash; Syringe Pump 0.0.1 documentation</title>
+  <title>Syringe Pump &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -33,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Syringe Pump 0.0.1 documentation" href="#"/>
+    <link rel="top" title="Syringe Pump 1.0.0 documentation" href="#"/>
         <link rel="next" title="Frame" href="frame.html"/> 
 
   
@@ -43,6 +45,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -62,7 +65,7 @@
             
             
               <div class="version">
-                0.0.1
+                1.0.0
               </div>
             
           
@@ -83,11 +86,13 @@
           
             
             
-                <p class="caption"><span class="caption-text">Sections:</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Sections:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual.html">User Guide</a></li>
 </ul>
 
             
@@ -100,8 +105,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">Syringe Pump</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Syringe Pump</a>
+        
       </nav>
 
 
@@ -151,30 +158,68 @@
             
   <div class="section" id="syringe-pump">
 <h1>Syringe Pump<a class="headerlink" href="#syringe-pump" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><center>
+<figure>
+  <iframe src="https://player.vimeo.com/video/249147119?portrait=0" width="595" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</figure>
+</center></div></blockquote>
+<a class="reference internal image-reference" href="_images/3d_render.png"><img alt="_images/3d_render.png" class="align-center" src="_images/3d_render.png" style="width: 1105.0px; height: 907.0px;" /></a>
 <div class="section" id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>Syringe pumps are excessively expensive. By leveraging micro-manufacturing services (OSH Park, Ponoko, Shapeways etc.) and low cost readily available 3D printer components,
-there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be replicated at 1/10th the cost. Therefore, the aim of this project is to provide an easy to assemble, open-source syringe pump that is an order of magnitude less expensive without sacrificing reliablity and resolution.</p>
+<p>The expansion of the hobbyist 3D printing market has lowered the cost and increased the availability of CNC components due to demand for DIY kits and replacement parts.
+By leveraging these low cost readily available components (stepper motors, lead screws, linear bearings etc.), along with micro-manufacturing services (OSH Park, Ponoko, Shapeways etc.),
+there is no reason that the functionality of a expensive commercial syringe pump can’t be replicated at 1/10th the cost. Therefore, the goal of this project is to make an easy to assemble, open-source syringe pump that is
+an order of magnitude less expensive than commercial pumps, while maintaining a adequate level of reliablity and dispense resolution.</p>
 <div class="section" id="other-open-source-syringe-pumps">
 <h3>Other Open Source Syringe Pumps:<a class="headerlink" href="#other-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://hackaday.io/post/5681">Open Syringe Pump</a>  by naroom</li>
-<li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech&#8217;s Open Sustainability Technology Lab</li>
+<li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech’s Open Sustainability Technology Lab</li>
 <li><a class="reference external" href="http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html">Open source syringe pump</a> by Will Patrick</li>
 <li><a class="reference external" href="http://www.thingiverse.com/thing:1820146">SyriGo</a> by Ocram</li>
 </ul>
+<p>The major difference between my take on the DIY syringe pump, and the ones above, is my avoidance of 3d printed parts.
+I prefer lasercut parts when possible because they are more precise, stiffer, and more condusive to rapid iteration (minutes to cut instead of hours to 3d print).</p>
 </div>
 </div>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Laser cut acrylic frame<ul>
-<li>Most other open source syringe pumps use 3D printed parts. Laser cut acrylic is more rigid and can be produced with superior dimensional accuracy than a 3D printed part. If one decides to make changes to the design, it is much faster to iterate through changes using a lasercutter than if you were to prototype with 3D printed parts. Of course if one doesn&#8217;t have access to a laser cutter, parts can easily be acquired through services like Ponoko.</li>
+<li>Push and pull capable</li>
+<li>Laser cut 1/4” thick acrylic frame<ul>
+<li>Stiff,</li>
+<li>Precise</li>
+<li>No need for finishing/removing support material as with a 3D printed part</li>
 </ul>
 </li>
-<li>Push and pull capable</li>
-<li>Limit switch prevents withdrawing the syringe too far and causing a big mess</li>
+<li>Easy to assemble using standard parts (no glue or thread tapping required)</li>
+<li>Controller board that combines microcontroller, stepper driver, and OLED display with pushbuttons</li>
+<li>2 limit switches prevent the motor from stalling in either direction</li>
 </ul>
+<p>Theoretical minimum volume resolution calculated to be <strong>2.65</strong> μL (calculation using Python below)</p>
+<blockquote>
+<div><div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+
+<span class="c1">#Acme rod specs</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#millimeters</span>
+<span class="n">numStarts</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">lead</span> <span class="o">=</span> <span class="n">numStarts</span><span class="o">*</span><span class="n">pitch</span><span class="o">/</span><span class="mf">10.0</span> <span class="c1">#cm</span>
+
+<span class="c1">#Syringe specs</span>
+<span class="n">syringeDiameter</span> <span class="o">=</span> <span class="mi">26</span> <span class="c1">#millimeters</span>
+<span class="n">syringeArea</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">syringeDiameter</span><span class="o">/</span><span class="mf">10.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">4.0</span> <span class="c1">#cm^2</span>
+
+<span class="c1">#Motor specs</span>
+<span class="n">numSteps</span> <span class="o">=</span> <span class="mi">200</span><span class="o">*</span><span class="mi">8</span> <span class="c1">#200 steps with 1/8 microstepping</span>
+
+<span class="c1">#Result</span>
+<span class="n">resolution</span> <span class="o">=</span> <span class="n">lead</span><span class="o">*</span><span class="n">syringeArea</span><span class="o">/</span><span class="n">numSteps</span> <span class="c1">#mL</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="si">{:0.3f}</span><span class="s2"> </span><span class="se">\u03bc</span><span class="s2">L resolution&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resolution</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div></blockquote>
 <div style="text-align:center; margin-bottom:24px">
   <a href="https://github.com/Karpova-Lab/syringe-pump" style="background-color: #2980b9;border: none;color: white;padding: 15px 15px;text-align:center;text-decoration: none;display: inline-block;font-size: 18px;border-radius:15px">All files available on Github</a>
 </div><div class="toctree-wrapper compound">
@@ -184,12 +229,15 @@ there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="frame.html" class="btn btn-neutral float-right" title="Frame" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="frame.html" class="btn btn-neutral float-right" title="Frame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -200,7 +248,7 @@ there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Andy Lustig.
-      Last updated on Aug 01, 2017.
+      Last updated on Jan 27, 2018.
 
     </p>
   </div>
@@ -222,10 +270,11 @@ there is no reason that the functionality of a $2500 Syringe pump can&#8217;t be
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.0.1',
+            VERSION:'1.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

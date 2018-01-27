@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>User Guide &mdash; Syringe Pump 0.0.1 documentation</title>
+  <title>User Guide &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -33,8 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Syringe Pump 0.0.1 documentation" href="index.html"/>
-        <link rel="prev" title="Controller" href="controller.html"/> 
+    <link rel="top" title="Syringe Pump 1.0.0 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -43,6 +44,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -62,7 +64,7 @@
             
             
               <div class="version">
-                0.0.1
+                1.0.0
               </div>
             
           
@@ -83,20 +85,13 @@
           
             
             
-                <p class="caption"><span class="caption-text">Sections:</span></p>
-<ul class="current">
+              
+            
+            
+              <p class="caption"><span class="caption-text">Sections:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pinout">Pinout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manual-mode">Manual Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#electronic-mode">Electronic Mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#advance">Advance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#retract">Retract</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
             
@@ -109,8 +104,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Syringe Pump</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Syringe Pump</a>
+        
       </nav>
 
 
@@ -164,52 +161,62 @@
 <h2>Pinout<a class="headerlink" href="#pinout" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="12%" />
-<col width="71%" />
+<col width="13%" />
+<col width="9%" />
+<col width="22%" />
+<col width="56%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">RJ45 Pin</th>
 <th class="head">Label</th>
+<th class="head">Function</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>B</td>
+<td>Output</td>
 <td>HIGH when syringe is retracting.</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>C</td>
+<td>Output</td>
 <td>HIGH-LOW pulse begins retraction</td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>A</td>
+<td>Input</td>
 <td>Motor turns when pin is HIGH</td>
 </tr>
 <tr class="row-odd"><td>4</td>
-<td><a href="#id1"><span class="problematic" id="id2">*</span></a>5V</td>
-<td>Provides power to Atmega328</td>
+<td>5V</td>
+<td>not used</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>5</td>
-<td><a href="#id3"><span class="problematic" id="id4">*</span></a>GND</td>
+<td>GND</td>
+<td>Power</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>6</td>
-<td><a href="#id5"><span class="problematic" id="id6">*</span></a>12V</td>
+<td>12V</td>
+<td>Power</td>
 <td>Provides power for Stepper Motor Driver</td>
 </tr>
 <tr class="row-even"><td>7</td>
-<td><a href="#id7"><span class="problematic" id="id8">*</span></a>3V</td>
-<td>Provides power for OLED Display</td>
+<td>3V</td>
+<td>not used</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>8</td>
 <td>D</td>
+<td>not used</td>
 <td>&#160;</td>
 </tr>
 </tbody>
 </table>
-<p><a href="#id9"><span class="problematic" id="id10">*</span></a>Required</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Required</p>
 </div>
 <div class="section" id="manual-mode">
 <h2>Manual Mode<a class="headerlink" href="#manual-mode" title="Permalink to this headline">¶</a></h2>
@@ -250,7 +257,7 @@
 <h2>Electronic Mode<a class="headerlink" href="#electronic-mode" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="advance">
 <h3>Advance<a class="headerlink" href="#advance" title="Permalink to this headline">¶</a></h3>
-<p>Providing a &#8220;High&#8221; TTL pulse to pin 3 of the RJ45 will cause the stepper motor to advance at a rate of 1 step per 2 milliseconds. Pullling the same pin back &#8220;Low&#8221; will stop the motor.
+<p>Providing a “High” TTL pulse to pin 3 of the RJ45 will cause the stepper motor to advance at a rate of 1 step per 2 milliseconds. Pullling the same pin back “Low” will stop the motor.
 You can use the form below to calculate the duration of the high pulse in order to deliver a target amount of liquid for a given size syringe.</p>
 <!DOCTYPE html>
 <html>
@@ -263,7 +270,7 @@ You can use the form below to calculate the duration of the high pulse in order 
         </form>
 
         <form>
-            Reward Volume:
+            Dispense Volume:
             <input id="rewardVol" type="text" value="0.100" onkeyup="showResult()" size="5"> (mL)
         </form>
         <!-- <br></br> -->
@@ -307,22 +314,18 @@ You can use the form below to calculate the duration of the high pulse in order 
 </div>
 <div class="section" id="retract">
 <h3>Retract<a class="headerlink" href="#retract" title="Permalink to this headline">¶</a></h3>
-<p>Providing a &#8220;High&#8221; TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syringe until the reed switch detects the magnet.</p>
+<p>Providing a “High” TTL pulse to pin 2 of the RJ45 will cause the pump to enter retraction mode. It will retract the syringe the limit switch is pressed.</p>
 </div>
 </div>
 </div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="controller.html" class="btn btn-neutral" title="Controller" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -330,7 +333,7 @@ You can use the form below to calculate the duration of the high pulse in order 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Andy Lustig.
-      Last updated on Aug 01, 2017.
+      Last updated on Jan 27, 2018.
 
     </p>
   </div>
@@ -352,10 +355,11 @@ You can use the form below to calculate the duration of the high pulse in order 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.0.1',
+            VERSION:'1.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
