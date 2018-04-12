@@ -1,73 +1,66 @@
 /*
 Syringe pump
 By: Andy Lustig
-Date: 2017-03-01
+Date: 2018-04-12
 http://andybuilds.com/projects/Syringe%20Pump/syringe/
 */
 
-#define VERSION 4
+#define VERSION 6
+#define RESOLUTION 1.327 //1.327 microliters per 1/16th microstep
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD130632.h>
+#include <AccelStepper.h>
 
 //Display Variables
-Adafruit_SSD1306 display(9);
-const byte limit_pull = 17;
-const byte limit_push = 8;
-const byte btnPins[3] = {0,1,16};
-bool refresh = false;
+Adafruit_SSD1306 display = Adafruit_SSD1306();
 #define pushMSG F("A: Push")
 #define pullMSG F("B: Pull")
-#define retractMSG F("C: Retract")
+#define retractMSG F("C: Full Retract")
 
-//Stepper Motor variables
-#define stp 3
-#define dir 2
-#define MS1 4
-#define MS2 5
-#define EN  6
+// Stepper Driver
+// http://learn.watterott.com/silentstepstick/pinconfig/
+AccelStepper stepper(AccelStepper::DRIVER, 11, 10); //(stp,dir)
+const byte enablePin = A0;
+bool motorEnabled;
 
-enum stepResolution {FULL=0, HALF=2, QTR=1, EIGHTH=3};  //Microstep Resolution Truth Table is on pg.3 of A3957 datasheet.
+// limit switches
+const byte limit_pull = 12;
+const byte limit_push = A1;
+
+// buttons
+const byte btnPins[3] = {9,6,5};
 enum buttonLocation {TOP,MIDDLE,BOTTOM};
-enum motorDirection {PULL,PUSH};
-const float minResolution = 0.002655; //minimum resolution in mL
-float volumePushed = 0;
-const unsigned int syringeVolume = 22599; // # of microsteps in 60 mL syringe (60.0e^-3)/2.655e^-6)
-const byte interStepDlay = 1;
+int debounceTime = 200;
 
 //mbed pins
-const byte mbedPush = 14; //mbed output 1 (A)
-const byte mbedRetract = 15; //mbed output 2 (C)
-const byte refillStatus = 10; //mbed input 1 (B)
+const byte mbedPush = A5; //mbed output 1 (A) . FeatherM0:A5
+const byte mbedRetract = A3; //mbed output 2 (C). FeatherM0:A3
+const byte refillStatus = A4; //mbed input 1 (B). FeatherM0:A4
 
-//Syringe varibales
-byte clickPushSteps = 38; //with 60 mL syringe and 1/8 microstepping, 38 steps ~ 0.1mL
-byte clickPullSteps = 188; // ~ .5mL
-
-void limitReached(bool isPushing=false);
-
+long dispenseVolume = 200; //microliters 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() {
+  Serial.begin(115200);
+  Serial.println("Ready.");
   //OLED feather setup
   pinMode(btnPins[TOP],INPUT_PULLUP);
   pinMode(btnPins[MIDDLE], INPUT_PULLUP);
   pinMode(btnPins[BOTTOM], INPUT_PULLUP);
   pinMode(limit_pull,INPUT_PULLUP);
   pinMode(limit_push,INPUT_PULLUP);  
+
   delay(300); //feather oled display charge pump needs time to stablize. see: https://forums.adafruit.com/viewtopic.php?f=57&t=100042&start=15
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
   display.clearDisplay();
   display_then_clearBuff();
 
   //Motor setup
-  pinMode(stp, OUTPUT);
-  pinMode(dir, OUTPUT);
-  pinMode(MS1, OUTPUT);
-  pinMode(MS2, OUTPUT);
-  pinMode(EN, OUTPUT);
-  rstStepperPins(); //Set step, direction, microstep and enable pins to default states
-
+  stepper.setMaxSpeed(2500);
+  stepper.setAcceleration(50000);
+  pinMode( enablePin, OUTPUT );  // now we're sourcing current, i.e. GND
+  enableMotor();
   //mbed setup
   pinMode(mbedPush,INPUT);
   pinMode(mbedRetract,INPUT);
@@ -83,21 +76,51 @@ void setup() {
 }
 
 void loop() {
+  stepper.run();
+  if(stepper.isRunning() && !digitalRead(limit_push)){
+    limitReached();
+    mainMenu();
+  }
+  if(stepper.isRunning() && !digitalRead(limit_pull)){
+    limitReached();
+    mainMenu();
+  }
   checkButton(TOP);
   checkButton(MIDDLE);
   checkButton(BOTTOM);
+
   if (digitalRead(mbedPush)){
-    turnMotor(EIGHTH,PUSH); //turn motor with 1/8 microstepping until TTL pulse goes back low
-    rstStepperPins();
-    mainMenu();
-  }
-  if (digitalRead(mbedRetract)){
-    while(digitalRead(mbedRetract)){
-      delay(10);  //wait for signal to go back low;
+    long mbedSignalClock = millis();
+    while (digitalRead(mbedPush)){
+      //wait for signal to go back low
     }
-    clickAction(BOTTOM);
+    mbedSignalClock = millis()-mbedSignalClock;
+    if (mbedSignalClock>20){ //update dispenseVolume
+      updateRewardVolume(mbedSignalClock);
+    }
+    else{//dispense
+      clickAction(TOP);
+    }    
     mainMenu();
   }
+  // if (digitalRead(mbedRetract)){
+  //   while(digitalRead(mbedRetract)){
+  //     delay(10);  //wait for signal to go back low;
+  //   }
+  //   // clickAction(BOTTOM);
+  //   // mainMenu();
+  // }
+
+  // if (!stepper.isRunning() && motorEnabled){
+  //   disableMotor();
+  // }
+}
+
+void updateRewardVolume(long rewardLength){
+  int multiple = 10;
+  dispenseVolume = rewardLength  + multiple/2;
+  dispenseVolume -= dispenseVolume % multiple;
+  dispenseVolume *= 1/10.0; //microliters to dispense
 }
 
 void display_then_clearBuff(){
@@ -112,6 +135,7 @@ void checkButton(byte button){
   unsigned int holdTime = 0;
   unsigned int holdThresh = 350;
   if (!digitalRead(btnPins[button])){     // button has been pressed
+    // enableMotor();
     while(!digitalRead(btnPins[button])){
       delay(1);
       holdTime++;
@@ -124,7 +148,7 @@ void checkButton(byte button){
       clickAction(button);
       mainMenu();
     }
-    rstStepperPins();
+    delay(debounceTime);
   }
   else{ //button wasn't pressed
   }
@@ -133,65 +157,56 @@ void checkButton(byte button){
 void holdAction(byte action){
   showChoice(action+3);
   while(!digitalRead(btnPins[action])){
+    stepper.run();
     switch (action){
       case TOP: //Push
         if(digitalRead(limit_push)){
-          volumePushed += turnMotor(EIGHTH,PUSH,5);
-        }
-        else{
-          limitReached(1);
-        }
-        break;
-      case MIDDLE: //Pull
-        if (digitalRead(limit_pull)){
-          volumePushed += turnMotor(EIGHTH,PULL,5);
+          if (stepper.distanceToGo() < 800){
+            stepper.move(1000);
+          }
         }
         else{
           limitReached();
         }
         break;
+      case MIDDLE: //Pull
+        if (digitalRead(limit_pull)){
+          if (stepper.distanceToGo() > -800){
+            stepper.move(-1000);
+          }
+        }
+        else{
+          limitReached();;
+        }
+        break;
     }
   }
-  rstStepperPins();
+  stepper.setCurrentPosition(0);
 }
 
 void clickAction(byte action){
   showChoice(action);
   switch (action){
     case TOP: //Push
-      if(digitalRead(limit_push)){
-        volumePushed += turnMotor(EIGHTH,PUSH,clickPushSteps);
-        rstStepperPins();
-        delay(150);
-      }
-      else{
-        limitReached(1);
-      }
-      break;
+      stepper.move(int(dispenseVolume/RESOLUTION));break;
     case MIDDLE: //Pull
-      if (digitalRead(limit_pull)){
-        volumePushed += turnMotor(EIGHTH,PULL,clickPullSteps);
-        rstStepperPins();
-        delay(150);
-      }
-      else{
-        limitReached();
-      }
-      break;
+      stepper.move(-int(dispenseVolume/RESOLUTION));break;
     case BOTTOM: //Retract
       digitalWrite(refillStatus,HIGH);
       while(1){
-        if (!digitalRead(limit_pull)){
-          digitalWrite(refillStatus,LOW);
-          rstStepperPins();
-          limitReached();
-          break;
+        stepper.run();
+        if (digitalRead(limit_pull)){
+          if (stepper.distanceToGo() > -800){
+            stepper.move(-1000);
+          }
         }
         else{
-          volumePushed += turnMotor(EIGHTH,PULL,5);
+          digitalWrite(refillStatus,LOW);
+          limitReached();;
+          break;
         }
       }
-      break;
+    break;
   }
 }
 
@@ -222,84 +237,30 @@ void showChoice(byte choice){
 }
 
 void mainMenu(){ //takes about 16ms to refresh the menu
-  display.print("  --");
-  display.print(volumePushed*minResolution);
-  display.println(F(" mL pushed--"));
+  display.print(F("   Reward = "));
+  display.print(dispenseVolume);  
+  display.println(F(" uL"));
   display.println(pushMSG);
   display.println(pullMSG);
   display.print(retractMSG);
   display_then_clearBuff();
 }
 
-float turnMotor(byte resolution, bool myDIR, int steps){
-  digitalWrite(EN, LOW); //Pull enable pin low to allow motor control
-  digitalWrite(dir, myDIR); //Pull direction pin low to move "forward"
-  digitalWrite(MS1, resolution >> 1); //set resolution
-  digitalWrite(MS2, resolution & 1);
-  for(int x= 1; x<steps; x++){
-    digitalWrite(stp,HIGH);
-    delay(interStepDlay);
-    digitalWrite(stp,LOW);
-    delay(interStepDlay);
-  }
-  byte multiplier;
-  switch (resolution){
-    case EIGHTH:
-      multiplier = 1;
-      break;
-    case QTR:
-      multiplier = 2;
-      break;
-    case HALF:
-      multiplier = 4;
-      break;
-    case FULL:
-      multiplier = 8;
-      break;
-  }
-  if (myDIR){
-    return steps*multiplier;
-  }
-  else{
-    return steps*multiplier*-1;
-  }
-}
 
-void turnMotor(byte resolution,bool myDIR){
-  digitalWrite(EN, LOW); //Pull enable pin low to allow motor control
-  digitalWrite(dir, myDIR); //Pull direction pin low to move "forward"
-  digitalWrite(MS1, resolution >> 1); //set resolution
-  digitalWrite(MS2, resolution & 1);
-  while(digitalRead(mbedPush)){ //at EIGHTH resolution we get 0.00265 mL / 2ms. for 100 microliter reward, turn on for 76ms
-    if(digitalRead(limit_push)){
-      digitalWrite(stp,HIGH);
-      delay(interStepDlay);
-      digitalWrite(stp,LOW);
-      delay(interStepDlay);
-      volumePushed++;
-    }
-    else{
-      while(digitalRead(mbedPush)){ //display limit reached message until push signal is gone
-        limitReached(1);
-      }
-    }
-  }
-}
-
-//Reset Stepper Driver pins to default states
-void rstStepperPins(){
-  digitalWrite(stp, LOW);
-  digitalWrite(dir, LOW);
-  digitalWrite(MS1, LOW);
-  digitalWrite(MS2, LOW);
-  digitalWrite(EN, HIGH);
-}
-
-void limitReached(bool isPushing=false){
-  if(!isPushing){
-    volumePushed = 0;
-  }
+void limitReached(){
+  stepper.setCurrentPosition(0);
   display.print(F("Limit Reached"));
   display_then_clearBuff();
   delay(1000);
+}
+
+void enableMotor(){
+  motorEnabled = true;
+  digitalWrite(enablePin,LOW);
+
+}
+
+void disableMotor(){
+  motorEnabled = false;
+  digitalWrite(enablePin,HIGH);
 }
