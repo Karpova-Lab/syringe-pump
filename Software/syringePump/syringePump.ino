@@ -1,17 +1,17 @@
 /*
 Syringe pump
 By: Andy Lustig
-Date: 2018-04-12
+Date: 2018-05-17
 http://andybuilds.com/projects/Syringe%20Pump/syringe/
 */
 
-#define VERSION 6
+#define VERSION 7
 #define RESOLUTION 1.327 //1.327 microliters per 1/16th microstep
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD130632.h>
-#include <AccelStepper.h>
+#include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 
 //Display Variables
 Adafruit_SSD1306 display = Adafruit_SSD1306();
@@ -39,7 +39,7 @@ const byte mbedPush = A5; //mbed output 1 (A) . FeatherM0:A5
 const byte mbedRetract = A3; //mbed output 2 (C). FeatherM0:A3
 const byte refillStatus = A4; //mbed input 1 (B). FeatherM0:A4
 
-long dispenseVolume = 200; //microliters 
+long dispenseVolume = 250; //microliters 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() {
   Serial.begin(115200);
@@ -57,8 +57,8 @@ void setup() {
   display_then_clearBuff();
 
   //Motor setup
-  stepper.setMaxSpeed(2500);
-  stepper.setAcceleration(50000);
+  stepper.setMaxSpeed(5000);
+  stepper.setAcceleration(1500);
   pinMode( enablePin, OUTPUT );  // now we're sourcing current, i.e. GND
   enableMotor();
   //mbed setup
@@ -110,10 +110,9 @@ void loop() {
   //   // clickAction(BOTTOM);
   //   // mainMenu();
   // }
-
-  // if (!stepper.isRunning() && motorEnabled){
-  //   disableMotor();
-  // }
+  if (!stepper.isRunning() && motorEnabled){
+    disableMotor();
+  }
 }
 
 void updateRewardVolume(long rewardLength){
@@ -155,6 +154,7 @@ void checkButton(byte button){
 }
 
 void holdAction(byte action){
+  enableMotor();
   showChoice(action+3);
   while(!digitalRead(btnPins[action])){
     stepper.run();
@@ -185,12 +185,13 @@ void holdAction(byte action){
 }
 
 void clickAction(byte action){
+  enableMotor();
   showChoice(action);
   switch (action){
     case TOP: //Push
-      stepper.move(int(dispenseVolume/RESOLUTION));break;
+      stepper.move(long(dispenseVolume/RESOLUTION));break;
     case MIDDLE: //Pull
-      stepper.move(-int(dispenseVolume/RESOLUTION));break;
+      stepper.move(-long(dispenseVolume/RESOLUTION));break;
     case BOTTOM: //Retract
       digitalWrite(refillStatus,HIGH);
       while(1){
@@ -202,11 +203,17 @@ void clickAction(byte action){
         }
         else{
           digitalWrite(refillStatus,LOW);
-          limitReached();;
+          stepper.setCurrentPosition(0);
+          display.print(F("Limit Reached"));
+          display_then_clearBuff();
+          stepper.move(int(300/RESOLUTION)); //bounce off the limit switch
+          while(stepper.isRunning()){
+            stepper.run();
+          }
+          delay(1000);
           break;
         }
       }
-    break;
   }
 }
 
@@ -257,10 +264,9 @@ void limitReached(){
 void enableMotor(){
   motorEnabled = true;
   digitalWrite(enablePin,LOW);
-
 }
 
 void disableMotor(){
+  digitalWrite(enablePin,HIGH);  
   motorEnabled = false;
-  digitalWrite(enablePin,HIGH);
 }
