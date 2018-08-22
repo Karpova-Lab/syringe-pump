@@ -33,8 +33,8 @@ float valsFromParse[2];
 void setup() {
   Serial.begin(115200);
   // setupDRV();
-  // setupAllegro();
-  setupTMC();
+  setupAllegro();
+  // setupTMC();
   delay(500);
   Serial.println("\nSerial Connected");
   Serial.println("\'e\' enable/disable motor");
@@ -181,8 +181,8 @@ void setupDRV(void){
 
   numSteps = 32*motorSteps;
   moveSteps = 10*numSteps;
-  motor.setMaxSpeed(30000);
-  motor.setAcceleration(90000);    // stp/s^2  
+  motor.setMaxSpeed(5000);
+  motor.setAcceleration(5000);    // stp/s^2  
 }
 
 void setupAllegro(void){
@@ -205,11 +205,11 @@ void setupAllegro(void){
   numSteps = 16*motorSteps;
   moveSteps = 10*numSteps;
 
-  motor.setMaxSpeed(15000);
-  motor.setAcceleration(90000);    // stp/s^2  
+  motor.setMaxSpeed(5000);
+  motor.setAcceleration(5000);    // stp/s^2  
 }
 
-void setupTMC(void){
+void setupTMC(void){ //http://learn.watterott.com/silentstepstick/
   pinMode(PIN5, OUTPUT);//CFG0
   digitalWrite(PIN5, LOW);//CFG0
 
@@ -226,7 +226,7 @@ void setupTMC(void){
   numSteps = 16*motorSteps;
   moveSteps = numSteps;
   motor.setMaxSpeed(5000);
-  motor.setAcceleration(5000);    // stp/s^2  
+  motor.setAcceleration(2500);    // stp/s^2  
 
 
 }
