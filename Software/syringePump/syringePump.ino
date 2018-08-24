@@ -7,6 +7,7 @@ https://karpova-lab.github.io/syringe-pump/index.html
 
 #define VERSION 8
 
+#define BPOD  //only uses 1 TTL output
 #define TEN_ML 0.379 // microliters per 1/16th microstep for 10mL syringe
 #define SIXTY_ML 1.327 // microliters per 1/16th microstep for 60mL syringe
 
@@ -45,7 +46,7 @@ const byte refillStatus = A4; //ttl input 1 (B: RJ45 pin 1).
 long dispenseVolume = 200; //microliters 
 long ongoingPosition = 0;
 
-const float resolution =  SIXTY_ML;
+const float resolution =  TEN_ML;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() {
   Serial.begin(115200);
@@ -91,10 +92,13 @@ void loop() {
     holdAction(TOP);
     mainMenu();
   }
+
+  #ifndef BPOD
   if (digitalRead(ttlRetract)){
     holdAction(MIDDLE);
     mainMenu();
   }
+  #endif
 
   //run motor if a step is scheduled to be executed, otherwise do nothing.
   stepper.run();
@@ -149,7 +153,11 @@ void checkButton(byte button){
 void holdAction(byte action){
   enableMotor();
   showChoice(action+3);
+  #ifdef BPOD
+  while(!digitalRead(btnPins[action]) | digitalRead(ttlPush)){
+  #else
   while(!digitalRead(btnPins[action]) | digitalRead(ttlPush) | digitalRead(ttlRetract)){
+  #endif
     stepper.run();
     switch (action){
       case TOP: //Push
