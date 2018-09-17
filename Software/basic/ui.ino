@@ -1,22 +1,74 @@
-void updateUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
+void arrowUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
     if (! (buttons & 1<<buttonPos)) {
-    while(!(buttons & 1<<buttonPos)){
-      (*fxn_1)(ST77XX_WHITE);
-      showMenu(ST77XX_BLACK,ST77XX_BLACK);
-      buttons = ss.readButtons();
-    }
+        enableMotor();
+        (*fxn_1)(ST77XX_WHITE);
+        showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+        uint16_t count = 0;
+        while(!(buttons & 1<<buttonPos)){
+            stepper.run();
+            switch (buttonPos){
+            case LEFT:
+                if(digitalRead(limit_push)){
+                    if (stepper.distanceToGo() < 8000){
+                        stepper.move(100000);
+                    }
+                }
+                else{
+                    limitReached();
+                    buttons = ss.readButtons();
+                }
+                break;
+            case RIGHT:
+                if (digitalRead(limit_pull)){
+                    if (stepper.distanceToGo() > -8000){
+                        stepper.move(-100000);
+                    }
+                }
+                else{
+                    limitReached();
+                    buttons = ss.readButtons();
+                }
+                break;
+            case UP: 
+                retract();
+                buttons = ss.readButtons();
+                break;
+            case DOWN:
+                delay(1000);
+                ongoingPosition = 0;
+                buttons = ss.readButtons();
+                break;
+            }
+            if (count++ == 300){
+                count = 0;
+                buttons = ss.readButtons();
+            }
+        }    
+    ongoingPosition += long(stepper.currentPosition());
+    stopImmediately();    
     (*fxn_1)(ST77XX_BLACK);
-    showMenu(ST77XX_WHITE,ST77XX_WHITE);
+    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
   }
+}
 
+void buttonUI(void (*fxn_1)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uint16_t helpColor ){
+    if (! (buttons & 1<<buttonPos)) {
+        showMenu(aboutColor,helpColor,ST77XX_BLACK);
+        (*fxn_1)(ST77XX_WHITE);
+        while(!(buttons & 1<<buttonPos)){
+            buttons = ss.readButtons();
+        }
+        (*fxn_1)(ST77XX_BLACK);
+        showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+    }
 }
 
 
-void showMenu(uint16_t aboutColor, uint16_t helpColor ){
+void showMenu(uint16_t aboutColor, uint16_t helpColor, uint16_t dispenseColor ){
     about(aboutColor);  
     help(helpColor);
+    showDispensed(dispenseColor);
 }
-
 
 void firmware(uint16_t color){
   tft.setRotation(3);
@@ -24,7 +76,7 @@ void firmware(uint16_t color){
   tft.setTextSize(1);
   tft.setCursor(0,12);
   tft.println("\n\nFirmware Version: 1");
-  tft.println("Updated: 9/14/2018\n");
+  tft.println(DATE);
   tft.println("Syringe Volume: 60 mL");
 }
 
@@ -40,7 +92,7 @@ void help(uint16_t color){
   tft.setRotation(3);
   tft.setTextColor(color);
   tft.setTextSize(1);
-  tft.setCursor(133,60);
+  tft.setCursor(135,60);
   tft.println("Help");
 }
 
@@ -91,7 +143,6 @@ void upArrrow(uint16_t color){
     tft.print("Retract");
 }
 
-
 void downArrow(uint16_t color){
     tft.setRotation(3);
     uint16_t centerX = 45; 
@@ -107,6 +158,13 @@ void downArrow(uint16_t color){
     tft.print("Reset Volume");
 }
 
+void showButtonMap(uint16_t color){
+    rightArrow(color);
+    leftArrow(color);
+    upArrrow(color);
+    downArrow(color);
+}     
+
 void pushing(uint16_t color){
     tft.setRotation(3);
     uint16_t rightSide = 10; 
@@ -120,7 +178,6 @@ void pushing(uint16_t color){
     tft.setCursor(15 , 0);
     tft.print("Push");
 }
-
 
 void pulling(uint16_t color){
     tft.setRotation(3);
@@ -163,4 +220,12 @@ void resetting(uint16_t color){
     tft.print("Reset Volume");
 }
 
-
+void showDispensed(uint16_t color){
+    tft.setTextColor(color);
+    tft.setTextSize(2);
+    tft.setCursor(0,35);
+    tft.print(int(ongoingPosition*resolution));  
+    tft.setCursor(tft.getCursorX(),42);
+    tft.setTextSize(1);
+    tft.println(F(" uL dispensed"));
+}
