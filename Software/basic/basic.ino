@@ -87,8 +87,8 @@ void loop() {
   buttons = ss.readButtons();
   // Serial.println(buttons, BIN);
 
-  buttonUI(firmware,10,ST77XX_GREEN,ST77XX_BLACK); //about
-  buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_GREEN); //help
+  buttonUI(firmware,10,ST77XX_YELLOW,ST77XX_BLACK); //about
+  buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_YELLOW); //help
 
   arrowUI(pushing,3); //left
   arrowUI(pulling,7); //right

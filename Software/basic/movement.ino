@@ -27,14 +27,6 @@ void limitReached(){
   limitMessage(ST77XX_BLACK);
 }
 
-void limitMessage(uint16_t color){
-  tft.setTextColor(color);
-  tft.setTextSize(2);
-  tft.setCursor(0 , 35);
-  tft.print("Limit Reached");
-}
-
-
 void retract(){
   digitalWrite(refillStatus,HIGH);
   Serial.println("retract loop");
