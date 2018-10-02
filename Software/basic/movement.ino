@@ -33,15 +33,18 @@ void retract(){
   while(1){
     stepper.run();
     if (digitalRead(limit_pull)){
-      if (stepper.distanceToGo() > -8000){
-        stepper.move(-10000);
-      }
+      moveDirection(!softDirection);
     }
     else{
       digitalWrite(refillStatus,LOW);
       stepper.setCurrentPosition(0);// stop the motor
       limitMessage(ST77XX_RED);
-      stepper.move(250); //bounce off the limit switch
+      if (softDirection){
+          stepper.move(250); //bounce off the limit switch
+      }
+      else{
+          stepper.move(-250); //bounce off the limit switch
+      }
       while(stepper.isRunning()){
         stepper.run();
       }
@@ -50,6 +53,19 @@ void retract(){
       stepper.setCurrentPosition(0);
       ongoingPosition = 0;//reset dispensed volume to 0
       break;
+    }
+  }
+}
+
+void moveDirection(bool oneWay){
+  if (oneWay){
+    if (stepper.distanceToGo() < 8000){
+      stepper.move(100000);
+    }
+  }
+  else{
+    if (stepper.distanceToGo() > -8000){
+        stepper.move(-10000);
     }
   }
 }

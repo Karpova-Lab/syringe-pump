@@ -1,17 +1,15 @@
-void arrowUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
+void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
     if (! (buttons & 1<<buttonPos)) {
         enableMotor();
         showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
-        (*fxn_1)(ST77XX_WHITE);
+        (*fxn)(ST77XX_WHITE);
         uint16_t count = 0;
         while(!(buttons & 1<<buttonPos)){
             stepper.run();
             switch (buttonPos){
             case LEFT:
                 if(digitalRead(limit_push)){
-                    if (stepper.distanceToGo() < 8000){
-                        stepper.move(100000);
-                    }
+                    moveDirection(softDirection);
                 }
                 else{
                     limitReached();
@@ -20,9 +18,7 @@ void arrowUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
                 break;
             case RIGHT:
                 if (digitalRead(limit_pull)){
-                    if (stepper.distanceToGo() > -8000){
-                        stepper.move(-100000);
-                    }
+                    moveDirection(!softDirection);
                 }
                 else{
                     limitReached();
@@ -38,6 +34,16 @@ void arrowUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
                 ongoingPosition = 0;
                 buttons = ss.readButtons();
                 break;
+            case CENTER:
+                uint32_t holdStarted = millis();
+                while( ((millis()-holdStarted) < 2750) & (!(buttons & 1<<buttonPos)) ){
+                    buttons = ss.readButtons();
+                }
+                if( !(buttons & 1<<buttonPos) ){
+                    softDirection = !softDirection;
+                    successfulFlip(ST77XX_WHITE);
+                }
+                break;
             }
             if (count++ == 300){
                 count = 0;
@@ -46,19 +52,19 @@ void arrowUI(void (*fxn_1)(uint16_t), uint8_t buttonPos){
         }    
     ongoingPosition += long(stepper.currentPosition());
     stopImmediately();    
-    (*fxn_1)(ST77XX_BLACK);
+    (*fxn)(ST77XX_BLACK);
     showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
   }
 }
 
-void buttonUI(void (*fxn_1)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uint16_t helpColor ){
+void buttonUI(void (*fxn)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uint16_t helpColor ){
     if (! (buttons & 1<<buttonPos)) {
         showMenu(aboutColor,helpColor,ST77XX_BLACK);
-        (*fxn_1)(ST77XX_WHITE);
+        (*fxn)(ST77XX_WHITE);
         while(!(buttons & 1<<buttonPos)){
             buttons = ss.readButtons();
         }
-        (*fxn_1)(ST77XX_BLACK);
+        (*fxn)(ST77XX_BLACK);
         showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
     }
 }
@@ -220,6 +226,26 @@ void resetting(uint16_t color){
     tft.print("Reset");
     tft.setCursor(30 , 43);
     tft.print("Volume");
+}
+
+void flipDirection(uint16_t color){
+
+    tft.setTextColor(color);
+    tft.setTextSize(2);
+    tft.setCursor(0 , 0);
+    tft.print("Continue\nHolding\nto flip\ndirection");
+}
+
+void successfulFlip(uint16_t color){
+    tft.fillScreen(ST77XX_BLACK);
+
+    tft.setTextColor(color);
+    tft.setTextSize(2);
+    tft.setCursor(0 , 0);
+    tft.print("Direction\nflipped!");
+    delay(1250);
+    tft.fillScreen(ST77XX_BLACK);
+
 }
 
 void showDispensed(uint16_t color){

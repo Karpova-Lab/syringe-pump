@@ -5,7 +5,7 @@
 #include "Adafruit_miniTFTWing.h"
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 
-#define DATE "Updated: 9/17/2018\n"
+#define DATE "Updated: 10/02/2018\n"
 
 #define BPOD  //only uses 1 TTL output
 #define TEN_ML 0.379 // microliters per 1/16th microstep for 10mL syringe
@@ -37,8 +37,9 @@ const byte ttlRetract = A3; //TTL output 2 (C: RJ45 pin 2).
 const byte refillStatus = A4; //TTL input 1 (B: RJ45 pin 1). 
 
 long ongoingPosition = 0;
-enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4};
+enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11};
 const float resolution =  SIXTY_ML;
+bool softDirection = 0;
 
 void setup()   {
   Serial.begin(115200);
@@ -90,10 +91,13 @@ void loop() {
   buttonUI(firmware,10,ST77XX_YELLOW,ST77XX_BLACK); //about
   buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_YELLOW); //help
 
-  arrowUI(pushing,3); //left
-  arrowUI(pulling,7); //right
-  arrowUI(retracting,2); //up
-  arrowUI(resetting,4); //down
+
+  arrowUI(pushing,LEFT); //left
+  arrowUI(pulling,RIGHT); //right
+  arrowUI(retracting,UP); //up
+  arrowUI(resetting,DOWN); //down
+  arrowUI(flipDirection,CENTER); //center
+
 
   //run motor if a step is scheduled to be executed, otherwise do nothing.
   stepper.run();
