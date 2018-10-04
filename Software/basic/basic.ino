@@ -36,6 +36,9 @@ const byte ttlPush = A5; //TTL output 1 (A: RJ45 pin 3).
 const byte ttlRetract = A3; //TTL output 2 (C: RJ45 pin 2).
 const byte refillStatus = A4; //TTL input 1 (B: RJ45 pin 1). 
 
+// //Indicator LED
+// const byte indicatorLED = 13;
+
 long ongoingPosition = 0;
 enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11};
 const float resolution =  SIXTY_ML;
@@ -59,6 +62,9 @@ void setup()   {
   pinMode(ttlRetract,INPUT);
   pinMode(refillStatus,OUTPUT);
   digitalWrite(refillStatus,LOW);
+  
+  // //LED setup
+  // pinMode(indicatorLED,OUTPUT);
 
   //Display Setup
   if (!ss.begin()) {

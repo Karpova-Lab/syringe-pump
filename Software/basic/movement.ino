@@ -11,8 +11,8 @@ void slowStop(){
 }
 
 void enableMotor(){
-  motorEnabled = true;
   digitalWrite(enablePin,LOW);
+  motorEnabled = true;
 }
 
 void disableMotor(){

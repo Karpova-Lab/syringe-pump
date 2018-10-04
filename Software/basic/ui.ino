@@ -49,8 +49,13 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 count = 0;
                 buttons = ss.readButtons();
             }
-        }    
-    ongoingPosition += long(stepper.currentPosition());
+        }
+    if (softDirection){
+        ongoingPosition += long(stepper.currentPosition());
+    }
+    else{
+        ongoingPosition -= long(stepper.currentPosition());
+    }        
     stopImmediately();    
     (*fxn)(ST77XX_BLACK);
     showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
@@ -69,7 +74,6 @@ void buttonUI(void (*fxn)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uin
     }
 }
 
-
 void showMenu(uint16_t aboutColor, uint16_t helpColor, uint16_t dispenseColor ){
     about(aboutColor);  
     help(helpColor);
@@ -77,35 +81,35 @@ void showMenu(uint16_t aboutColor, uint16_t helpColor, uint16_t dispenseColor ){
 }
 
 void firmware(uint16_t color){
-  tft.setRotation(3);
-  tft.setTextColor(color);
-  tft.setTextSize(1);
-  tft.setCursor(0,12);
-  tft.println("\n\nFirmware Version: 1");
-  tft.println(DATE);
-  tft.println("Syringe Volume: 60 mL");
+    tft.setRotation(3);
+    tft.setTextColor(color);
+    tft.setTextSize(1);
+    tft.setCursor(0,12);
+    tft.println("\n\nFirmware Version: 1");
+    tft.println(DATE);
+    tft.println("Syringe Volume: 60 mL");
 }
 
 void about(uint16_t color){
-  tft.setRotation(3);
-  tft.setTextColor(color);
-  tft.setTextSize(1);
-  tft.setCursor(130,12);
-  tft.println("About");
+    tft.setRotation(3);
+    tft.setTextColor(color);
+    tft.setTextSize(1);
+    tft.setCursor(130,12);
+    tft.println("About");
 }
 
 void help(uint16_t color){
-  tft.setRotation(3);
-  tft.setTextColor(color);
-  tft.setTextSize(1);
-  tft.setCursor(135,60);
-  tft.println("Help");
+    tft.setRotation(3);
+    tft.setTextColor(color);
+    tft.setTextSize(1);
+    tft.setCursor(135,60);
+    tft.println("Help");
 }
 
 void rightArrow(uint16_t color){
     tft.setRotation(3);
 
-    uint16_t leftSideX = 52; 
+    uint16_t leftSideX = 62; 
     uint16_t centerY = 40;
     uint16_t arrowWidth = 10;
     uint16_t arrowHeight = 5;
@@ -115,12 +119,12 @@ void rightArrow(uint16_t color){
     tft.setTextSize(1);
     tft.setCursor(leftSideX + arrowWidth + 3, centerY - 3);
 
-    tft.print("Pull");
+    tft.print("Refill");
 }
 
 void leftArrow(uint16_t color){
     tft.setRotation(3);
-    uint16_t rightSide = 38; 
+    uint16_t rightSide = 48; 
     uint16_t centerY = 40;
     uint16_t arrowWidth = 10;
     uint16_t arrowHeight = 5;
@@ -128,15 +132,15 @@ void leftArrow(uint16_t color){
 
     tft.setTextColor(color);
     tft.setTextSize(1);
-    tft.setCursor(rightSide - 35, centerY - 3);
+    tft.setCursor(rightSide - 47, centerY - 3);
 
-    tft.print("Push");
+    tft.print("Infuse");
 }
 
 void upArrrow(uint16_t color){
     tft.setRotation(3);
 
-    uint16_t centerX = 45; 
+    uint16_t centerX = 55; 
     uint16_t bottomSide = 33;
     uint16_t arrowWidth = 5;
     uint16_t arrowHeight = 10;
@@ -151,7 +155,7 @@ void upArrrow(uint16_t color){
 
 void downArrow(uint16_t color){
     tft.setRotation(3);
-    uint16_t centerX = 45; 
+    uint16_t centerX = 55; 
     uint16_t bottomSide = 47;
     uint16_t arrowWidth = 5;
     uint16_t arrowHeight = 10;
@@ -182,7 +186,7 @@ void pushing(uint16_t color){
     tft.setTextColor(color);
     tft.setTextSize(3);
     tft.setCursor(40 , 30);
-    tft.print("Push");
+    tft.print("Infuse");
 }
 
 void pulling(uint16_t color){
@@ -196,7 +200,7 @@ void pulling(uint16_t color){
     tft.setTextColor(color);
     tft.setTextSize(3);
     tft.setCursor(40 , 30);
-    tft.print("Pull");
+    tft.print("Refill");
 }
 
 void retracting(uint16_t color){
@@ -245,7 +249,6 @@ void successfulFlip(uint16_t color){
     tft.print("Direction\nflipped!");
     delay(1250);
     tft.fillScreen(ST77XX_BLACK);
-
 }
 
 void showDispensed(uint16_t color){
@@ -259,11 +262,11 @@ void showDispensed(uint16_t color){
 }
 
 void limitMessage(uint16_t color){
-  tft.fillScreen(ST77XX_BLACK);
-  tft.setTextColor(color);
-  tft.setTextSize(3);
-  tft.setCursor(40 , 17);
-  tft.print("Limit\n");
-  tft.setCursor(20 ,tft.getCursorY());
-  tft.print("Reached");
+    tft.fillScreen(ST77XX_BLACK);
+    tft.setTextColor(color);
+    tft.setTextSize(3);
+    tft.setCursor(40 , 17);
+    tft.print("Limit\n");
+    tft.setCursor(20 ,tft.getCursorY());
+    tft.print("Reached");
 }
