@@ -85,7 +85,7 @@ void firmware(uint16_t color){
     tft.setTextColor(color);
     tft.setTextSize(1);
     tft.setCursor(0,12);
-    tft.println("\n\nFirmware Version: 1");
+    tft.print("\n\nFirmware Version: ");tft.println(VERSION);
     tft.println(DATE);
     tft.println("Syringe Volume: 60 mL");
 }

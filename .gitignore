@@ -1,2 +1,6 @@
 Software/.ipynb_checkpoints
 Documentation Source/build
+
+
+# Ignore sketch files
+*.sketch

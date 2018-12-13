@@ -5,11 +5,12 @@
 #include "Adafruit_miniTFTWing.h"
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 
-#define DATE "Updated: 10/02/2018\n"
+#define VERSION 2
+#define DATE "Updated: 12/13/2018\n"
 
 #define BPOD  //only uses 1 TTL output
-#define TEN_ML 0.379 // microliters per 1/16th microstep for 10mL syringe
-#define SIXTY_ML 1.327 // microliters per 1/16th microstep for 60mL syringe
+#define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
+#define SIXTY_ML 1.4 // microliters per 1/16th microstep for 60mL syringe
 
 //Display
 Adafruit_miniTFTWing ss;
@@ -24,7 +25,7 @@ uint32_t buttons;
 // TMC2208 Stepper Driver 
 // http://learn.watterott.com/silentstepstick/pinconfig/
 AccelStepper stepper(AccelStepper::DRIVER, 11, 10); //(stp,dir)
-const byte enablePin = A0;
+const byte enablePin = A0; //pin 36 PF7
 bool motorEnabled;
 
 // limit switches
@@ -43,9 +44,11 @@ long ongoingPosition = 0;
 enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11};
 const float resolution =  SIXTY_ML;
 bool softDirection = 0;
+uint32_t  valsFromParse[5];
 
 void setup()   {
   Serial.begin(115200);
+  Serial1.begin(9600);
 
   //limit switch setup
   pinMode(limit_pull,INPUT_PULLUP);
@@ -97,13 +100,11 @@ void loop() {
   buttonUI(firmware,10,ST77XX_YELLOW,ST77XX_BLACK); //about
   buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_YELLOW); //help
 
-
   arrowUI(pushing,LEFT); //left
   arrowUI(pulling,RIGHT); //right
   arrowUI(retracting,UP); //up
   arrowUI(resetting,DOWN); //down
   arrowUI(flipDirection,CENTER); //center
-
 
   //run motor if a step is scheduled to be executed, otherwise do nothing.
   stepper.run();
@@ -112,4 +113,21 @@ void loop() {
   if (!stepper.isRunning() && motorEnabled){
     disableMotor();
   }
+
+  if (Serial1.available()){
+    char msg = Serial1.read();
+    if (msg=='I'){ 
+      uint32_t volume = parseData();
+      Serial.print("should infuse ");
+      Serial.println(volume);
+    }
+  }
+}
+
+int parseData(){
+  char msgData[30] = "";
+  Serial1.readBytesUntil('\n',msgData,30);
+  char* msgPointer;
+  msgPointer = strtok(msgData,",");
+  return atol(msgPointer);
 }

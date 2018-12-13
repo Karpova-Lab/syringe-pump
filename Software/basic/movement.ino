@@ -21,6 +21,12 @@ void disableMotor(){
 }
 
 void limitReached(){
+  if (softDirection){
+      ongoingPosition += long(stepper.currentPosition());
+  }
+  else{
+      ongoingPosition -= long(stepper.currentPosition());
+  }   
   stepper.setCurrentPosition(0);
   limitMessage(ST77XX_RED);
   delay(1000);
@@ -29,7 +35,6 @@ void limitReached(){
 
 void retract(){
   digitalWrite(refillStatus,HIGH);
-  Serial.println("retract loop");
   while(1){
     stepper.run();
     if (digitalRead(limit_pull)){
