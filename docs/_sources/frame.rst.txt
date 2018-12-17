@@ -7,9 +7,9 @@ Mechanical
 Bill of Materials
 =================
 
-.. image:: frame_assembly/1_parts_overview.jpg
-  :align: center
-  :scale: 100 %
+.. .. image:: frame_assembly/1_parts_overview.jpg
+..   :align: center
+..   :scale: 100 %
 
 +------+---------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 | QTY  | Description                     | Price | Part Number                                                                                                                                                                   | Supplier      | 

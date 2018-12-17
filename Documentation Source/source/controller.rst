@@ -1,6 +1,6 @@
-==================
-Electronical
-==================
+==========
+Electrical
+==========
 .. include:: isogrk1.txt
 
 In order to control the movement of the pump you need two basic elements: a **stepper motor driver** and a **microcontroller**.
