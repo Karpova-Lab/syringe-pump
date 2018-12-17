@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Frame &mdash; Syringe Pump 1.0.0 documentation</title>
+  <title>Mechanical &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Syringe Pump 1.0.0 documentation" href="index.html"/>
-        <link rel="next" title="Controller" href="controller.html"/>
+        <link rel="next" title="Electronical" href="controller.html"/>
         <link rel="prev" title="Syringe Pump" href="index.html"/> 
 
   
@@ -92,17 +92,12 @@
             
               <p class="caption"><span class="caption-text">Sections:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Frame</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#design-files-for-laser-cutting-acrylic">Design Files For Laser Cutting Acrylic</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mechanical</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#assembly-instructions">Assembly Instructions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#required-tools">Required Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Electronical</a></li>
 </ul>
 
             
@@ -147,7 +142,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Frame</li>
+      <li>Mechanical</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,29 +161,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="frame">
-<h1>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This frame is designed to work with a 60mL syringe.</p>
-</div>
-<div class="section" id="design-files-for-laser-cutting-acrylic">
-<h2>Design Files For Laser Cutting Acrylic<a class="headerlink" href="#design-files-for-laser-cutting-acrylic" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/Karpova-Lab/syringe-pump/tree/master/2D%20CAD">On GitHub</a></p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you don’t have access to a laser cutter, you can try a service like <a class="reference external" href="https://www.ponoko.com/laser-cutting">Ponoko</a></p>
-</div>
-</div>
+  <div class="section" id="mechanical">
+<h1>Mechanical<a class="headerlink" href="#mechanical" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="bill-of-materials">
 <h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="_images/1_parts_overview.jpg"><img alt="_images/1_parts_overview.jpg" class="align-center" src="_images/1_parts_overview.jpg" style="width: 3024.0px; height: 2389.0px;" /></a>
+<a class="reference internal image-reference" href="frame_assembly/1_parts_overview.jpg"><img alt="frame_assembly/1_parts_overview.jpg" class="align-center" src="frame_assembly/1_parts_overview.jpg" /></a>
 <table border="1" class="docutils">
 <colgroup>
-<col width="2%" />
-<col width="13%" />
 <col width="3%" />
-<col width="76%" />
+<col width="14%" />
+<col width="3%" />
+<col width="74%" />
 <col width="6%" />
 </colgroup>
 <thead valign="bottom">
@@ -201,10 +184,10 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
-<td>12” x 12” x 1/4”</td>
-<td>9.98</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#8505K754">8505K754</a></td>
-<td rowspan="9">McMaster-Carr</td>
+<td>12” x 12” x 1/4” Acrylic</td>
+<td>12.43</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#4615T37">4615T37</a></td>
+<td rowspan="12">McMaster-Carr</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Grommet</td>
@@ -212,80 +195,90 @@
 <td><a class="reference external" href="https://www.mcmaster.com/#9600k54">9600k54</a></td>
 </tr>
 <tr class="row-even"><td>1</td>
-<td>Flanged Sleeve Bearing</td>
-<td>3.32</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#5448T2">5448T2</a></td>
+<td>Flanged ball bearing</td>
+<td>7.97</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#7804K147">7804K147</a></td>
 </tr>
-<tr class="row-odd"><td>10</td>
-<td>M4 x 16mm machine screws</td>
-<td>4.4</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#92005A226">92005A220</a></td>
+<tr class="row-odd"><td>1</td>
+<td>Flanged sleeve bearing with oil</td>
+<td>2.18</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#6659k676">6659k676</a></td>
 </tr>
 <tr class="row-even"><td>10</td>
+<td>M4 x 16mm machine screw</td>
+<td>4.40</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#92005A226">92005A220</a></td>
+</tr>
+<tr class="row-odd"><td>10</td>
 <td>M4  square nut</td>
 <td>10.0</td>
 <td><a class="reference external" href="https://www.mcmaster.com/#96887A329">96887A329</a></td>
 </tr>
-<tr class="row-odd"><td>14</td>
-<td>M3 x 10mm machine screws</td>
-<td>4.7</td>
+<tr class="row-even"><td>4</td>
+<td>M3 x 25mm machine screw</td>
+<td>3.36</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#92005A130">92005A130</a></td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>M3 x 30mm machine screw</td>
+<td>3.88</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#92005A132">92005A132</a></td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>M3 x 10mm machine screw</td>
+<td>4.70</td>
 <td><a class="reference external" href="https://www.mcmaster.com/#92000A120">92000A120</a></td>
 </tr>
-<tr class="row-even"><td>14</td>
-<td>M3 Threaded inserts</td>
-<td>7.2</td>
+<tr class="row-odd"><td>14</td>
+<td>M3 Threaded insert</td>
+<td>7.20</td>
 <td><a class="reference external" href="https://www.mcmaster.com/#94510A240">94510A240</a></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>Binder clips</td>
-<td>1.85</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#12755t73">12755t73</a></td>
+<tr class="row-even"><td>4</td>
+<td>Spring</td>
+<td>10.51</td>
+<td><a class="reference external" href="https://www.mcmaster.com/#9657K267">9657K267</a></td>
 </tr>
-<tr class="row-even"><td>1</td>
+<tr class="row-odd"><td>1</td>
 <td>Knob</td>
 <td>5.33</td>
 <td><a class="reference external" href="https://www.mcmaster.com/#6479K78">6479K78</a></td>
 </tr>
-<tr class="row-odd"><td>1</td>
+<tr class="row-even"><td>1</td>
 <td>300 x 8mm lead screw</td>
 <td>9.99</td>
 <td><a class="reference external" href="https://www.servocity.com/lead-screws#371=448">634050</a></td>
 <td rowspan="3">ServoCity</td>
 </tr>
-<tr class="row-even"><td>1</td>
+<tr class="row-odd"><td>1</td>
 <td>8mm lead screw nut</td>
 <td>7.99</td>
 <td><a class="reference external" href="https://www.servocity.com/8mm-4-start-hub">545315</a></td>
 </tr>
-<tr class="row-odd"><td>1</td>
+<tr class="row-even"><td>1</td>
 <td>200 x  8 mm shaft</td>
 <td>3.49</td>
 <td><a class="reference external" href="https://www.servocity.com/8mm-stainless-steel-precision-shafting#371=460">634310</a></td>
 </tr>
-<tr class="row-even"><td>1</td>
+<tr class="row-odd"><td>1</td>
 <td>5 mm to 8 mm coupler</td>
 <td>7.99</td>
 <td><a class="reference external" href="https://www.amazon.com/RepRap-Champion-Coupler-Routers-printers/dp/B01M287GNY/ref=sr_1_12?ie=UTF8&amp;qid=1488495177&amp;sr=8-12&amp;keywords=5+to+8mm+coupler">B01M287GNY</a></td>
-<td rowspan="2">Amazon</td>
-</tr>
-<tr class="row-odd"><td>1</td>
-<td>Flanged LMF8UU slide bearing</td>
-<td>6.01</td>
-<td><a class="reference external" href="https://www.amazon.com/uxcell-LMF8UU-Inside-Flange-Bearing/dp/B00NQ2H8YU/ref=sr_1_1?rps=1&amp;ie=UTF8&amp;qid=1488498852&amp;sr=8-1&amp;keywords=LMF8UU&amp;refinements=p_85%3A2470955011">B00NQ2H8YU</a></td>
+<td>Amazon</td>
 </tr>
 <tr class="row-even"><td>4</td>
-<td>Bumpers</td>
+<td>Bumper</td>
 <td>14.31</td>
 <td><a class="reference external" href="https://www.digikey.com/product-detail/en/3m/SJ61A1/SJ5746-0-ND/1768456">SJ5746-0-ND</a></td>
 <td rowspan="2">Digi-Key</td>
 </tr>
 <tr class="row-odd"><td>2</td>
-<td>Limit Switches</td>
+<td>Limit switch</td>
 <td>4.11</td>
 <td><a class="reference external" href="https://www.digikey.com/products/en?keywords=255-5122-nd">255-5122-ND</a></td>
 </tr>
 <tr class="row-even"><td>1</td>
-<td>Nema 17 Bipolar 60Ncm 200steps</td>
+<td>Nema 17 bipolar 60Ncm 200steps</td>
 <td>18.39</td>
 <td><a class="reference external" href="https://www.omc-stepperonline.com/hybrid-stepper-motor/nema-17-bipolar-18deg-60ncm-85ozin-064a-10v-42x42x60mm-4-wires-17hs24-0644s.html?search=17hs24-0644s">17HS24-0644S</a></td>
 <td>STEPPERONLINE</td>
@@ -293,62 +286,20 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="assembly-instructions">
-<h2>Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="required-tools">
-<h3>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Phillips screwdriver</li>
-<li>Flathead screwdriver</li>
-<li>Allen wrench (included with shaft coupler)</li>
+<div class="section" id="design-files-for-laser-cutting">
+<h2>Design Files For Laser Cutting<a class="headerlink" href="#design-files-for-laser-cutting" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>60 mL Syringe (units=mm):</dt>
+<dd><ul class="first last simple">
+<li><a class="reference download internal" download="" href="_downloads/e99b373633f88b1599420c3dc5c0bac0/60mL_frame.ai"><code class="xref download docutils literal notranslate"><span class="pre">ai</span> <span class="pre">file</span></code></a></li>
+<li><a class="reference download internal" download="" href="_downloads/cdbdd54f9e9a66a4df28defc31f2e294/60mL_frame.dxf"><code class="xref download docutils literal notranslate"><span class="pre">dxf</span> <span class="pre">file</span></code></a></li>
 </ul>
-</div>
-<div class="section" id="instructions">
-<h3>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Mount motor</li>
-</ol>
-<a class="reference internal image-reference" href="_images/3_add_coupler.jpg"><img alt="_images/3_add_coupler.jpg" class="align-center" src="_images/3_add_coupler.jpg" style="width: 3024.0px; height: 1442.0px;" /></a>
-<ol class="arabic simple" start="2">
-<li>Add coupler</li>
-</ol>
-<a class="reference internal image-reference" href="_images/4_assemble_carriage.jpg"><img alt="_images/4_assemble_carriage.jpg" class="align-center" src="_images/4_assemble_carriage.jpg" style="width: 3024.0px; height: 2090.0px;" /></a>
-<ol class="arabic simple" start="3">
-<li>Assemble syringe cradle</li>
-</ol>
-<a class="reference internal image-reference" href="_images/5_assemble_stage.jpg"><img alt="_images/5_assemble_stage.jpg" class="align-center" src="_images/5_assemble_stage.jpg" style="width: 3024.0px; height: 2153.0px;" /></a>
-<ol class="arabic simple" start="4">
-<li>Assemble stage</li>
-</ol>
-<a class="reference internal image-reference" href="_images/6_mount_carriage_and_stage.jpg"><img alt="_images/6_mount_carriage_and_stage.jpg" class="align-center" src="_images/6_mount_carriage_and_stage.jpg" style="width: 3024.0px; height: 1950.0px;" /></a>
-<ol class="arabic simple" start="5">
-<li>Mount syringe cradle and stage</li>
-</ol>
-<a class="reference internal image-reference" href="_images/7_assemble_tail_support.jpg"><img alt="_images/7_assemble_tail_support.jpg" class="align-center" src="_images/7_assemble_tail_support.jpg" style="width: 3024.0px; height: 1905.0px;" /></a>
-<ol class="arabic simple" start="6">
-<li>Assemble end support</li>
-</ol>
-<a class="reference internal image-reference" href="_images/8_assemble_base.jpg"><img alt="_images/8_assemble_base.jpg" class="align-center" src="_images/8_assemble_base.jpg" style="width: 3024.0px; height: 2578.0px;" /></a>
-<ol class="arabic simple" start="7">
-<li>Attach rubber bumper to base</li>
-</ol>
-<a class="reference internal image-reference" href="_images/9_attach_to_base.jpg"><img alt="_images/9_attach_to_base.jpg" class="align-center" src="_images/9_attach_to_base.jpg" style="width: 3024.0px; height: 2641.0px;" /></a>
-<ol class="arabic simple" start="8">
-<li>Mount everything to the base</li>
-</ol>
-<a class="reference internal image-reference" href="_images/10_add_controller.jpg"><img alt="_images/10_add_controller.jpg" class="align-center" src="_images/10_add_controller.jpg" style="width: 3024.0px; height: 1881.0px;" /></a>
-<ol class="arabic simple" start="9">
-<li>Attach connector to wires, mount controller to end support, and attach magnet to linear bearing</li>
-</ol>
-<a class="reference internal image-reference" href="_images/11_add_syringe.jpg"><img alt="_images/11_add_syringe.jpg" class="align-center" src="_images/11_add_syringe.jpg" style="width: 3024.0px; height: 1875.0px;" /></a>
-<ol class="arabic simple" start="10">
-<li>Attach syringe</li>
-</ol>
-<a class="reference internal image-reference" href="_images/final_side_3.jpg"><img alt="_images/final_side_3.jpg" class="align-center" src="_images/final_side_3.jpg" style="width: 3024.0px; height: 996.0px;" /></a>
-<a class="reference internal image-reference" href="_images/final_top_3.jpg"><img alt="_images/final_top_3.jpg" class="align-center" src="_images/final_top_3.jpg" style="width: 3024.0px; height: 877.0px;" /></a>
-<ol class="arabic simple" start="11">
-<li>Done!</li>
-</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you don’t have access to a laser cutter, you can try searching for a local <a class="reference external" href="http://themakermap.com/">makerspace</a> that has a laser cutter.
+Alternatively, you can order laser cut parts from a service like <a class="reference external" href="https://www.ponoko.com/laser-cutting">Ponoko</a> or <a class="reference external" href="https://www.sculpteo.com/en/">Sculpteo</a> or <a class="reference external" href="https://www.bigbluesaw.com/">Big Blue Saw</a></p>
 </div>
 </div>
 </div>
@@ -363,7 +314,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="controller.html" class="btn btn-neutral float-right" title="Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="controller.html" class="btn btn-neutral float-right" title="Electronical" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Syringe Pump" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -375,8 +326,8 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Andy Lustig.
-      Last updated on Jan 27, 2018.
+        &copy; Copyright 2018, Andy Lustig.
+      Last updated on Dec 17, 2018.
 
     </p>
   </div>

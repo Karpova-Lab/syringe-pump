@@ -31,7 +31,8 @@ Pinout
 
 Manual Mode
 ===========
-The pump can be conrtolled by the buttons on the left side of the OLED display
+The pump can be conrtolled by the joystick on the left side of the display.
+
 
 +--------+----------------------------+--------------------------------+
 | Button | Click                      | Hold                           |

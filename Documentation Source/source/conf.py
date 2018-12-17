@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Syringe Pump'
-copyright = '2017, Andy Lustig'
+copyright = '2018, Andy Lustig'
 author = 'Andy Lustig'
 
 # The version info for the project you're documenting, acts as replacement for

@@ -1,0 +1,91 @@
+==================
+Electronics
+==================
+.. include:: isogrk1.txt
+
+In order to control the movement of the pump you need two basic elements: a **stepper motor driver** and a **microcontroller**.
+
+A **stepper motor driver** takes care of delivering the proper sequence of signals to rotate the stepper motor smoothly and accurately.
+A **microcontroller** talks to the stepper motor driver, telling it when to rotate the motor, how fast, and in which direction.
+
+Using Existing Electronics
+++++++++++++++++++++++++++
+There are many options for combining these two elements in order to control your syringe pump. Here are some possibilities from Sparkfun and Adafruit:
+
+- `Arduino Uno and Easy Driver <https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide>`_ 
+- `Arduino Uno and Big Easy Driver <https://learn.sparkfun.com/tutorials/big-easy-driver-hookup-guide>`_ 
+- `Arduino Uno with Stepper Motor Shield <https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/using-stepper-motors>`_ 
+- `Adafruit Feather and Motor Driver FeatherWing <https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/overview>`_ 
+
+
+Building Your Own Electonics
+++++++++++++++++++++++++++++
+
+The following is documentation for building a custom circuit board that combines a microcontroller, stepper driver, power connections, and motor connections onto one board. It uses the same chips and is functionally equivalent to an `Adafruit Feather 32u4 <https://www.adafruit.com/product/2771>`_ and a `TMC2208 SilentStepStick <https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626>`_. Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the `Mini Color TFT with Joystick <https://www.adafruit.com/product/3321>`_ or `Featherwing OLED <https://www.adafruit.com/product/2900>`_, or add wireless control with a `Radio FeatherWing <https://www.adafruit.com/product/3229>`_. 
+
+
+Bill of Materials
+=================
+
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+----------+
+| QTY | Description             | Price | Part Number                                                                                                                     | Supplier | 
++=====+=========================+=======+=================================================================================================================================+==========+
+| 1   | Printed Circuit Board   | 18.95 | `Syringe Board 2.5 <https://oshpark.com/shared_projects/DTkIcOKD>`_                                                             | OSH Park | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+----------+
+| 1   | Motor Driver            | 3.0   | `TMC2208 <https://www.newark.com/trinamic/tmc2208-la-t/motor-driver-stepper-qfn-28/dp/46AC2024>`_                               | Newark   | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+----------+
+| 1   | Microcontroller         | 4.12  | `ATMEGA32U4 <https://www.digikey.com/products/en?keywords=ATMEGA32U4-AU-ND>`_                                                   | Digi-Key | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | Mini Color TFT Display  | 24.95 | `2900 <http://www.digikey.com/products/en?x=0&y=0&lang=en&site=us&keywords=1528-1547-ND>`_                                      |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | DC Jack                 | 1.71  | `PJ-036AH-SMT-TR <https://www.digikey.com/product-detail/en/PJ-036AH-SMT-TR/CP-036AHPJCT-ND/1530994/?itemSeq=270013531>`_       |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | RJ45 Jack               | 1.88  | `855025008 <https://www.digikey.com/product-detail/en/0855025008/WM3547CT-ND/2405753/?itemSeq=270098995>`_                      |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 3.3v DC regulator       | 3.53  | `ROF-78E3.3-0.5SMD-R <https://www.digikey.com/product-detail/en/ROF-78E3.3-0.5SMD-R/945-1689-1-ND/3593418/?itemSeq=270101613>`_ |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 8 pin terminal          | 2.36  | `OSTVN08A150 <https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158>`_                    |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 8 pos female header     | 0.65  | `PPTC081LFBN-RC <https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC081LFBN-RC/S7006-ND/810147>`_        |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 12 pos female header    | 0.78  | `PPTC121LFBN-RC <https://www.digikey.com/product-detail/en/PPTC121LFBN-RC/S6100-ND/807231/?itemSeq=270114950>`_                 |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 16 pos female header    | 0.98  | `PPTC161LFBN-RC <https://www.digikey.com/product-detail/en/PPTC161LFBN-RC/S7014-ND/810154/?itemSeq=270114954>`_                 |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 8 Mhz resonator         | 0.48  | `CSTCE8M00G55-R0 <https://www.digikey.com/products/en?keywords=490-1195-1-ND>`_                                                 |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 10kΩ Trimpot            | 0.29  | `TC33X-2-103E <https://www.digikey.com/products/en?keywords=tc33x-103ect>`_                                                     |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 2   | 0.3Ω Resistor (0603)    | 0.25  | `0.3Ω <https://www.digikey.com/products/en?keywords=p19247ct-nd>`_                                                              |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 3   | 10kΩ Resistor (0603)    | 0.18  | `10kΩ <https://www.digikey.com/product-detail/en/vishay-beyschlag/MCT06030C1002FP500/MCT0603-10.0K-CFCT-ND/2607933>`_           |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | Red LED (0805)          | 0.35  | `LED <https://www.digikey.com/product-detail/en/LTST-C170KRKT/160-1415-1-ND/386778/?itemSeq=270114655>`_                        |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 100 µF capacitor        | 0.62  | `100µF <https://www.digikey.com/product-detail/en/nichicon/UCL1V101MCL6GS/493-3953-1-ND/2300380>`_                              |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 0.1 µF capacitor (0603) | 0.22  | `0.1µF <https://www.digikey.com/products/en?keywords=399-7969-1>`_                                                              |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+          +
+| 1   | 22 nF capacitor (0603)  | 0.1   | `22nF <https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B223KB8NNWC/1276-2003-1-ND/3890089>`_            |          | 
++-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+----------+
+
+PCB Files
+=========
+
+Use these files for ordering PCBs and solder paste stencils from your vendor of choice. 
+
+Assembly
+========
+
+Required Tools
+--------------
+- Soldering Iron
+- wire strippers
+- wire cutters
+
+Programming
+===========
+
+1. Connect to ICSP pins
+#. Burn bootloader
+#. Upload Syringe Sketch
