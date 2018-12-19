@@ -1,6 +1,6 @@
-==================
-Electronics
-==================
+==========
+Electrical
+==========
 .. include:: isogrk1.txt
 
 In order to control the movement of the pump you need two basic elements: a **stepper motor driver** and a **microcontroller**.
@@ -8,8 +8,8 @@ In order to control the movement of the pump you need two basic elements: a **st
 A **stepper motor driver** takes care of delivering the proper sequence of signals to rotate the stepper motor smoothly and accurately.
 A **microcontroller** talks to the stepper motor driver, telling it when to rotate the motor, how fast, and in which direction.
 
-Using Existing Electronics
-++++++++++++++++++++++++++
+Purchasing Electronic Modules
++++++++++++++++++++++++++++++
 There are many options for combining these two elements in order to control your syringe pump. Here are some possibilities from Sparkfun and Adafruit:
 
 - `Arduino Uno and Easy Driver <https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide>`_ 
@@ -18,10 +18,13 @@ There are many options for combining these two elements in order to control your
 - `Adafruit Feather and Motor Driver FeatherWing <https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/overview>`_ 
 
 
-Building Your Own Electonics
-++++++++++++++++++++++++++++
+Building Custom Circuit Board Assembly
+++++++++++++++++++++++++++++++++++++++
 
-The following is documentation for building a custom circuit board that combines a microcontroller, stepper driver, power connections, and motor connections onto one board. It uses the same chips and is functionally equivalent to an `Adafruit Feather 32u4 <https://www.adafruit.com/product/2771>`_ and a `TMC2208 SilentStepStick <https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626>`_. Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the `Mini Color TFT with Joystick <https://www.adafruit.com/product/3321>`_ or `Featherwing OLED <https://www.adafruit.com/product/2900>`_, or add wireless control with a `Radio FeatherWing <https://www.adafruit.com/product/3229>`_. 
+An alternative to purchasing and combining the modules above, is to build the following custom circuit board. 
+The custom "Syringe Board" circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board. 
+It uses the same chips and is functionally equivalent to an `Adafruit Feather 32u4 <https://www.adafruit.com/product/2771>`_ microcontroller and a `TMC2208 SilentStepStick <https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626>`_ stepper driver. 
+Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the `Mini Color TFT with Joystick <https://www.adafruit.com/product/3321>`_ or `Featherwing OLED <https://www.adafruit.com/product/2900>`_, or add wireless control with a `Radio FeatherWing <https://www.adafruit.com/product/3229>`_. 
 
 
 Bill of Materials
@@ -69,23 +72,23 @@ Bill of Materials
 | 1   | 22 nF capacitor (0603)  | 0.1   | `22nF <https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B223KB8NNWC/1276-2003-1-ND/3890089>`_            |          | 
 +-----+-------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------+----------+
 
-PCB Files
-=========
+.. PCB Files
+.. =========
 
-Use these files for ordering PCBs and solder paste stencils from your vendor of choice. 
+.. Use these files for ordering PCBs and solder paste stencils from your vendor of choice. 
 
-Assembly
-========
+.. Assembly
+.. ========
 
-Required Tools
---------------
-- Soldering Iron
-- wire strippers
-- wire cutters
+.. Required Tools
+.. --------------
+.. - Soldering Iron
+.. - wire strippers
+.. - wire cutters
 
-Programming
-===========
+.. Programming
+.. ===========
 
-1. Connect to ICSP pins
-#. Burn bootloader
-#. Upload Syringe Sketch
+.. 1. Connect to ICSP pins
+.. #. Burn bootloader
+.. #. Upload syringe sketch.

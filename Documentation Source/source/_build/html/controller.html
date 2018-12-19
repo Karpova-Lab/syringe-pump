@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Electronics &mdash; Syringe Pump 1.0.0 documentation</title>
+  <title>Electrical &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
   
@@ -92,16 +92,10 @@
               <p class="caption"><span class="caption-text">Sections:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="frame.html">Mechanical</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Electronics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-existing-electronics">Using Existing Electronics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-your-own-electonics">Building Your Own Electonics</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Electrical</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purchasing-electronic-modules">Purchasing Electronic Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-custom-circuit-board-assembly">Building Custom Circuit Board Assembly</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pcb-files">PCB Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assembly">Assembly</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#required-tools">Required Tools</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#programming">Programming</a></li>
 </ul>
 </li>
 </ul>
@@ -150,7 +144,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Electronics</li>
+      <li>Electrical</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,13 +163,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="electronics">
-<h1>Electronics<a class="headerlink" href="#electronics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="electrical">
+<h1>Electrical<a class="headerlink" href="#electrical" title="Permalink to this headline">¶</a></h1>
 <p>In order to control the movement of the pump you need two basic elements: a <strong>stepper motor driver</strong> and a <strong>microcontroller</strong>.</p>
 <p>A <strong>stepper motor driver</strong> takes care of delivering the proper sequence of signals to rotate the stepper motor smoothly and accurately.
 A <strong>microcontroller</strong> talks to the stepper motor driver, telling it when to rotate the motor, how fast, and in which direction.</p>
-<div class="section" id="using-existing-electronics">
-<h2>Using Existing Electronics<a class="headerlink" href="#using-existing-electronics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="purchasing-electronic-modules">
+<h2>Purchasing Electronic Modules<a class="headerlink" href="#purchasing-electronic-modules" title="Permalink to this headline">¶</a></h2>
 <p>There are many options for combining these two elements in order to control your syringe pump. Here are some possibilities from Sparkfun and Adafruit:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide">Arduino Uno and Easy Driver</a></li>
@@ -184,9 +178,12 @@ A <strong>microcontroller</strong> talks to the stepper motor driver, telling it
 <li><a class="reference external" href="https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/overview">Adafruit Feather and Motor Driver FeatherWing</a></li>
 </ul>
 </div>
-<div class="section" id="building-your-own-electonics">
-<h2>Building Your Own Electonics<a class="headerlink" href="#building-your-own-electonics" title="Permalink to this headline">¶</a></h2>
-<p>The following is documentation for building a custom circuit board that combines a microcontroller, stepper driver, power connections, and motor connections onto one board. It uses the same chips and is functionally equivalent to an <a class="reference external" href="https://www.adafruit.com/product/2771">Adafruit Feather 32u4</a> and a <a class="reference external" href="https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626">TMC2208 SilentStepStick</a>. Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the <a class="reference external" href="https://www.adafruit.com/product/3321">Mini Color TFT with Joystick</a> or <a class="reference external" href="https://www.adafruit.com/product/2900">Featherwing OLED</a>, or add wireless control with a <a class="reference external" href="https://www.adafruit.com/product/3229">Radio FeatherWing</a>.</p>
+<div class="section" id="building-custom-circuit-board-assembly">
+<h2>Building Custom Circuit Board Assembly<a class="headerlink" href="#building-custom-circuit-board-assembly" title="Permalink to this headline">¶</a></h2>
+<p>An alternative to purchasing and combining the modules above, is to build the following custom circuit board.
+The custom “Syringe Board” circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board.
+It uses the same chips and is functionally equivalent to an <a class="reference external" href="https://www.adafruit.com/product/2771">Adafruit Feather 32u4</a> microcontroller and a <a class="reference external" href="https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626">TMC2208 SilentStepStick</a> stepper driver.
+Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the <a class="reference external" href="https://www.adafruit.com/product/3321">Mini Color TFT with Joystick</a> or <a class="reference external" href="https://www.adafruit.com/product/2900">Featherwing OLED</a>, or add wireless control with a <a class="reference external" href="https://www.adafruit.com/product/3229">Radio FeatherWing</a>.</p>
 <div class="section" id="bill-of-materials">
 <h3>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -307,29 +304,6 @@ A <strong>microcontroller</strong> talks to the stepper motor driver, telling it
 </tbody>
 </table>
 </div>
-<div class="section" id="pcb-files">
-<h3>PCB Files<a class="headerlink" href="#pcb-files" title="Permalink to this headline">¶</a></h3>
-<p>Use these files for ordering PCBs and solder paste stencils from your vendor of choice.</p>
-</div>
-<div class="section" id="assembly">
-<h3>Assembly<a class="headerlink" href="#assembly" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="required-tools">
-<h4>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Soldering Iron</li>
-<li>wire strippers</li>
-<li>wire cutters</li>
-</ul>
-</div>
-</div>
-<div class="section" id="programming">
-<h3>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Connect to ICSP pins</li>
-<li>Burn bootloader</li>
-<li>Upload Syringe Sketch</li>
-</ol>
-</div>
 </div>
 </div>
 
@@ -354,7 +328,7 @@ A <strong>microcontroller</strong> talks to the stepper motor driver, telling it
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018, Andy Lustig.
-      Last updated on Dec 17, 2018.
+      Last updated on Dec 19, 2018.
 
     </p>
   </div>

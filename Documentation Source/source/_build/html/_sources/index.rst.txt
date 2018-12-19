@@ -32,7 +32,7 @@ there is no reason that the functionality of an expensive commercial syringe pum
 Therefore, the goal of this project is to make an easy to assemble, open-source syringe pump that is an order of magnitude less expensive than commercial pumps, while maintaining an adequate level of dispense resolution and repeatability.
 
 
-https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump
+.. https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump
 
 
 Alternative Open Source Syringe Pumps
@@ -45,9 +45,8 @@ I'm not the first to share an open source syringe pump. Here are some examples:
 - `Open source syringe pump <http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html>`_ by Will Patrick
 - `SyriGo <http://www.thingiverse.com/thing:1820146>`_ by Ocram
 
-The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed parts. 
-I chose to use lasercut parts because they are more accurate, precise, stiffer, and more condusive to rapid iteration/making large quantities (minutes to lasercut instead of hours to 3d print).
-
+The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed components. 
+I chose to use lasercut parts because they are more accurate, more precise, stiffer, and more condusive to rapid iteration and/or making large quantities (minutes to lasercut instead of hours to 3d print).
 
 Features
 ========
@@ -64,10 +63,10 @@ Features
   - Modern stepper driver rotates motor with minimal audible noise. 
   - Can be controlled manually, or 
 - 2 limit switches prevent the motor from stalling in either direction
-- Low cost compared to `commercial <http://syringepump.com/NE-1000.php>`_ `alternatives <https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-pump-11-elite-programmable-syringe-pumps.html>`_  
+- Lower cost than `commercial <http://syringepump.com/NE-1000.php>`_ `alternatives <https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-pump-11-elite-programmable-syringe-pumps.html>`_  
 
-  - Frame ~ $135
-  - Electronics ~ $40
+  - Frame ~ $150
+  - Electronics ~ $50
 
 The theoretical linear travel resolution is **2.5** |mgr|\ m. Using a 60 mL syringe, this works out to be a volume dispense resolution of **1.4** |mgr|\ L. The calculation is shown below, using Python. You can adjust the numbers and see new results `here <https://repl.it/@alustig3/SyringeResCalc>`_. 
 
@@ -94,7 +93,7 @@ The theoretical linear travel resolution is **2.5** |mgr|\ m. Using a 60 mL syri
   linearResolution = lead/(numSteps*microSteps) #cm
   volumeResolution = linearResolution*syringeArea #cm^3 or mL
   print (u"{:0.1f} \u03bcm linear resolution".format(linearResolution*10000))
-  print (u"{:0.1f} \u03bcL volume resolution".format(volumeResolution*1000))
+  print (u"{:0.1f} \u03bcL volumetric resolution".format(volumeResolution*1000))
 
 .. Empirical results from minimum volume resolution testing:
 

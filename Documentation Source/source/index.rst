@@ -93,7 +93,7 @@ The theoretical linear travel resolution is **2.5** |mgr|\ m. Using a 60 mL syri
   linearResolution = lead/(numSteps*microSteps) #cm
   volumeResolution = linearResolution*syringeArea #cm^3 or mL
   print (u"{:0.1f} \u03bcm linear resolution".format(linearResolution*10000))
-  print (u"{:0.1f} \u03bcL volume resolution".format(volumeResolution*1000))
+  print (u"{:0.1f} \u03bcL volumetric resolution".format(volumeResolution*1000))
 
 .. Empirical results from minimum volume resolution testing:
 
