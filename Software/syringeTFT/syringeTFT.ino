@@ -4,10 +4,11 @@
 #include <Adafruit_ST7735.h> // Hardware-specific library https://github.com/adafruit/Adafruit-ST7735-Library
 #include "Adafruit_miniTFTWing.h"
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
+#include <EEPROM.h>
 
-#define VERSION 2
-#define DATE "Updated: 12/13/2018\n"
-
+#define VERSION 3
+#define DATE "Updated: 02/05/2019\n"
+#define DIRECTION_ADDRESS 0
 #define BPOD  //only uses 1 TTL output
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
 #define SIXTY_ML 1.4 // microliters per 1/16th microstep for 60mL syringe
@@ -37,16 +38,15 @@ const byte ttlPush = A5; //TTL output 1 (A: RJ45 pin 3).
 const byte ttlRetract = A3; //TTL output 2 (C: RJ45 pin 2).
 const byte refillStatus = A4; //TTL input 1 (B: RJ45 pin 1). 
 
-// //Indicator LED
-// const byte indicatorLED = 13;
 
 long ongoingPosition = 0;
 enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11};
 const float resolution =  SIXTY_ML;
-bool softDirection = 0;
+uint8_t softDirection = 0;
 uint32_t  valsFromParse[5];
 
 void setup()   {
+
   Serial.begin(115200);
   Serial1.begin(9600);
 
@@ -66,9 +66,6 @@ void setup()   {
   pinMode(refillStatus,OUTPUT);
   digitalWrite(refillStatus,LOW);
   
-  // //LED setup
-  // pinMode(indicatorLED,OUTPUT);
-
   //Display Setup
   if (!ss.begin()) {
     Serial.println("seesaw couldn't be found!");
@@ -91,15 +88,22 @@ void setup()   {
   tft.fillScreen(ST77XX_BLACK);
 
   showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+
+  //get soft direction variable from non-volatile memmory
+  EEPROM.get(DIRECTION_ADDRESS,softDirection);
 }
 
 void loop() {
-  buttons = ss.readButtons();
-  // Serial.println(buttons, BIN);
+  
+  //check for ttl pulse
+  ttlUI(pushing,ttlPush);
 
+  buttons = ss.readButtons();
+  //check for button pushes
   buttonUI(firmware,10,ST77XX_YELLOW,ST77XX_BLACK); //about
   buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_YELLOW); //help
 
+  //check for arrow pushes
   arrowUI(pushing,LEFT); //left
   arrowUI(pulling,RIGHT); //right
   arrowUI(retracting,UP); //up

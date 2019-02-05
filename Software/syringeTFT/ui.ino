@@ -8,7 +8,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
             stepper.run();
             switch (buttonPos){
             case LEFT:
-                if(digitalRead(limit_push)){
+                if(digitalRead(limit_push) && digitalRead(limit_pull)){
                     moveDirection(softDirection);
                 }
                 else{
@@ -17,7 +17,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 }
                 break;
             case RIGHT:
-                if (digitalRead(limit_pull)){
+                if (digitalRead(limit_push) && digitalRead(limit_pull)){
                     moveDirection(!softDirection);
                 }
                 else{
@@ -41,6 +41,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 }
                 if( !(buttons & 1<<buttonPos) ){
                     softDirection = !softDirection;
+                    EEPROM.update(DIRECTION_ADDRESS, softDirection);
                     successfulFlip(ST77XX_WHITE);
                 }
                 break;
@@ -72,6 +73,33 @@ void buttonUI(void (*fxn)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uin
         (*fxn)(ST77XX_BLACK);
         showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
     }
+}
+
+void ttlUI(void (*fxn)(uint16_t), uint8_t ttlPin){
+    if(digitalRead(ttlPin)==HIGH){
+    enableMotor();
+    showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+    (*fxn)(ST77XX_WHITE);
+    while(digitalRead(ttlPin)==HIGH){
+      stepper.run();
+      if(digitalRead(limit_push) && digitalRead(limit_pull)){
+          moveDirection(softDirection);
+      }
+      else{
+          limitReached();
+      }
+    }
+    if (softDirection){
+        ongoingPosition += long(stepper.currentPosition());
+    }
+    else{
+        ongoingPosition -= long(stepper.currentPosition());
+    }  
+    stopImmediately();    
+    (*fxn)(ST77XX_BLACK);
+    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+  }
+
 }
 
 void showMenu(uint16_t aboutColor, uint16_t helpColor, uint16_t dispenseColor ){

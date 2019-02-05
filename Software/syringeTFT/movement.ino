@@ -37,7 +37,7 @@ void retract(){
   digitalWrite(refillStatus,HIGH);
   while(1){
     stepper.run();
-    if (digitalRead(limit_pull)){
+    if (digitalRead(limit_push) && digitalRead(limit_pull)){
       moveDirection(!softDirection);
     }
     else{
@@ -62,7 +62,7 @@ void retract(){
   }
 }
 
-void moveDirection(bool oneWay){
+void moveDirection(uint8_t oneWay){
   if (oneWay){
     if (stepper.distanceToGo() < 8000){
       stepper.move(100000);
