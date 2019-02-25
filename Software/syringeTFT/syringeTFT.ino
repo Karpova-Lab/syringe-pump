@@ -6,12 +6,14 @@
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 #include <EEPROM.h>
 
-#define VERSION 3
-#define DATE "Updated: 02/05/2019\n"
+#define VERSION 4
+#define DATE "Updated: 02/25/2019\n"
 #define DIRECTION_ADDRESS 0
 #define BPOD  //only uses 1 TTL output
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
 #define SIXTY_ML 1.4 // microliters per 1/16th microstep for 60mL syringe
+
+//pinout: https://cdn-learn.adafruit.com/assets/assets/000/046/240/original/microcomputers_Adafruit_Feather_32u4_Basic_Proto_v2.3-1.png?1504884949
 
 //Display
 Adafruit_miniTFTWing ss;
@@ -104,12 +106,11 @@ void loop() {
   buttonUI(showButtonMap,9,ST77XX_BLACK,ST77XX_YELLOW); //help
 
   //check for arrow pushes
-  arrowUI(pushing,LEFT); //left
-  arrowUI(pulling,RIGHT); //right
-  arrowUI(retracting,UP); //up
-  arrowUI(resetting,DOWN); //down
+  arrowUI(retracting,LEFT); //left
+  arrowUI(resetting,RIGHT); //right
+  arrowUI(pushing,UP); //up
+  arrowUI(pulling,DOWN); //down
   arrowUI(flipDirection,CENTER); //center
-
   //run motor if a step is scheduled to be executed, otherwise do nothing.
   stepper.run();
 

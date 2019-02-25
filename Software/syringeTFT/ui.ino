@@ -7,7 +7,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
         while(!(buttons & 1<<buttonPos)){
             stepper.run();
             switch (buttonPos){
-            case LEFT:
+            case UP:
                 if(digitalRead(limit_push) && digitalRead(limit_pull)){
                     moveDirection(softDirection);
                 }
@@ -16,7 +16,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                     buttons = ss.readButtons();
                 }
                 break;
-            case RIGHT:
+            case DOWN:
                 if (digitalRead(limit_push) && digitalRead(limit_pull)){
                     moveDirection(!softDirection);
                 }
@@ -25,11 +25,11 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                     buttons = ss.readButtons();
                 }
                 break;
-            case UP: 
+            case LEFT: 
                 retract();
                 buttons = ss.readButtons();
                 break;
-            case DOWN:
+            case RIGHT:
                 delay(1000);
                 ongoingPosition = 0;
                 buttons = ss.readButtons();
@@ -137,7 +137,7 @@ void help(uint16_t color){
 void rightArrow(uint16_t color){
     tft.setRotation(3);
 
-    uint16_t leftSideX = 62; 
+    uint16_t leftSideX = 67; 
     uint16_t centerY = 40;
     uint16_t arrowWidth = 10;
     uint16_t arrowHeight = 5;
@@ -147,12 +147,12 @@ void rightArrow(uint16_t color){
     tft.setTextSize(1);
     tft.setCursor(leftSideX + arrowWidth + 3, centerY - 3);
 
-    tft.print("Refill");
+    tft.print("Reset Volume");
 }
 
 void leftArrow(uint16_t color){
     tft.setRotation(3);
-    uint16_t rightSide = 48; 
+    uint16_t rightSide = 53; 
     uint16_t centerY = 40;
     uint16_t arrowWidth = 10;
     uint16_t arrowHeight = 5;
@@ -160,15 +160,15 @@ void leftArrow(uint16_t color){
 
     tft.setTextColor(color);
     tft.setTextSize(1);
-    tft.setCursor(rightSide - 47, centerY - 3);
+    tft.setCursor(0, centerY - 3);
 
-    tft.print("Infuse");
+    tft.print("Retract");
 }
 
 void upArrrow(uint16_t color){
     tft.setRotation(3);
 
-    uint16_t centerX = 55; 
+    uint16_t centerX = 60; 
     uint16_t bottomSide = 33;
     uint16_t arrowWidth = 5;
     uint16_t arrowHeight = 10;
@@ -178,12 +178,12 @@ void upArrrow(uint16_t color){
     tft.setTextSize(1);
     tft.setCursor(centerX - 20, bottomSide - 18);
 
-    tft.print("Retract");
+    tft.print("Infuse");
 }
 
 void downArrow(uint16_t color){
     tft.setRotation(3);
-    uint16_t centerX = 55; 
+    uint16_t centerX = 60; 
     uint16_t bottomSide = 47;
     uint16_t arrowWidth = 5;
     uint16_t arrowHeight = 10;
@@ -193,7 +193,7 @@ void downArrow(uint16_t color){
     tft.setTextSize(1);
     tft.setCursor(centerX -33, bottomSide + 11);
 
-    tft.print("Reset Volume");
+    tft.print("Withdrawal");
 }
 
 void showButtonMap(uint16_t color){
@@ -203,7 +203,7 @@ void showButtonMap(uint16_t color){
     downArrow(color);
 }     
 
-void pushing(uint16_t color){
+void retracting(uint16_t color){
     tft.setRotation(3);
     uint16_t rightSide = 22; 
     uint16_t centerY = 40;
@@ -213,11 +213,11 @@ void pushing(uint16_t color){
 
     tft.setTextColor(color);
     tft.setTextSize(3);
-    tft.setCursor(40 , 30);
-    tft.print("Infuse");
+    tft.setCursor(30 , 30);
+    tft.print("Retract");
 }
 
-void pulling(uint16_t color){
+void resetting(uint16_t color){
     tft.setRotation(3);
     uint16_t leftSideX = 2; 
     uint16_t centerY = 40;
@@ -227,11 +227,13 @@ void pulling(uint16_t color){
 
     tft.setTextColor(color);
     tft.setTextSize(3);
-    tft.setCursor(40 , 30);
-    tft.print("Refill");
+    tft.setCursor(40 , 17);
+    tft.print("Reset");
+    tft.setCursor(30 , 43);
+    tft.print("Volume");
 }
 
-void retracting(uint16_t color){
+void pushing(uint16_t color){
     tft.setRotation(3);
     uint16_t centerX = 12; 
     uint16_t bottomSide = 50;
@@ -242,10 +244,10 @@ void retracting(uint16_t color){
     tft.setTextColor(color);
     tft.setTextSize(3);
     tft.setCursor(30 , 30);
-    tft.print("Retract");
+    tft.print("Infuse");
 }
 
-void resetting(uint16_t color){
+void pulling(uint16_t color){
     uint16_t centerX = 12; 
     uint16_t topSide = 30;
     uint16_t arrowWidth = 10;
@@ -253,11 +255,10 @@ void resetting(uint16_t color){
     tft.fillTriangle(centerX - arrowWidth, topSide, centerX, topSide + arrowHeight, centerX + arrowWidth,topSide, color);
 
     tft.setTextColor(color);
-    tft.setTextSize(3);
-    tft.setCursor(40 , 17);
-    tft.print("Reset");
-    tft.setCursor(30 , 43);
-    tft.print("Volume");
+    tft.setTextSize(2);
+    tft.setCursor(30 , 30);
+    tft.print("Withdrawal");
+
 }
 
 void flipDirection(uint16_t color){
