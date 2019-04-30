@@ -6,8 +6,8 @@
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 #include <EEPROM.h>
 
-#define VERSION 4
-#define DATE "Updated: 02/25/2019\n"
+#define VERSION 5
+#define DATE "Updated: 04/30/2019\n"
 #define DIRECTION_ADDRESS 0
 #define BPOD  //only uses 1 TTL output
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
@@ -38,7 +38,7 @@ const byte limit_push = A1;
 //TTL pins
 const byte ttlPush = A5; //TTL output 1 (A: RJ45 pin 3).
 const byte ttlRetract = A3; //TTL output 2 (C: RJ45 pin 2).
-const byte refillStatus = A4; //TTL input 1 (B: RJ45 pin 1). 
+// const byte refillStatus = A4; //TTL input 1 (B: RJ45 pin 1). 
 
 
 long ongoingPosition = 0;
@@ -47,26 +47,64 @@ const float resolution =  SIXTY_ML;
 uint8_t softDirection = 0;
 uint32_t  valsFromParse[5];
 
+// //tmc5160
+// int chipCS = 9;
+// int enable = A2;
+// unsigned long SGvalue = 0;
+// unsigned long SGflag = 0;
+// int cnt = 0;
+
+// void coarseMode(){
+//   sendData(0xEC,0x35000003);      // CHOPCONF
+//   stepper.setMaxSpeed(1100);
+//   stepper.setAcceleration(900);
+// }
+
+// void fineMode(){
+//   sendData(0xEC,0x32000003);      // CHOPCONF
+//   stepper.setMaxSpeed(1750);
+//   stepper.setAcceleration(3000);
+// }
+
 void setup()   {
 
   Serial.begin(115200);
-  Serial1.begin(9600);
-
+  Serial1.begin(9600,SERIAL_8N1);
   //limit switch setup
   pinMode(limit_pull,INPUT_PULLUP);
   pinMode(limit_push,INPUT_PULLUP);  
+ 
+  // //TMC SEtup
+  // pinMode(chipCS,OUTPUT);
+  // pinMode(enable, OUTPUT);
+  // digitalWrite(chipCS,HIGH);
+  // digitalWrite(enable,HIGH);
 
-  //Motor setup
+  // SPI.setBitOrder(MSBFIRST);
+  // SPI.setClockDivider(SPI_CLOCK_DIV8);
+  // SPI.setDataMode(SPI_MODE3);
+  // SPI.begin();
+
+  // sendData(0xF0,0xC40C001E);      // PWMCONF (default)
+  // sendData(0x80,0x00000004);      // enable stealhchop
+  // sendData(0x90,0x000F1100);      // IHOLD_IRUN 
+  // sendData(0x91,0x00000080);      // TPOWERDOWN
+  // sendData(0x89,0x00010F0F);      // SHORTCONF
+
+  // digitalWrite(enable,LOW);
+
+  // Motor setup
   stepper.setMaxSpeed(3500);
   stepper.setAcceleration(5000);
+  // fineMode();
   pinMode(enablePin,OUTPUT); 
   enableMotor();
 
   //TTL setup
   pinMode(ttlPush,INPUT);
   pinMode(ttlRetract,INPUT);
-  pinMode(refillStatus,OUTPUT);
-  digitalWrite(refillStatus,LOW);
+  // pinMode(refillStatus,OUTPUT);
+  // digitalWrite(refillStatus,LOW);
   
   //Display Setup
   if (!ss.begin()) {
@@ -96,9 +134,8 @@ void setup()   {
 }
 
 void loop() {
-  
   //check for ttl pulse
-  ttlUI(pushing,ttlPush);
+  // ttlUI(pushing,ttlPush);
 
   buttons = ss.readButtons();
   //check for button pushes
@@ -111,21 +148,12 @@ void loop() {
   arrowUI(pushing,UP); //up
   arrowUI(pulling,DOWN); //down
   arrowUI(flipDirection,CENTER); //center
-  //run motor if a step is scheduled to be executed, otherwise do nothing.
-  stepper.run();
 
+  serialUI();
+  
   //disable motor if no more steps are scheduled  
   if (!stepper.isRunning() && motorEnabled){
     disableMotor();
-  }
-
-  if (Serial1.available()){
-    char msg = Serial1.read();
-    if (msg=='I'){ 
-      uint32_t volume = parseData();
-      Serial.print("should infuse ");
-      Serial.println(volume);
-    }
   }
 }
 
@@ -136,3 +164,30 @@ int parseData(){
   msgPointer = strtok(msgData,",");
   return atol(msgPointer);
 }
+
+// unsigned long sendData(unsigned long address, unsigned long datagram)
+// {
+//   //TMC5130 takes 40 bit data: 8 address and 32 data
+//   unsigned long i_datagram = 0;
+
+//   digitalWrite(chipCS,LOW);
+//   delayMicroseconds(10);
+
+//   SPI.transfer(address);
+
+//   i_datagram |= SPI.transfer((datagram >> 24) & 0xff);
+//   i_datagram <<= 8;
+//   i_datagram |= SPI.transfer((datagram >> 16) & 0xff);
+//   i_datagram <<= 8;
+//   i_datagram |= SPI.transfer((datagram >> 8) & 0xff);
+//   i_datagram <<= 8;
+//   i_datagram |= SPI.transfer((datagram) & 0xff);
+//   digitalWrite(chipCS,HIGH);
+  
+//   Serial.print("Received: ");
+//   Serial.println(i_datagram,HEX);
+//   Serial.print(" from register: ");
+//   Serial.println(address,HEX);
+
+//   return i_datagram;
+// }

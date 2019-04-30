@@ -36,7 +36,7 @@ void arrowUI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 break;
             case CENTER:
                 uint32_t holdStarted = millis();
-                while( ((millis()-holdStarted) < 2750) & (!(buttons & 1<<buttonPos)) ){
+                while( ((millis()-holdStarted) < 500) & (!(buttons & 1<<buttonPos)) ){
                     buttons = ss.readButtons();
                 }
                 if( !(buttons & 1<<buttonPos) ){
@@ -73,6 +73,39 @@ void buttonUI(void (*fxn)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uin
         (*fxn)(ST77XX_BLACK);
         showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
     }
+}
+
+void serialUI(){
+  if (Serial1.available()){
+    char msg = Serial1.read();
+    showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+    if (msg=='I'){ 
+      uint32_t volume = parseData();
+      dispenseVolume(volume);
+    }
+    else if (msg=='C'){
+      connectedMessage();
+    }
+    else if (msg == 'R'){
+      retracting(ST77XX_WHITE);
+      retract();
+      retracting(ST77XX_BLACK);
+    }
+    else if (msg == 'Z'){
+      resetting(ST77XX_WHITE);
+      delay(1000);
+      ongoingPosition = 0;
+      resetting(ST77XX_BLACK);
+    }
+    if (softDirection){
+        ongoingPosition += long(stepper.currentPosition());
+    }
+    else{
+        ongoingPosition -= long(stepper.currentPosition());
+    }    
+    stepper.setCurrentPosition(0);
+    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+  }
 }
 
 void ttlUI(void (*fxn)(uint16_t), uint8_t ttlPin){
@@ -262,7 +295,6 @@ void pulling(uint16_t color){
 }
 
 void flipDirection(uint16_t color){
-
     tft.setTextColor(color);
     tft.setTextSize(2);
     tft.setCursor(0 , 0);
@@ -271,11 +303,20 @@ void flipDirection(uint16_t color){
 
 void successfulFlip(uint16_t color){
     tft.fillScreen(ST77XX_BLACK);
-
     tft.setTextColor(color);
     tft.setTextSize(2);
     tft.setCursor(0 , 0);
     tft.print("Direction\nflipped!");
+    // if (softDirection){
+    //     fineMode();
+    // }
+    // else{
+    //     coarseMode();
+    // }
+    // stepper.move(143);
+    // while (stepper.distanceToGo()){
+    //     stepper.run();
+    // }
     delay(1250);
     tft.fillScreen(ST77XX_BLACK);
 }
@@ -298,4 +339,16 @@ void limitMessage(uint16_t color){
     tft.print("Limit\n");
     tft.setCursor(20 ,tft.getCursorY());
     tft.print("Reached");
+}
+
+void connectedMessage(){
+    showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+    tft.setTextColor(ST77XX_WHITE);
+    tft.setTextSize(2);
+    tft.setCursor(0 , 0);
+    tft.print("Connected To pyControl!");
+    delay(1500);
+    ongoingPosition = 0;
+    tft.fillScreen(ST77XX_BLACK);
+    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
 }
