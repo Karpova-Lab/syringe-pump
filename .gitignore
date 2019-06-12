@@ -1,6 +1,22 @@
 Software/.ipynb_checkpoints
 Documentation Source/build
 
+# from https://github.com/github/gitignore/blob/master/KiCad.gitignore
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*~
+_autosave-*
+*.tmp
+*-rescue.lib
+*-save.pro
+*-save.kicad_pcb
+
+# Footprint cache
+fp-info-cache
+
 
 # Ignore sketch files
 *.sketch
