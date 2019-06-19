@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Syringe Board"
-Date "2019-06-12"
-Rev "3.0"
+Date "2019-06-19"
+Rev "3.1"
 Comp "Andy Lustig"
 Comment1 ""
 Comment2 ""
@@ -70,11 +70,7 @@ F 3 "https://www.digikey.com/product-detail/en/cui-inc/PJ-037A/CP-037A-ND/164454
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	3300 2000 3100 2000
-Wire Wire Line
 	2700 1800 2700 1700
-Wire Wire Line
-	2700 1700 3100 1700
 Text Label 3400 1700 2    50   ~ 0
 GND
 Text Label 3000 2000 2    50   ~ 0
@@ -251,8 +247,6 @@ Wire Wire Line
 	7400 5600 7400 5700
 Wire Wire Line
 	7400 5700 7300 5700
-Text Label 7400 5650 0    50   ~ 0
-GND
 $Comp
 L Device:LED D1
 U 1 1 5CFFDB45
@@ -313,12 +307,6 @@ Text Label 3100 3100 0    50   ~ 0
 12VDC
 Text Label 7600 2500 2    50   ~ 0
 MTR_ENABLE
-Text Label 7600 2600 2    50   ~ 0
-LIMIT1
-Text Label 7600 2700 2    50   ~ 0
-A2
-Text Label 7600 2800 2    50   ~ 0
-A3
 $Comp
 L asl_symbols:feather_wing X1
 U 1 1 5D04693D
@@ -398,10 +386,6 @@ Wire Wire Line
 	5550 5300 5450 5300
 Wire Wire Line
 	5550 5400 5450 5400
-Text Label 5450 4300 2    50   ~ 0
-A2
-Text Label 5450 4400 2    50   ~ 0
-A3
 Wire Wire Line
 	7600 3400 7700 3400
 Wire Wire Line
@@ -424,8 +408,6 @@ Text Label 5450 4600 2    50   ~ 0
 A
 Text Label 5450 4100 2    50   ~ 0
 MTR_ENABLE
-Text Label 5450 4200 2    50   ~ 0
-LIMIT1
 Wire Wire Line
 	7700 3900 7650 3900
 Text Label 7650 3900 2    50   ~ 0
@@ -774,10 +756,6 @@ Wire Wire Line
 Text Label 3300 5500 3    50   ~ 0
 GND
 Wire Wire Line
-	7700 4800 7600 4800
-Text Label 7600 4800 2    50   ~ 0
-CS
-Wire Wire Line
 	1950 4100 1850 4100
 Text Label 1850 4100 2    50   ~ 0
 CS
@@ -812,18 +790,8 @@ F 1 "100uF" H 2900 1800 50  0001 L CNN
 F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 3100 1850 50  0001 C CNN
 F 3 "~" H 3100 1850 50  0001 C CNN
 	1    3100 1850
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
-Wire Wire Line
-	3100 1750 3100 1700
-Connection ~ 3100 1700
-Wire Wire Line
-	3100 1700 3700 1700
-Wire Wire Line
-	3100 1950 3100 2000
-Connection ~ 3100 2000
-Wire Wire Line
-	3100 2000 2700 2000
 Text Label 9200 3800 2    50   ~ 0
 D+
 Text Label 9200 3900 2    50   ~ 0
@@ -891,4 +859,40 @@ F 3 "~" H 6100 2900 50  0001 C CNN
 	1    6100 2900
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2700 1700 3100 1700
+Wire Wire Line
+	2700 2000 3100 2000
+Wire Wire Line
+	3100 1750 3100 1700
+Connection ~ 3100 1700
+Wire Wire Line
+	3100 1700 3700 1700
+Wire Wire Line
+	3100 1950 3100 2000
+Connection ~ 3100 2000
+Wire Wire Line
+	3100 2000 3300 2000
+Text Label 7400 5650 0    50   ~ 0
+3.3VDC
+Text Label 6950 5600 0    50   ~ 0
+SDA
+Text Label 6950 5700 0    50   ~ 0
+SCL
+Wire Wire Line
+	1950 4000 1850 4000
+Text Label 1850 4000 2    50   ~ 0
+GND
+Text Label 7600 2800 2    50   ~ 0
+LIMIT1
+Text Label 7600 2700 2    50   ~ 0
+CS
+Text Label 7600 2600 2    50   ~ 0
+A1
+Text Label 5450 4400 2    50   ~ 0
+LIMIT1
+Text Label 5450 4300 2    50   ~ 0
+CS
+Text Label 5450 4200 2    50   ~ 0
+A1
 $EndSCHEMATC
