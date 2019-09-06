@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Syringe Board"
-Date "2019-06-19"
-Rev "3.1"
+Date "2019-08-15"
+Rev "3.2"
 Comp "Andy Lustig"
 Comment1 ""
 Comment2 ""
@@ -79,17 +79,6 @@ Wire Wire Line
 	4100 1950 4250 1950
 Text Label 4250 1950 0    50   ~ 0
 3.3VDC
-$Comp
-L asl_symbols:B3FS-1010P S1
-U 1 1 5CFB48C1
-P 9800 2450
-F 0 "S1" H 9800 2765 50  0000 C CNN
-F 1 "B3FS-1010P" H 9800 2674 50  0000 C CNN
-F 2 "asl_footprints:6mm_tactile_smd" H 9650 2350 50  0001 C CNN
-F 3 "https://www.digikey.com/products/en?keywords=sw1440ct" H 9650 2350 50  0001 C CNN
-	1    9800 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9100 4300 9300 4300
 Wire Wire Line
@@ -100,7 +89,6 @@ Wire Wire Line
 	9100 2500 9500 2500
 Wire Wire Line
 	9500 2500 9500 2400
-Connection ~ 9500 2500
 Wire Wire Line
 	10100 2400 10100 2500
 Text Label 10100 2400 0    50   ~ 0
@@ -137,10 +125,10 @@ Connection ~ 9750 4400
 Wire Wire Line
 	9750 4400 10350 4400
 $Comp
-L Device:R_Small_US R7
+L Device:R_Small_US R6
 U 1 1 5CFDC0A5
 P 9350 3800
-F 0 "R7" V 9250 3700 50  0000 C CNN
+F 0 "R6" V 9250 3700 50  0000 C CNN
 F 1 "27Ω" V 9250 3900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 9350 3800 50  0001 C CNN
 F 3 "~" H 9350 3800 50  0001 C CNN
@@ -148,10 +136,10 @@ F 3 "~" H 9350 3800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small_US R8
+L Device:R_Small_US R7
 U 1 1 5CFDB43E
 P 9350 3900
-F 0 "R8" V 9450 3750 50  0000 L CNN
+F 0 "R7" V 9450 3750 50  0000 L CNN
 F 1 "27Ω" V 9450 4100 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 9350 3900 50  0001 C CNN
 F 3 "~" H 9350 3900 50  0001 C CNN
@@ -216,10 +204,10 @@ RX
 Text Label 7600 3500 2    50   ~ 0
 TX
 $Comp
-L Device:R_Small_US R5
+L Device:R_Small_US R4
 U 1 1 5CFF5A05
 P 7200 5600
-F 0 "R5" V 7100 5500 50  0000 C CNN
+F 0 "R4" V 7100 5500 50  0000 C CNN
 F 1 "10KΩ" V 7100 5700 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 5600 50  0001 C CNN
 F 3 "~" H 7200 5600 50  0001 C CNN
@@ -227,10 +215,10 @@ F 3 "~" H 7200 5600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small_US R6
+L Device:R_Small_US R5
 U 1 1 5CFF65E5
 P 7200 5700
-F 0 "R6" V 7100 5600 50  0000 C CNN
+F 0 "R5" V 7100 5600 50  0000 C CNN
 F 1 "10KΩ" V 7100 5800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 5700 50  0001 C CNN
 F 3 "~" H 7200 5700 50  0001 C CNN
@@ -259,10 +247,10 @@ F 3 "~" H 5050 5650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R_Small_US R4
+L Device:R_Small_US R3
 U 1 1 5D001160
 P 4750 5800
-F 0 "R4" V 4650 5800 50  0000 C CNN
+F 0 "R3" V 4650 5800 50  0000 C CNN
 F 1 "10KΩ" V 4850 5800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 4750 5800 50  0001 C CNN
 F 3 "~" H 4750 5800 50  0001 C CNN
@@ -320,7 +308,7 @@ F 3 "" H 6450 4300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5050 5500 5550 5500
-Text Label 1850 4750 2    50   ~ 0
+Text Label 1850 5150 2    50   ~ 0
 MTR_ENABLE
 Wire Wire Line
 	7700 2500 7600 2500
@@ -331,7 +319,7 @@ Wire Wire Line
 Wire Wire Line
 	7600 2800 7700 2800
 Wire Wire Line
-	1850 4750 1950 4750
+	1850 5150 1950 5150
 Wire Wire Line
 	7700 2900 7600 2900
 Wire Wire Line
@@ -467,326 +455,85 @@ SDA
 Text Label 7600 3700 2    50   ~ 0
 SCL
 Wire Wire Line
-	1950 4550 1850 4550
+	1950 5250 1850 5250
 Wire Wire Line
-	1950 4650 1850 4650
-Text Label 1850 4550 2    50   ~ 0
+	1950 5350 1850 5350
+Text Label 1850 5250 2    50   ~ 0
 STEP
-Text Label 1850 4650 2    50   ~ 0
+Text Label 1850 5350 2    50   ~ 0
 DIR
-Wire Wire Line
-	1950 4300 1850 4300
-Wire Wire Line
-	1950 4200 1850 4200
-Wire Wire Line
-	1950 4400 1850 4400
-Text Label 1850 4400 2    50   ~ 0
-MISO
-Text Label 1850 4300 2    50   ~ 0
-MOSI
-Text Label 1850 4200 2    50   ~ 0
-SCK
 Text Label 7400 4900 2    50   ~ 0
 SCK
 Text Label 7400 5000 2    50   ~ 0
 MOSI
 Text Label 7400 5100 2    50   ~ 0
 MISO
-Wire Wire Line
-	1850 5400 1850 5650
-Wire Wire Line
-	1850 5650 1950 5650
-Wire Wire Line
-	1850 5400 1950 5400
-Wire Wire Line
-	1850 5650 1850 5850
-Connection ~ 1850 5650
-Text Label 1850 5850 0    50   ~ 0
-GND
-$Comp
-L asl_symbols:TMC2130 U1
-U 1 1 5D05BA53
-P 2450 4850
-F 0 "U1" H 2425 6115 50  0000 C CNN
-F 1 "TMC2130" H 2425 6024 50  0000 C CNN
-F 2 "Package_QFP:TQFP-48-1EP_7x7mm_P0.5mm_EP5x5mm_ThermalVias" H 2300 4650 50  0001 C CNN
-F 3 "" H 2300 4650 50  0001 C CNN
-	1    2450 4850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 5450 2900 5550
-Wire Wire Line
-	1850 5850 2450 5850
-Wire Wire Line
-	2450 5850 2900 5850
-Connection ~ 2450 5850
-Wire Wire Line
-	2900 5850 2900 5650
-Wire Wire Line
-	2900 5650 2900 5550
-Connection ~ 2900 5650
-Connection ~ 2900 5550
-Wire Wire Line
-	2900 3850 2900 3950
-Wire Wire Line
-	2900 3950 2900 4050
-Connection ~ 2900 3950
-$Comp
-L Device:C_Small C4
-U 1 1 5D083C24
-P 3400 3850
-F 0 "C4" V 3200 3850 50  0000 C CNN
-F 1 "100nF" V 3300 3850 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3400 3850 50  0001 C CNN
-F 3 "~" H 3400 3850 50  0001 C CNN
-	1    3400 3850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2900 3850 2950 3850
-Connection ~ 2900 3850
 $Comp
 L Device:C_Small C6
-U 1 1 5D115873
-P 3750 3850
-F 0 "C6" V 3550 3850 50  0000 C CNN
-F 1 "100nF" V 3650 3850 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3750 3850 50  0001 C CNN
-F 3 "~" H 3750 3850 50  0001 C CNN
-	1    3750 3850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3150 3850 3200 3850
-Wire Wire Line
-	3200 3850 3200 3550
-Wire Wire Line
-	3900 3550 3900 3850
-Wire Wire Line
-	3900 3850 3850 3850
-Text Label 3900 3550 0    50   ~ 0
-GND
-Wire Wire Line
-	3300 3950 3300 3850
-$Comp
-L Device:C_Small C1
-U 1 1 5D083227
-P 3050 3850
-F 0 "C1" V 3250 3800 50  0000 L CNN
-F 1 "100nF" V 3150 3750 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3050 3850 50  0001 C CNN
-F 3 "~" H 3050 3850 50  0001 C CNN
-	1    3050 3850
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3300 3950 2900 3950
-Wire Wire Line
-	3500 3850 3550 3850
-Wire Wire Line
-	3550 3850 3550 3550
-Wire Wire Line
-	3550 3550 3900 3550
-Wire Wire Line
-	3200 3550 3550 3550
-Connection ~ 3550 3550
-Connection ~ 2900 4050
-Wire Wire Line
-	3400 4050 3400 3950
-Wire Wire Line
-	3400 3950 3650 3950
-Wire Wire Line
-	3650 3850 3650 3950
-Wire Wire Line
-	3400 4050 2900 4050
-$Comp
-L Device:C_Small C7
 U 1 1 5D1C930B
-P 4150 4150
-F 0 "C7" V 3950 4150 50  0000 C CNN
-F 1 "4.7uF" V 4050 4150 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 4150 4150 50  0001 C CNN
-F 3 "~" H 4150 4150 50  0001 C CNN
-	1    4150 4150
+P 3050 4650
+F 0 "C6" V 2850 4650 50  0000 C CNN
+F 1 "2.2µF" V 2950 4650 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3050 4650 50  0001 C CNN
+F 3 "~" H 3050 4650 50  0001 C CNN
+	1    3050 4650
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:R_Small_US R3
-U 1 1 5D1CABDD
-P 3850 4250
-F 0 "R3" V 3750 4250 50  0000 C CNN
-F 1 "2.2Ω" V 3950 4250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3850 4250 50  0001 C CNN
-F 3 "~" H 3850 4250 50  0001 C CNN
-	1    3850 4250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 4150 3850 4150
-Wire Wire Line
-	3850 4350 3700 4350
-Wire Wire Line
-	3700 4350 3700 4250
-Wire Wire Line
-	3700 4250 2900 4250
-$Comp
-L Device:C_Small C8
-U 1 1 5D1DB29F
-P 4150 4350
-F 0 "C8" V 3950 4350 50  0000 C CNN
-F 1 "470nF" V 4050 4350 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 4150 4350 50  0001 C CNN
-F 3 "~" H 4150 4350 50  0001 C CNN
-	1    4150 4350
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3850 4150 4050 4150
-Connection ~ 3850 4150
-Wire Wire Line
-	4250 4150 4350 4150
-Wire Wire Line
-	4350 4150 4350 3850
-Wire Wire Line
-	4350 3850 3900 3850
-Connection ~ 3900 3850
-Wire Wire Line
-	3850 4350 4050 4350
-Connection ~ 3850 4350
-Wire Wire Line
-	4250 4350 4350 4350
-Wire Wire Line
-	4350 4350 4350 4150
-Connection ~ 4350 4150
 $Comp
 L Device:C_Small C5
 U 1 1 5D204D14
-P 3450 4350
-F 0 "C5" V 3250 4350 50  0000 C CNN
-F 1 "100nF" V 3350 4350 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3450 4350 50  0001 C CNN
-F 3 "~" H 3450 4350 50  0001 C CNN
-	1    3450 4350
-	0    -1   -1   0   
+P 1950 4100
+F 0 "C5" V 1750 4100 50  0000 C CNN
+F 1 "100nF" V 1850 4100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1950 4100 50  0001 C CNN
+F 3 "~" H 1950 4100 50  0001 C CNN
+	1    1950 4100
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2900 4350 3350 4350
-Wire Wire Line
-	3550 4350 3600 4350
-Wire Wire Line
-	4350 4600 4350 4350
-Connection ~ 4350 4350
-$Comp
-L Device:C_Small C2
-U 1 1 5D217415
-P 3050 4500
-F 0 "C2" V 2850 4500 50  0000 C CNN
-F 1 "22nF" V 2950 4500 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3050 4500 50  0001 C CNN
-F 3 "~" H 3050 4500 50  0001 C CNN
-	1    3050 4500
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2900 4450 2950 4450
-Wire Wire Line
-	2950 4450 2950 4400
-Wire Wire Line
-	2950 4400 3050 4400
-Wire Wire Line
-	3050 4600 2950 4600
-Wire Wire Line
-	2950 4600 2950 4550
-Wire Wire Line
-	2950 4550 2900 4550
-Wire Wire Line
-	3600 4350 3600 4600
-Wire Wire Line
-	3600 4600 4350 4600
 $Comp
 L Device:R_Small_US R1
 U 1 1 5D29B52D
-P 3100 5400
-F 0 "R1" V 3000 5400 50  0000 C CNN
-F 1 "0.3Ω" V 3200 5400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 3100 5400 50  0001 C CNN
-F 3 "~" H 3100 5400 50  0001 C CNN
-	1    3100 5400
-	1    0    0    -1  
+P 3100 5550
+F 0 "R1" V 3000 5550 50  0000 C CNN
+F 1 "0.3Ω" V 3200 5550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3100 5550 50  0001 C CNN
+F 3 "~" H 3100 5550 50  0001 C CNN
+	1    3100 5550
+	0    1    1    0   
 $EndComp
-$Comp
-L Device:R_Small_US R2
-U 1 1 5D2ADA9C
-P 3450 5300
-F 0 "R2" V 3350 5300 50  0000 C CNN
-F 1 "0.3Ω" V 3550 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 3450 5300 50  0001 C CNN
-F 3 "~" H 3450 5300 50  0001 C CNN
-	1    3450 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 5100 4050 5100
-Wire Wire Line
-	2900 5000 4050 5000
-Wire Wire Line
-	2900 4900 4050 4900
-Wire Wire Line
-	2900 4800 4050 4800
 $Comp
 L asl_symbols:Screw_Terminal_01x08 J3
 U 1 1 5CFC1787
-P 4250 5100
-F 0 "J3" H 4330 5092 50  0000 L CNN
-F 1 "OSTVN08A150" H 4330 5001 50  0000 L CNN
-F 2 "asl_footprints:8pos_screw_terminal" H 4250 5100 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158" H 4250 5100 50  0001 C CNN
-	1    4250 5100
+P 4200 5150
+F 0 "J3" H 4280 5142 50  0000 L CNN
+F 1 "OSTVN08A150" H 4280 5051 50  0000 L CNN
+F 2 "asl_footprints:8pos_screw_terminal" H 4200 5150 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158" H 4200 5150 50  0001 C CNN
+	1    4200 5150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 5300 3100 5300
-Wire Wire Line
-	3100 5500 3450 5500
-Wire Wire Line
-	3450 5500 3450 5400
-Wire Wire Line
-	3450 5200 2900 5200
-Text Label 3300 5500 3    50   ~ 0
+	3450 5300 2950 5300
+Text Label 3550 5550 3    50   ~ 0
 GND
-Wire Wire Line
-	1950 4100 1850 4100
-Text Label 1850 4100 2    50   ~ 0
-CS
-Wire Wire Line
-	1950 3850 1850 3850
-Text Label 1850 3850 2    50   ~ 0
+Text Label 1950 4300 2    50   ~ 0
 3.3VDC
 Wire Wire Line
-	4050 5300 3650 5300
+	4000 5350 3650 5350
 Wire Wire Line
-	3650 5300 3650 5500
+	4000 5450 3950 5450
 Wire Wire Line
-	3650 5500 3450 5500
-Connection ~ 3450 5500
-Wire Wire Line
-	4050 5500 3650 5500
-Connection ~ 3650 5500
-Wire Wire Line
-	4050 5400 4000 5400
-Wire Wire Line
-	4050 5200 4000 5200
-Text Label 4000 5200 2    50   ~ 0
+	4000 5250 3950 5250
+Text Label 3950 5250 2    50   ~ 0
 LIMIT1
-Text Label 4000 5400 2    50   ~ 0
+Text Label 3950 5450 2    50   ~ 0
 LIMIT2
 $Comp
-L Device:CP_Small C3
+L Device:CP_Small C7
 U 1 1 5D37D1BD
 P 3100 1850
-F 0 "C3" H 2900 1900 50  0000 L CNN
-F 1 "100uF" H 2900 1800 50  0001 L CNN
+F 0 "C7" H 2900 1900 50  0000 L CNN
+F 1 "100uF" H 2800 1800 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 3100 1850 50  0001 C CNN
 F 3 "~" H 3100 1850 50  0001 C CNN
 	1    3100 1850
@@ -879,10 +626,6 @@ Text Label 6950 5600 0    50   ~ 0
 SDA
 Text Label 6950 5700 0    50   ~ 0
 SCL
-Wire Wire Line
-	1950 4000 1850 4000
-Text Label 1850 4000 2    50   ~ 0
-GND
 Text Label 7600 2800 2    50   ~ 0
 LIMIT1
 Text Label 7600 2700 2    50   ~ 0
@@ -895,4 +638,176 @@ Text Label 5450 4300 2    50   ~ 0
 CS
 Text Label 5450 4200 2    50   ~ 0
 A1
+Text Label 1650 4400 0    50   ~ 0
+12VDC
+Wire Wire Line
+	3450 5550 3450 5500
+$Comp
+L Device:R_Small_US R2
+U 1 1 5D2ADA9C
+P 3450 5400
+F 0 "R2" V 3350 5400 50  0000 C CNN
+F 1 "0.3Ω" V 3550 5400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3450 5400 50  0001 C CNN
+F 3 "~" H 3450 5400 50  0001 C CNN
+	1    3450 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 5300 2950 5350
+Wire Wire Line
+	2950 5350 2900 5350
+Wire Wire Line
+	2900 5450 2950 5450
+Wire Wire Line
+	2950 5450 2950 5550
+Wire Wire Line
+	2950 5550 3000 5550
+$Comp
+L Device:C_Small C1
+U 1 1 5D217415
+P 1450 4800
+F 0 "C1" V 1250 4800 50  0000 C CNN
+F 1 "22nF" V 1350 4800 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1450 4800 50  0001 C CNN
+F 3 "~" H 1450 4800 50  0001 C CNN
+	1    1450 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 5D083227
+P 1750 4650
+F 0 "C4" V 1950 4600 50  0000 L CNN
+F 1 "100nF" V 1850 4550 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1750 4650 50  0001 C CNN
+F 3 "~" H 1750 4650 50  0001 C CNN
+	1    1750 4650
+	0    -1   1    0   
+$EndComp
+Text Label 2900 3900 0    50   ~ 0
+GND
+Wire Wire Line
+	1950 4900 1450 4900
+Wire Wire Line
+	1450 4700 1600 4700
+Wire Wire Line
+	1600 4700 1600 4800
+Wire Wire Line
+	1600 4800 1950 4800
+Wire Wire Line
+	1950 4650 1850 4650
+Wire Wire Line
+	1650 4650 1650 4550
+Wire Wire Line
+	1650 4550 1950 4550
+$Comp
+L Device:C_Small C3
+U 1 1 5D083C24
+P 1550 4550
+F 0 "C3" V 1600 4800 50  0000 C CNN
+F 1 "100nF" V 1500 4800 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1550 4550 50  0001 C CNN
+F 3 "~" H 1550 4550 50  0001 C CNN
+	1    1550 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 5D115873
+P 1550 4400
+F 0 "C2" V 1350 4400 50  0000 C CNN
+F 1 "100nF" V 1450 4400 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1550 4400 50  0001 C CNN
+F 3 "~" H 1550 4400 50  0001 C CNN
+	1    1550 4400
+	0    1    1    0   
+$EndComp
+Connection ~ 1650 4550
+Wire Wire Line
+	1650 4400 1650 4550
+Wire Wire Line
+	1650 4400 1950 4400
+Wire Wire Line
+	1950 4400 1950 4450
+Connection ~ 1650 4400
+Wire Wire Line
+	2900 4350 2900 3900
+Wire Wire Line
+	2900 3900 1950 3900
+Connection ~ 2900 4350
+Wire Wire Line
+	1450 3900 1450 4400
+Wire Wire Line
+	1450 4400 1450 4550
+Connection ~ 1450 4400
+Wire Wire Line
+	1950 4200 1950 4300
+Wire Wire Line
+	1950 4000 1950 3900
+Connection ~ 1950 3900
+Wire Wire Line
+	1950 3900 1450 3900
+Wire Wire Line
+	1850 5800 1950 5800
+Text Label 1850 5800 2    50   ~ 0
+GND
+Wire Wire Line
+	1950 5700 1850 5700
+Wire Wire Line
+	2900 4650 2950 4650
+Wire Wire Line
+	3150 4650 3200 4650
+Wire Wire Line
+	3200 4650 3200 4350
+Wire Wire Line
+	3200 4350 2900 4350
+Text Label 1850 5700 2    50   ~ 0
+D6
+Wire Wire Line
+	3200 5550 3450 5550
+Wire Wire Line
+	4000 5550 3650 5550
+Wire Wire Line
+	3650 5350 3650 5550
+Wire Wire Line
+	3450 5550 3650 5550
+Connection ~ 3450 5550
+Connection ~ 3650 5550
+Connection ~ 2900 4450
+Wire Wire Line
+	2900 4450 2900 4550
+Wire Wire Line
+	2900 4350 2900 4450
+$Comp
+L asl_symbols:TMC2208 U1
+U 1 1 5D56346E
+P 2450 5050
+F 0 "U1" H 2450 4200 50  0000 C CNN
+F 1 "TMC2208" H 2450 4100 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm_ThermalVias" H 3700 6950 50  0001 C CNN
+F 3 "" H 2300 4250 50  0001 C CNN
+	1    2450 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 5150 4000 5150
+Wire Wire Line
+	2900 5050 4000 5050
+Wire Wire Line
+	2900 4950 4000 4950
+Wire Wire Line
+	2900 4850 4000 4850
+$Comp
+L asl_symbols:B3FS-1010P S1
+U 1 1 5D8DA001
+P 9800 2450
+F 0 "S1" H 9800 2765 50  0000 C CNN
+F 1 "B3FS-1010P" H 9800 2674 50  0000 C CNN
+F 2 "asl_footprints:6mm_tactile_smd" H 9650 2350 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=sw1440ct" H 9650 2350 50  0001 C CNN
+	1    9800 2450
+	1    0    0    -1  
+$EndComp
+Connection ~ 9500 2500
 $EndSCHEMATC
