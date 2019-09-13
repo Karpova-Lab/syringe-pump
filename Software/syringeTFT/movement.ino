@@ -1,22 +1,14 @@
-
 void stopImmediately(){
     stepper.setCurrentPosition(0);
 }
 
-void slowStop(){
-  stepper.stop();
-  while(stepper.isRunning()){
-    stepper.run();
-  }
-}
-
 void enableMotor(){
-  digitalWrite(enablePin,LOW);
+  PORTF &= ~(1<<7);
   motorEnabled = true;
 }
 
 void disableMotor(){
-  digitalWrite(enablePin,HIGH);  
+  PORTF |= (1<<7);
   motorEnabled = false;
 }
 
@@ -28,21 +20,19 @@ void limitReached(){
       ongoingPosition -= long(stepper.currentPosition());
   }   
   stepper.setCurrentPosition(0);
-  Serial1.write("Limit Reached\n");
+  Serial1.write("Limit");
   limitMessage(ST77XX_RED);
   delay(1000);
   limitMessage(ST77XX_BLACK);
 }
 
 void retract(){
-  // digitalWrite(refillStatus,HIGH);
   while(1){
     stepper.run();
     if (digitalRead(limit_push) && digitalRead(limit_pull)){
       moveDirection(!softDirection);
     }
     else{
-      // digitalWrite(refillStatus,LOW);
       stepper.setCurrentPosition(0);// stop the motor
       if (softDirection){
           stepper.move(250); //bounce off the limit switch
@@ -55,7 +45,6 @@ void retract(){
       }
       ongoingPosition = 0;
       stepper.setCurrentPosition(0);
-      limitReached();
       break;
     }
   }
@@ -74,7 +63,7 @@ void moveDirection(uint8_t oneWay){
   }
 }
 
-void dispenseVolume(int volume){
+void dispenseVolume(long volume){
   enableMotor();
   if (!softDirection){
     volume *= -1;
