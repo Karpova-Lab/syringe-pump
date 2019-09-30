@@ -1,7 +1,3 @@
-void stopImmediately(){
-    stepper.setCurrentPosition(0);
-}
-
 void enableMotor(){
   PORTF &= ~(1<<7);
   motorEnabled = true;

@@ -1,7 +1,7 @@
 void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
     if (! (buttons & 1<<buttonPos)) {
         enableMotor();
-        showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+        tft.fillScreen(ST77XX_BLACK);
         (*fxn)(ST77XX_WHITE);
         uint8_t count = 0;
         if (buttonPos==B_BTN){
@@ -67,29 +67,16 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
             }
         }
     ongoingPosition += long(stepper.currentPosition());
-    stopImmediately();    
-    (*fxn)(ST77XX_BLACK);
-    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+    stepper.setCurrentPosition(0);    
+    showMenu();
   }
-}
-
-void buttonUI(void (*fxn)(uint16_t), uint8_t buttonPos, uint16_t aboutColor, uint16_t helpColor ){
-    if (! (buttons & 1<<buttonPos)) {
-        showMenu(aboutColor,helpColor,ST77XX_BLACK);
-        (*fxn)(ST77XX_WHITE);
-        while(!(buttons & 1<<buttonPos)){
-            buttons = ss.readButtons();
-        }
-        (*fxn)(ST77XX_BLACK);
-        showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
-    }
 }
 
 void serialUI(){
   if (Serial1.available()){
     char msg = Serial1.read();
     if (msg=='I' | msg == 'C' | msg == 'R' | msg == 'Z'){
-        showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+        tft.fillScreen(ST77XX_BLACK);
         if (msg=='I'){ 
             uint32_t volume = parseData();
             dispenseVolume(volume);
@@ -100,26 +87,23 @@ void serialUI(){
         else if (msg == 'R'){
             retracting(ST77XX_WHITE);
             retract();
-            retracting(ST77XX_BLACK);
         }
         else if (msg == 'Z'){
             resetting(ST77XX_WHITE);
             delay(1000);
             ongoingPosition = 0;
-            resetting(ST77XX_BLACK);
         }
         ongoingPosition += long(stepper.currentPosition());
         stepper.setCurrentPosition(0);
-        showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+        showMenu();
     }    
   }
 }
 
-
-void showMenu(uint16_t aboutColor, uint16_t helpColor, uint16_t dispenseColor){
+void showMenu(){
     tft.fillScreen(ST77XX_BLACK);
-    reset(aboutColor);  
-    showDispensed(dispenseColor);
+    reset(ST77XX_WHITE);  
+    showDispensed(ST77XX_GREEN);
 }
 
 void reset(uint16_t color){
@@ -197,7 +181,7 @@ void limitMessage(uint16_t color){
 }
 
 void connectedMessage(){
-    showMenu(ST77XX_BLACK,ST77XX_BLACK,ST77XX_BLACK);
+    tft.fillScreen(ST77XX_BLACK);;
     tft.setTextColor(ST77XX_WHITE);
     tft.setTextSize(2);
     tft.setCursor(0 , 0);
@@ -205,5 +189,5 @@ void connectedMessage(){
     delay(1500);
     ongoingPosition = 0;
     tft.fillScreen(ST77XX_BLACK);
-    showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+    showMenu();
 }

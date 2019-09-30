@@ -94,7 +94,7 @@ void setup()   {
   tft.setRotation(3);
   tft.fillScreen(ST77XX_BLACK);
 
-  showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
+  showMenu();
 
 }
 
