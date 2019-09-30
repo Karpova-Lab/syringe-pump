@@ -23,19 +23,19 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
             switch (buttonPos){
             case UP:
                 if((PINF & (1<<4) ) && (PIND & (1<<6))){
-                    moveDirection(softDirection);
+                    moveDirection(INFUSE);
                 }
                 else{
-                    limitReached();
+                    limitReached(INFUSE);
                     buttons = ss.readButtons();
                 }
                 break;
             case DOWN:
                 if ((PINF & (1<<4) ) && (PIND & (1<<6))){
-                    moveDirection(!softDirection);
+                    moveDirection(RETRACT);
                 }
                 else{
-                    limitReached();
+                    limitReached(RETRACT);
                     buttons = ss.readButtons();
                 }
                 break;
@@ -56,6 +56,7 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 if( !(buttons & 1<<buttonPos) ){
                     softDirection = !softDirection;
                     EEPROM.update(DIRECTION_ADDRESS, softDirection);
+                    stepper.setPinsInverted(softDirection, false, true);
                     successfulFlip(ST77XX_WHITE);
                 }
                 break;
@@ -65,12 +66,7 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 buttons = ss.readButtons();
             }
         }
-    if (softDirection){
-        ongoingPosition += long(stepper.currentPosition());
-    }
-    else{
-        ongoingPosition -= long(stepper.currentPosition());
-    }        
+    ongoingPosition += long(stepper.currentPosition());
     stopImmediately();    
     (*fxn)(ST77XX_BLACK);
     showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
@@ -112,12 +108,7 @@ void serialUI(){
             ongoingPosition = 0;
             resetting(ST77XX_BLACK);
         }
-        if (softDirection){
-            ongoingPosition += long(stepper.currentPosition());
-        }
-        else{
-            ongoingPosition -= long(stepper.currentPosition());
-        }    
+        ongoingPosition += long(stepper.currentPosition());
         stepper.setCurrentPosition(0);
         showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
     }    

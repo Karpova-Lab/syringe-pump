@@ -5,8 +5,8 @@
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 #include <EEPROM.h>
 
-#define VERSION 6
-#define DATE "Updated: 09/13/2019\n"
+#define VERSION 7
+#define DATE "Updated: 09/30/2019\n"
 #define DIRECTION_ADDRESS 0
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
 #define SIXTY_ML 1.4 // microliters per 1/16th microstep for 60mL syringe
@@ -32,6 +32,8 @@ const byte dir  = 10;
 const byte enablePin = A0; //pin 36 PF7
 AccelStepper stepper = AccelStepper(stepper.DRIVER, step, dir);
 bool motorEnabled;
+#define INFUSE 1
+#define RETRACT 0
 
 //-------------------------------------------Other Variables -----------------------------------
 // limit switches
@@ -41,7 +43,7 @@ const byte limit_push = 21;
 long ongoingPosition = 0;
 enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11,A_BTN=10,B_BTN=9};
 const float resolution =  SIXTY_ML;
-uint8_t softDirection = 0;
+bool softDirection = 0;
 uint8_t  valsFromParse[5];
 
 void setup()   {
@@ -73,7 +75,9 @@ void setup()   {
   stepper.setMaxSpeed(3500); // 100mm/s @ 80 steps/mm
   stepper.setAcceleration(5000); // 2000mm/s^2
   stepper.setEnablePin(enablePin);
-  stepper.setPinsInverted(false, false, true);
+  //get soft direction variable from non-volatile memmory
+  EEPROM.get(DIRECTION_ADDRESS,softDirection);
+  stepper.setPinsInverted(softDirection, false, true);
   stepper.enableOutputs();
 
   enableMotor();
@@ -92,8 +96,6 @@ void setup()   {
 
   showMenu(ST77XX_WHITE,ST77XX_WHITE,ST77XX_GREEN);
 
-  //get soft direction variable from non-volatile memmory
-  EEPROM.get(DIRECTION_ADDRESS,softDirection);
 }
 
 void loop() {

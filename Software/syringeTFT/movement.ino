@@ -12,14 +12,24 @@ void disableMotor(){
   motorEnabled = false;
 }
 
-void limitReached(){
-  if (softDirection){
+void bounce(int bounceDistance){
+  stepper.setCurrentPosition(0);
+  stepper.move(bounceDistance); //bounce off the limit switch
+  while(stepper.isRunning()){
+    stepper.run();
+  }
+  stepper.setCurrentPosition(0);
+}
+
+void limitReached(boolean infusing){
+  if (infusing){
       ongoingPosition += long(stepper.currentPosition());
+      bounce(-250);
   }
   else{
       ongoingPosition -= long(stepper.currentPosition());
+      bounce(250);
   }   
-  stepper.setCurrentPosition(0);
   Serial1.write("Limit");
   limitMessage(ST77XX_RED);
   delay(1000);
@@ -30,30 +40,21 @@ void retract(){
   while(1){
     stepper.run();
     if (digitalRead(limit_push) && digitalRead(limit_pull)){
-      moveDirection(!softDirection);
+      moveDirection(RETRACT);
     }
     else{
       stepper.setCurrentPosition(0);// stop the motor
-      if (softDirection){
-          stepper.move(250); //bounce off the limit switch
-      }
-      else{
-          stepper.move(-250); //bounce off the limit switch
-      }
-      while(stepper.isRunning()){
-        stepper.run();
-      }
+      bounce(250);
       ongoingPosition = 0;
-      stepper.setCurrentPosition(0);
       break;
     }
   }
 }
 
-void moveDirection(uint8_t oneWay){
-  if (oneWay){
+void moveDirection(bool infusing){
+  if (infusing){
     if (stepper.distanceToGo() < 8000){
-      stepper.move(100000);
+      stepper.move(10000);
     }
   }
   else{
@@ -65,9 +66,6 @@ void moveDirection(uint8_t oneWay){
 
 void dispenseVolume(long volume){
   enableMotor();
-  if (!softDirection){
-    volume *= -1;
-  }
   stepper.move(volume/resolution);
 
   while (stepper.isRunning()){
@@ -75,7 +73,12 @@ void dispenseVolume(long volume){
       stepper.run();
     }
     else{
-      limitReached();
+      if (volume>=0){
+        limitReached(INFUSE);
+      }
+      else{
+        limitReached(RETRACT);
+      }
     }
   }
 }
