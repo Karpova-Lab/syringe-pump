@@ -17,41 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Syringe Pump 1.0.0 documentation" href="#"/>
-        <link rel="next" title="Mechanical" href="frame.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mechanical" href="frame.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,13 +55,6 @@
           
           </a>
 
-          
-            
-            
-              <div class="version">
-                1.0.0
-              </div>
-            
           
 
           
@@ -104,7 +91,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">Syringe Pump</a>
@@ -112,10 +99,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -143,13 +133,23 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
     
   </ul>
 
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="frame.html" class="btn btn-neutral float-right" title="Mechanical" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+  </div>
   
   <hr/>
 </div>
@@ -182,7 +182,7 @@
         mozallowfullscreen allowFullScreen>
     </iframe>
 </div></div></blockquote>
-<a class="reference internal image-reference" href="_images/sidebyside.png"><img alt="_images/sidebyside.png" class="align-center" src="_images/sidebyside.png" style="width: 2424.0px; height: 941.0px;" /></a>
+<a class="reference internal image-reference" href="_images/vertical_pumps.jpg"><img alt="_images/vertical_pumps.jpg" class="align-center" src="_images/vertical_pumps.jpg" style="width: 100%;" /></a>
 <div class="section" id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>The expansion of the hobbyist 3D printing market has lowered the cost and increased the availability of CNC components due to demand for DIY kits and replacement parts.
@@ -193,11 +193,13 @@ Therefore, the goal of this project is to make an easy to assemble, open-source 
 <h3>Alternative Open Source Syringe Pumps<a class="headerlink" href="#alternative-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h3>
 <p>I’m not the first to share an open source syringe pump. Here are some examples:</p>
 <ul class="simple">
+<li><a class="reference external" href="https://pachterlab.github.io/poseidon/">Poisedon</a> by the Pachter Lab</li>
 <li><a class="reference external" href="https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/">3D Printed Syringe Pump Rack</a> by aldricnegrier</li>
 <li><a class="reference external" href="https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/">DIY Syringe Pump</a></li>
 <li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech’s Open Sustainability Technology Lab</li>
 <li><a class="reference external" href="http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html">Open source syringe pump</a> by Will Patrick</li>
 <li><a class="reference external" href="http://www.thingiverse.com/thing:1820146">SyriGo</a> by Ocram</li>
+<li><a class="reference external" href="http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/">Low cost laser cut syringe pump</a></li>
 </ul>
 <p>The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed components.
 I chose to use lasercut parts because they are more accurate, more precise, stiffer, and more condusive to rapid iteration and/or making large quantities (minutes to lasercut instead of hours to 3d print).</p>
@@ -206,21 +208,29 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Push and pull capable</li>
+<li>Easy to build<ul>
+<li>Assembled with screws and nuts. No glue or thread tapping required</li>
 <li>Laser cut 1/4” thick acrylic frame<ul>
-<li>Stiff</li>
-<li>Precise</li>
+<li>Stiff &amp; precise</li>
 <li>No need for finishing/removing support material as with a 3D printed part</li>
 </ul>
 </li>
-<li>Easy to assemble using standard parts (no glue or thread tapping required)</li>
-<li>Controller board that combines microcontroller, stepper driver, and color display, joystick, and motor/power connections<ul>
-<li>Reprogrammable over USB for complete customization</li>
-<li>Modern stepper driver rotates motor with minimal audible noise.</li>
-<li>Can be controlled manually, or</li>
+</ul>
+</li>
+<li>Infuse and retract capable</li>
+<li>Vertically mounted on <a class="reference external" href="https://en.wikipedia.org/wiki/DIN_rail">DIN rail</a><ul>
+<li>Air bubbles rise to the top and exit at start of infusion</li>
+<li>Easy to mount several pumps side by side</li>
 </ul>
 </li>
 <li>2 limit switches prevent the motor from stalling in either direction</li>
+<li>Controller board that combines microcontroller, stepper driver, color display, joystick, and motor/power connections<ul>
+<li>Reprogrammable over USB for complete customization</li>
+<li>Modern stepper driver rotates motor very quietly</li>
+<li>Send precise “dispense X µL” serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration</li>
+<li>Can automatically stop experiment when syringe is empty (when infuse limit switch is triggered)</li>
+</ul>
+</li>
 <li>Lower cost than <a class="reference external" href="http://syringepump.com/NE-1000.php">commercial</a> <a class="reference external" href="https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-pump-11-elite-programmable-syringe-pumps.html">alternatives</a><ul>
 <li>Frame ~ $150</li>
 <li>Electronics ~ $50</li>
@@ -263,9 +273,7 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -281,12 +289,14 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Andy Lustig.
-      Last updated on Dec 19, 2018.
+        &copy; Copyright 2018, Andy Lustig
+      <span class="lastupdated">
+        Last updated on Oct 17, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -299,36 +309,15 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -1,15 +1,17 @@
+:github_url: https://github.com/Karpova-Lab/syringe-pump
 ==========
 Mechanical
 ==========
 
 .. include:: isogrk1.txt
 
+
 Bill of Materials
 =================
 
 .. image:: frame_assembly/all_parts.jpg
   :align: center
-  :scale: 100 %
+  :width: 100%
 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 | QTY | Description                    | Price | Part Number                                                                                                                                                                   | Supplier      | 
@@ -22,7 +24,7 @@ Bill of Materials
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
 | 4   | M4 x 16mm machine screw        | 4.4   | `92005A220 <https://www.mcmaster.com/#92005A226>`_                                                                                                                            |               | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
-| 4   | M4  square nut                 | 10.0  | `96887A329 <https://www.mcmaster.com/#96887A329>`_                                                                                                                            |               | 
+| 4   | M4  square nut                 | 10    | `96887A329 <https://www.mcmaster.com/#96887A329>`_                                                                                                                            |               | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
 | 4   | M3 x 25mm machine screw        | 3.36  | `92005A130 <https://www.mcmaster.com/#92005A130>`_                                                                                                                            |               | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
@@ -42,7 +44,7 @@ Bill of Materials
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
 | 1   | 200 x  8 mm shaft              | 3.49  | `634310 <https://www.servocity.com/8mm-stainless-steel-precision-shafting#371=460>`_                                                                                          |               | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
-| 1   | 5 mm to 8 mm coupler           | 7.99  | `B01M287GNY <https://www.amazon.com/RepRap-Champion-Coupler-Routers-printers/dp/B01M287GNY/ref=sr_1_12?ie=UTF8&qid=1488495177&sr=8-12&keywords=5+to+8mm+coupler>`_            | Amazon        | 
+| 1   | 5 mm to 8 mm coupler           | 8.99  | `B07Q5Q3DCB <https://www.amazon.com/Befenybay-Coupling-Diameter-Coupler-Aluminum/dp/B07Q5Q3DCB/ref=sr_1_1?keywords=B07Q5Q3DCB&qid=1565137893&s=gateway&sr=8-1>`_              | Amazon        | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+               +
 | 1   | Flanged LMF8UU slide bearing   | 7.11  | `B00NQ2H8YUF17 <https://www.amazon.com/uxcell-LMF8UU-Inside-Flange-Bearing/d>`_                                                                                               |               | 
 +-----+--------------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+
@@ -92,11 +94,21 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_143041.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
 
 .. image:: frame_assembly/shrunk/20181219_143723.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
+
+.. https://github.com/spinus/sphinxcontrib-images
+.. .. thumbnail:: frame_assembly/shrunk/20181219_143041.jpg
+..   :group: group1
+..   :width: 49%
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_143723.jpg
+..   :width: 50%
+..   :group: group1
+
 
 2. Assemble carriage
   
@@ -109,11 +121,19 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_143948.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
 
 .. image:: frame_assembly/shrunk/20181219_144534.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_143948.jpg
+..   :group: group2
+..   :width: 49%
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_144534.jpg
+..   :width: 50%
+..   :group: group2
 
 3. Assemble cradle
 
@@ -127,15 +147,27 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_144806.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
 
 .. image:: frame_assembly/shrunk/20181219_145243.jpg
   :align: center
-  :scale: 100 %
+  :width: 100 %
 
 .. image:: frame_assembly/shrunk/20181219_145647.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_144806.jpg
+..   :group: group3
+..   :width: 32%
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_145243.jpg
+..   :width: 32%
+..   :group: group3
+
+.. .. thumbnail:: frame_assembly/shrunk/20181219_145647.jpg
+..   :width: 32%
+  :group: group3
 
 4. Assemble end support
 
@@ -144,11 +176,11 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_145709.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_150141.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 5. Attach lead screw to motor
 
@@ -158,11 +190,11 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_150248.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_150415.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 6. Attach shaft to end support
 
@@ -171,11 +203,11 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_150427.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_150438.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 7. Fit sub assemblies together
 
@@ -185,15 +217,15 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_150536.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_150639.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_150742.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 8. Secure sub assemblies to base and attach knob
 
@@ -203,23 +235,23 @@ Instructions
 
 .. image:: frame_assembly/shrunk/20181219_150812.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_151055.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 
 9. Attach Syringe Board PCB assembly and connect motor and limit switch wires
 
 .. image:: frame_assembly/shrunk/20181219_151154.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_152013.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 
 
 .. image:: frame_assembly/shrunk/20181219_152034.jpg
   :align: center
-  :scale: 100 % 
+  :width: 100 % 

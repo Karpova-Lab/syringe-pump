@@ -1,3 +1,4 @@
+:github_url: https://github.com/Karpova-Lab/syringe-pump
 ==========
 User Guide
 ==========

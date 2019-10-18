@@ -17,41 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Syringe Pump 1.0.0 documentation" href="index.html"/>
-        <link rel="prev" title="Mechanical" href="frame.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Mechanical" href="frame.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -61,13 +55,6 @@
           
           </a>
 
-          
-            
-            
-              <div class="version">
-                1.0.0
-              </div>
-            
           
 
           
@@ -111,7 +98,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Syringe Pump</a>
@@ -119,10 +106,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -150,13 +140,23 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/controller.rst.txt" rel="nofollow"> View page source</a>
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
     
   </ul>
 
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+      
+        <a href="frame.html" class="btn btn-neutral" title="Mechanical" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
   
   <hr/>
 </div>
@@ -180,6 +180,13 @@ A <strong>microcontroller</strong> talks to the stepper motor driver, telling it
 </div>
 <div class="section" id="building-custom-circuit-board-assembly">
 <h2>Building Custom Circuit Board Assembly<a class="headerlink" href="#building-custom-circuit-board-assembly" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/pcb.jpg"><img alt="_images/pcb.jpg" src="_images/pcb.jpg" style="width: 100%;" /></a>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/pcb_with_display.jpg"><img alt="_images/pcb_with_display.jpg" src="_images/pcb_with_display.jpg" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">PCB with display</span></p>
+</div>
 <p>An alternative to purchasing and combining the modules above, is to build the following custom circuit board.
 The custom “Syringe Board” circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board.
 It uses the same chips and is functionally equivalent to an <a class="reference external" href="https://www.adafruit.com/product/2771">Adafruit Feather 32u4</a> microcontroller and a <a class="reference external" href="https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626">TMC2208 SilentStepStick</a> stepper driver.
@@ -309,16 +316,14 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="frame.html" class="btn btn-neutral" title="Mechanical" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="frame.html" class="btn btn-neutral float-left" title="Mechanical" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -327,12 +332,14 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Andy Lustig.
-      Last updated on Dec 19, 2018.
+        &copy; Copyright 2018, Andy Lustig
+      <span class="lastupdated">
+        Last updated on Oct 17, 2019.
+      </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -345,36 +352,15 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

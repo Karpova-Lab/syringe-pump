@@ -1,3 +1,4 @@
+:github_url: https://github.com/Karpova-Lab/syringe-pump
 ==========
 Electrical
 ==========
@@ -21,6 +22,17 @@ There are many options for combining these two elements in order to control your
 Building Custom Circuit Board Assembly
 ++++++++++++++++++++++++++++++++++++++
 
+.. figure:: PCB/pcb.jpg
+  :align: center
+  :width: 100%
+  
+
+.. figure:: PCB/pcb_with_display.jpg
+  :align: center
+  :width: 100%
+  
+  PCB with display
+  
 An alternative to purchasing and combining the modules above, is to build the following custom circuit board. 
 The custom "Syringe Board" circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board. 
 It uses the same chips and is functionally equivalent to an `Adafruit Feather 32u4 <https://www.adafruit.com/product/2771>`_ microcontroller and a `TMC2208 SilentStepStick <https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626>`_ stepper driver. 
