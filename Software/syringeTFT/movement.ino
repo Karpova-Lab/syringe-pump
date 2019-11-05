@@ -1,13 +1,3 @@
-void enableMotor(){
-  PORTF &= ~(1<<7);
-  motorEnabled = true;
-}
-
-void disableMotor(){
-  PORTF |= (1<<7);
-  motorEnabled = false;
-}
-
 void bounce(int bounceDistance){
   stepper.setCurrentPosition(0);
   stepper.move(bounceDistance); //bounce off the limit switch
@@ -61,7 +51,7 @@ void moveDirection(bool infusing){
 }
 
 void dispenseVolume(long volume){
-  enableMotor();
+  stepper.enableOutputs();
   stepper.move(volume/resolution);
 
   while (stepper.isRunning()){

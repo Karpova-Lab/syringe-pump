@@ -1,6 +1,6 @@
 void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
     if (! (buttons & 1<<buttonPos)) {
-        enableMotor();
+        stepper.enableOutputs();
         tft.fillScreen(ST77XX_BLACK);
         (*fxn)(ST77XX_WHITE);
         uint8_t count = 0;
