@@ -25,7 +25,7 @@ void limitReached(boolean infusing){
 void retract(){
   while(1){
     stepper.run();
-    if (digitalRead(limit_push) && digitalRead(limit_pull)){
+    if (digitalRead(limit_pull)){
       moveDirection(RETRACT);
     }
     else{
@@ -33,6 +33,29 @@ void retract(){
       bounce(250);
       ongoingPosition = 0;
       break;
+    }
+  }
+}
+
+bool determine_direction(){
+  while(1){
+    stepper.run();
+    if (digitalRead(limit_pull)){
+      if (digitalRead(limit_push)){
+        moveDirection(INFUSE);
+      }
+      else{
+        stepper.setCurrentPosition(0);// stop the motor
+        bounce(250);
+        ongoingPosition = 0;
+        return 0;
+      }
+    }
+    else{
+      stepper.setCurrentPosition(0);// stop the motor
+      bounce(250);
+      ongoingPosition = 0;
+      return 1;
     }
   }
 }
@@ -55,12 +78,17 @@ void dispenseVolume(long volume){
   stepper.move(volume/resolution);
 
   while (stepper.isRunning()){
-    if (digitalRead(limit_push) && digitalRead(limit_pull)){
-      stepper.run();
+    if (volume>=0){
+      if (digitalRead(limit_push)){
+        stepper.run();
+      }
+      else{
+        limitReached(INFUSE);
+      }
     }
     else{
-      if (volume>=0){
-        limitReached(INFUSE);
+      if (digitalRead(limit_pull)){
+        stepper.run();
       }
       else{
         limitReached(RETRACT);

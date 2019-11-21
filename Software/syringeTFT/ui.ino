@@ -5,14 +5,14 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
         (*fxn)(ST77XX_WHITE);
         uint8_t count = 0;
         if (buttonPos==B_BTN){
-            stepper.setAcceleration(850); // 2000mm/s^2
+            stepper.setAcceleration(850); 
             for(byte i=0; i<10;i++){
                 driver.mres(5); 
                 delay(5);
             };
         }
         else{
-            stepper.setAcceleration(5000); // 2000mm/s^2
+            stepper.setAcceleration(5000); 
             for(byte i=0; i<10;i++){
                 driver.mres(4); 
                 delay(5);
@@ -22,7 +22,7 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
             stepper.run();
             switch (buttonPos){
             case UP:
-                if((PINF & (1<<4) ) && (PIND & (1<<6))){
+                if(digitalRead(limit_push)){
                     moveDirection(INFUSE);
                 }
                 else{
@@ -31,7 +31,7 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 }
                 break;
             case DOWN:
-                if ((PINF & (1<<4) ) && (PIND & (1<<6))){
+                if (digitalRead(limit_pull)){
                     moveDirection(RETRACT);
                 }
                 else{
@@ -53,11 +53,44 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 while( ((millis()-holdStarted) < 900) & (!(buttons & 1<<buttonPos)) ){
                     buttons = ss.readButtons();
                 }
+                tft.print("...");
                 if( !(buttons & 1<<buttonPos) ){
-                    softDirection = !softDirection;
-                    EEPROM.update(DIRECTION_ADDRESS, softDirection);
-                    stepper.setPinsInverted(softDirection, false, true);
-                    successfulFlip(ST77XX_WHITE);
+                    bool hit_pull = determine_direction();
+                    tft.fillScreen(ST77XX_BLACK);
+                    tft.setTextColor(ST77XX_WHITE);
+                    tft.setTextSize(2);
+                    tft.setCursor(80,11);
+                    tft.print("Infuse");
+                    tft.setCursor(70,62);
+                    tft.print("Retract"); 
+                    bool selected = false;
+                    while(!selected){
+                        buttons = ss.readButtons();
+                        if(! (buttons & 1<<A_BTN)){
+                            selected = true;
+                            if (hit_pull){
+                                pull_is_21  = !pull_is_21;
+                                limit_pull = limit_pins[pull_is_21];
+                                limit_push = limit_pins[!pull_is_21];
+                                EEPROM.update(LIMIT_PIN_ASSIGNMENT_ADDRESS, pull_is_21);
+                            }
+                            // was pushed
+                        }
+                        else if (! (buttons & 1<<B_BTN)){
+                            selected = true;
+                            softDirection = !softDirection;
+                            EEPROM.update(DIRECTION_ADDRESS, softDirection);
+                            stepper.setPinsInverted(softDirection, false, true);
+                            if (!hit_pull){
+                                pull_is_21  = !pull_is_21;
+                                limit_pull = limit_pins[pull_is_21];
+                                limit_push = limit_pins[!pull_is_21];
+                                EEPROM.update(LIMIT_PIN_ASSIGNMENT_ADDRESS, pull_is_21);
+                            }
+                            // retracted
+                        }
+                    }
+                    delay(1000);
                 }
                 break;
             }
@@ -102,17 +135,13 @@ void serialUI(){
 
 void showMenu(){
     tft.fillScreen(ST77XX_BLACK);
-    reset(ST77XX_WHITE);  
-    showDispensed(ST77XX_GREEN);
-}
-
-void reset(uint16_t color){
-    tft.setTextColor(color);
+    tft.setTextColor(ST77XX_WHITE);
     tft.setTextSize(1);
     tft.setCursor(129,11);
     tft.print("Reset");
     tft.setCursor(123,62);
-    tft.print("Refill");
+    tft.print("Refill"); 
+    showDispensed(ST77XX_GREEN);
 }
 
 void retracting(uint16_t color){
@@ -132,29 +161,26 @@ void resetting(uint16_t color){
 }
 
 void pushing(uint16_t color){
-    tft.setRotation(3);
-    uint16_t centerX = 80; 
-    uint16_t bottomSide = 60;
-    uint16_t arrowWidth = 20;
-    uint16_t arrowHeight = 40;
-    tft.fillTriangle(centerX - arrowWidth, bottomSide, centerX, bottomSide - arrowHeight, centerX + arrowWidth,bottomSide, color);
+    tft.fillScreen(ST77XX_BLACK);
+    tft.setTextColor(color);
+    tft.setTextSize(3);
+    tft.setCursor(30, 30);
+    tft.print("Infuse");
 }
 
 void pulling(uint16_t color){
-    uint16_t centerX = 80; 
-    uint16_t topSide = 20;
-    uint16_t arrowWidth = 20;
-    uint16_t arrowHeight = 40;
-    tft.fillTriangle(centerX - arrowWidth, topSide, centerX, topSide + arrowHeight, centerX + arrowWidth,topSide, color);
+    tft.fillScreen(ST77XX_BLACK);
+    tft.setTextColor(color);
+    tft.setTextSize(3);
+    tft.setCursor(20, 30);
+    tft.print("Retract");
 }
 
 void flipDirection(uint16_t color){
     tft.setTextColor(color);
     tft.setTextSize(2);
-    tft.setCursor(60 , 20);
-    tft.print("Hold");
-    tft.setCursor(20 , 36);
-    tft.print("to reverse");
+    tft.setCursor(30,30);
+    tft.print("Homing");
 }
 
 void successfulFlip(uint16_t color){
@@ -181,13 +207,13 @@ void limitMessage(uint16_t color){
 }
 
 void connectedMessage(){
-    tft.fillScreen(ST77XX_BLACK);;
-    tft.setTextColor(ST77XX_WHITE);
-    tft.setTextSize(2);
-    tft.setCursor(0 , 0);
-    tft.print("pyControl");
-    delay(1500);
-    ongoingPosition = 0;
-    tft.fillScreen(ST77XX_BLACK);
-    showMenu();
+    // tft.fillScreen(ST77XX_BLACK);;
+    // tft.setTextColor(ST77XX_WHITE);
+    // tft.setTextSize(2);
+    // tft.setCursor(0 , 0);
+    // tft.print("pyControl");
+    // delay(1500);
+    // ongoingPosition = 0;
+    // tft.fillScreen(ST77XX_BLACK);
+    // showMenu();
 }

@@ -5,9 +5,10 @@
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 #include <EEPROM.h>
 
-#define VERSION 8
-#define DATE "Updated: 11/05/2019\n"
+#define VERSION 9
+#define DATE "Updated: 11/21/2019\n"
 #define DIRECTION_ADDRESS 0
+#define LIMIT_PIN_ASSIGNMENT_ADDRESS 1
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
 #define SIXTY_ML 1.4 // microliters per 1/16th microstep for 60mL syringe
 
@@ -37,8 +38,10 @@ bool motorEnabled;
 
 //-------------------------------------------Other Variables -----------------------------------
 // limit switches
-const byte limit_pull = 12;
-const byte limit_push = 21;
+const byte limit_pins[2] = {12,21};
+uint8_t limit_pull = limit_pins[0];
+uint8_t limit_push = limit_pins[1];
+uint8_t pull_is_21;
 
 long ongoingPosition = 0;
 enum buttonLocation {LEFT=3,RIGHT=7,UP=2,DOWN=4,CENTER=11,A_BTN=10,B_BTN=9};
@@ -77,7 +80,16 @@ void setup()   {
   stepper.setEnablePin(enablePin);
   //get soft direction variable from non-volatile memmory
   EEPROM.get(DIRECTION_ADDRESS,softDirection);
-  stepper.setPinsInverted(true, false, true);
+  stepper.setPinsInverted(softDirection, false, true);
+
+  //get limit switch pin assignments from non-volatile memmory
+  EEPROM.get(LIMIT_PIN_ASSIGNMENT_ADDRESS,pull_is_21);
+  if(pull_is_21>1){ // if eeprom hasn't ever been written to then it will be 255, so assign it to be 0
+    pull_is_21 = 0;
+    EEPROM.update(LIMIT_PIN_ASSIGNMENT_ADDRESS, pull_is_21);
+  }
+  limit_pull = limit_pins[pull_is_21];
+  limit_push = limit_pins[!pull_is_21];
   //--------------------------------------------------Display Setup------------------
   if (!ss.begin()) {
     while(1);
@@ -91,7 +103,6 @@ void setup()   {
   tft.fillScreen(ST77XX_BLACK);
 
   showMenu();
-
 }
 
 void loop() {
