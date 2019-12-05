@@ -5,18 +5,10 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
         (*fxn)(ST77XX_WHITE);
         uint8_t count = 0;
         if (buttonPos==B_BTN){
-            stepper.setAcceleration(850); 
-            for(byte i=0; i<10;i++){
-                driver.mres(5); 
-                delay(5);
-            };
+            setFast(); 
         }
         else{
-            stepper.setAcceleration(5000); 
-            for(byte i=0; i<10;i++){
-                driver.mres(4); 
-                delay(5);
-            }
+            setSlow();
         }
         while(!(buttons & 1<<buttonPos)){
             stepper.run();
@@ -55,6 +47,7 @@ void UI(void (*fxn)(uint16_t), uint16_t buttonPos){
                 }
                 tft.print("...");
                 if( !(buttons & 1<<buttonPos) ){
+                    setFast();
                     bool hit_pull = determine_direction();
                     tft.fillScreen(ST77XX_BLACK);
                     tft.setTextColor(ST77XX_WHITE);
@@ -207,13 +200,29 @@ void limitMessage(uint16_t color){
 }
 
 void connectedMessage(){
-    // tft.fillScreen(ST77XX_BLACK);;
-    // tft.setTextColor(ST77XX_WHITE);
-    // tft.setTextSize(2);
-    // tft.setCursor(0 , 0);
-    // tft.print("pyControl");
-    // delay(1500);
-    // ongoingPosition = 0;
-    // tft.fillScreen(ST77XX_BLACK);
-    // showMenu();
+    tft.fillScreen(ST77XX_BLACK);;
+    tft.setTextColor(ST77XX_WHITE);
+    tft.setTextSize(2);
+    tft.setCursor(0 , 0);
+    tft.print("pyControl");
+    delay(1500);
+    ongoingPosition = 0;
+    tft.fillScreen(ST77XX_BLACK);
+    showMenu();
+}
+
+void setFast(){
+    stepper.setAcceleration(850); 
+    for(byte i=0; i<10;i++){
+        driver.mres(5); 
+        delay(5);
+    }
+}
+
+void setSlow(){
+    stepper.setAcceleration(5000); 
+    for(byte i=0; i<10;i++){
+        driver.mres(4); 
+        delay(5);
+    }
 }

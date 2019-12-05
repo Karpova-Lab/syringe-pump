@@ -5,6 +5,7 @@ void bounce(int bounceDistance){
     stepper.run();
   }
   stepper.setCurrentPosition(0);
+  setSlow();
 }
 
 void limitReached(boolean infusing){
@@ -46,14 +47,14 @@ bool determine_direction(){
       }
       else{
         stepper.setCurrentPosition(0);// stop the motor
-        bounce(250);
+        bounce(-250);
         ongoingPosition = 0;
         return 0;
       }
     }
     else{
       stepper.setCurrentPosition(0);// stop the motor
-      bounce(250);
+      bounce(-250);
       ongoingPosition = 0;
       return 1;
     }
