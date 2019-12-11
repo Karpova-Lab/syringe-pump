@@ -1,13 +1,12 @@
 EESchema Schematic File Version 4
-LIBS:syringe_board-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Syringe Board"
-Date "2019-08-15"
-Rev "3.2"
+Date "2019-12-11"
+Rev "3.3"
 Comp "Andy Lustig"
 Comment1 ""
 Comment2 ""
@@ -21,7 +20,8 @@ P 10050 3900
 F 0 "J4" H 10050 4280 59  0000 C CNN
 F 1 "10118194-0001LF" H 10050 4250 50  0001 C CNN
 F 2 "asl_footprints:microUSB_horizontal_socket" H 10100 3500 50  0001 C CNN
-F 3 "" H 10050 3900 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=609-4618-1-nd" H 10050 3900 50  0001 C CNN
+F 4 "Micro USB Socket" H 10050 3900 50  0001 C CNN "Description"
 	1    10050 3900
 	1    0    0    1   
 $EndComp
@@ -33,6 +33,7 @@ F 0 "U2" H 3700 2150 50  0001 C CNN
 F 1 "ROF-78E3.3-0.5SMD-R" H 4100 1700 50  0001 C CNN
 F 2 "asl_footprints:DC_DC_CONVERTER" H 3700 2150 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/ROF-78E3.3-0.5SMD-R/945-1689-1-ND/3593418/?itemSeq=270101613" H 3700 2150 50  0001 C CNN
+F 4 "3.3V Voltage Regulator" H 3700 1900 50  0001 C CNN "Description"
 	1    3700 1900
 	1    0    0    1   
 $EndComp
@@ -43,7 +44,8 @@ P 8400 3900
 F 0 "U3" H 8400 5686 59  0000 C CNN
 F 1 "ATMEGA32U4" H 8400 5581 59  0000 C CNN
 F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 8400 3900 50  0001 C CNN
-F 3 "" H 8400 3900 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=atmega32u4-au-nd" H 8400 3900 50  0001 C CNN
+F 4 "Microcontroller" H 8400 3900 50  0001 C CNN "Description"
 	1    8400 3900
 	-1   0    0    -1  
 $EndComp
@@ -54,7 +56,8 @@ P 2700 2700
 F 0 "J2" H 2371 2704 50  0000 R CNN
 F 1 "0855025008" H 2371 2795 50  0000 R CNN
 F 2 "asl_footprints:RJ45_SMD" V 2700 2725 50  0001 C CNN
-F 3 "~" V 2700 2725 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=wm3547ct-nd" V 2700 2725 50  0001 C CNN
+F 4 "RJ45 Jack" H 2700 2700 50  0001 C CNN "Description"
 	1    2700 2700
 	1    0    0    1   
 $EndComp
@@ -66,6 +69,7 @@ F 0 "J1" H 2170 1950 50  0000 R CNN
 F 1 "PJ-037A" H 2170 1859 50  0000 R CNN
 F 2 "asl_footprints:DC_Jack" H 2450 1860 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/cui-inc/PJ-037A/CP-037A-ND/1644545" H 2450 1860 50  0001 C CNN
+F 4 "DC Jack" H 2400 1900 50  0001 C CNN "Description"
 	1    2400 1900
 	1    0    0    1   
 $EndComp
@@ -131,7 +135,7 @@ P 9350 3800
 F 0 "R6" V 9250 3700 50  0000 C CNN
 F 1 "27Ω" V 9250 3900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 9350 3800 50  0001 C CNN
-F 3 "~" H 9350 3800 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=541-27.0sct" H 9350 3800 50  0001 C CNN
 	1    9350 3800
 	0    1    1    0   
 $EndComp
@@ -142,7 +146,7 @@ P 9350 3900
 F 0 "R7" V 9450 3750 50  0000 L CNN
 F 1 "27Ω" V 9450 4100 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 9350 3900 50  0001 C CNN
-F 3 "~" H 9350 3900 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=541-27.0sct" H 9350 3900 50  0001 C CNN
 	1    9350 3900
 	0    1    1    0   
 $EndComp
@@ -210,7 +214,7 @@ P 7200 5600
 F 0 "R4" V 7100 5500 50  0000 C CNN
 F 1 "10KΩ" V 7100 5700 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 5600 50  0001 C CNN
-F 3 "~" H 7200 5600 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=311-10KGRCT-ND" H 7200 5600 50  0001 C CNN
 	1    7200 5600
 	0    1    1    0   
 $EndComp
@@ -221,7 +225,7 @@ P 7200 5700
 F 0 "R5" V 7100 5600 50  0000 C CNN
 F 1 "10KΩ" V 7100 5800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 5700 50  0001 C CNN
-F 3 "~" H 7200 5700 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=311-10KGRCT-ND" H 7200 5700 50  0001 C CNN
 	1    7200 5700
 	0    1    -1   0   
 $EndComp
@@ -240,9 +244,10 @@ L Device:LED D1
 U 1 1 5CFFDB45
 P 5050 5650
 F 0 "D1" H 5050 5550 50  0000 C CNN
-F 1 "LED" H 5050 5750 50  0000 C CNN
+F 1 "Red" H 5050 5750 50  0000 C CNN
 F 2 "LED_SMD:LED_0603_1608Metric" H 5050 5650 50  0001 C CNN
-F 3 "~" H 5050 5650 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=160-1447-1-ND" H 5050 5650 50  0001 C CNN
+F 4 "Indicator LED" H 5050 5650 50  0001 C CNN "Description"
 	1    5050 5650
 	0    -1   -1   0   
 $EndComp
@@ -253,7 +258,7 @@ P 4750 5800
 F 0 "R3" V 4650 5800 50  0000 C CNN
 F 1 "10KΩ" V 4850 5800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 4750 5800 50  0001 C CNN
-F 3 "~" H 4750 5800 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=311-10KGRCT-ND" H 4750 5800 50  0001 C CNN
 	1    4750 5800
 	0    1    1    0   
 $EndComp
@@ -271,6 +276,7 @@ F 0 "JP2" V 3654 2968 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3745 2968 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3700 2900 50  0001 C CNN
 F 3 "~" H 3700 2900 50  0001 C CNN
+F 4 "1" H 3700 2900 50  0001 C CNN "DNP"
 	1    3700 2900
 	0    1    1    0   
 $EndComp
@@ -282,6 +288,7 @@ F 0 "JP1" V 3654 2468 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3745 2468 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3700 2400 50  0001 C CNN
 F 3 "~" H 3700 2400 50  0001 C CNN
+F 4 "1" H 3700 2400 50  0001 C CNN "DNP"
 	1    3700 2400
 	0    1    1    0   
 $EndComp
@@ -303,6 +310,7 @@ F 0 "X1" H 6250 5865 50  0000 C CNN
 F 1 "feather_wing" H 6250 5774 50  0000 C CNN
 F 2 "asl_footprints:Feather" H 6250 5750 50  0001 C CNN
 F 3 "" H 6450 4300 50  0001 C CNN
+F 4 "1" H 6250 4750 50  0001 C CNN "DNP"
 	1    6250 4750
 	-1   0    0    -1  
 $EndComp
@@ -475,7 +483,7 @@ P 3050 4650
 F 0 "C6" V 2850 4650 50  0000 C CNN
 F 1 "2.2µF" V 2950 4650 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 3050 4650 50  0001 C CNN
-F 3 "~" H 3050 4650 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=399-7886-1-ND" H 3050 4650 50  0001 C CNN
 	1    3050 4650
 	0    1    1    0   
 $EndComp
@@ -486,7 +494,7 @@ P 1950 4100
 F 0 "C5" V 1750 4100 50  0000 C CNN
 F 1 "100nF" V 1850 4100 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1950 4100 50  0001 C CNN
-F 3 "~" H 1950 4100 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1276-1258-1-ND" H 1950 4100 50  0001 C CNN
 	1    1950 4100
 	1    0    0    -1  
 $EndComp
@@ -497,7 +505,7 @@ P 3100 5550
 F 0 "R1" V 3000 5550 50  0000 C CNN
 F 1 "0.3Ω" V 3200 5550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 3100 5550 50  0001 C CNN
-F 3 "~" H 3100 5550 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=p19247ct" H 3100 5550 50  0001 C CNN
 	1    3100 5550
 	0    1    1    0   
 $EndComp
@@ -509,6 +517,7 @@ F 0 "J3" H 4280 5142 50  0000 L CNN
 F 1 "OSTVN08A150" H 4280 5051 50  0000 L CNN
 F 2 "asl_footprints:8pos_screw_terminal" H 4200 5150 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158" H 4200 5150 50  0001 C CNN
+F 4 "8pos Screw Terminal" H 4200 5150 50  0001 C CNN "Description"
 	1    4200 5150
 	1    0    0    -1  
 $EndComp
@@ -535,7 +544,8 @@ P 3100 1850
 F 0 "C7" H 2900 1900 50  0000 L CNN
 F 1 "100uF" H 2800 1800 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 3100 1850 50  0001 C CNN
-F 3 "~" H 3100 1850 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=493-2203-1-ND" H 3100 1850 50  0001 C CNN
+F 4 "Electrolytic Capacitor" H 3100 1850 50  0001 C CNN "Description"
 	1    3100 1850
 	1    0    0    1   
 $EndComp
@@ -550,7 +560,8 @@ P 9400 4400
 F 0 "Y1" V 9200 4500 50  0000 C CNN
 F 1 "8MHz" V 9200 4300 50  0000 C CNN
 F 2 "Crystal:Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm" H 9375 4400 50  0001 C CNN
-F 3 "~" H 9375 4400 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=490-17958-1-ND" H 9375 4400 50  0001 C CNN
+F 4 "Resonator" H 9400 4400 50  0001 C CNN "Description"
 	1    9400 4400
 	0    -1   1    0   
 $EndComp
@@ -565,45 +576,49 @@ RX
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5D009730
-P 5350 2550
-F 0 "H1" H 5450 2596 50  0000 L CNN
-F 1 "MountingHole" H 5450 2505 50  0000 L CNN
-F 2 "asl_footprints:standoff nut" H 5350 2550 50  0001 C CNN
-F 3 "~" H 5350 2550 50  0001 C CNN
-	1    5350 2550
+P 5450 1100
+F 0 "H1" H 5550 1146 50  0000 L CNN
+F 1 "4207" H 5550 1055 50  0000 L CNN
+F 2 "asl_footprints:standoff nut" H 5450 1100 50  0001 C CNN
+F 3 "https://www.adafruit.com/product/4207" H 5450 1100 50  0001 C CNN
+F 4 "Standoff" H 5450 1100 50  0001 C CNN "Description"
+	1    5450 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 5D0097B7
-P 6100 2550
-F 0 "H3" H 6200 2596 50  0000 L CNN
-F 1 "MountingHole" H 6200 2505 50  0000 L CNN
-F 2 "asl_footprints:standoff nut" H 6100 2550 50  0001 C CNN
-F 3 "~" H 6100 2550 50  0001 C CNN
-	1    6100 2550
+P 6200 1100
+F 0 "H3" H 6300 1146 50  0000 L CNN
+F 1 "4207" H 6300 1055 50  0000 L CNN
+F 2 "asl_footprints:standoff nut" H 6200 1100 50  0001 C CNN
+F 3 "https://www.adafruit.com/product/4207" H 6200 1100 50  0001 C CNN
+F 4 "Standoff" H 6200 1100 50  0001 C CNN "Description"
+	1    6200 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5D01488B
-P 5350 2900
-F 0 "H2" H 5450 2946 50  0000 L CNN
-F 1 "MountingHole" H 5450 2855 50  0000 L CNN
-F 2 "asl_footprints:standoff nut" H 5350 2900 50  0001 C CNN
-F 3 "~" H 5350 2900 50  0001 C CNN
-	1    5350 2900
+P 5450 1450
+F 0 "H2" H 5550 1496 50  0000 L CNN
+F 1 "4207" H 5550 1405 50  0000 L CNN
+F 2 "asl_footprints:standoff nut" H 5450 1450 50  0001 C CNN
+F 3 "https://www.adafruit.com/product/4207" H 5450 1450 50  0001 C CNN
+F 4 "Standoff" H 5450 1450 50  0001 C CNN "Description"
+	1    5450 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5D014B39
-P 6100 2900
-F 0 "H4" H 6200 2946 50  0000 L CNN
-F 1 "MountingHole" H 6200 2855 50  0000 L CNN
-F 2 "asl_footprints:standoff nut" H 6100 2900 50  0001 C CNN
-F 3 "~" H 6100 2900 50  0001 C CNN
-	1    6100 2900
+P 6200 1450
+F 0 "H4" H 6300 1496 50  0000 L CNN
+F 1 "4207" H 6300 1405 50  0000 L CNN
+F 2 "asl_footprints:standoff nut" H 6200 1450 50  0001 C CNN
+F 3 "https://www.adafruit.com/product/4207" H 6200 1450 50  0001 C CNN
+F 4 "Standoff" H 6200 1450 50  0001 C CNN "Description"
+	1    6200 1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -649,7 +664,7 @@ P 3450 5400
 F 0 "R2" V 3350 5400 50  0000 C CNN
 F 1 "0.3Ω" V 3550 5400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 3450 5400 50  0001 C CNN
-F 3 "~" H 3450 5400 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=p19247ct" H 3450 5400 50  0001 C CNN
 	1    3450 5400
 	1    0    0    -1  
 $EndComp
@@ -670,7 +685,7 @@ P 1450 4800
 F 0 "C1" V 1250 4800 50  0000 C CNN
 F 1 "22nF" V 1350 4800 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1450 4800 50  0001 C CNN
-F 3 "~" H 1450 4800 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1276-6534-1" H 1450 4800 50  0001 C CNN
 	1    1450 4800
 	1    0    0    -1  
 $EndComp
@@ -681,7 +696,7 @@ P 1750 4650
 F 0 "C4" V 1950 4600 50  0000 L CNN
 F 1 "100nF" V 1850 4550 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1750 4650 50  0001 C CNN
-F 3 "~" H 1750 4650 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1276-1258-1-ND" H 1750 4650 50  0001 C CNN
 	1    1750 4650
 	0    -1   1    0   
 $EndComp
@@ -708,7 +723,7 @@ P 1550 4550
 F 0 "C3" V 1600 4800 50  0000 C CNN
 F 1 "100nF" V 1500 4800 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1550 4550 50  0001 C CNN
-F 3 "~" H 1550 4550 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1276-1258-1-ND" H 1550 4550 50  0001 C CNN
 	1    1550 4550
 	0    -1   -1   0   
 $EndComp
@@ -719,7 +734,7 @@ P 1550 4400
 F 0 "C2" V 1350 4400 50  0000 C CNN
 F 1 "100nF" V 1450 4400 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1550 4400 50  0001 C CNN
-F 3 "~" H 1550 4400 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1276-1258-1-ND" H 1550 4400 50  0001 C CNN
 	1    1550 4400
 	0    1    1    0   
 $EndComp
@@ -786,7 +801,8 @@ P 2450 5050
 F 0 "U1" H 2450 4200 50  0000 C CNN
 F 1 "TMC2208" H 2450 4100 50  0000 C CNN
 F 2 "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm_ThermalVias" H 3700 6950 50  0001 C CNN
-F 3 "" H 2300 4250 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=1460-1184-1-ND" H 2300 4250 50  0001 C CNN
+F 4 "Motor Driver IC" H 2450 5050 50  0001 C CNN "Description"
 	1    2450 5050
 	1    0    0    -1  
 $EndComp
@@ -806,8 +822,33 @@ F 0 "S1" H 9800 2765 50  0000 C CNN
 F 1 "B3FS-1010P" H 9800 2674 50  0000 C CNN
 F 2 "asl_footprints:6mm_tactile_smd" H 9650 2350 50  0001 C CNN
 F 3 "https://www.digikey.com/products/en?keywords=sw1440ct" H 9650 2350 50  0001 C CNN
+F 4 "Tactile switch" H 9800 2450 50  0001 C CNN "Description"
 	1    9800 2450
 	1    0    0    -1  
 $EndComp
 Connection ~ 9500 2500
+$Comp
+L Connector:Conn_01x12_Female J6
+U 1 1 5DC16744
+P 5700 2500
+F 0 "J6" H 5300 3050 50  0000 L CNN
+F 1 "PPTC121LFBN-RC" H 5250 3150 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical" H 5700 2500 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC121LFBN-RC/S6100-ND/807231" H 5700 2500 50  0001 C CNN
+F 4 "12-pin Female Header" H 5700 2500 50  0001 C CNN "Description"
+	1    5700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x16_Female J5
+U 1 1 5DC124A3
+P 6550 2650
+F 0 "J5" H 6200 3350 50  0000 L CNN
+F 1 "PPTC161LFBN-RC" H 6100 3450 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical" H 6550 2650 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC161LFBN-RC/S7014-ND/810154" H 6550 2650 50  0001 C CNN
+F 4 "16-pin Female Header" H 6550 2650 50  0001 C CNN "Description"
+	1    6550 2650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
