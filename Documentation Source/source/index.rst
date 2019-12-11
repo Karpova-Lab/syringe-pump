@@ -1,4 +1,5 @@
 :github_url: https://github.com/Karpova-Lab/syringe-pump
+
 .. Syringe Pump documentation master file, created by
    sphinx-quickstart on Wed Mar  1 17:44:06 2017.
    You can adapt this file completely to your liking, but it should at least
@@ -9,69 +10,31 @@
 ============
 Syringe Pump
 ============
- .. raw:: html
 
-  <style>
-      .embed-container {
-          position: relative;
-          padding-bottom: 56.25%;
-          height: 0;
-          overflow: hidden;
-          max-width: 100%;
-      }
-      .embed-container iframe,
-      .embed-container object,
-      .embed-container embed {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-      }
-  </style>
-  <div class='embed-container'>
-      <iframe src='https://player.vimeo.com/video/306429799?portrait=0' frameborder='0' webkitAllowFullScreen
-          mozallowfullscreen allowFullScreen>
-      </iframe>
-  </div>
+.. image:: renders/vert.gif
 
-.. .. image:: frame_assembly/sidebyside.webp
-..   :align: center
-..   :scale: 100 %
+The goal of this project is to provide an easy to assemble, open-source syringe pump that is significantly less expensive than commercial pumps, while maintaining a sufficient level of dispense resolution and repeatability.
 
-.. image:: frame_assembly/vertical_pumps.jpg
-  :align: center
-  :width: 100 %
-
-Background
-==========
-The expansion of the hobbyist 3D printing market has lowered the cost and increased the availability of CNC components due to demand for DIY kits and replacement parts. 
-By leveraging these low-cost readily available components (stepper motors, lead screws, linear bearings etc.), along with prototyping services (`OSH Park <https://oshpark.com/>`_, `Big Blue Saw <https://www.bigbluesaw.com/>`_  etc.), 
-there is no reason that the functionality of an expensive commercial syringe pump can’t be replicated at 1/10th the cost. 
-Therefore, the goal of this project is to make an easy to assemble, open-source syringe pump that is an order of magnitude less expensive than commercial pumps, while maintaining an adequate level of dispense resolution and repeatability.
-
-
-.. https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump
-
-
-Alternative Open Source Syringe Pumps
---------------------------------------
-I'm not the first to share an open source syringe pump. Here are some examples:
+This is not the only open source syringe pump that exists. Here are some other projects:
 
 - `Poisedon <https://pachterlab.github.io/poseidon/>`_ by the Pachter Lab
+- `Low cost laser cut syringe pump <http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/>`_ by Jakob Voigts
 - `3D Printed Syringe Pump Rack <https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/>`_ by aldricnegrier
 - `DIY Syringe Pump <https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/>`_ 
 - `Open-source syringe pump <http://www.appropedia.org/Open-source_syringe_pump>`_  by Michigan Tech's Open Sustainability Technology Lab
 - `Open source syringe pump <http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html>`_ by Will Patrick
 - `SyriGo <http://www.thingiverse.com/thing:1820146>`_ by Ocram
-- `Low cost laser cut syringe pump <http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/>`_ 
-The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed components. 
-I chose to use lasercut parts because they are more accurate, more precise, stiffer, and more condusive to rapid iteration and/or making large quantities (minutes to lasercut instead of hours to 3d print).
+
+.. The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed components. 
+.. I chose to use lasercut parts because they are more accurate, more precise, stiffer, and more condusive to rapid iteration and/or making large quantities (minutes to lasercut instead of hours to 3d print).
+.. https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump
+
 
 Features
 ========
 - Easy to build
 
+  - ~30 minutes to assemble
   - Assembled with screws and nuts. No glue or thread tapping required
   - Laser cut 1/4" thick acrylic frame
 
@@ -82,16 +45,17 @@ Features
 - Vertically mounted on `DIN rail <https://en.wikipedia.org/wiki/DIN_rail>`_ 
 
   - Air bubbles rise to the top and exit at start of infusion
-  - Easy to mount several pumps side by side
+  - Easy to mount multiple pumps side by side
 
 - 2 limit switches prevent the motor from stalling in either direction
 - Controller board that combines microcontroller, stepper driver, color display, joystick, and motor/power connections
 
   - Reprogrammable over USB for complete customization
   - Modern stepper driver rotates motor very quietly
-  - Send precise "dispense X µL" serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration
+  - Send precise "dispense [X] µL" serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration
   - Can automatically stop experiment when syringe is empty (when infuse limit switch is triggered) 
-- Lower cost than `commercial <http://syringepump.com/NE-1000.php>`_ `alternatives <https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-pump-11-elite-programmable-syringe-pumps.html>`_  
+
+- Lower cost than comparable commerical pumps (`$750 <http://syringepump.com/NE-1000.php>`_ , `$950 <https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump>`_, `$4600 <https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-phd-22-2000-syringe-pumps.html>`_)
 
   - Frame ~ $150
   - Electronics ~ $50
@@ -127,13 +91,68 @@ The theoretical linear travel resolution is **2.5** |mgr|\ m. Using a 60 mL syri
 
 .. raw:: html
 
-  <div style="text-align:center; margin-bottom:24px">
-    <a href="https://github.com/Karpova-Lab/syringe-pump" style="background-color: #2980b9;border: none;color: white;padding: 15px 15px;text-align:center;text-decoration: none;display: inline-block;font-size: 18px;border-radius:15px">All files available on Github</a>
+  <style>
+      .embed-container {
+          position: relative;
+          padding-bottom: 56.25%;
+          height: 0;
+          overflow: hidden;
+          max-width: 100%;
+      }
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+  </style>
+  <div class='embed-container'>
+      <iframe src='https://player.vimeo.com/video/306429799?portrait=0' frameborder='0' webkitAllowFullScreen
+          mozallowfullscreen allowFullScreen>
+      </iframe>
   </div>
+  <br></br>
+
+.. image:: frame_assembly/vertical_pumps.jpg
+  :align: center
+  :width: 100 %
+
+
+Hardware License
+++++++++++++++++
+Janelia Open-Source Hardware (Non-commercial)
+
+By downloading, using and/or viewing these designs, documentation and related data and information, and all content in the foregoing (collectively, the “Designs”), you agree to the following:
+
+You may use, copy, modify, display and distribute the Designs for any non-commercial research or educational purpose.
+
+THE DESIGNS ARE PROTOTYPES AND ARE EXPERIMENTAL IN NATURE AND SHOULD BE USED WITH PRUDENCE AND APPROPRIATE CAUTION, AS NOT ALL OF THE CHARACTERISTICS ARE KNOWN. THE DESIGNS ARE PROVIDED “AS-IS” WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, TITLE, ACCURACY, OR FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES ARISING FROM COURSE OF PERFORMANCE, COURSE OF DEALING, COURSE OF CONDUCT, OR USAGE OF TRADE) OR CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED OR STATUTORY. NO OPINION, ADVICE OR STATEMENT OF THE HOWARD HUGHES MEDICAL INSTITUTE (“HHMI”) OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS, WHETHER MADE WITHIN THE DESIGNS OR OTHERWISE, SHALL CREATE ANY WARRANTY. HHMI MAKES NO WARRANTY THAT THE DESIGNS WILL BE ACCURATE, CURRENT OR RELIABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR CONDITIONS, AND AS A CONSEQUENCE SOME OF THE ABOVE DISCLAIMERS MAY NOT APPLY TO YOU. 
+
+IN NO EVENT SHALL HHMI OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS (THE “HHMI PARTIES”) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES OR LOSSES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, BUSINESS, GOODWILL, DATA, REVENUE, OR PROFITS; REASONABLE ROYALTIES; BUSINESS INTERRUPTION; OR OTHER INTANGIBLE LOSSES) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF, OR INABILITY TO USE, THE DESIGNS, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE DESIGNS OR YOUR INTERACTIONS WITH HHMI, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE OR LOSS, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY. YOU ACKNOWLEDGE THAT THESE LIMITATIONS ARE REASONABLE, THAT THEY ARE AN ESSENTIAL ELEMENT HEREOF, AND THAT ABSENT SUCH LIMITATIONS, HHMI WOULD NOT MAKE THE DESIGNS AVAILABLE TO YOU OR ENTER INTO THESE TERMS AND CONDITIONS. YOU REMAIN RESPONSIBLE FOR ALL LEGAL COMPLIANCE WITH RESPECT TO YOUR USAGE OF THE DESIGNS. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, AND AS A CONSEQUENCE SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU; IN SUCH JURISDICTIONS, THE LIABILITY OF THE HHMI PARTIES SHALL BE LIMITED TO THE FULLEST EXTENT PERMITTED BY LAW.
+
+Any redistribution of the Designs must contain or reference these terms.
+
+Software License
+++++++++++++++++
+Janelia Open-Source Software
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    
+- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+- Neither the name of HHMI nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Sections:
    :hidden:
 
    frame.rst

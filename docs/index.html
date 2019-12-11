@@ -33,6 +33,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/my.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Mechanical" href="frame.html" /> 
@@ -71,19 +72,21 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    <a href="#">Overview</a>
+    
             
             
               
             
             
-              <p class="caption"><span class="caption-text">Sections:</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="frame.html">Mechanical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controller.html">Electrical</a></li>
 </ul>
 
             
           
+  
         </div>
       </div>
     </nav>
@@ -158,57 +161,23 @@
             
   <div class="section" id="syringe-pump">
 <h1>Syringe Pump<a class="headerlink" href="#syringe-pump" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><style>
-    .embed-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-    }
-    .embed-container iframe,
-    .embed-container object,
-    .embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-<div class='embed-container'>
-    <iframe src='https://player.vimeo.com/video/306429799?portrait=0' frameborder='0' webkitAllowFullScreen
-        mozallowfullscreen allowFullScreen>
-    </iframe>
-</div></div></blockquote>
-<a class="reference internal image-reference" href="_images/vertical_pumps.jpg"><img alt="_images/vertical_pumps.jpg" class="align-center" src="_images/vertical_pumps.jpg" style="width: 100%;" /></a>
-<div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>The expansion of the hobbyist 3D printing market has lowered the cost and increased the availability of CNC components due to demand for DIY kits and replacement parts.
-By leveraging these low-cost readily available components (stepper motors, lead screws, linear bearings etc.), along with prototyping services (<a class="reference external" href="https://oshpark.com/">OSH Park</a>, <a class="reference external" href="https://www.bigbluesaw.com/">Big Blue Saw</a>  etc.),
-there is no reason that the functionality of an expensive commercial syringe pump can’t be replicated at 1/10th the cost.
-Therefore, the goal of this project is to make an easy to assemble, open-source syringe pump that is an order of magnitude less expensive than commercial pumps, while maintaining an adequate level of dispense resolution and repeatability.</p>
-<div class="section" id="alternative-open-source-syringe-pumps">
-<h3>Alternative Open Source Syringe Pumps<a class="headerlink" href="#alternative-open-source-syringe-pumps" title="Permalink to this headline">¶</a></h3>
-<p>I’m not the first to share an open source syringe pump. Here are some examples:</p>
+<img alt="_images/vert.gif" src="_images/vert.gif" />
+<p>The goal of this project is to provide an easy to assemble, open-source syringe pump that is significantly less expensive than commercial pumps, while maintaining a sufficient level of dispense resolution and repeatability.</p>
+<p>This is not the only open source syringe pump that exists. Here are some other projects:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://pachterlab.github.io/poseidon/">Poisedon</a> by the Pachter Lab</li>
+<li><a class="reference external" href="http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/">Low cost laser cut syringe pump</a> by Jakob Voigts</li>
 <li><a class="reference external" href="https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/">3D Printed Syringe Pump Rack</a> by aldricnegrier</li>
 <li><a class="reference external" href="https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/">DIY Syringe Pump</a></li>
 <li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech’s Open Sustainability Technology Lab</li>
 <li><a class="reference external" href="http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html">Open source syringe pump</a> by Will Patrick</li>
 <li><a class="reference external" href="http://www.thingiverse.com/thing:1820146">SyriGo</a> by Ocram</li>
-<li><a class="reference external" href="http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/">Low cost laser cut syringe pump</a></li>
 </ul>
-<p>The major difference between my take on the DIY syringe pump, and the ones above, is my abstaining from using 3D printed components.
-I chose to use lasercut parts because they are more accurate, more precise, stiffer, and more condusive to rapid iteration and/or making large quantities (minutes to lasercut instead of hours to 3d print).</p>
-</div>
-</div>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Easy to build<ul>
+<li>~30 minutes to assemble</li>
 <li>Assembled with screws and nuts. No glue or thread tapping required</li>
 <li>Laser cut 1/4” thick acrylic frame<ul>
 <li>Stiff &amp; precise</li>
@@ -220,18 +189,18 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 <li>Infuse and retract capable</li>
 <li>Vertically mounted on <a class="reference external" href="https://en.wikipedia.org/wiki/DIN_rail">DIN rail</a><ul>
 <li>Air bubbles rise to the top and exit at start of infusion</li>
-<li>Easy to mount several pumps side by side</li>
+<li>Easy to mount multiple pumps side by side</li>
 </ul>
 </li>
 <li>2 limit switches prevent the motor from stalling in either direction</li>
 <li>Controller board that combines microcontroller, stepper driver, color display, joystick, and motor/power connections<ul>
 <li>Reprogrammable over USB for complete customization</li>
 <li>Modern stepper driver rotates motor very quietly</li>
-<li>Send precise “dispense X µL” serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration</li>
+<li>Send precise “dispense [X] µL” serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration</li>
 <li>Can automatically stop experiment when syringe is empty (when infuse limit switch is triggered)</li>
 </ul>
 </li>
-<li>Lower cost than <a class="reference external" href="http://syringepump.com/NE-1000.php">commercial</a> <a class="reference external" href="https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-pump-11-elite-programmable-syringe-pumps.html">alternatives</a><ul>
+<li>Lower cost than comparable commerical pumps (<a class="reference external" href="http://syringepump.com/NE-1000.php">$750</a> , <a class="reference external" href="https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump">$950</a>, <a class="reference external" href="https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-phd-22-2000-syringe-pumps.html">$4600</a>)<ul>
 <li>Frame ~ $150</li>
 <li>Electronics ~ $50</li>
 </ul>
@@ -264,9 +233,51 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 </pre></div>
 </div>
 </div></blockquote>
-<div style="text-align:center; margin-bottom:24px">
-  <a href="https://github.com/Karpova-Lab/syringe-pump" style="background-color: #2980b9;border: none;color: white;padding: 15px 15px;text-align:center;text-decoration: none;display: inline-block;font-size: 18px;border-radius:15px">All files available on Github</a>
-</div><div class="toctree-wrapper compound">
+<style>
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class='embed-container'>
+    <iframe src='https://player.vimeo.com/video/306429799?portrait=0' frameborder='0' webkitAllowFullScreen
+        mozallowfullscreen allowFullScreen>
+    </iframe>
+</div>
+<br></br><a class="reference internal image-reference" href="_images/vertical_pumps.jpg"><img alt="_images/vertical_pumps.jpg" class="align-center" src="_images/vertical_pumps.jpg" style="width: 100%;" /></a>
+<div class="section" id="hardware-license">
+<h3>Hardware License<a class="headerlink" href="#hardware-license" title="Permalink to this headline">¶</a></h3>
+<p>Janelia Open-Source Hardware (Non-commercial)</p>
+<p>By downloading, using and/or viewing these designs, documentation and related data and information, and all content in the foregoing (collectively, the “Designs”), you agree to the following:</p>
+<p>You may use, copy, modify, display and distribute the Designs for any non-commercial research or educational purpose.</p>
+<p>THE DESIGNS ARE PROTOTYPES AND ARE EXPERIMENTAL IN NATURE AND SHOULD BE USED WITH PRUDENCE AND APPROPRIATE CAUTION, AS NOT ALL OF THE CHARACTERISTICS ARE KNOWN. THE DESIGNS ARE PROVIDED “AS-IS” WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, TITLE, ACCURACY, OR FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES ARISING FROM COURSE OF PERFORMANCE, COURSE OF DEALING, COURSE OF CONDUCT, OR USAGE OF TRADE) OR CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED OR STATUTORY. NO OPINION, ADVICE OR STATEMENT OF THE HOWARD HUGHES MEDICAL INSTITUTE (“HHMI”) OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS, WHETHER MADE WITHIN THE DESIGNS OR OTHERWISE, SHALL CREATE ANY WARRANTY. HHMI MAKES NO WARRANTY THAT THE DESIGNS WILL BE ACCURATE, CURRENT OR RELIABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR CONDITIONS, AND AS A CONSEQUENCE SOME OF THE ABOVE DISCLAIMERS MAY NOT APPLY TO YOU.</p>
+<p>IN NO EVENT SHALL HHMI OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS (THE “HHMI PARTIES”) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES OR LOSSES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, BUSINESS, GOODWILL, DATA, REVENUE, OR PROFITS; REASONABLE ROYALTIES; BUSINESS INTERRUPTION; OR OTHER INTANGIBLE LOSSES) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF, OR INABILITY TO USE, THE DESIGNS, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE DESIGNS OR YOUR INTERACTIONS WITH HHMI, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE OR LOSS, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY. YOU ACKNOWLEDGE THAT THESE LIMITATIONS ARE REASONABLE, THAT THEY ARE AN ESSENTIAL ELEMENT HEREOF, AND THAT ABSENT SUCH LIMITATIONS, HHMI WOULD NOT MAKE THE DESIGNS AVAILABLE TO YOU OR ENTER INTO THESE TERMS AND CONDITIONS. YOU REMAIN RESPONSIBLE FOR ALL LEGAL COMPLIANCE WITH RESPECT TO YOUR USAGE OF THE DESIGNS. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, AND AS A CONSEQUENCE SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU; IN SUCH JURISDICTIONS, THE LIABILITY OF THE HHMI PARTIES SHALL BE LIMITED TO THE FULLEST EXTENT PERMITTED BY LAW.</p>
+<p>Any redistribution of the Designs must contain or reference these terms.</p>
+</div>
+<div class="section" id="software-license">
+<h3>Software License<a class="headerlink" href="#software-license" title="Permalink to this headline">¶</a></h3>
+<p>Janelia Open-Source Software</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul class="simple">
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the name of HHMI nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>
@@ -289,9 +300,9 @@ I chose to use lasercut parts because they are more accurate, more precise, stif
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Andy Lustig
+        &copy; Copyright 2019, Andy Lustig
       <span class="lastupdated">
-        Last updated on Oct 17, 2019.
+        Last updated on Dec 11, 2019.
       </span>
 
     </p>
