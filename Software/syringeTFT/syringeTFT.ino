@@ -5,8 +5,8 @@
 #include <AccelStepper.h> //http://www.airspayce.com/mikem/arduino/AccelStepper/
 #include <EEPROM.h>
 
-#define VERSION 10
-#define DATE "Updated: 12/05/2019\n"
+#define VERSION 11
+#define DATE "Updated: 01/16/2020\n"
 #define DIRECTION_ADDRESS 0
 #define LIMIT_PIN_ASSIGNMENT_ADDRESS 1
 #define TEN_ML 0.413 // microliters per 1/16th microstep for 10mL syringe
