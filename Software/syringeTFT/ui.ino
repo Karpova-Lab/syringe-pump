@@ -111,6 +111,7 @@ void serialUI(){
             connectedMessage();
         }
         else if (msg == 'R'){
+            stepper.enableOutputs();
             retracting(ST77XX_WHITE);
             retract();
         }
