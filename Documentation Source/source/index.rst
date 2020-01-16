@@ -157,4 +157,4 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
 
    frame.rst
    controller.rst
-..   manual.rst
+   pyControl.rst
