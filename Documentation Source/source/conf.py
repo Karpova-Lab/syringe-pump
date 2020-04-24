@@ -98,6 +98,8 @@ html_last_updated_fmt = '%b %d, %Y'
 html_theme_options = {
     'display_version': False,
     'prev_next_buttons_location': 'both',
+    'collapse_navigation': False,
+    'navigation_depth': 4,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

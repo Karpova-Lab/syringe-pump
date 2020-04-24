@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,7 +36,8 @@
   <link rel="stylesheet" href="_static/my.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Electrical" href="controller.html" /> 
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Frame" href="frame.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,11 +81,37 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="frame.html">Mechanical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Electrical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Motor Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controller.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#assembly">Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#instructions">Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-base">1. Assemble base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-end-support">2. Assemble end support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-plunger-carriage">3. Assemble plunger carriage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-syringe-cradle">4. Assemble syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#mount-motor-to-syringe-cradle">5. Mount motor to syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#combine-sub-assemblies">6. Combine sub assemblies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#install-leadscrew-and-connect-motor-controller">7. Install leadscrew, and connect Motor controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Manual</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pycontrol-operation">pyControl Operation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#manual-operation">Manual operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#hardware-license">Hardware License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#software-license">Software License</a></li>
 </ul>
 </li>
 </ul>
@@ -143,7 +170,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repo</a>
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repository</a>
             
           
         
@@ -154,8 +181,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="controller.html" class="btn btn-neutral float-left" title="Electrical" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="frame.html" class="btn btn-neutral float-left" title="Frame" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -168,35 +197,47 @@
 <h1>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pycontrol-operation">
 <h2>pyControl Operation<a class="headerlink" href="#pycontrol-operation" title="Permalink to this headline">¶</a></h2>
-<p>The syringe board can be used as pyControl device. It’s pinout is compatible with pyControl <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#behaviour-ports">behavior ports</a>. The pump must be plugged into a port that has a serial UART. On <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a>,  this can be ports 1, 3 or 4. On <a class="reference external" href="https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#">D-series Breakout Board 1.4</a>, this can be ports 8, 10, 11 or 12.</p>
+<p>The syringe board can be used as pyControl device.
+It’s pinout is compatible with pyControl <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#behaviour-ports">behavior ports</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pump must be plugged into a port that has a serial UART.</p>
+<ul class="simple">
+<li><p>For <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a>, this can be ports 1, 3 or 4.</p></li>
+<li><p>For <a class="reference external" href="https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#">D-series Breakout Board 1.4</a>, this can be ports 8, 10, 11 or 12.</p></li>
+</ul>
+</div>
 <p>The following example assumes that the syringe pump is plugged into port 3 of <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a>:</p>
 <ol class="arabic simple">
-<li>Download  <a class="reference download internal" download="" href="_downloads/f6b8b9967f205d7673dc7745fd2a1317/_syringepump.py"><code class="xref download docutils literal notranslate"><span class="pre">_syringepump.py</span></code></a> and place it in your “devices” directory.</li>
-<li>Download <a class="reference download internal" download="" href="_downloads/17a1e022e580a585649f78faa3f6ed3b/pump_example_task.py"><code class="xref download docutils literal notranslate"><span class="pre">pump_example_task.py</span></code></a> and place it you “tasks” directory.</li>
-<li>Open up pyControl GUI</li>
-<li>Connect to your board</li>
-<li>Click the “Config” button and then click “Load framework”. This will ensure the _syringepump.py device is on the microcontroller.</li>
-<li>From the Task dropdown select the “pump_example_task”</li>
-<li>Click “Upload”</li>
-<li>Click “Start”</li>
-<li>Pressing the user button on the <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a> will tell the syring pump to infuse 0.25 mL.</li>
-<li>Click “Variables” and adjust the pump volume to 2500. Press the user button and see the difference. You can also try giving it a negative number, causing the motor to spin in the opposite direction.</li>
+<li><p>Download  <a class="reference download internal" download="" href="_downloads/39918e0eb69aad108b99556de4cb769b/_syringepump.py"><code class="xref download docutils literal notranslate"><span class="pre">_syringepump.py</span></code></a> and place it in your “devices” directory.</p></li>
+<li><p>Download <a class="reference download internal" download="" href="_downloads/64ed5dea552261dd32c0e7baa21d0b92/pump_example_task.py"><code class="xref download docutils literal notranslate"><span class="pre">pump_example_task.py</span></code></a> and place it you “tasks” directory.</p></li>
+<li><p>Open up pyControl GUI</p></li>
+<li><p>Connect to your board</p></li>
+<li><p>Click the “Config” button and then click “Load framework”. This will ensure the _syringepump.py device is on the microcontroller.</p></li>
+<li><p>From the Task dropdown select the “pump_example_task”</p></li>
+<li><p>Click “Upload”</p></li>
+<li><p>Click “Start”</p></li>
+<li><p>Pressing the user button on the <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a> will tell the syring pump to infuse 0.25 mL.</p></li>
+<li><p>Click “Variables” and adjust the pump volume to 2500. Press the user button and see the difference. You can also try giving it a negative number, causing the motor to spin in the opposite direction.</p></li>
 </ol>
-</div>
+<br></div>
 <div class="section" id="manual-operation">
 <h2>Manual operation<a class="headerlink" href="#manual-operation" title="Permalink to this headline">¶</a></h2>
 <p>The color display includes 7 inputs: a joystick on the left (4 directions + 1 center button) and 2 additional buttons on the right (A and B). Some of these inputs can be used to manually control the syringe pump.</p>
-<dl class="docutils">
-<dt>“A” button</dt>
-<dd>Resets the displayed volume to 0.00 mL</dd>
-<dt>“B” button</dt>
-<dd>Retracts the pump until it reaches the retract limit switch.</dd>
-<dt>Joystick North</dt>
-<dd>Rotates the motor in the infuse direction.</dd>
-<dt>Joystick South</dt>
-<dd>Rotates the motor in the retract direction.</dd>
-<dt>Joystick center button</dt>
-<dd>Press and hold down the button until “…” appears, indicating the pump has entered “homing” mode. It will continuosly rotate the motor until one of the limit switches is pressed. Two options will then appear asking whether the triggered limit switch was the infuse limit switch or the retract limit switch. Answer by pressing the “A” or “B” button. The pump now knows which motor rotation (clockwise or counterclockwise) corresponds to infuse and retract.</dd>
+<dl class="simple">
+<dt>“A” button</dt><dd><p>Resets the displayed volume to 0.00 mL</p>
+</dd>
+<dt>“B” button</dt><dd><p>Retracts the pump until it reaches the retract limit switch.</p>
+</dd>
+<dt>Joystick North</dt><dd><p>Rotates the motor in the infuse direction.</p>
+</dd>
+<dt>Joystick South</dt><dd><p>Rotates the motor in the retract direction.</p>
+</dd>
+<dt>Joystick center button</dt><dd><p>Press and hold down the button until “…” appears, indicating the pump has entered “homing” mode.
+It will continuosly rotate the motor until one of the limit switches is triggerd by the moving carriage.
+Two options will then appear asking whether the triggered limit switch was the infuse limit switch or the retract limit switch.
+Answer by pressing the “A” or “B” button. The pump now knows which motor rotation (clockwise or counterclockwise) corresponds to infuse and retract.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -209,8 +250,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="controller.html" class="btn btn-neutral float-left" title="Electrical" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="frame.html" class="btn btn-neutral float-left" title="Frame" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -221,7 +264,7 @@
     <p>
         &copy; Copyright 2020, Andy Lustig
       <span class="lastupdated">
-        Last updated on Jan 16, 2020.
+        Last updated on Apr 23, 2020.
       </span>
 
     </p>

@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/my.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mechanical" href="frame.html" /> 
+    <link rel="next" title="Motor Controller" href="controller.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -80,9 +80,39 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="frame.html">Mechanical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Electrical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyControl.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Motor Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controller.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#assembly">Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#instructions">Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-base">1. Assemble base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-end-support">2. Assemble end support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-plunger-carriage">3. Assemble plunger carriage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-syringe-cradle">4. Assemble syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#mount-motor-to-syringe-cradle">5. Mount motor to syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#combine-sub-assemblies">6. Combine sub-assemblies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#install-leadscrew-and-connect-motor-controller">7. Install leadscrew, and connect Motor controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Using</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#pycontrol-operation">pyControl Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manual-operation">Manual Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#hardware-license">Hardware License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#software-license">Software License</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -139,7 +169,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repo</a>
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repository</a>
             
           
         
@@ -150,7 +180,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="frame.html" class="btn btn-neutral float-right" title="Mechanical" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="controller.html" class="btn btn-neutral float-right" title="Motor Controller" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
   </div>
@@ -162,123 +192,70 @@
             
   <div class="section" id="syringe-pump">
 <h1>Syringe Pump<a class="headerlink" href="#syringe-pump" title="Permalink to this headline">¶</a></h1>
-<img alt="_images/vert.gif" src="_images/vert.gif" />
-<p>The goal of this project is to provide an easy to assemble, open-source syringe pump that is significantly less expensive than commercial pumps, while maintaining a sufficient level of dispense resolution and repeatability.</p>
-<p>This is not the only open source syringe pump that exists. Here are some other projects:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://pachterlab.github.io/poseidon/">Poisedon</a> by the Pachter Lab</li>
-<li><a class="reference external" href="http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/">Low cost laser cut syringe pump</a> by Jakob Voigts</li>
-<li><a class="reference external" href="https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/">3D Printed Syringe Pump Rack</a> by aldricnegrier</li>
-<li><a class="reference external" href="https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/">DIY Syringe Pump</a></li>
-<li><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech’s Open Sustainability Technology Lab</li>
-<li><a class="reference external" href="http://fab.cba.mit.edu/classes/863.13/people/wildebeest/projects/final/index.html">Open source syringe pump</a> by Will Patrick</li>
-<li><a class="reference external" href="http://www.thingiverse.com/thing:1820146">SyriGo</a> by Ocram</li>
-</ul>
+<a class="reference internal image-reference" href="_images/vertical.gif"><img alt="_images/vertical.gif" src="_images/vertical.gif" style="width: 35%;" /></a>
+<a class="reference internal image-reference" href="_images/vertical_pumps.jpg"><img alt="_images/vertical_pumps.jpg" src="_images/vertical_pumps.jpg" style="width: 60%;" /></a>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Easy to build<ul>
-<li>~30 minutes to assemble</li>
-<li>Assembled with screws and nuts. No glue or thread tapping required</li>
-<li>Laser cut 1/4” thick acrylic frame<ul>
-<li>Stiff &amp; precise</li>
-<li>No need for finishing/removing support material as with a 3D printed part</li>
+<li><p>Infuse and retract capable syringe pump</p></li>
+<li><p>Frame is made of lasercut parts and standard hardware</p></li>
+<li><p>Small footprint (330 mm x 140 mm x 100 mm). Can be mounted vertically or set on surface</p></li>
+<li><p>Cost ~ $200</p></li>
+<li><p>Assembly time ~30 minutes</p></li>
+<li><p>Linear resolution = 2.5 μm. Volume resolution with 60mL syringe is 1.4 μL</p></li>
+<li><p>Can receive commands over UART using <a class="reference external" href="https://pycontrol.readthedocs.io/en/latest/">pyControl</a></p></li>
+<li><p>Motor controller includes color display and joystick/buttons for manual control</p></li>
 </ul>
-</li>
-</ul>
-</li>
-<li>Infuse and retract capable</li>
-<li>Vertically mounted on <a class="reference external" href="https://en.wikipedia.org/wiki/DIN_rail">DIN rail</a><ul>
-<li>Air bubbles rise to the top and exit at start of infusion</li>
-<li>Easy to mount multiple pumps side by side</li>
-</ul>
-</li>
-<li>2 limit switches prevent the motor from stalling in either direction</li>
-<li>Controller board that combines microcontroller, stepper driver, color display, joystick, and motor/power connections<ul>
-<li>Reprogrammable over USB for complete customization</li>
-<li>Modern stepper driver rotates motor very quietly</li>
-<li>Send precise “dispense [X] µL” serial commands to dispense volume or set an infuse rate and provide an high TTL signal for desired duration</li>
-<li>Can automatically stop experiment when syringe is empty (when infuse limit switch is triggered)</li>
-</ul>
-</li>
-<li>Lower cost than comparable commerical pumps (<a class="reference external" href="http://syringepump.com/NE-1000.php">$750</a> , <a class="reference external" href="https://www.wpiinc.com/var-2300-aladdin-single-syringe-pump">$950</a>, <a class="reference external" href="https://www.harvardapparatus.com/pumps-liquid-handling/syringe-pumps/infuse-withdraw/standard-infuse-withdraw-phd-22-2000-syringe-pumps.html">$4600</a>)<ul>
-<li>Frame ~ $150</li>
-<li>Electronics ~ $50</li>
-</ul>
-</li>
-</ul>
-<p>The theoretical linear travel resolution is <strong>2.5</strong> μm. Using a 60 mL syringe, this works out to be a volume dispense resolution of <strong>1.4</strong> μL. The calculation is shown below, using Python. You can adjust the numbers and see new results <a class="reference external" href="https://repl.it/&#64;alustig3/SyringeResCalc">here</a>.</p>
-<blockquote>
-<div><div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
-
-<span class="c1">#Syringe</span>
-<span class="n">innerDiameter</span> <span class="o">=</span> <span class="mf">26.7</span> <span class="c1">#mm</span>
-<span class="n">syringeArea</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">innerDiameter</span><span class="o">/</span><span class="mf">10.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">4.0</span> <span class="c1">#cm^2</span>
-
-<span class="c1">#Lead screw</span>
-<span class="n">pitch</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#mm</span>
-<span class="n">numStarts</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">lead</span> <span class="o">=</span> <span class="n">numStarts</span><span class="o">*</span><span class="n">pitch</span><span class="o">/</span><span class="mf">10.0</span> <span class="c1">#cm</span>
-
-<span class="c1">#Stepper Driver</span>
-<span class="n">microSteps</span> <span class="o">=</span> <span class="mi">16</span>
-
-<span class="c1">#Motor</span>
-<span class="n">numSteps</span> <span class="o">=</span> <span class="mi">200</span>
-
-<span class="c1">#Result</span>
-<span class="n">linearResolution</span> <span class="o">=</span> <span class="n">lead</span><span class="o">/</span><span class="p">(</span><span class="n">numSteps</span><span class="o">*</span><span class="n">microSteps</span><span class="p">)</span> <span class="c1">#cm</span>
-<span class="n">volumeResolution</span> <span class="o">=</span> <span class="n">linearResolution</span><span class="o">*</span><span class="n">syringeArea</span> <span class="c1">#cm^3 or mL</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="si">{:0.1f}</span><span class="s2"> </span><span class="se">\u03bc</span><span class="s2">m linear resolution&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linearResolution</span><span class="o">*</span><span class="mi">10000</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="si">{:0.1f}</span><span class="s2"> </span><span class="se">\u03bc</span><span class="s2">L volumetric resolution&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">volumeResolution</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
-</pre></div>
 </div>
-</div></blockquote>
-<style>
-    .embed-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-    }
-    .embed-container iframe,
-    .embed-container object,
-    .embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-<div class='embed-container'>
-    <iframe src='https://player.vimeo.com/video/306429799?portrait=0' frameborder='0' webkitAllowFullScreen
-        mozallowfullscreen allowFullScreen>
-    </iframe>
-</div>
-<br></br><a class="reference internal image-reference" href="_images/vertical_pumps.jpg"><img alt="_images/vertical_pumps.jpg" class="align-center" src="_images/vertical_pumps.jpg" style="width: 100%;" /></a>
-<div class="section" id="hardware-license">
-<h3>Hardware License<a class="headerlink" href="#hardware-license" title="Permalink to this headline">¶</a></h3>
-<p>Janelia Open-Source Hardware (Non-commercial)</p>
-<p>By downloading, using and/or viewing these designs, documentation and related data and information, and all content in the foregoing (collectively, the “Designs”), you agree to the following:</p>
-<p>You may use, copy, modify, display and distribute the Designs for any purpose, excluding any diagnostic, clinical, therapeutic or other medical use.</p>
-<p>THE DESIGNS ARE PROTOTYPES AND ARE EXPERIMENTAL IN NATURE AND SHOULD BE USED WITH PRUDENCE AND APPROPRIATE CAUTION, AS NOT ALL OF THE CHARACTERISTICS ARE KNOWN. THE DESIGNS ARE PROVIDED “AS-IS” WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, TITLE, ACCURACY, OR FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES ARISING FROM COURSE OF PERFORMANCE, COURSE OF DEALING, COURSE OF CONDUCT, OR USAGE OF TRADE) OR CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED OR STATUTORY. NO OPINION, ADVICE OR STATEMENT OF THE HOWARD HUGHES MEDICAL INSTITUTE (“HHMI”) OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS, WHETHER MADE WITHIN THE DESIGNS OR OTHERWISE, SHALL CREATE ANY WARRANTY. HHMI MAKES NO WARRANTY THAT THE DESIGNS WILL BE ACCURATE, CURRENT OR RELIABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR CONDITIONS, AND AS A CONSEQUENCE SOME OF THE ABOVE DISCLAIMERS MAY NOT APPLY TO YOU.</p>
-<p>HHMI and its trustees, officers, employees, and agents (collectively, the “HHMI Indemnitees”), will be indemnified, defended by counsel acceptable to HHMI, and held harmless by you from and against any claim, liability, cost, expense, damage, deficiency, loss, or obligation, of any kind or nature (including, without limitation, reasonable attorneys’ fees and other costs and expenses of defense) (collectively, “Claims”), based upon, arising out of, or otherwise relating to this agreement, including without limitation any cause of action relating to product liability. The previous sentence will not apply to any Claim that is determined with finality by a court of competent jurisdiction to result solely from the gross negligence or willful misconduct of an HHMI Indemnitee. Notwithstanding any other provision of this agreement, your obligation to defend, indemnify and hold harmless the HHMI Indemnitees under this paragraph will not be subject to any limitation or exclusion of liability or damages or otherwise limited in any way.  This provision shall survive any termination or expiration of this agreement.</p>
-<p>Any redistribution of the Designs must contain or reference these terms.</p>
-</div>
-<div class="section" id="software-license">
-<h3>Software License<a class="headerlink" href="#software-license" title="Permalink to this headline">¶</a></h3>
-<p>Janelia Open-Source Software</p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ul class="simple">
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-<li>Neither the name of HHMI nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this project is to provide an easy to assemble, open-source syringe pump that is significantly less expensive than commercial pumps, while maintaining a sufficient level of dispense resolution and repeatability.</p>
+<p style="margin-bottom:0px;">This is not the only open-source syringe pump that exists. Here are some other projects you may be interested in:</p><ul class="simple">
+<li><p><a class="reference external" href="https://pachterlab.github.io/poseidon/">Poisedon</a> by the Pachter Lab</p></li>
+<li><p><a class="reference external" href="http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/">Low cost laser cut syringe pump</a> by Jakob Voigts</p></li>
+<li><p><a class="reference external" href="http://www.appropedia.org/Open-source_syringe_pump">Open-source syringe pump</a>  by Michigan Tech’s Open Sustainability Technology Lab</p></li>
+<li><p><a class="reference external" href="https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/">3D Printed Syringe Pump Rack</a> by aldricnegrier</p></li>
+<li><p><a class="reference external" href="https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/">DIY Syringe Pump</a>  by Naroom</p></li>
 </ul>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+<div class="section" id="documentation-outline">
+<h2>Documentation Outline<a class="headerlink" href="#documentation-outline" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-</div>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Motor Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controller.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#assembly">Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#instructions">Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-base">1. Assemble base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-end-support">2. Assemble end support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-plunger-carriage">3. Assemble plunger carriage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-syringe-cradle">4. Assemble syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#mount-motor-to-syringe-cradle">5. Mount motor to syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#combine-sub-assemblies">6. Combine sub-assemblies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#install-leadscrew-and-connect-motor-controller">7. Install leadscrew, and connect Motor controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Using</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#pycontrol-operation">pyControl Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manual-operation">Manual Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#hardware-license">Hardware License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#software-license">Software License</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -291,7 +268,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="frame.html" class="btn btn-neutral float-right" title="Mechanical" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="controller.html" class="btn btn-neutral float-right" title="Motor Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -303,7 +280,7 @@
     <p>
         &copy; Copyright 2020, Andy Lustig
       <span class="lastupdated">
-        Last updated on Jan 16, 2020.
+        Last updated on Apr 24, 2020.
       </span>
 
     </p>

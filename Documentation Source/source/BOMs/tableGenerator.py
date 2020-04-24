@@ -49,7 +49,7 @@ def printContents(table,colWidths,isHeader=False):
     return contentString,blankCols
 
 
-table = pd.read_excel(xlsFile,usecols=[0,1,2,3,4],dtype='str')#read in table from excel file
+table = pd.read_excel(xlsFile,usecols=[0,1,2,3],dtype='str')#read in table from excel file
 table.fillna("",inplace=True)
 widths = getColWidths(table) # get the maximum content width of each column
 

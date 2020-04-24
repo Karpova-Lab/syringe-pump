@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Electrical &mdash; Syringe Pump 1.0.0 documentation</title>
+  <title>Motor Controller &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
   
@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/my.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="User Manual" href="pyControl.html" />
-    <link rel="prev" title="Mechanical" href="frame.html" /> 
+    <link rel="next" title="Frame" href="frame.html" />
+    <link rel="prev" title="Syringe Pump" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,16 +81,39 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="frame.html">Mechanical</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Electrical</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#purchasing-electronic-modules">Purchasing Electronic Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-custom-circuit-board-assembly">Building Custom Circuit Board Assembly</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Motor Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame.html#assembly">Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame.html#instructions">Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-base">1. Assemble base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-end-support">2. Assemble end support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-plunger-carriage">3. Assemble plunger carriage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#assemble-syringe-cradle">4. Assemble syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#mount-motor-to-syringe-cradle">5. Mount motor to syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#combine-sub-assemblies">6. Combine sub-assemblies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="frame.html#install-leadscrew-and-connect-motor-controller">7. Install leadscrew, and connect Motor controller</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pyControl.html">User Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Using</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#pycontrol-operation">pyControl Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manual-operation">Manual Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#hardware-license">Hardware License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#software-license">Software License</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -139,7 +162,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Electrical</li>
+      <li>Motor Controller</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -147,7 +170,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repo</a>
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repository</a>
             
           
         
@@ -158,10 +181,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="pyControl.html" class="btn btn-neutral float-right" title="User Manual" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="frame.html" class="btn btn-neutral float-right" title="Frame" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frame.html" class="btn btn-neutral float-left" title="Mechanical" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Syringe Pump" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -170,143 +193,128 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="electrical">
-<h1>Electrical<a class="headerlink" href="#electrical" title="Permalink to this headline">¶</a></h1>
-<p>In order to control the movement of the pump you need two basic elements: a <strong>stepper motor driver</strong> and a <strong>microcontroller</strong>.</p>
-<p>A <strong>stepper motor driver</strong> takes care of delivering the proper sequence of signals to rotate the stepper motor smoothly and accurately.
-A <strong>microcontroller</strong> talks to the stepper motor driver, telling it when to rotate the motor, how fast, and in which direction.</p>
-<div class="section" id="purchasing-electronic-modules">
-<h2>Purchasing Electronic Modules<a class="headerlink" href="#purchasing-electronic-modules" title="Permalink to this headline">¶</a></h2>
-<p>There are many options for combining these two elements in order to control your syringe pump. Here are some possibilities from Sparkfun and Adafruit:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide">Arduino Uno and Easy Driver</a></li>
-<li><a class="reference external" href="https://learn.sparkfun.com/tutorials/big-easy-driver-hookup-guide">Arduino Uno and Big Easy Driver</a></li>
-<li><a class="reference external" href="https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/using-stepper-motors">Arduino Uno with Stepper Motor Shield</a></li>
-<li><a class="reference external" href="https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/overview">Adafruit Feather and Motor Driver FeatherWing</a></li>
-</ul>
+  <div class="section" id="motor-controller">
+<h1>Motor Controller<a class="headerlink" href="#motor-controller" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/pcb_with_display.jpg"><img alt="_images/pcb_with_display.jpg" src="_images/pcb_with_display.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">PCB with display</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="building-custom-circuit-board-assembly">
-<h2>Building Custom Circuit Board Assembly<a class="headerlink" href="#building-custom-circuit-board-assembly" title="Permalink to this headline">¶</a></h2>
-<p>An alternative to purchasing and combining the modules above, is to build the following custom circuit board.
-The custom “Syringe Board” circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board.
-It uses the same chips and is functionally equivalent to an <a class="reference external" href="https://www.adafruit.com/product/2771">Adafruit Feather 32u4</a> microcontroller and a <a class="reference external" href="https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626">TMC2208 SilentStepStick</a> stepper driver.
-Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the <a class="reference external" href="https://www.adafruit.com/product/3321">Mini Color TFT with Joystick</a> or <a class="reference external" href="https://www.adafruit.com/product/2900">Featherwing OLED</a>, or add wireless control with a <a class="reference external" href="https://www.adafruit.com/product/3229">Radio FeatherWing</a>.</p>
 <div class="section" id="bill-of-materials">
-<h3>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
 <colgroup>
-<col width="3%" />
-<col width="9%" />
-<col width="14%" />
-<col width="74%" />
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 14%" />
+<col style="width: 74%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Qty</th>
-<th class="head">Reference</th>
-<th class="head">Description</th>
-<th class="head">Value/MPN</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Qty</p></th>
+<th class="head"><p>Reference</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Value/MPN</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td>C1</td>
-<td>0603 Capacitor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=1276-6534-1">22nF</a></td>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>C1</p></td>
+<td><p>0603 Capacitor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=1276-6534-1">22nF</a></p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>C5, C4, C3, C2</td>
-<td>0603 Capacitor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=1276-1258-1-ND">100nF</a></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>C5, C4, C3, C2</p></td>
+<td><p>0603 Capacitor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=1276-1258-1-ND">100nF</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>C6</td>
-<td>0603 Capacitor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=399-7886-1-ND">2.2µF</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>C6</p></td>
+<td><p>0603 Capacitor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=399-7886-1-ND">2.2µF</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>C7</td>
-<td>Electrolytic Capacitor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=493-2203-1-ND">100uF</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>C7</p></td>
+<td><p>Electrolytic Capacitor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=493-2203-1-ND">100uF</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>D1</td>
-<td>Indicator LED</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=160-1447-1-ND">Red</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>D1</p></td>
+<td><p>Indicator LED</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=160-1447-1-ND">Red</a></p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>H1, H3, H2, H4</td>
-<td>Standoff</td>
-<td><a class="reference external" href="https://www.adafruit.com/product/4207">4207</a></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>H1, H3, H2, H4</p></td>
+<td><p>Standoff</p></td>
+<td><p><a class="reference external" href="https://www.adafruit.com/product/4207">4207</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>J1</td>
-<td>DC Jack</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/cui-inc/PJ-037A/CP-037A-ND/1644545">PJ-037A</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>J1</p></td>
+<td><p>DC Jack</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/product-detail/en/cui-inc/PJ-037A/CP-037A-ND/1644545">PJ-037A</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>J2</td>
-<td>RJ45 Jack</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=wm3547ct-nd">0855025008</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>J2</p></td>
+<td><p>RJ45 Jack</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=wm3547ct-nd">0855025008</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>J3</td>
-<td>8pos Screw Terminal</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158">OSTVN08A150</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>J3</p></td>
+<td><p>8pos Screw Terminal</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/product-detail/en/OSTVN08A150/ED10566-ND/1588868/?itemSeq=270117158">OSTVN08A150</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>J4</td>
-<td>Micro USB Socket</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=609-4618-1-nd">10118194-0001LF</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>J4</p></td>
+<td><p>Micro USB Socket</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=609-4618-1-nd">10118194-0001LF</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>J5</td>
-<td>16-pin Female Header</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC161LFBN-RC/S7014-ND/810154">PPTC161LFBN-RC</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>J5</p></td>
+<td><p>16-pin Female Header</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC161LFBN-RC/S7014-ND/810154">PPTC161LFBN-RC</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>J6</td>
-<td>12-pin Female Header</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC121LFBN-RC/S6100-ND/807231">PPTC121LFBN-RC</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>J6</p></td>
+<td><p>12-pin Female Header</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/product-detail/en/sullins-connector-solutions/PPTC121LFBN-RC/S6100-ND/807231">PPTC121LFBN-RC</a></p></td>
 </tr>
-<tr class="row-even"><td>2</td>
-<td>R1, R2</td>
-<td>0805 Resistor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=p19247ct">0.3Ω</a></td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>R1, R2</p></td>
+<td><p>0805 Resistor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=p19247ct">0.3Ω</a></p></td>
 </tr>
-<tr class="row-odd"><td>3</td>
-<td>R4, R5, R3</td>
-<td>0603 Resistor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=311-10KGRCT-ND">10KΩ</a></td>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>R4, R5, R3</p></td>
+<td><p>0603 Resistor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=311-10KGRCT-ND">10KΩ</a></p></td>
 </tr>
-<tr class="row-even"><td>2</td>
-<td>R6, R7</td>
-<td>0603 Resistor</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=541-27.0sct">27Ω</a></td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>R6, R7</p></td>
+<td><p>0603 Resistor</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=541-27.0sct">27Ω</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>S1</td>
-<td>Tactile switch</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=sw1440ct">B3FS-1010P</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>S1</p></td>
+<td><p>Tactile switch</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=sw1440ct">B3FS-1010P</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>U1</td>
-<td>Motor Driver IC</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=1460-1184-1-ND">TMC2208</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>U1</p></td>
+<td><p>Motor Driver IC</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=1460-1184-1-ND">TMC2208</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>U2</td>
-<td>3.3V Voltage Regulator</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/ROF-78E3.3-0.5SMD-R/945-1689-1-ND/3593418/?itemSeq=270101613">ROF-78E3.3-0.5SMD-R</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>U2</p></td>
+<td><p>3.3V Voltage Regulator</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/product-detail/en/ROF-78E3.3-0.5SMD-R/945-1689-1-ND/3593418/?itemSeq=270101613">ROF-78E3.3-0.5SMD-R</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>U3</td>
-<td>Microcontroller</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=atmega32u4-au-nd">ATMEGA32U4</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>U3</p></td>
+<td><p>Microcontroller</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=atmega32u4-au-nd">ATMEGA32U4</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>Y1</td>
-<td>Resonator</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=490-17958-1-ND">8MHz</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Y1</p></td>
+<td><p>Resonator</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=490-17958-1-ND">8MHz</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -320,15 +328,8 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
   display: inline-block;
   font-size: 18px;
   border-radius:15px">View interactive BOM</a>
-</div><div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="_images/render.jpg"><img alt="_images/render.jpg" src="_images/render.jpg" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">PCB render</span></p>
-</div>
-<div class="figure align-center" id="id7">
-<a class="reference internal image-reference" href="_images/pcb_with_display.jpg"><img alt="_images/pcb_with_display.jpg" src="_images/pcb_with_display.jpg" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">PCB with display</span></p>
-</div>
-</div>
+</div><a class="reference external image-reference" href="_static/schematic.pdf"><img alt="_images/schematic.png" class="align-center" src="_images/schematic.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="_images/render.png"><img alt="_images/render.png" class="align-center" src="_images/render.png" style="width: 80%;" /></a>
 </div>
 </div>
 
@@ -340,10 +341,10 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyControl.html" class="btn btn-neutral float-right" title="User Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="frame.html" class="btn btn-neutral float-right" title="Frame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="frame.html" class="btn btn-neutral float-left" title="Mechanical" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Syringe Pump" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -354,7 +355,7 @@ Additonally, it includes headers that allow you to attach FeatherWings. This pro
     <p>
         &copy; Copyright 2020, Andy Lustig
       <span class="lastupdated">
-        Last updated on Jan 16, 2020.
+        Last updated on Apr 24, 2020.
       </span>
 
     </p>

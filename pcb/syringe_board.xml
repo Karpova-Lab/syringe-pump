@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.sch</source>
-    <date>Tuesday, December 10, 2019 at 05:18:03 PM</date>
+    <date>Friday, January 03, 2020 at 03:02:11 PM</date>
     <tool>Eeschema (5.1.5-0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Syringe Board</title>
         <company>Andy Lustig</company>
         <rev>3.3</rev>
-        <date>2019-11-04</date>
+        <date>2019-12-11</date>
         <source>syringe_board.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -488,6 +488,7 @@
       </fields>
     </libpart>
     <libpart lib="asl_symbols" part="ATMEGA32U4">
+      <docs>https://www.digikey.com/products/en?keywords=atmega32u4-au-nd</docs>
       <fields>
         <field name="Reference">U</field>
         <field name="Value">ATMEGA32U4</field>
@@ -570,6 +571,12 @@
       </pins>
     </libpart>
     <libpart lib="asl_symbols" part="RJ45">
+      <aliases>
+        <alias>RJ45_HRZ_SMD</alias>
+        <alias>RJ45_HRZ_PTH</alias>
+        <alias>RJ45_VRT_SMD</alias>
+        <alias>RJ45_VRT_PTH</alias>
+      </aliases>
       <description>RJ connector, 8P8C (8 positions 8 connected)</description>
       <docs>~</docs>
       <fields>
@@ -629,6 +636,7 @@
       </pins>
     </libpart>
     <libpart lib="asl_symbols" part="TMC2208">
+      <docs>https://www.digikey.com/products/en?keywords=1460-1184-1-ND</docs>
       <fields>
         <field name="Reference">U</field>
         <field name="Value">TMC2208</field>

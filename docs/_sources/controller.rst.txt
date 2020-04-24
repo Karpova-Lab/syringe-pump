@@ -1,33 +1,14 @@
 :github_url: https://github.com/Karpova-Lab/syringe-pump
 
-==========
-Electrical
-==========
-.. include:: isogrk1.txt
+================
+Motor Controller
+================
 
-In order to control the movement of the pump you need two basic elements: a **stepper motor driver** and a **microcontroller**.
-
-A **stepper motor driver** takes care of delivering the proper sequence of signals to rotate the stepper motor smoothly and accurately.
-A **microcontroller** talks to the stepper motor driver, telling it when to rotate the motor, how fast, and in which direction.
-
-Purchasing Electronic Modules
-+++++++++++++++++++++++++++++
-There are many options for combining these two elements in order to control your syringe pump. Here are some possibilities from Sparkfun and Adafruit:
-
-- `Arduino Uno and Easy Driver <https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide>`_ 
-- `Arduino Uno and Big Easy Driver <https://learn.sparkfun.com/tutorials/big-easy-driver-hookup-guide>`_ 
-- `Arduino Uno with Stepper Motor Shield <https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/using-stepper-motors>`_ 
-- `Adafruit Feather and Motor Driver FeatherWing <https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/overview>`_ 
-
-
-Building Custom Circuit Board Assembly
-++++++++++++++++++++++++++++++++++++++
-
-An alternative to purchasing and combining the modules above, is to build the following custom circuit board. 
-The custom "Syringe Board" circuit board combines a microcontroller, stepper driver, power jack, and motor terminal connections onto one board. 
-It uses the same chips and is functionally equivalent to an `Adafruit Feather 32u4 <https://www.adafruit.com/product/2771>`_ microcontroller and a `TMC2208 SilentStepStick <https://www.digikey.com/product-detail/en/trinamic-motion-control-gmbh/TMC2208-SILENTSTEPSTICK/1460-1201-ND/6873626>`_ stepper driver. 
-Additonally, it includes headers that allow you to attach FeatherWings. This provides flexibility to add displays such as the `Mini Color TFT with Joystick <https://www.adafruit.com/product/3321>`_ or `Featherwing OLED <https://www.adafruit.com/product/2900>`_, or add wireless control with a `Radio FeatherWing <https://www.adafruit.com/product/3229>`_. 
-
+.. figure:: images/PCB/pcb_with_display.jpg
+  :align: center
+  :width: 80%
+  
+  PCB with display
 
 Bill of Materials
 =================
@@ -91,17 +72,14 @@ Bill of Materials
     border-radius:15px">View interactive BOM</a>
   </div>
 
-.. figure:: PCB/render.jpg
+.. image:: images/PCB/schematic.png
+  :target: _static/schematic.pdf
   :align: center
   :width: 100%
 
-  PCB render
-
-.. figure:: PCB/pcb_with_display.jpg
+.. image:: images/PCB/render.png
   :align: center
-  :width: 100%
-  
-  PCB with display
+  :width: 80%
 
 .. PCB Files
 .. =========

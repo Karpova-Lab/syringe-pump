@@ -20,4 +20,16 @@ fp-info-cache
 
 # Ignore sketch files
 *.sketch
-Documentation Source/source/frame_assembly/originals
+*.vscode
+videos
+Documentation Source/source/images/frame_assembly/originals
+Documentation Source/source/images/PCB/original
+Documentation Source/source/images/renders/original
+3D CAD/animations
+2D CAD/10 mL
+resolution calculation.Rmd
+syringe_diameters.png
+702000 01 PHD222000 Rev H.pdf
+syringe comparison.png
+syringe data.xlsx
+manufacturing.zip

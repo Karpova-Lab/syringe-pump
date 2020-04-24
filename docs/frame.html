@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mechanical &mdash; Syringe Pump 1.0.0 documentation</title>
+  <title>Frame &mdash; Syringe Pump 1.0.0 documentation</title>
   
 
   
@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/my.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Electrical" href="controller.html" />
-    <link rel="prev" title="Syringe Pump" href="index.html" /> 
+    <link rel="next" title="Using" href="manual.html" />
+    <link rel="prev" title="Motor Controller" href="controller.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,18 +81,39 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mechanical</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Motor Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controller.html#bill-of-materials">Bill of Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frame</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#design-files-for-laser-cutting">Design Files For Laser Cutting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#assembly-instructions">Assembly Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assembly">Assembly</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#required-tools">Required Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assemble-base">1. Assemble base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assemble-end-support">2. Assemble end support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assemble-plunger-carriage">3. Assemble plunger carriage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assemble-syringe-cradle">4. Assemble syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mount-motor-to-syringe-cradle">5. Mount motor to syringe cradle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combine-sub-assemblies">6. Combine sub-assemblies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-leadscrew-and-connect-motor-controller">7. Install leadscrew, and connect Motor controller</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="controller.html">Electrical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyControl.html">User Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Using</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#pycontrol-operation">pyControl Operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manual-operation">Manual Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#hardware-license">Hardware License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#software-license">Software License</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -141,7 +162,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Mechanical</li>
+      <li>Frame</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,7 +170,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repo</a>
+              <a href="https://github.com/Karpova-Lab/syringe-pump" class="fa fa-github"> View GitHub Repository</a>
             
           
         
@@ -160,10 +181,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="controller.html" class="btn btn-neutral float-right" title="Electrical" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="manual.html" class="btn btn-neutral float-right" title="Using" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Syringe Pump" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="controller.html" class="btn btn-neutral float-left" title="Motor Controller" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -172,269 +193,246 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mechanical">
-<h1>Mechanical<a class="headerlink" href="#mechanical" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="frame">
+<h1>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="design-files-for-laser-cutting">
+<h2>Design Files For Laser Cutting<a class="headerlink" href="#design-files-for-laser-cutting" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/lasercut.jpg" class="align-center" src="_images/lasercut.jpg" />
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="_downloads/69023bbeaaf969062394e4c128a39c49/60mL_frame.ai"><code class="xref download docutils literal notranslate"><span class="pre">60mL_frame.ai</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/7044488fda087f4c16ed7f9bdcc67f75/60mL_frame.dxf"><code class="xref download docutils literal notranslate"><span class="pre">60mL_frame.dxf</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t have access to a laser cutter, you can try searching for a local <a class="reference external" href="http://themakermap.com/">makerspace</a> that has a laser cutter.
+Alternatively, you can order laser cut parts from a service like <a class="reference external" href="https://www.ponoko.com/laser-cutting">Ponoko</a> or <a class="reference external" href="https://www.sculpteo.com/en/">Sculpteo</a> or <a class="reference external" href="https://www.bigbluesaw.com/">Big Blue Saw</a></p>
+</div>
+</div>
 <div class="section" id="bill-of-materials">
 <h2>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="_images/all_parts.jpg"><img alt="_images/all_parts.jpg" class="align-center" src="_images/all_parts.jpg" style="width: 100%;" /></a>
-<table border="1" class="docutils">
+<img alt="_images/all_parts.jpg" class="align-center" src="_images/all_parts.jpg" />
+<table class="docutils align-default">
 <colgroup>
-<col width="2%" />
-<col width="14%" />
-<col width="3%" />
-<col width="75%" />
-<col width="6%" />
+<col style="width: 2%" />
+<col style="width: 14%" />
+<col style="width: 77%" />
+<col style="width: 7%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">QTY</th>
-<th class="head">Description</th>
-<th class="head">Price</th>
-<th class="head">Part Number</th>
-<th class="head">Supplier</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>QTY</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Part Number</p></th>
+<th class="head"><p>Supplier</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td>12” x 12” x 1/4” Acrylic</td>
-<td>31.84</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#4615T37">4615T37</a></td>
-<td rowspan="11">McMaster-Carr</td>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>12” x 12” x 1/4” Acrylic</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#4615T37">4615T37</a></p></td>
+<td rowspan="11"><p>McMaster-Carr</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>Grommet</td>
-<td>10.52</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#9600k54">9600k54</a></td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Grommet</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#9600k54">9600k54</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>Flanged ball bearing</td>
-<td>7.97</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#7804K147">7804K147</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Flanged ball bearing</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#7804K147">7804K147</a></p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>M4 x 16mm machine screw</td>
-<td>4.4</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#92005A226">92005A220</a></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>M4 x 16mm machine screw</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#92005A226">92005A220</a></p></td>
 </tr>
-<tr class="row-even"><td>4</td>
-<td>M4  square nut</td>
-<td>10</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#96887A329">96887A329</a></td>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>M4  square nut</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#96887A329">96887A329</a></p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>M3 x 25mm machine screw</td>
-<td>3.36</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#92005A130">92005A130</a></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>M3 x 25mm machine screw</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#92005A130">92005A130</a></p></td>
 </tr>
-<tr class="row-even"><td>4</td>
-<td>M3 x 30mm machine screw</td>
-<td>3.88</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#92005A132">92005A132</a></td>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>M3 x 30mm machine screw</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#92005A132">92005A132</a></p></td>
 </tr>
-<tr class="row-odd"><td>16</td>
-<td>M3 x 10mm machine screw</td>
-<td>4.7</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#92000A120">92000A120</a></td>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>M3 x 10mm machine screw</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#92000A120">92000A120</a></p></td>
 </tr>
-<tr class="row-even"><td>20</td>
-<td>M3 Threaded insert</td>
-<td>7.2</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#94510A240">94510A240</a></td>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>M3 Threaded insert</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#94510A240">94510A240</a></p></td>
 </tr>
-<tr class="row-odd"><td>4</td>
-<td>Spring</td>
-<td>10.51</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#9657K267">9657K267</a></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Spring</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#9657K267">9657K267</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>Knob</td>
-<td>5.33</td>
-<td><a class="reference external" href="https://www.mcmaster.com/#6479K78">6479K78</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Knob</p></td>
+<td><p><a class="reference external" href="https://www.mcmaster.com/#6479K78">6479K78</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>350 x 8mm lead screw</td>
-<td>7.99</td>
-<td><a class="reference external" href="https://www.servocity.com/lead-screws#371=448">3501-0804-0350</a></td>
-<td rowspan="3">ServoCity</td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>350 x 8mm lead screw</p></td>
+<td><p><a class="reference external" href="https://www.servocity.com/lead-screws#371=448">3501-0804-0350</a></p></td>
+<td rowspan="3"><p>ServoCity</p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>8mm lead screw nut</td>
-<td>7.99</td>
-<td><a class="reference external" href="https://www.servocity.com/8mm-4-start-hub">545315</a></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>8mm lead screw nut</p></td>
+<td><p><a class="reference external" href="https://www.servocity.com/8mm-4-start-hub">545315</a></p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>200 x  8 mm shaft</td>
-<td>3.49</td>
-<td><a class="reference external" href="https://www.servocity.com/8mm-stainless-steel-precision-shafting#371=460">634310</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>200 x  8 mm shaft</p></td>
+<td><p><a class="reference external" href="https://www.servocity.com/8mm-stainless-steel-precision-shafting#371=460">634310</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>5 mm to 8 mm coupler</td>
-<td>8.99</td>
-<td><a class="reference external" href="https://www.amazon.com/Befenybay-Coupling-Diameter-Coupler-Aluminum/dp/B07Q5Q3DCB/ref=sr_1_1?keywords=B07Q5Q3DCB&amp;qid=1565137893&amp;s=gateway&amp;sr=8-1">B07Q5Q3DCB</a></td>
-<td rowspan="2">Amazon</td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>5 mm to 8 mm coupler</p></td>
+<td><p><a class="reference external" href="https://www.amazon.com/Befenybay-Coupling-Diameter-Coupler-Aluminum/dp/B07Q5Q3DCB/ref=sr_1_1?keywords=B07Q5Q3DCB&amp;qid=1565137893&amp;s=gateway&amp;sr=8-1">B07Q5Q3DCB</a></p></td>
+<td rowspan="2"><p>Amazon</p></td>
 </tr>
-<tr class="row-odd"><td>1</td>
-<td>Flanged LMF8UU slide bearing</td>
-<td>7.11</td>
-<td><a class="reference external" href="https://www.amazon.com/s?k=LMF8UU&amp;ref=nb_sb_noss_2">B00NQ2H8YUF17</a></td>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Flanged LMF8UU slide bearing</p></td>
+<td><p><a class="reference external" href="https://www.amazon.com/s?k=LMF8UU&amp;ref=nb_sb_noss_2">B00NQ2H8YUF17</a></p></td>
 </tr>
-<tr class="row-even"><td>8</td>
-<td>Bumper</td>
-<td>14.31</td>
-<td><a class="reference external" href="https://www.digikey.com/product-detail/en/3m/SJ61A1/SJ5746-0-ND/1768456">SJ5746-0-ND</a></td>
-<td rowspan="2">Digi-Key</td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Limit Switch</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=255-5122-nd">255-5122-ND</a></p></td>
+<td rowspan="2"><p>Digi-Key</p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td>Limit switch</td>
-<td>4.11</td>
-<td><a class="reference external" href="https://www.digikey.com/products/en?keywords=255-5122-nd">255-5122-ND</a></td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>DIN clip</p></td>
+<td><p><a class="reference external" href="https://www.digikey.com/products/en?keywords=277-2296-nd">277-2296-ND</a></p></td>
 </tr>
-<tr class="row-even"><td>1</td>
-<td>Nema 17 bipolar 60Ncm 200steps</td>
-<td>18.39</td>
-<td><a class="reference external" href="https://www.omc-stepperonline.com/hybrid-stepper-motor/nema-17-bipolar-18deg-60ncm-85ozin-064a-10v-42x42x60mm-4-wires-17hs24-0644s.html?search=17hs24-0644s">17HS24-0644S</a></td>
-<td>STEPPERONLINE</td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Nema 17 bipolar 60Ncm 200steps</p></td>
+<td><p><a class="reference external" href="https://www.omc-stepperonline.com/hybrid-stepper-motor/nema-17-bipolar-18deg-60ncm-85ozin-064a-10v-42x42x60mm-4-wires-17hs24-0644s.html?search=17hs24-0644s">17HS24-0644S</a></p></td>
+<td><p>STEPPERONLINE</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="design-files-for-laser-cutting">
-<h2>Design Files For Laser Cutting<a class="headerlink" href="#design-files-for-laser-cutting" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>60 mL Syringe (units=mm):</dt>
-<dd><ul class="first last simple">
-<li><a class="reference download internal" download="" href="_downloads/e99b373633f88b1599420c3dc5c0bac0/60mL_frame.ai"><code class="xref download docutils literal notranslate"><span class="pre">ai</span> <span class="pre">file</span></code></a></li>
-<li><a class="reference download internal" download="" href="_downloads/cdbdd54f9e9a66a4df28defc31f2e294/60mL_frame.dxf"><code class="xref download docutils literal notranslate"><span class="pre">dxf</span> <span class="pre">file</span></code></a></li>
-</ul>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you don’t have access to a laser cutter, you can try searching for a local <a class="reference external" href="http://themakermap.com/">makerspace</a> that has a laser cutter.
-Alternatively, you can order laser cut parts from a service like <a class="reference external" href="https://www.ponoko.com/laser-cutting">Ponoko</a> or <a class="reference external" href="https://www.sculpteo.com/en/">Sculpteo</a> or <a class="reference external" href="https://www.bigbluesaw.com/">Big Blue Saw</a></p>
-</div>
-</div>
-<div class="section" id="assembly-instructions">
-<h2>Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assembly">
+<h2>Assembly<a class="headerlink" href="#assembly" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="required-tools">
 <h3>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Phillips screwdriver</li>
-<li>Flathead screwdriver</li>
-<li>Allen wrench (included with shaft coupler)</li>
+<li><p>Phillips screwdriver</p></li>
+<li><p>Flathead screwdriver</p></li>
+<li><p>Allen wrench (included with shaft coupler)</p></li>
+<li><p>Wirecutters</p></li>
+<li><p>Wire strippers</p></li>
 </ul>
 </div>
 <div class="section" id="instructions">
 <h3>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Assemble base</li>
-</ol>
+<div class="section" id="assemble-base">
+<h4>1. Assemble base<a class="headerlink" href="#assemble-base" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(4) M3 x 10mm screws</li>
-<li>(4) M3 threaded inserts</li>
-<li>(8) Bumpers</li>
-<li>(2) Limit switches</li>
+<li><p>(6) M3 x 10mm screws</p></li>
+<li><p>(2) M3 threaded inserts</p></li>
+<li><p>(2) Limit switches</p></li>
+<li><p>(2) DIN clips</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_143041.jpg"><img alt="_images/20181219_143041.jpg" class="align-center" src="_images/20181219_143041.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_143723.jpg"><img alt="_images/20181219_143723.jpg" class="align-center" src="_images/20181219_143723.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="2">
-<li>Assemble carriage</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cut the limit switch wires to 24cm and 9cm.</p>
+</div>
+<a class="reference internal image-reference" href="_images/base_before.jpg"><img alt="_images/base_before.jpg" src="_images/base_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/base_after.jpg"><img alt="_images/base_after.jpg" src="_images/base_after.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/base.gif"><img alt="_images/base.gif" class="align-center" src="_images/base.gif" style="width: 70%;" /></a>
+</div>
+<div class="section" id="assemble-end-support">
+<h4>2. Assemble end support<a class="headerlink" href="#assemble-end-support" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(8) M3 x 10mm screws</li>
-<li>(10) M3 threaded inserts</li>
-<li>(2) M3 x 25mm screws</li>
-<li>(2) Springs</li>
-<li>(1) Linear bearing</li>
-<li>(1) Lead nut</li>
+<li><p>(1) Flanged ball bearing</p></li>
+<li><p>(1) Grommet</p></li>
+<li><p>(1) 200 x 8 mm shaft</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_143948.jpg"><img alt="_images/20181219_143948.jpg" class="align-center" src="_images/20181219_143948.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_144534.jpg"><img alt="_images/20181219_144534.jpg" class="align-center" src="_images/20181219_144534.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="3">
-<li>Assemble cradle</li>
-</ol>
+<a class="reference internal image-reference" href="_images/end_before.jpg"><img alt="_images/end_before.jpg" src="_images/end_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/end_after.jpg"><img alt="_images/end_after.jpg" src="_images/end_after.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/end.gif"><img alt="_images/end.gif" class="align-center" src="_images/end.gif" style="width: 100%;" /></a>
+</div>
+<div class="section" id="assemble-plunger-carriage">
+<h4>3. Assemble plunger carriage<a class="headerlink" href="#assemble-plunger-carriage" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(6) M3 threaded inserts</li>
-<li>(4) M3 x 10mm screws</li>
-<li>(4) M3 x 30mm screws</li>
-<li>(2) M3 x 25mm screws</li>
-<li>(2) Springs</li>
-<li>(1) Grommet</li>
-<li>(1) Motor</li>
+<li><p>(10) M3 threaded inserts</p></li>
+<li><p>(8) M3 x 10mm screws</p></li>
+<li><p>(2) M3 x 25mm screws</p></li>
+<li><p>(1) Lead nut</p></li>
+<li><p>(1) Linear bearing</p></li>
+<li><p>(2) Springs</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_144806.jpg"><img alt="_images/20181219_144806.jpg" class="align-center" src="_images/20181219_144806.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_145243.jpg"><img alt="_images/20181219_145243.jpg" class="align-center" src="_images/20181219_145243.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_145647.jpg"><img alt="_images/20181219_145647.jpg" class="align-center" src="_images/20181219_145647.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="4">
-<li>Assemble end support</li>
-</ol>
+<a class="reference internal image-reference" href="_images/carriage_before.jpg"><img alt="_images/carriage_before.jpg" src="_images/carriage_before.jpg" style="width: 64%;" /></a>
+<a class="reference internal image-reference" href="_images/carriage_after.jpg"><img alt="_images/carriage_after.jpg" src="_images/carriage_after.jpg" style="width: 34%;" /></a>
+<a class="reference internal image-reference" href="_images/carriage.gif"><img alt="_images/carriage.gif" class="align-center" src="_images/carriage.gif" style="width: 70%;" /></a>
+</div>
+<div class="section" id="assemble-syringe-cradle">
+<h4>4. Assemble syringe cradle<a class="headerlink" href="#assemble-syringe-cradle" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(1) Flanged ball bearing</li>
-<li>(1) Grommet</li>
+<li><p>(6) M3 threaded inserts</p></li>
+<li><p>(4) M3 x 30mm screws</p></li>
+<li><p>(2) M3 x 25mm screws</p></li>
+<li><p>(2) Springs</p></li>
+<li><p>(1) Grommet</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_145709.jpg"><img alt="_images/20181219_145709.jpg" class="align-center" src="_images/20181219_145709.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_150141.jpg"><img alt="_images/20181219_150141.jpg" class="align-center" src="_images/20181219_150141.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="5">
-<li>Attach lead screw to motor</li>
-</ol>
+<a class="reference internal image-reference" href="_images/motor_mount_before.jpg"><img alt="_images/motor_mount_before.jpg" src="_images/motor_mount_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/motor_mount_after.jpg"><img alt="_images/motor_mount_after.jpg" src="_images/motor_mount_after.jpg" style="width: 49%;" /></a>
+<img alt="_images/motor_mount.gif" class="align-center" src="_images/motor_mount.gif" />
+</div>
+<div class="section" id="mount-motor-to-syringe-cradle">
+<h4>5. Mount motor to syringe cradle<a class="headerlink" href="#mount-motor-to-syringe-cradle" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(1) Cradle Assembly</li>
-<li>(1) Lead screw</li>
-<li>(1) Coupler</li>
+<li><p>(1) Stepper motor</p></li>
+<li><p>(4) M3 x 10mm screws</p></li>
+<li><p>(1) Coupler</p></li>
+<li><p>(1) Syringe cradle</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_150248.jpg"><img alt="_images/20181219_150248.jpg" class="align-center" src="_images/20181219_150248.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_150415.jpg"><img alt="_images/20181219_150415.jpg" class="align-center" src="_images/20181219_150415.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="6">
-<li>Attach shaft to end support</li>
-</ol>
+<a class="reference internal image-reference" href="_images/mounted_before.jpg"><img alt="_images/mounted_before.jpg" src="_images/mounted_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/mounted_after.jpg"><img alt="_images/mounted_after.jpg" src="_images/mounted_after.jpg" style="width: 49%;" /></a>
+<img alt="_images/mounting_motor.gif" class="align-center" src="_images/mounting_motor.gif" />
+</div>
+<div class="section" id="combine-sub-assemblies">
+<h4>6. Combine sub-assemblies<a class="headerlink" href="#combine-sub-assemblies" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(1) 8mm shaft</li>
-<li>(1) End support assembly</li>
+<li><p>(1) End support Assembly</p></li>
+<li><p>(1) Motor Assembly</p></li>
+<li><p>(1) Carriage Assembly</p></li>
+<li><p>(4) M4 x 16mm screws</p></li>
+<li><p>(4) M4 square nuts</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_150427.jpg"><img alt="_images/20181219_150427.jpg" class="align-center" src="_images/20181219_150427.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_150438.jpg"><img alt="_images/20181219_150438.jpg" class="align-center" src="_images/20181219_150438.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="7">
-<li>Fit sub assemblies together</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cut the motor wires to 5cm.</p>
+</div>
+<a class="reference internal image-reference" href="_images/subs_before.jpg"><img alt="_images/subs_before.jpg" src="_images/subs_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/subs_after.jpg"><img alt="_images/subs_after.jpg" src="_images/subs_after.jpg" style="width: 49%;" /></a>
+<img alt="_images/subassemble.gif" class="align-center" src="_images/subassemble.gif" />
+</div>
+<div class="section" id="install-leadscrew-and-connect-motor-controller">
+<h4>7. Install leadscrew, and connect Motor controller<a class="headerlink" href="#install-leadscrew-and-connect-motor-controller" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
-<li>(1) Base assembly</li>
-<li>(1) Carriage assembly</li>
-<li>(1) End support assembly</li>
+<li><p>(1) Lead screw</p></li>
+<li><p>(1) Knob</p></li>
+<li><p>(1) Motor Controller</p></li>
+<li><p>(4) M3 x 10mm screws</p></li>
 </ul>
 </div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_150536.jpg"><img alt="_images/20181219_150536.jpg" class="align-center" src="_images/20181219_150536.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_150639.jpg"><img alt="_images/20181219_150639.jpg" class="align-center" src="_images/20181219_150639.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_150742.jpg"><img alt="_images/20181219_150742.jpg" class="align-center" src="_images/20181219_150742.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="8">
-<li>Secure sub assemblies to base and attach knob</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>(4) M4 x 16mm screws</li>
-<li>(4) M4 square nuts</li>
-<li>(1) Knob</li>
-</ul>
-</div></blockquote>
-<a class="reference internal image-reference" href="_images/20181219_150812.jpg"><img alt="_images/20181219_150812.jpg" class="align-center" src="_images/20181219_150812.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_151055.jpg"><img alt="_images/20181219_151055.jpg" class="align-center" src="_images/20181219_151055.jpg" style="width: 100%;" /></a>
-<ol class="arabic simple" start="9">
-<li>Attach Syringe Board PCB assembly and connect motor and limit switch wires</li>
-</ol>
-<a class="reference internal image-reference" href="_images/20181219_151154.jpg"><img alt="_images/20181219_151154.jpg" class="align-center" src="_images/20181219_151154.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_152013.jpg"><img alt="_images/20181219_152013.jpg" class="align-center" src="_images/20181219_152013.jpg" style="width: 100%;" /></a>
-<a class="reference internal image-reference" href="_images/20181219_152034.jpg"><img alt="_images/20181219_152034.jpg" class="align-center" src="_images/20181219_152034.jpg" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="_images/final_before.jpg"><img alt="_images/final_before.jpg" src="_images/final_before.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/final_after.jpg"><img alt="_images/final_after.jpg" src="_images/final_after.jpg" style="width: 49%;" /></a>
+<img alt="_images/screw_and_pcb.gif" class="align-center" src="_images/screw_and_pcb.gif" />
+</div>
 </div>
 </div>
 </div>
@@ -447,10 +445,10 @@ Alternatively, you can order laser cut parts from a service like <a class="refer
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="controller.html" class="btn btn-neutral float-right" title="Electrical" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="manual.html" class="btn btn-neutral float-right" title="Using" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Syringe Pump" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="controller.html" class="btn btn-neutral float-left" title="Motor Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -461,7 +459,7 @@ Alternatively, you can order laser cut parts from a service like <a class="refer
     <p>
         &copy; Copyright 2020, Andy Lustig
       <span class="lastupdated">
-        Last updated on Jan 16, 2020.
+        Last updated on Apr 24, 2020.
       </span>
 
     </p>
