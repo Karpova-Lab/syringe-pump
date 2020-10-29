@@ -7,13 +7,13 @@ Full Documentation: [https://karpova-lab.github.io/syringe-pump/](https://karpov
 
 Demo Video: [https://vimeo.com/306429799](https://vimeo.com/306429799)
 
-<img src="Documentation%20Source/source/images/renders/iso1.png" height="400" ></img>
-<img src="Documentation%20Source/source/images/renders/iso2.png" height="400" ></img>
-<img src="Documentation%20Source/source/images/renders/vertical_render.png" height="400" ></img>
-<img src="Documentation%20Source/source/images/renders/lasercut.png" height="400" ></img>
-<img src="Documentation%20Source/source/images/pieces.jpg" height="400" ></img>
-<img src="Documentation%20Source/source/images/frame_assembly/iso.jpg" height="400" ></img>
-<img src="Documentation%20Source/source/images/PCB/pcb_with_display.jpg" height="350" ></img>
+<img src="doc_src/source/images/renders/iso1.png" height="400" ></img>
+<img src="doc_src/source/images/renders/iso2.png" height="400" ></img>
+<img src="doc_src/source/images/renders/vertical_render.png" height="400" ></img>
+<img src="doc_src/source/images/renders/lasercut.png" height="400" ></img>
+<img src="doc_src/source/images/pieces.jpg" height="400" ></img>
+<img src="doc_src/source/images/frame_assembly/iso.jpg" height="400" ></img>
+<img src="doc_src/source/images/PCB/pcb_with_display.jpg" height="350" ></img>
 
 ## Hardware License
 
