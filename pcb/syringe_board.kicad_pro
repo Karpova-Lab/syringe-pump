@@ -45,7 +45,7 @@
         "silk_text_upright": true,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.127
         }
       },
       "diff_pair_dimensions": [
@@ -85,7 +85,7 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_over_copper": "error",
+        "silk_over_copper": "warning",
         "silk_overlap": "error",
         "skew_out_of_range": "error",
         "too_many_vias": "error",
@@ -115,13 +115,13 @@
         "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_diameter": 0.39999999999999997,
-        "solder_mask_clearance": 0.051,
+        "solder_mask_clearance": 0.0508,
         "solder_mask_min_width": 0.25,
         "solder_paste_clearance": 0.0,
         "solder_paste_margin_ratio": -0.0
       },
       "track_widths": [
-        0.25,
+        0.0,
         0.254,
         0.3048,
         0.4064,
@@ -130,8 +130,8 @@
       ],
       "via_dimensions": [
         {
-          "diameter": 0.8,
-          "drill": 0.4
+          "diameter": 0.0,
+          "drill": 0.0
         }
       ],
       "zones_allow_external_fillets": false,
@@ -374,7 +374,27 @@
         "microvia_drill": 0.1,
         "name": "3VPOWER",
         "nets": [
-          "/3.3VDC"
+          "+3V3"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4572,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5VPOWER",
+        "nets": [
+          "/5VDC"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -431,7 +451,7 @@
   },
   "sheets": [
     [
-      "b3563f27-d68c-4397-8d27-56a96590eea0",
+      "0f0b0040-3182-4012-8c13-43588887a152",
       ""
     ]
   ],

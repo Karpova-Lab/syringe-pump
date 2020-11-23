@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 44,
     "active_layer_preset": "",
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -50,17 +50,17 @@
       22,
       23,
       24,
-      25,
-      26,
       27,
       28,
       29,
       30,
       31,
+      32,
+      33,
       37,
       38
     ],
-    "visible_layers": "0001020_80000001"
+    "visible_layers": "ffcffff_ffffffff"
   },
   "meta": {
     "filename": "syringe_board.kicad_prl",

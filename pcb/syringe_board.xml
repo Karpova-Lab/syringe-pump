@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch</source>
+    <date>Monday, November 23, 2020 at 05:17:54 PM</date>
+    <tool>Eeschema (5.99.0-6632-gb710573c5)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Syringe Board</title>
+        <company>Andy Lustig</company>
+        <rev>3.3</rev>
+        <date>2019-12-11</date>
+        <source>syringe_board.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5d9d5c7d-efd7-46d9-b0e5-f1d312075a6c</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>0.1µF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>fb7e7ee8-7a66-467c-bd1f-8e3a5e028fd0</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>22µF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>98e2945a-a0b8-4aa9-9112-af1f652d062d</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>10µF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>17cc7afa-e651-4afd-b9d0-40e50469045e</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100uF</value>
+      <footprint>Capacitor_SMD:CP_Elec_6.3x7.7</footprint>
+      <datasheet>https://www.digikey.com/products/en?keywords=493-2203-1-ND</datasheet>
+      <fields>
+        <field name="Description">Electrolytic Capacitor</field>
+      </fields>
+      <libsource lib="syringe_board-rescue" part="CP_Small-Device" description=""/>
+      <property name="Description" value="Electrolytic Capacitor"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d37d1bd</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d204d14</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d115873</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d083c24</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d083227</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>2.2µF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d1c930b</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>22nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d217415</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>Red</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">Indicator LED</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Description" value="Indicator LED"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>301eff56-5a99-4bac-a556-ebb0e1f7ec2d</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>Red</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">Indicator LED</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Description" value="Indicator LED"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005cffdb45</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>1bd85010-5518-4160-ad02-65e22e834180</tstamp>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>26bc28b4-fb65-4036-8548-aa42e81f3707</tstamp>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>cc35420b-ebaf-4446-b790-71dc60ce8e0a</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>RJ45_pyControl</value>
+      <footprint>asl_footprints:RJ45_SMD</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="asl_symbols_new" part="RJ45_pyControl" description="RJ connector, 8P8C (8 positions 8 connected)"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6113a33b-ee38-4b6b-bf41-40ae960c4131</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>PPTC161LFBN-RC</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">16-pin Female Header</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x16_Female" description="Generic connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Description" value="16-pin Female Header"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005dc124a3</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>PPTC121LFBN-RC</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Description">12-pin Female Header</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x12_Female" description="Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Description" value="12-pin Female Header"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005dc16744</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>SWD_connector</value>
+      <footprint>asl_footprints:SWD_2x5_socket</footprint>
+      <datasheet>https://www.digikey.com/products/en?keywords=SAM10710-ND</datasheet>
+      <libsource lib="asl_symbols_new" part="SWD_connector" description="Cortex Debug Connector, standard ARM Cortex-M SWD and JTAG interface"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>48d5554f-9cef-45e4-81ef-10775a76c689</tstamp>
+    </comp>
+    <comp ref="J5">
+      <value>Conn_01x04_Male</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>912ceccf-95a4-4b9d-983a-4ad925eaca40</tstamp>
+    </comp>
+    <comp ref="J6">
+      <value>Male header</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x07_Male" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5e3b2d59-4b29-4ec0-af30-c60b285e150a</tstamp>
+    </comp>
+    <comp ref="J7">
+      <value>Female header</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x07_Female" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>fb2e3fd9-1af1-46af-aefc-4bee95b6e959</tstamp>
+    </comp>
+    <comp ref="J8">
+      <value>Conn_01x04_Male</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>15ea6677-74ea-4772-b7c4-54b93f67f82d</tstamp>
+    </comp>
+    <comp ref="L1">
+      <value>3.9µH</value>
+      <footprint>Inductor_SMD:L_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>d15141d3-bc66-4632-946f-9b05d227562d</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>10KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6dde3f9c-58ae-4bb6-9cd1-8f161c960ea9</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>1KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>18be19ba-cb2b-4104-aa81-5a2d9b1bcf75</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>10KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005cff5a05</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>10KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005cff65e5</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>10KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d001160</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>10KΩ</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>b5c0a166-d7b4-4f9d-b048-f4bb97e2ee63</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>0.3Ω</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d2ada9c</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>0.3Ω</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d29b52d</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>AP63203WU</value>
+      <footprint>Package_TO_SOT_SMD:TSOT-23-6</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</datasheet>
+      <fields>
+        <field name="Description">Voltage Regulator</field>
+      </fields>
+      <libsource lib="asl_symbols_new" part="AP63203WU" description="2A, 500kHz Buck DC/DC Converter, adjustable output voltage, TSOT-23-6"/>
+      <property name="Description" value="Voltage Regulator"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>21d2f52f-ab33-4c67-b811-891ff941e44a</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>ATSAMD21G</value>
+      <footprint>Package_QFP:TQFP-48_7x7mm_P0.5mm</footprint>
+      <datasheet>https://cdn.sparkfun.com/assets/learn_tutorials/4/5/4/graphicalDatasheet-Dev.pdf</datasheet>
+      <fields>
+        <field name="Description">Microcontroller</field>
+      </fields>
+      <libsource lib="asl_symbols_new" part="ATSAMD21G" description="SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 32K Flash, 4K SRAM, TQFP-48"/>
+      <property name="Description" value="Microcontroller"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>751b41e4-37d9-47aa-bc48-0b79c1e18d93</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>TMC2209</value>
+      <footprint>Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm_ThermalVias</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/trinamic-motion-control-gmbh/TMC2209-LA-T/10232491?s=N4IgTCBcDaIC4FsDGYwAYCcIC6BfIA</datasheet>
+      <fields>
+        <field name="Description">Motor Driver IC</field>
+      </fields>
+      <libsource lib="asl_symbols" part="TMC2208" description=""/>
+      <property name="Description" value="Motor Driver IC"/>
+      <property name="Sheet name" value=""/>
+      <property name="Sheet file" value="/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>00000000-0000-0000-0000-00005d56346e</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x04_Male">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x07_Female">
+      <description>Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x07_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x07_Male">
+      <description>Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x07_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x12_Female">
+      <description>Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x12_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x16_Female">
+      <description>Generic connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x16_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small_US">
+      <description>Resistor, small US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small_US</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="asl_symbols" part="TMC2208">
+      <docs>https://www.digikey.com/products/en?keywords=1460-1184-1-ND</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TMC2208</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm_ThermalVias</field>
+        <field name="Datasheet">https://www.digikey.com/products/en?keywords=1460-1184-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OB2" type="input"/>
+        <pin num="2" name="ENN" type="input"/>
+        <pin num="3" name="GND" type="input"/>
+        <pin num="4" name="CPO" type="input"/>
+        <pin num="5" name="CPI" type="input"/>
+        <pin num="6" name="VCP" type="input"/>
+        <pin num="7" name="N.C." type="NotConnected"/>
+        <pin num="8" name="5VOUT" type="output"/>
+        <pin num="9" name="MS1" type="input"/>
+        <pin num="10" name="MS2" type="input"/>
+        <pin num="11" name="DIAG" type="output"/>
+        <pin num="12" name="INDEX" type="output"/>
+        <pin num="13" name="CLK" type="input"/>
+        <pin num="14" name="PDN_UART" type="BiDi"/>
+        <pin num="15" name="VCC_IO" type="input"/>
+        <pin num="16" name="STEP" type="input"/>
+        <pin num="17" name="VREF" type="input"/>
+        <pin num="18" name="GND" type="input"/>
+        <pin num="19" name="DIR" type="input"/>
+        <pin num="20" name="N.C." type="NotConnected"/>
+        <pin num="21" name="OA2" type="input"/>
+        <pin num="22" name="VS" type="input"/>
+        <pin num="23" name="BRA" type="input"/>
+        <pin num="24" name="OA1" type="input"/>
+        <pin num="25" name="N.C." type="NotConnected"/>
+        <pin num="26" name="OB1" type="input"/>
+        <pin num="27" name="BRB" type="input"/>
+        <pin num="28" name="VS" type="input"/>
+        <pin num="29" name="DIE_PAD" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="asl_symbols" part="feather_wing">
+      <description>Feather wing connection</description>
+      <fields>
+        <field name="Reference">X</field>
+        <field name="Value">feather_wing</field>
+        <field name="Footprint">asl_footprints:Feather</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RST" type="BiDi"/>
+        <pin num="2" name="3V" type="BiDi"/>
+        <pin num="3" name="AREF" type="BiDi"/>
+        <pin num="4" name="GND" type="BiDi"/>
+        <pin num="5" name="A0" type="BiDi"/>
+        <pin num="6" name="A1" type="BiDi"/>
+        <pin num="7" name="A2" type="BiDi"/>
+        <pin num="8" name="A3" type="BiDi"/>
+        <pin num="9" name="A4" type="BiDi"/>
+        <pin num="10" name="A5" type="BiDi"/>
+        <pin num="11" name="SCK" type="BiDi"/>
+        <pin num="12" name="MOSI" type="BiDi"/>
+        <pin num="13" name="MISO" type="BiDi"/>
+        <pin num="14" name="RX" type="BiDi"/>
+        <pin num="15" name="TX" type="BiDi"/>
+        <pin num="16" name="GND" type="BiDi"/>
+        <pin num="17" name="SDA" type="BiDi"/>
+        <pin num="18" name="SCL" type="BiDi"/>
+        <pin num="19" name="D5" type="BiDi"/>
+        <pin num="20" name="D6" type="BiDi"/>
+        <pin num="21" name="D9" type="BiDi"/>
+        <pin num="22" name="D10" type="BiDi"/>
+        <pin num="23" name="D11" type="BiDi"/>
+        <pin num="24" name="D12" type="BiDi"/>
+        <pin num="25" name="D13" type="BiDi"/>
+        <pin num="26" name="USB" type="BiDi"/>
+        <pin num="27" name="ENABLE" type="BiDi"/>
+        <pin num="28" name="BATT" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="asl_symbols_new" part="AP63203WU">
+      <description>2A, 500kHz Buck DC/DC Converter, adjustable output voltage, TSOT-23-6</description>
+      <docs>https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</docs>
+      <footprints>
+        <fp>TSOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP63203WU</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TSOT-23-6</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="FB" type="input"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="IN" type="power_in"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="SW" type="output"/>
+        <pin num="6" name="BST" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="asl_symbols_new" part="ATSAMD21G_1">
+      <description>SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 32K Flash, 4K SRAM, TQFP-48</description>
+      <docs>https://cdn.sparkfun.com/assets/learn_tutorials/4/5/4/graphicalDatasheet-Dev.pdf</docs>
+      <footprints>
+        <fp>TQFP*7x7mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ATSAMD21G</field>
+        <field name="Footprint">Package_QFP:TQFP-48_7x7mm_P0.5mm</field>
+        <field name="Datasheet">https://cdn.sparkfun.com/assets/learn_tutorials/4/5/4/graphicalDatasheet-Dev.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PA00" type="BiDi"/>
+        <pin num="2" name="PA01" type="BiDi"/>
+        <pin num="3" name="PA02(A0)" type="BiDi"/>
+        <pin num="4" name="PA03(AREF)" type="BiDi"/>
+        <pin num="5" name="GNDANA" type="power_in"/>
+        <pin num="6" name="VDDANA" type="power_in"/>
+        <pin num="7" name="PB08(A1)" type="BiDi"/>
+        <pin num="8" name="PB09(A2)" type="BiDi"/>
+        <pin num="9" name="PA04(A3)" type="BiDi"/>
+        <pin num="10" name="PA05(A4)" type="BiDi"/>
+        <pin num="11" name="PA06(D8)" type="BiDi"/>
+        <pin num="12" name="PA07(D9)" type="BiDi"/>
+        <pin num="13" name="PA08(D4)" type="BiDi"/>
+        <pin num="14" name="PA09(D3)" type="BiDi"/>
+        <pin num="15" name="PA10(D1/TX)" type="BiDi"/>
+        <pin num="16" name="PA11(D0/RX)" type="BiDi"/>
+        <pin num="17" name="VDDIO" type="power_in"/>
+        <pin num="18" name="GND" type="power_in"/>
+        <pin num="19" name="PB10(MOSI)" type="BiDi"/>
+        <pin num="20" name="PB11(SCK)" type="BiDi"/>
+        <pin num="21" name="PA12(MISO)" type="BiDi"/>
+        <pin num="22" name="PA13" type="BiDi"/>
+        <pin num="23" name="PA14(D2)" type="BiDi"/>
+        <pin num="24" name="PA15(D5)" type="BiDi"/>
+        <pin num="25" name="PA16(D11)" type="BiDi"/>
+        <pin num="26" name="PA17(D13)" type="BiDi"/>
+        <pin num="27" name="PA18(D10)" type="BiDi"/>
+        <pin num="28" name="PA19(D12)" type="BiDi"/>
+        <pin num="29" name="PA20(D6)" type="BiDi"/>
+        <pin num="30" name="PA21(D7)" type="BiDi"/>
+        <pin num="31" name="PA22(SDA)" type="BiDi"/>
+        <pin num="32" name="PA23(SCL)" type="BiDi"/>
+        <pin num="33" name="PA24(USB_D-)" type="BiDi"/>
+        <pin num="34" name="PA25(USB_D+)" type="BiDi"/>
+        <pin num="35" name="GND" type="passive"/>
+        <pin num="36" name="VDDIO" type="power_in"/>
+        <pin num="37" name="PB22(D30/TX)" type="BiDi"/>
+        <pin num="38" name="PB23(D31/RX)" type="BiDi"/>
+        <pin num="39" name="PA27" type="BiDi"/>
+        <pin num="40" name="~RESET" type="input"/>
+        <pin num="41" name="PA28" type="BiDi"/>
+        <pin num="42" name="GND" type="passive"/>
+        <pin num="43" name="VDDCORE" type="power_out"/>
+        <pin num="44" name="VDDIN" type="power_in"/>
+        <pin num="45" name="PA30(SWCLK)" type="BiDi"/>
+        <pin num="46" name="PA31(SWDIO)" type="BiDi"/>
+        <pin num="47" name="PB02(A5)" type="BiDi"/>
+        <pin num="48" name="PB03" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="asl_symbols_new" part="RJ45_pyControl">
+      <description>RJ connector, 8P8C (8 positions 8 connected)</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">RJ45_pyControl</field>
+        <field name="Footprint">asl_footprints:RJ45_SMD</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DIO-A" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="POW-A" type="passive"/>
+        <pin num="4" name="DIO-B" type="passive"/>
+        <pin num="5" name="SPECIAL" type="passive"/>
+        <pin num="6" name="5V" type="passive"/>
+        <pin num="7" name="POW-B" type="passive"/>
+        <pin num="8" name="12V" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="asl_symbols_new" part="SWD_connector">
+      <description>Cortex Debug Connector, standard ARM Cortex-M SWD and JTAG interface</description>
+      <docs>https://www.digikey.com/products/en?keywords=SAM10710-ND</docs>
+      <footprints>
+        <fp>PinHeader?2x05?P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">SWD_connector</field>
+        <field name="Footprint">asl_footprints:SWD_2x5_socket</field>
+        <field name="Datasheet">https://www.digikey.com/products/en?keywords=SAM10710-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VTref" type="power_in"/>
+        <pin num="2" name="SWDIO/TMS" type="BiDi"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="SWDCLK/TCK" type="output"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="SWO/TDO" type="input"/>
+        <pin num="7" name="KEY" type="NotConnected"/>
+        <pin num="8" name="NC/TDI" type="output"/>
+        <pin num="9" name="GNDDetect" type="passive"/>
+        <pin num="10" name="~RESET~" type="openCol"/>
+      </pins>
+    </libpart>
+    <libpart lib="syringe_board-rescue" part="CP_Small-Device">
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP_Small-Device</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Library/Application Support/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Library/Application Support/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/Library/Application Support/kicad/library/Mechanical.lib</uri>
+    </library>
+    <library logical="asl_symbols">
+      <uri>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/libs/asl_symbols.lib</uri>
+    </library>
+    <library logical="asl_symbols_new">
+      <uri>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/libs/asl_symbols_new.kicad_sym</uri>
+    </library>
+    <library logical="syringe_board-rescue">
+      <uri>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board-rescue.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3">
+      <node ref="C3" pin="1"/>
+      <node ref="C6" pin="2"/>
+      <node ref="D1" pin="2" pinfunction="A"/>
+      <node ref="J4" pin="1" pinfunction="VTref"/>
+      <node ref="L1" pin="2" pinfunction="2"/>
+      <node ref="R3" pin="1"/>
+      <node ref="R4" pin="1"/>
+      <node ref="R6" pin="1"/>
+      <node ref="U1" pin="1" pinfunction="FB"/>
+      <node ref="U2" pin="17" pinfunction="VDDIO"/>
+      <node ref="U2" pin="36" pinfunction="VDDIO"/>
+      <node ref="U2" pin="44" pinfunction="VDDIN"/>
+      <node ref="U2" pin="6" pinfunction="VDDANA"/>
+      <node ref="U3" pin="15" pinfunction="VCC_IO"/>
+    </net>
+    <net code="2" name="/12VDC">
+      <node ref="C5" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C9" pin="1"/>
+      <node ref="J1" pin="8" pinfunction="12V"/>
+      <node ref="U3" pin="22" pinfunction="VS"/>
+      <node ref="U3" pin="28" pinfunction="VS"/>
+    </net>
+    <net code="3" name="/5VDC">
+      <node ref="C4" pin="1"/>
+      <node ref="J1" pin="6" pinfunction="5V"/>
+      <node ref="U1" pin="2" pinfunction="EN"/>
+      <node ref="U1" pin="3" pinfunction="IN"/>
+    </net>
+    <net code="4" name="/A0">
+      <node ref="U2" pin="3" pinfunction="PA02(A0)"/>
+    </net>
+    <net code="5" name="/A1">
+      <node ref="U2" pin="7" pinfunction="PB08(A1)"/>
+    </net>
+    <net code="6" name="/A2">
+      <node ref="U2" pin="8" pinfunction="PB09(A2)"/>
+    </net>
+    <net code="7" name="/A3">
+      <node ref="U2" pin="9" pinfunction="PA04(A3)"/>
+      <node ref="U3" pin="19" pinfunction="DIR"/>
+    </net>
+    <net code="8" name="/A4">
+      <node ref="U2" pin="10" pinfunction="PA05(A4)"/>
+      <node ref="U3" pin="16" pinfunction="STEP"/>
+    </net>
+    <net code="9" name="/A5">
+      <node ref="U2" pin="47" pinfunction="PB02(A5)"/>
+      <node ref="U3" pin="2" pinfunction="ENN"/>
+    </net>
+    <net code="10" name="/D10">
+      <node ref="J6" pin="6" pinfunction="Pin_6"/>
+      <node ref="U2" pin="27" pinfunction="PA18(D10)"/>
+    </net>
+    <net code="11" name="/D11">
+      <node ref="U2" pin="25" pinfunction="PA16(D11)"/>
+      <node ref="U3" pin="11" pinfunction="DIAG"/>
+    </net>
+    <net code="12" name="/D12">
+      <node ref="U2" pin="28" pinfunction="PA19(D12)"/>
+    </net>
+    <net code="13" name="/D13">
+      <node ref="D2" pin="2" pinfunction="A"/>
+      <node ref="U2" pin="26" pinfunction="PA17(D13)"/>
+    </net>
+    <net code="14" name="/D5">
+      <node ref="U2" pin="24" pinfunction="PA15(D5)"/>
+    </net>
+    <net code="15" name="/D6">
+      <node ref="U2" pin="29" pinfunction="PA20(D6)"/>
+    </net>
+    <net code="16" name="/D9">
+      <node ref="J6" pin="5" pinfunction="Pin_5"/>
+      <node ref="U2" pin="12" pinfunction="PA07(D9)"/>
+    </net>
+    <net code="17" name="/MISO">
+      <node ref="U2" pin="21" pinfunction="PA12(MISO)"/>
+    </net>
+    <net code="18" name="/MOSI">
+      <node ref="U2" pin="19" pinfunction="PB10(MOSI)"/>
+    </net>
+    <net code="19" name="/PDN_UART">
+      <node ref="R2" pin="2"/>
+      <node ref="U2" pin="38" pinfunction="PB23(D31/RX)"/>
+      <node ref="U3" pin="14" pinfunction="PDN_UART"/>
+    </net>
+    <net code="20" name="/RST">
+      <node ref="R6" pin="2"/>
+      <node ref="U2" pin="40" pinfunction="~RESET"/>
+    </net>
+    <net code="21" name="/RX">
+      <node ref="J1" pin="1" pinfunction="DIO-A"/>
+      <node ref="U2" pin="16" pinfunction="PA11(D0/RX)"/>
+    </net>
+    <net code="22" name="/SCK">
+      <node ref="U2" pin="20" pinfunction="PB11(SCK)"/>
+    </net>
+    <net code="23" name="/SCL">
+      <node ref="R4" pin="2"/>
+      <node ref="U2" pin="32" pinfunction="PA23(SCL)"/>
+    </net>
+    <net code="24" name="/SDA">
+      <node ref="R3" pin="2"/>
+      <node ref="U2" pin="31" pinfunction="PA22(SDA)"/>
+    </net>
+    <net code="25" name="/TX">
+      <node ref="J1" pin="4" pinfunction="DIO-B"/>
+      <node ref="U2" pin="15" pinfunction="PA10(D1/TX)"/>
+    </net>
+    <net code="26" name="GND">
+      <node ref="C10" pin="1"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C8" pin="1"/>
+      <node ref="J1" pin="2" pinfunction="GND"/>
+      <node ref="J4" pin="3" pinfunction="GND"/>
+      <node ref="J4" pin="5" pinfunction="GND"/>
+      <node ref="J4" pin="9" pinfunction="GNDDetect"/>
+      <node ref="J6" pin="7" pinfunction="Pin_7"/>
+      <node ref="R1" pin="2"/>
+      <node ref="R5" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="R8" pin="1"/>
+      <node ref="U1" pin="4" pinfunction="GND"/>
+      <node ref="U2" pin="18" pinfunction="GND"/>
+      <node ref="U2" pin="35" pinfunction="GND"/>
+      <node ref="U2" pin="42" pinfunction="GND"/>
+      <node ref="U2" pin="5" pinfunction="GNDANA"/>
+      <node ref="U3" pin="13" pinfunction="CLK"/>
+      <node ref="U3" pin="18" pinfunction="GND"/>
+      <node ref="U3" pin="29" pinfunction="DIE_PAD"/>
+      <node ref="U3" pin="3" pinfunction="GND"/>
+    </net>
+    <net code="27" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="6" pinfunction="BST"/>
+    </net>
+    <net code="28" name="Net-(C1-Pad2)">
+      <node ref="C1" pin="2"/>
+      <node ref="L1" pin="1" pinfunction="1"/>
+      <node ref="U1" pin="5" pinfunction="SW"/>
+    </net>
+    <net code="29" name="Net-(C10-Pad2)">
+      <node ref="C10" pin="2"/>
+      <node ref="U3" pin="8" pinfunction="5VOUT"/>
+    </net>
+    <net code="30" name="Net-(C11-Pad1)">
+      <node ref="C11" pin="1"/>
+      <node ref="U3" pin="4" pinfunction="CPO"/>
+    </net>
+    <net code="31" name="Net-(C11-Pad2)">
+      <node ref="C11" pin="2"/>
+      <node ref="U3" pin="5" pinfunction="CPI"/>
+    </net>
+    <net code="32" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1"/>
+      <node ref="U2" pin="43" pinfunction="VDDCORE"/>
+    </net>
+    <net code="33" name="Net-(C9-Pad2)">
+      <node ref="C9" pin="2"/>
+      <node ref="U3" pin="6" pinfunction="VCP"/>
+    </net>
+    <net code="34" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="35" name="Net-(D2-Pad1)">
+      <node ref="D2" pin="1" pinfunction="K"/>
+      <node ref="R5" pin="1"/>
+    </net>
+    <net code="36" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3" pinfunction="POW-A"/>
+    </net>
+    <net code="37" name="Net-(J1-Pad5)">
+      <node ref="J1" pin="5" pinfunction="SPECIAL"/>
+    </net>
+    <net code="38" name="Net-(J1-Pad7)">
+      <node ref="J1" pin="7" pinfunction="POW-B"/>
+    </net>
+    <net code="39" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1" pinfunction="Pin_1"/>
+    </net>
+    <net code="40" name="Net-(J2-Pad10)">
+      <node ref="J2" pin="10" pinfunction="Pin_10"/>
+    </net>
+    <net code="41" name="Net-(J2-Pad11)">
+      <node ref="J2" pin="11" pinfunction="Pin_11"/>
+    </net>
+    <net code="42" name="Net-(J2-Pad12)">
+      <node ref="J2" pin="12" pinfunction="Pin_12"/>
+    </net>
+    <net code="43" name="Net-(J2-Pad13)">
+      <node ref="J2" pin="13" pinfunction="Pin_13"/>
+    </net>
+    <net code="44" name="Net-(J2-Pad14)">
+      <node ref="J2" pin="14" pinfunction="Pin_14"/>
+    </net>
+    <net code="45" name="Net-(J2-Pad15)">
+      <node ref="J2" pin="15" pinfunction="Pin_15"/>
+    </net>
+    <net code="46" name="Net-(J2-Pad16)">
+      <node ref="J2" pin="16" pinfunction="Pin_16"/>
+    </net>
+    <net code="47" name="Net-(J2-Pad2)">
+      <node ref="J2" pin="2" pinfunction="Pin_2"/>
+    </net>
+    <net code="48" name="Net-(J2-Pad3)">
+      <node ref="J2" pin="3" pinfunction="Pin_3"/>
+    </net>
+    <net code="49" name="Net-(J2-Pad4)">
+      <node ref="J2" pin="4" pinfunction="Pin_4"/>
+    </net>
+    <net code="50" name="Net-(J2-Pad5)">
+      <node ref="J2" pin="5" pinfunction="Pin_5"/>
+    </net>
+    <net code="51" name="Net-(J2-Pad6)">
+      <node ref="J2" pin="6" pinfunction="Pin_6"/>
+    </net>
+    <net code="52" name="Net-(J2-Pad7)">
+      <node ref="J2" pin="7" pinfunction="Pin_7"/>
+    </net>
+    <net code="53" name="Net-(J2-Pad8)">
+      <node ref="J2" pin="8" pinfunction="Pin_8"/>
+    </net>
+    <net code="54" name="Net-(J2-Pad9)">
+      <node ref="J2" pin="9" pinfunction="Pin_9"/>
+    </net>
+    <net code="55" name="Net-(J3-Pad1)">
+      <node ref="J3" pin="1" pinfunction="Pin_1"/>
+    </net>
+    <net code="56" name="Net-(J3-Pad10)">
+      <node ref="J3" pin="10" pinfunction="Pin_10"/>
+    </net>
+    <net code="57" name="Net-(J3-Pad11)">
+      <node ref="J3" pin="11" pinfunction="Pin_11"/>
+    </net>
+    <net code="58" name="Net-(J3-Pad12)">
+      <node ref="J3" pin="12" pinfunction="Pin_12"/>
+    </net>
+    <net code="59" name="Net-(J3-Pad2)">
+      <node ref="J3" pin="2" pinfunction="Pin_2"/>
+    </net>
+    <net code="60" name="Net-(J3-Pad3)">
+      <node ref="J3" pin="3" pinfunction="Pin_3"/>
+    </net>
+    <net code="61" name="Net-(J3-Pad4)">
+      <node ref="J3" pin="4" pinfunction="Pin_4"/>
+    </net>
+    <net code="62" name="Net-(J3-Pad5)">
+      <node ref="J3" pin="5" pinfunction="Pin_5"/>
+    </net>
+    <net code="63" name="Net-(J3-Pad6)">
+      <node ref="J3" pin="6" pinfunction="Pin_6"/>
+    </net>
+    <net code="64" name="Net-(J3-Pad7)">
+      <node ref="J3" pin="7" pinfunction="Pin_7"/>
+    </net>
+    <net code="65" name="Net-(J3-Pad8)">
+      <node ref="J3" pin="8" pinfunction="Pin_8"/>
+    </net>
+    <net code="66" name="Net-(J3-Pad9)">
+      <node ref="J3" pin="9" pinfunction="Pin_9"/>
+    </net>
+    <net code="67" name="Net-(J4-Pad10)">
+      <node ref="J4" pin="10" pinfunction="~RESET~"/>
+    </net>
+    <net code="68" name="Net-(J4-Pad2)">
+      <node ref="J4" pin="2" pinfunction="SWDIO/TMS"/>
+      <node ref="U2" pin="46" pinfunction="PA31(SWDIO)"/>
+    </net>
+    <net code="69" name="Net-(J4-Pad4)">
+      <node ref="J4" pin="4" pinfunction="SWDCLK/TCK"/>
+      <node ref="U2" pin="45" pinfunction="PA30(SWCLK)"/>
+    </net>
+    <net code="70" name="Net-(J4-Pad6)">
+      <node ref="J4" pin="6" pinfunction="SWO/TDO"/>
+    </net>
+    <net code="71" name="Net-(J4-Pad7)">
+      <node ref="J4" pin="7" pinfunction="KEY"/>
+    </net>
+    <net code="72" name="Net-(J4-Pad8)">
+      <node ref="J4" pin="8" pinfunction="NC/TDI"/>
+    </net>
+    <net code="73" name="Net-(J5-Pad1)">
+      <node ref="J5" pin="1" pinfunction="Pin_1"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1"/>
+    </net>
+    <net code="74" name="Net-(J5-Pad2)">
+      <node ref="J5" pin="2" pinfunction="Pin_2"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2"/>
+    </net>
+    <net code="75" name="Net-(J5-Pad3)">
+      <node ref="J5" pin="3" pinfunction="Pin_3"/>
+      <node ref="J7" pin="3" pinfunction="Pin_3"/>
+    </net>
+    <net code="76" name="Net-(J5-Pad4)">
+      <node ref="J5" pin="4" pinfunction="Pin_4"/>
+      <node ref="J7" pin="4" pinfunction="Pin_4"/>
+    </net>
+    <net code="77" name="Net-(J6-Pad1)">
+      <node ref="J6" pin="1" pinfunction="Pin_1"/>
+      <node ref="U3" pin="1" pinfunction="OB2"/>
+    </net>
+    <net code="78" name="Net-(J6-Pad2)">
+      <node ref="J6" pin="2" pinfunction="Pin_2"/>
+      <node ref="U3" pin="26" pinfunction="OB1"/>
+    </net>
+    <net code="79" name="Net-(J6-Pad3)">
+      <node ref="J6" pin="3" pinfunction="Pin_3"/>
+      <node ref="U3" pin="24" pinfunction="OA1"/>
+    </net>
+    <net code="80" name="Net-(J6-Pad4)">
+      <node ref="J6" pin="4" pinfunction="Pin_4"/>
+      <node ref="U3" pin="21" pinfunction="OA2"/>
+    </net>
+    <net code="81" name="Net-(J7-Pad5)">
+      <node ref="J7" pin="5" pinfunction="Pin_5"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1"/>
+    </net>
+    <net code="82" name="Net-(J7-Pad6)">
+      <node ref="J7" pin="6" pinfunction="Pin_6"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2"/>
+    </net>
+    <net code="83" name="Net-(J7-Pad7)">
+      <node ref="J7" pin="7" pinfunction="Pin_7"/>
+      <node ref="J8" pin="3" pinfunction="Pin_3"/>
+      <node ref="J8" pin="4" pinfunction="Pin_4"/>
+    </net>
+    <net code="84" name="Net-(R2-Pad1)">
+      <node ref="R2" pin="1"/>
+      <node ref="U2" pin="37" pinfunction="PB22(D30/TX)"/>
+    </net>
+    <net code="85" name="Net-(R7-Pad1)">
+      <node ref="R7" pin="1"/>
+      <node ref="U3" pin="23" pinfunction="BRA"/>
+    </net>
+    <net code="86" name="Net-(R8-Pad2)">
+      <node ref="R8" pin="2"/>
+      <node ref="U3" pin="27" pinfunction="BRB"/>
+    </net>
+    <net code="87" name="Net-(U2-Pad1)">
+      <node ref="U2" pin="1" pinfunction="PA00"/>
+    </net>
+    <net code="88" name="Net-(U2-Pad11)">
+      <node ref="U2" pin="11" pinfunction="PA06(D8)"/>
+    </net>
+    <net code="89" name="Net-(U2-Pad13)">
+      <node ref="U2" pin="13" pinfunction="PA08(D4)"/>
+    </net>
+    <net code="90" name="Net-(U2-Pad14)">
+      <node ref="U2" pin="14" pinfunction="PA09(D3)"/>
+    </net>
+    <net code="91" name="Net-(U2-Pad2)">
+      <node ref="U2" pin="2" pinfunction="PA01"/>
+    </net>
+    <net code="92" name="Net-(U2-Pad22)">
+      <node ref="U2" pin="22" pinfunction="PA13"/>
+    </net>
+    <net code="93" name="Net-(U2-Pad23)">
+      <node ref="U2" pin="23" pinfunction="PA14(D2)"/>
+    </net>
+    <net code="94" name="Net-(U2-Pad30)">
+      <node ref="U2" pin="30" pinfunction="PA21(D7)"/>
+    </net>
+    <net code="95" name="Net-(U2-Pad33)">
+      <node ref="U2" pin="33" pinfunction="PA24(USB_D-)"/>
+    </net>
+    <net code="96" name="Net-(U2-Pad34)">
+      <node ref="U2" pin="34" pinfunction="PA25(USB_D+)"/>
+    </net>
+    <net code="97" name="Net-(U2-Pad39)">
+      <node ref="U2" pin="39" pinfunction="PA27"/>
+    </net>
+    <net code="98" name="Net-(U2-Pad4)">
+      <node ref="U2" pin="4" pinfunction="PA03(AREF)"/>
+    </net>
+    <net code="99" name="Net-(U2-Pad41)">
+      <node ref="U2" pin="41" pinfunction="PA28"/>
+    </net>
+    <net code="100" name="Net-(U2-Pad48)">
+      <node ref="U2" pin="48" pinfunction="PB03"/>
+    </net>
+    <net code="101" name="Net-(U3-Pad10)">
+      <node ref="U3" pin="10" pinfunction="MS2"/>
+    </net>
+    <net code="102" name="Net-(U3-Pad12)">
+      <node ref="U3" pin="12" pinfunction="INDEX"/>
+    </net>
+    <net code="103" name="Net-(U3-Pad17)">
+      <node ref="U3" pin="17" pinfunction="VREF"/>
+    </net>
+    <net code="104" name="Net-(U3-Pad20)">
+      <node ref="U3" pin="20" pinfunction="N.C."/>
+    </net>
+    <net code="105" name="Net-(U3-Pad25)">
+      <node ref="U3" pin="25" pinfunction="N.C."/>
+    </net>
+    <net code="106" name="Net-(U3-Pad7)">
+      <node ref="U3" pin="7" pinfunction="N.C."/>
+    </net>
+    <net code="107" name="Net-(U3-Pad9)">
+      <node ref="U3" pin="9" pinfunction="MS1"/>
+    </net>
+  </nets>
+</export>

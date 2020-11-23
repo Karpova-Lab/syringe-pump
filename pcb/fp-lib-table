@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name "asl_footprints")(type "KiCad")(uri "/Users/lustiga/Desktop/test2/libs/asl_footprints.pretty")(options "")(descr ""))
+  (lib (name "asl_footprints")(type "KiCad")(uri "${KIPRJMOD}/libs/asl_footprints.pretty")(options "")(descr ""))
 )
