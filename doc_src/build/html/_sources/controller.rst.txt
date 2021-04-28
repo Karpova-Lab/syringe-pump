@@ -4,11 +4,15 @@
 Motor Controller
 ================
 
-.. figure:: images/PCB/pcb_with_display.jpg
-  :align: center
-  :width: 80%
+.. image:: images/PCB/pcb_with_display.jpeg
+  :width: 60%
+
+.. image:: images/PCB/insertion.gif
+  :width: 39%
+
   
-  PCB with display
+The syringe pump is designed to be modular so that you can flexibly plug in whichever control board is compatible with your system.
+This PCB is designed to work with pyControl, 
 
 Bill of Materials
 =================
@@ -60,7 +64,7 @@ Bill of Materials
 
 .. raw:: html
 
-  <div style="text-align:center; margin-bottom:24px">
+  <div style="margin-bottom:24px">
     <a href="_static/ibom.html" style="background-color: #2980b9;
     border: none;
     color: white;
