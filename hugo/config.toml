@@ -1,3 +1,26 @@
-baseURL = "http://example.org/"
+baseURL = "https://karpova-lab.github.io/syringe-pump/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Syringe Pump"
+publishDir = "../docs"
+
+
+[params]
+  BookSearch = true
+  BookTheme = 'light'
+  BookMenuBundle = '/menu'
+  BookRepo =  'https://github.com/Karpova-Lab/syringe-pump'
+
+  BookEditPath = "edit/main/exampleSite"
+  BookComments = true
+  
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+
+  [markup.highlight] 
+      style = 'friendly'
