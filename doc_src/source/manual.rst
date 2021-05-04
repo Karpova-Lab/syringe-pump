@@ -13,7 +13,7 @@ Its pinout is compatible with pyControl `behavior ports <https://pycontrol.readt
   The pump must be plugged into a port that has a serial UART. 
   
   - For `Breakout board 1.2 <https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12>`_, this can be ports 1, 3 or 4. 
-  - For `D-series Breakout Board 1.4 <https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#>`_, this can be ports 8, 10, 11 or 12.
+  - For `D-series Breakout Board 1.6 <https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#>`_, this can be ports 8, 10, 11 or 12.
 
 The following example assumes that the syringe pump is plugged into port 3 of `Breakout board 1.2 <https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12>`_:
 
@@ -21,7 +21,7 @@ The following example assumes that the syringe pump is plugged into port 3 of `B
 2. Download :download:`pump_example_task.py <pyControl_files/pump_example_task.py>` and place it you "tasks" directory.
 3. Open up pyControl GUI
 4. Connect to your board
-5. Click the "Config" button and then click "Load framework". This will ensure the _syringepump.py device is on the microcontroller. 
+5. Click the "Config" button and then click "Load framework". This will ensure the _syringepump.py device is transferred onto the pyBoard microcontroller. 
 6. From the Task dropdown select the "pump_example_task"
 7. Click "Upload"
 8. Click "Start"
