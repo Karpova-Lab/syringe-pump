@@ -2,16 +2,17 @@ baseURL = "https://karpova-lab.github.io/syringe-pump/"
 languageCode = "en-us"
 title = "Syringe Pump"
 publishDir = "../docs"
-
+theme = "book"
+# enableGitInfo = true
 
 [params]
   BookSearch = true
   BookTheme = 'light'
   BookMenuBundle = '/menu'
   BookRepo =  'https://github.com/Karpova-Lab/syringe-pump'
-
-  BookEditPath = "edit/main/exampleSite"
-  BookComments = true
+  # BookCommitPath = 'commit'
+  # BookEditPath = "edit/main/exampleSite"
+  # BookComments = true
   
 
 [markup.goldmark.renderer]
