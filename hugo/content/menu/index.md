@@ -1,7 +1,7 @@
 ---
 headless: true
 ---
-- [**Overview**]({{< relref "/" >}})
+- [Overview]({{< relref "/" >}})
 - [Motor Controller]({{< relref "/motor" >}})
 - [Frame]({{< relref "/frame" >}})
 - [User Guide]({{< relref "/guide" >}})

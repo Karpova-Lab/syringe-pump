@@ -1,12 +1,25 @@
 # Frame
 
+<a href="iso_photo.jpg">
+  <img src="iso_photo.jpg" >
+  </img>
+</a>
+
+<a href="labeled.png">
+  <img src="labeled.png">
+  </img>
+</a>
+
+
 
 ## 2D parts
 
 These components are cut from 1/4" acrylic.
 In the U.S. I can recommend [Big Blue Saw](https://www.bigbluesaw.com/) and [SendCutSend](https://sendcutsend.com/).
 
-<a href="60mL_frame.dxf" download >base and clamps</a>. $30 from Big Blue Saw
+{{< download filename="60mL_frame.dxf" text="base and clamps.dxf" >}} 
+<br>
+{{< download filename="60mL_frame.svg" text="base and clamps.svg" >}} 
 
 ![](lasercut_parts.png)
 
@@ -16,38 +29,40 @@ In the U.S. I can recommend [Big Blue Saw](https://www.bigbluesaw.com/) and [Sen
 These components are printed in Nylon using a HP Multi-Jet-Fusion printer. 
 It is the HP PA 12 option from from  [3D Hubs](https://www.3dhubs.com/)
 
-- :download:`Cradle<../../2D\  CAD/60mL_frame.dxf>`. $23 from 3D Hubs
+### Cradle
+{{< download filename="cradle.stl" text="cradle.stl" >}}
+<br>
+{{< download filename="cradle.step" text="cradle.step" >}}
 
 {{< columns >}} <!-- begin columns block -->
-
-### Cradle
-
 ![](cradle_1.png)
+<---> <!-- magic separator, between columns -->
 ![](cradle_2.png)
-
 <---> <!-- magic separator, between columns -->
-
-### Carriage
-
-![](carriage_1.png)
-![](carriage_2.png)
-<---> <!-- magic separator, between columns -->
-
-### End support
-
-![](end_1.png)
-![](end_2.png)
-
 {{< /columns >}}
 
+### Carriage
+{{< download filename="carriage.stl" text="carriage.stl" >}}
+<br>
+{{< download filename="carriage.step" text="carriage.step" >}}
+{{< columns >}}
+![](carriage_1.png)
+<--->
+![](carriage_2.png)
+<--->
+ {{< /columns >}}
 
+### End support
+{{< download filename="end_support.stl" text="end_support.stl" >}}
+<br>
+{{< download filename="end_support.step" text="end_support.step" >}}
+{{< columns >}}
+![](end_1.png)
+<--->
+![](end_2.png)
+<--->
 
-- :download:`Carriage<../../2D\  CAD/60mL_frame.dxf>`. $18 from 3D Hubs
-
-
-- :download:`End support<../../2D\  CAD/60mL_frame.dxf>`. $11 from 3D Hubs
-
-
+{{< /columns >}}
 
 ## Hardware
 
@@ -72,6 +87,7 @@ It is the HP PA 12 option from from  [3D Hubs](https://www.3dhubs.com/)
 | 1   | Nema 17 bipolar 60Ncm 200steps | [17HS24-0644S](https://www.omc-stepperonline.com/hybrid-stepper-motor/nema-17-bipolar-18deg-60ncm-85ozin-064a-10v-42x42x60mm-4-wires-17hs24-0644s.html?search=17hs24-0644s) | STEPPERONLINE |
 
 
+
 ## Assembly
 
 ### Required Tools
@@ -82,3 +98,6 @@ It is the HP PA 12 option from from  [3D Hubs](https://www.3dhubs.com/)
 - Wire strippers
 
 ### Instructions
+
+{{< previous link="motor" text="Motor Controller" >}}
+{{< next link="guide" text="User Guide" >}}

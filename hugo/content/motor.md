@@ -28,14 +28,21 @@ The motor controller can receive instructions from pyControl, or respond to user
 
 <a href="https://oshpark.com/shared_projects/LcC4KhMv"><img src="https://oshpark.com/packs/media/images/badge-5f4e3bf4bf68f72ff88bd92e0089e9cf.png" alt="Order from OSH Park"></img></a>
 
+{{< columns >}}
 Schematic:
 <a href="schematic.pdf">
   <img src="schematic.jpeg" >
   </img>
 </a>
+<--->
+Layout:
+<a href="layout.png">
+  <img src="layout.png" >
+  </img>
+</a>
+{{< /columns >}}
 
 
-![](layout.png)
 
 
 ## Bill of Materials
@@ -61,3 +68,6 @@ Schematic:
 | 1   | U2                 | Microcontroller          | [ATSAMD21G](https://www.digikey.com/en/products/detail/microchip-technology/ATSAMD21G18A-AUT/4878867)                                             | 
 | 1   | U3                 | EEPROM                   | [AT24C01C-STUM](https://www.digikey.com/en/products/detail/microchip-technology/AT24C01C-STUM-T/3903734)                                          | 
 | 1   | U4                 | Motor Driver             | [TMC2209](https://www.digikey.com/en/products/detail/trinamic-motion-control-gmbh/TMC2209-LA-T/10232491?s=N4IgTCBcDaIC4FsDGYwAYCcIC6BfIA)         | 
+
+{{< previous link="/" text="Overview" >}}
+{{< next link="frame" text="Frame" >}}
