@@ -86,7 +86,7 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 ---
 
 ### End Support
-[:material-file-download: end_support.step](frame/end_support_v83.step)
+[:material-file-download: end_support.step](frame/cad/end_support_v83.step)
 
 ![](frame/cad/end_1.png){ width=33% }
 ![](frame/cad/end_2.png){ width=33% }
