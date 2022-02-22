@@ -9,6 +9,7 @@ site_dir: ../docs
 
 theme:
     name: material
+    custom_dir: overrides
     icon:
         repo: fontawesome/brands/github
     features:
