@@ -2,8 +2,8 @@
 <export version="E">
   <design>
     <source>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/syringe_board.kicad_sch</source>
-    <date>Thursday, September 02, 2021 at 09:09:04 AM</date>
-    <tool>Eeschema (5.99.0-11678-ga208dac8d8)</tool>
+    <date>Monday, December 13, 2021 at 12:38:24 PM</date>
+    <tool>Eeschema (6.0.0-rc1-415-g653c7b78d7)</tool>
     <textvar name="version">4.5</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -173,7 +173,7 @@
     </comp>
     <comp ref="J1">
       <value>54602-908LF </value>
-      <footprint>asl_footprints:RJ45_THP_Vertical</footprint>
+      <footprint>asl_footprints:RJ45_THP</footprint>
       <datasheet>https://www.digikey.com/en/products/detail/54602-908LF/609-1046-ND/1001360</datasheet>
       <fields>
         <field name="Description">RJ45 Jack</field>
@@ -847,13 +847,13 @@
   </libparts>
   <libraries>
     <library logical="Connector">
-      <uri>/Library/Application Support/kicad/library/Connector.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
     </library>
     <library logical="Connector_Generic">
-      <uri>/Library/Application Support/kicad/library/Connector_Generic.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
     </library>
     <library logical="Device">
-      <uri>/Library/Application Support/kicad/library/Device.kicad_sym</uri>
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="asl_symbols_new">
       <uri>/Users/lustiga/Dropbox (HHMI)/Code/karpova_lab/Syringe/pcb/libs/asl_symbols_new.kicad_sym</uri>
