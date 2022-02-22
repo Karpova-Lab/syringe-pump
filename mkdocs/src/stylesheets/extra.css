@@ -1,0 +1,18 @@
+p > code{
+	color: red !important;;
+}
+li > code{
+	color: red !important;;
+}
+
+.md-typeset h1, .md-typeset h2 {
+    font-weight: 400;
+}
+
+.md-typeset table:not([class]) td {
+	padding: .5em .5em;
+}
+
+.md-typeset ol li, .md-typeset ul li {
+	margin-bottom: 0em;
+}

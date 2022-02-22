@@ -1,0 +1,52 @@
+site_name: Syringe Pump
+site_description: Open source syringe pump
+site_author: Andy Lustig
+repo_url: https://github.com/Karpova-Lab/syringe-pump
+repo_name: Karpova-Lab/syringe-pump
+edit_uri: ""
+docs_dir: src
+site_dir: ../docs
+
+theme:
+    name: material
+    icon:
+        repo: fontawesome/brands/github
+    features:
+        - navigation.top
+    palette:
+        # scheme: slate
+        primary: red
+        accent: blue
+
+plugins:
+    - git-revision-date-localized
+    - search
+
+extra_css:
+    - stylesheets/extra.css
+
+markdown_extensions:
+    - toc:
+        title: On this page
+        permalink: "#"
+        toc_depth: 4
+
+    - admonition
+    - pymdownx.highlight
+    - pymdownx.superfences
+    - attr_list
+    - pymdownx.emoji:
+          emoji_index: !!python/name:materialx.emoji.twemoji
+          emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.tabbed:
+          alternate_style: true
+
+nav:
+    - Overview: index.md
+    - Mechanics: frame.md
+    - Electronics: motor.md
+    # - Quick links: 
+        # - Discussions: "https://github.com/Karpova-Lab/syringe-pump/discussions"
+        # - Issues: "https://github.com/Karpova-Lab/syringe-pump/issues"
+
+copyright: Copyright &copy; 2022 Andy Lustig
