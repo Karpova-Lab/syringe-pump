@@ -33,3 +33,6 @@ syringe_diameters.png
 syringe comparison.png
 syringe data.xlsx
 manufacturing.zip
+other projects
+*.zip
+pcb/syringe_board.kicad_prl
