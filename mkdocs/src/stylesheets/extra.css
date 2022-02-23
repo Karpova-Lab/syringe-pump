@@ -1,8 +1,8 @@
 p > code{
-	color: red !important;;
+    color: red !important;;
 }
 li > code{
-	color: red !important;;
+    color: red !important;;
 }
 
 .md-typeset h1, .md-typeset h2 {
@@ -10,9 +10,34 @@ li > code{
 }
 
 .md-typeset table:not([class]) td {
-	padding: .5em .5em;
+    padding: .5em .5em;
 }
 
 .md-typeset ol li, .md-typeset ul li {
-	margin-bottom: 0em;
+    margin-bottom: 0em;
+}
+
+.bob{
+    font-size: 80px;
+}
+
+.nav_button{
+    border:2px solid #ef5552;
+    border-radius:5px;
+    padding:3px;
+}
+.nav_button:hover{
+    background-color: #ef5552;
+    color: white;
+    fill: white;
+}
+
+.nav_label{
+    margin-top:15px;
+    margin-bottom:5px;
+    font-style: italic;
+}
+
+h2{
+    text-decoration: underline;
 }
