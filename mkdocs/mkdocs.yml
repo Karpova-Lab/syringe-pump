@@ -12,12 +12,11 @@ theme:
     custom_dir: overrides
     icon:
         repo: fontawesome/brands/github
-    features:
-        - navigation.top
     palette:
         # scheme: slate
         primary: red
         accent: blue
+    logo: assets/home.svg
 
 plugins:
     - git-revision-date-localized
