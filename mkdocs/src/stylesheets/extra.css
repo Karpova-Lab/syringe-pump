@@ -24,7 +24,7 @@ li > code{
 .nav_button{
     border:1px solid #ef5552;
     border-radius:5px;
-    padding:3px;
+    padding: 4px;
 }
 .nav_button:hover{
     background-color: #ef5552;
@@ -40,4 +40,22 @@ li > code{
 
 h2{
     text-decoration: underline;
+}
+
+.md-footer__title{
+    color:black;
+    /* background:grey; */
+}
+
+.md-footer__button {
+    color:black;
+    /* background:grey; */
+}
+
+.md-footer {
+    background-color: white;
+}
+
+.md-footer-meta {
+    background-color: var(--md-footer-bg-color);
 }
