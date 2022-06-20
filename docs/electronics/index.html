@@ -264,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frame/" class="md-nav__link">
+      <a href="../mechanical/" class="md-nav__link">
         Mechanics
       </a>
     </li>
@@ -393,6 +393,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../further/" class="md-nav__link">
+        Further Resources
+      </a>
     </li>
   
 
@@ -609,7 +624,7 @@ If a cool new display or better motor driver IC becomes available, upgrading the
 <p>Do you have ideas for a custom control board? A design that you've already built? 
 Consider sharing in the <a href="https://github.com/Karpova-Lab/syringe-pump/discussions">discussions</a> for others to benefit from. 
 I can add community design links and information to this documentation page!</p>
-<p>To ensure compatibility with the existing <a href="../frame/#laser-cut-parts">baseplate</a>, your PCB should include a <a href="https://www.digikey.com/en/products/detail/adam-tech/PH1RB-07-UA/9831064?s=N4IgTCBcDa4AwFYDsBaADgCwIwCcBGKcSIAugL5A">7-pin header</a> and a mounting hole (refer to the <a href="#printed-circuit-board">pyControl SCB layout</a> below for dimensions).
+<p>To ensure compatibility with the existing <a href="frame.md#laser-cut-parts">baseplate</a>, your PCB should include a <a href="https://www.digikey.com/en/products/detail/adam-tech/PH1RB-07-UA/9831064?s=N4IgTCBcDa4AwFYDsBaADgCwIwCcBGKcSIAugL5A">7-pin header</a> and a mounting hole (refer to the <a href="#printed-circuit-board">pyControl SCB layout</a> below for dimensions).
 <!-- Of course everything is open source though, so you could modify the baseplate design to fit you needs.  -->
 <!-- Maybe you want to mount a large PCB with a touch display or mount multiple pumps to single baseplate. --></p>
 </div>
@@ -629,7 +644,7 @@ The skinny PCB is meant to permanently attach to the syringe frame and make conn
 It provides access to those connections through a 7-pin socket.
 The larger PCB is a pyControl compatible device that plugs into the motor connection socket.</p>
 <p><a href="https://oshpark.com/shared_projects/HIOVaYiQ"><img src="https://oshpark.com/packs/media/images/badge-5f4e3bf4bf68f72ff88bd92e0089e9cf.png" alt="Order from OSH Park"></img></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">layout</label><label for="__tabbed_1_2">schematic</label><label for="__tabbed_1_3">render</label><label for="__tabbed_1_4">PCB</label><label for="__tabbed_1_5">TFT display</label><label for="__tabbed_1_6">7-segment display</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">layout</label><label for="__tabbed_1_2">schematic</label><label for="__tabbed_1_3">render</label><label for="__tabbed_1_4">assembled</label><label for="__tabbed_1_5">TFT display</label><label for="__tabbed_1_6">7-segment display</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="layout.png">
@@ -656,13 +671,15 @@ The larger PCB is a pyControl compatible device that plugs into the motor connec
 </a></p>
 </div>
 <div class="tabbed-block">
-<p><a href="SCB_tft.jpg">
+<p><a href="https://www.adafruit.com/product/3321">Mini color TFT with Joystick</a>
+<a href="SCB_tft.jpg">
 <img src="SCB_tft.jpg">
 </img>
 </a></p>
 </div>
 <div class="tabbed-block">
-<p><a href="SCB_segment.jpg">
+<p><a href="https://www.adafruit.com/product/3108">4-digit 7-segment display</a>
+<a href="SCB_segment.jpg">
 <img src="SCB_segment.jpg">
 </img>
 </a></p>
@@ -823,11 +840,11 @@ Its pinout is compatible with pyControl <a href="https://pycontrol.readthedocs.i
 </div>
 <p>The following example assumes that the syringe pump is plugged into port 3 of <a href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12">Breakout board 1.2</a>.</p>
 <ol>
-<li>Download <a href="_syringepump.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8l-6-6m-2 17-4-4h2.5v-3h3v3H16l-4 4m1-10V3.5L18.5 9H13z"/></svg></span> _syringepump.py</a> and place it in your "devices" directory. </li>
+<li>Download <a href="syringe_pump_device.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8l-6-6m-2 17-4-4h2.5v-3h3v3H16l-4 4m1-10V3.5L18.5 9H13z"/></svg></span> syringe_pump_device.py</a> and place it in your "devices" directory. </li>
 <li>Download <a href="pump_example_task.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8l-6-6m-2 17-4-4h2.5v-3h3v3H16l-4 4m1-10V3.5L18.5 9H13z"/></svg></span> pump_example_task.py</a> and place it in your "tasks" directory. </li>
 <li>Open up pyControl GUI</li>
 <li>Connect to your board</li>
-<li>Click the <code>Config</code> button and then click <code>Load framework</code>. This will ensure the _syringepump.py device is transferred onto the pyBoard microcontroller. </li>
+<li>Click the <code>Config</code> button and then click <code>Load framework</code>. This will ensure the syringe_pump_device.py is transferred onto the pyBoard microcontroller. </li>
 <li>From the Task dropdown select the "pump_example_task"</li>
 <li>Click <code>Upload</code></li>
 <li>Click <code>Start</code></li>
@@ -866,7 +883,7 @@ Joystick center button
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 20, 2022</span>
       
     
   </small>
@@ -884,7 +901,7 @@ Joystick center button
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../frame/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mechanics" rel="prev">
+        <a href="../mechanical/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mechanics" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -898,6 +915,21 @@ Joystick center button
           </div>
         </a>
       
+      
+        
+        <a href="../further/" class="md-footer__link md-footer__link--next" aria-label="Next: Further Resources" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Further Resources
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
