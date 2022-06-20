@@ -1,7 +1,7 @@
 # Electronics
 
-![](motor/pcb_with_display.jpeg){ width=49% }
-![](motor/insertion.gif){ width=49% align=top }
+![](electronics/pcb_with_display.jpeg){ width=49% }
+![](electronics/insertion.gif){ width=49% align=top }
 
 <!-- <img src="insertion.gif" style= "width:60%; margin:auto; display:block"> </img> -->
 
@@ -91,17 +91,19 @@ The larger PCB is a pyControl compatible device that plugs into the motor connec
     <img src="render.png" >
     </img>
     </a>
-=== "PCB"
+=== "assembled"
     <a href="SCB_bare.jpeg">
     <img src="SCB_bare.jpeg">
     </img>
     </a>
 === "TFT display"
+    [Mini color TFT with Joystick](https://www.adafruit.com/product/3321)
     <a href="SCB_tft.jpg">
     <img src="SCB_tft.jpg">
     </img>
     </a>
 === "7-segment display"
+    [4-digit 7-segment display](https://www.adafruit.com/product/3108)
     <a href="SCB_segment.jpg">
     <img src="SCB_segment.jpg">
     </img>
@@ -170,11 +172,11 @@ Its pinout is compatible with pyControl [behavior ports](https://pycontrol.readt
 
 The following example assumes that the syringe pump is plugged into port 3 of [Breakout board 1.2](https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-board-12).
 
-1. Download [:material-file-download: _syringepump.py](motor/_syringepump.py) and place it in your "devices" directory. 
-2. Download [:material-file-download: pump_example_task.py](motor/pump_example_task.py) and place it in your "tasks" directory. 
+1. Download [:material-file-download: syringe_pump_device.py](electronics/syringe_pump_device.py) and place it in your "devices" directory. 
+2. Download [:material-file-download: pump_example_task.py](electronics/pump_example_task.py) and place it in your "tasks" directory. 
 3. Open up pyControl GUI
 4. Connect to your board
-5. Click the `Config` button and then click `Load framework`. This will ensure the _syringepump.py device is transferred onto the pyBoard microcontroller. 
+5. Click the `Config` button and then click `Load framework`. This will ensure the syringe_pump_device.py is transferred onto the pyBoard microcontroller. 
 6. From the Task dropdown select the "pump_example_task"
 7. Click `Upload`
 8. Click `Start`

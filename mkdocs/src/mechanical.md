@@ -1,10 +1,10 @@
 # Mechanics
-![iso photo](frame/iso_photo.jpg)
-![labeled](frame/labeled.png)
+![iso photo](mechanical/iso_photo.jpg)
+![labeled](mechanical/labeled.png)
 
 ## Hardware
 
-![all parts](frame/all_parts.jpg)
+![all parts](mechanical/all_parts.jpg)
 
 | QTY | Description                    | Part Number                                                                                                                                                                 | Supplier      | 
 |-----|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -37,22 +37,22 @@ Acrylic is a faster and cheaper option if you are using your own laser cutter.
 If you are outsourcing the laser cutting anyway, aluminum has the benefit of being stiffer for only a slightly higher cost.
 
 === "Aluminum" 
-	[:material-file-download: base_tapped_holes.dxf](frame/cad/base_v79_tapped_holes.dxf)
+	[:material-file-download: base_tapped_holes.dxf](mechanical/cad/base_v79_tapped_holes.dxf)
 
 	- 3/16"(0.1875") aluminum
 	- 2.5 mm holes ready for M3x0.5 tap
 
-	![](frame/cad/base_aluminum.png)
+	![](mechanical/cad/base_aluminum.png)
 
 	Laser cutting/water jetting may offer tapped holes as a service for an added cost. You can also tap the holes yourself using an M3x0.5 tap.
 
 === "Acrylic" 
-	[:material-file-download: base_threaded_inserts.dxf](frame/cad/base_v79.dxf)
+	[:material-file-download: base_threaded_inserts.dxf](mechanical/cad/base_v79.dxf)
 
 	- 1/4"(0.25") acrylic
 	- 4 mm holes for [flanged M3 threaded inserts](https://www.mcmaster.com/#94510A240) to be added
 
-	![](frame/cad/base_acrylic.png)
+	![](mechanical/cad/base_acrylic.png)
 
 ---
 
@@ -60,9 +60,9 @@ If you are outsourcing the laser cutting anyway, aluminum has the benefit of bei
 
 - 1/4"(0.25") acrylic
 
-[:material-file-download: clamps.dxf](frame/cad/clamps.dxf)
+[:material-file-download: clamps.dxf](mechanical/cad/clamps.dxf)
 
-![](frame/cad/clamps.png)
+![](mechanical/cad/clamps.png)
 
   
 ## 3D printed parts
@@ -70,26 +70,26 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 
 
 ### Cradle
-[:material-file-download: cradle.step](frame/cad/cradle_v118.step)
+[:material-file-download: cradle.step](mechanical/cad/cradle_v118.step)
 
-![](frame/cad/cradle_1.png){ width=33% }
-![](frame/cad/cradle_2.png){ width=33% }
+![](mechanical/cad/cradle_1.png){ width=33% }
+![](mechanical/cad/cradle_2.png){ width=33% }
 
 ---
 
 ### Carriage
-[:material-file-download: carriage.step](frame/cad/carriage_v81.step)
+[:material-file-download: carriage.step](mechanical/cad/carriage_v81.step)
 
-![](frame/cad/carriage_1.png){ width=33% }
-![](frame/cad/carriage_2.png){ width=33% }
+![](mechanical/cad/carriage_1.png){ width=33% }
+![](mechanical/cad/carriage_2.png){ width=33% }
 
 ---
 
 ### End Support
-[:material-file-download: end_support.step](frame/cad/end_support_v83.step)
+[:material-file-download: end_support.step](mechanical/cad/end_support_v83.step)
 
-![](frame/cad/end_1.png){ width=33% }
-![](frame/cad/end_2.png){ width=33% }
+![](mechanical/cad/end_1.png){ width=33% }
+![](mechanical/cad/end_2.png){ width=33% }
 
 
 ## Assembly
@@ -120,9 +120,9 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 	
 
 === "parts"
-	![](frame/assembly/cradle_parts.jpg)
+	![](mechanical/assembly/cradle_parts.jpg)
 === "assembled"
-	![](frame/assembly/cradle_assembled.jpg)
+	![](mechanical/assembly/cradle_assembled.jpg)
 
 
 #### 2. Mount motor to cradle and attach coupler
@@ -132,9 +132,9 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (1) cradle assembly
 
 === "parts"
-	![](frame/assembly/motor_parts.jpg)
+	![](mechanical/assembly/motor_parts.jpg)
 === "assembled"
-	![](frame/assembly/motor_mounted.jpg)
+	![](mechanical/assembly/motor_mounted.jpg)
 
 #### 3. Assemble carriage 
 - (6) M3x10mm screws
@@ -147,9 +147,9 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (1) 3d printed nylon carriage
 
 === "parts"
-	![](frame/assembly/carriage_parts.jpg)
+	![](mechanical/assembly/carriage_parts.jpg)
 === "assembled"
-	![](frame/assembly/carriage_assembled.jpg)
+	![](mechanical/assembly/carriage_assembled.jpg)
 
 #### 4. Connect carriage to motor
 - (1) lead screw
@@ -157,16 +157,16 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (1) carriage assembly
 
 === "parts"
-	![](frame/assembly/lead_screw_parts.jpg)
+	![](mechanical/assembly/lead_screw_parts.jpg)
 === "assembled"
-	![](frame/assembly/lead_screw_assembled.jpg)
+	![](mechanical/assembly/lead_screw_assembled.jpg)
 
 #### 5. Attach baseplate
 
 === "parts"
-	![](frame/assembly/baseplate_parts.jpg)
+	![](mechanical/assembly/baseplate_parts.jpg)
 === "assembled"
-	![](frame/assembly/baseplate_assembled.jpg)
+	![](mechanical/assembly/baseplate_assembled.jpg)
 
 #### 6. Attach end support
 - (1) flanged sleeve bearing
@@ -175,9 +175,9 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (2) square nuts
 
 === "parts"
-	![](frame/assembly/end_parts.jpg)
+	![](mechanical/assembly/end_parts.jpg)
 === "assembled"
-	![](frame/assembly/end_assembled.jpg)
+	![](mechanical/assembly/end_assembled.jpg)
 
 #### 7. Add knob and support shaft
 - (1) M3 x 10mm screw
@@ -186,9 +186,9 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (1) knob
 
 === "parts"
-	![](frame/assembly/knob_parts.jpg)
+	![](mechanical/assembly/knob_parts.jpg)
 === "assembled"
-	![](frame/assembly/knob_assembled.jpg)
+	![](mechanical/assembly/knob_assembled.jpg)
 
 #### 8. Add control electronics
 - (1) M3 x 10mm screw
@@ -196,6 +196,6 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 - (1) [Syringe Control Board](motor.md#syringe-control-board-for-pycontrol) 
 
 === "parts"
-	![](frame/assembly/controller_parts.jpg)
+	![](mechanical/assembly/controller_parts.jpg)
 === "assembled"
-	![](frame/assembly/controller_assembled.jpg)
+	![](mechanical/assembly/controller_assembled.jpg)

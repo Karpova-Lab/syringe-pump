@@ -43,10 +43,8 @@ markdown_extensions:
 
 nav:
     - Overview: index.md
-    - Mechanics: frame.md
-    - Electronics: motor.md
-    # - Quick links: 
-        # - Discussions: "https://github.com/Karpova-Lab/syringe-pump/discussions"
-        # - Issues: "https://github.com/Karpova-Lab/syringe-pump/issues"
+    - Mechanics: mechanical.md
+    - Electronics: electronics.md
+    - Further Resources: further.md
 
 copyright: Copyright &copy; 2022 Andy Lustig
