@@ -1,10 +1,9 @@
 # Mechanics
-![iso photo](mechanical/iso_photo.jpg)
 ![labeled](mechanical/labeled.png)
-
-## Hardware
-
+![iso photo](mechanical/iso_photo.jpg)
 ![all parts](mechanical/all_parts.jpg)
+
+## Hardware BOM
 
 | QTY | Description                    | Part Number                                                                                                                                                                 | Supplier      | 
 |-----|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -193,7 +192,7 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 #### 8. Add control electronics
 - (1) M3 x 10mm screw
 - (1) M3 threaded insert
-- (1) [Syringe Control Board](motor.md#syringe-control-board-for-pycontrol) 
+- (1) [Syringe Control Board](electronics.md#pycontrol-syringe-control-board-scb)
 
 === "parts"
 	![](mechanical/assembly/controller_parts.jpg)

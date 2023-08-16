@@ -17,6 +17,8 @@ theme:
         primary: red
         accent: blue
     logo: assets/home.svg
+    features:
+        - navigation.footer
 
 plugins:
     - git-revision-date-localized

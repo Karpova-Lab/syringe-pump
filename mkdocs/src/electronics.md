@@ -74,7 +74,8 @@ The skinny PCB is meant to permanently attach to the syringe frame and make conn
 It provides access to those connections through a 7-pin socket.
 The larger PCB is a pyControl compatible device that plugs into the motor connection socket.
 
-<a href="https://oshpark.com/shared_projects/HIOVaYiQ"><img src="https://oshpark.com/packs/media/images/badge-5f4e3bf4bf68f72ff88bd92e0089e9cf.png" alt="Order from OSH Park"></img></a>
+
+[Order PCB from OSH Park](https://oshpark.com/shared_projects/HIOVaYiQ)
 
 === "layout"
     <a href="layout.png">
@@ -110,7 +111,7 @@ The larger PCB is a pyControl compatible device that plugs into the motor connec
     </a>
 
 
-### Bill of Materials
+### Components BOM
 
 | Qty | Reference          | Description                | Value/MPN                                                                                                                                         | 
 |-----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
