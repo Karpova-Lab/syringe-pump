@@ -57,9 +57,9 @@ If you are outsourcing the laser cutting anyway, aluminum has the benefit of bei
 
 ### Clamps
 
-- 1/4"(0.25") acrylic
+[:material-file-download: clamp_plunger.dxf](mechanical/cad/clamp_plunger.dxf) and [:material-file-download: clamp_barrel.dxf](mechanical/cad/clamp_barrel.dxf) (units are in mm)
 
-[:material-file-download: clamps.dxf](mechanical/cad/clamps.dxf)
+- 1/4" acrylic
 
 ![](mechanical/cad/clamps.png)
 
