@@ -3,11 +3,11 @@
 
 - Full documentation: [https://karpova-lab.github.io/syringe-pump/](https://karpova-lab.github.io/syringe-pump/)
 - Demo video: [https://vimeo.com/543307158](https://vimeo.com/543307158)
-- The design of this pump has been updated to use 3D printed parts. This results in fewer parts, faster/easier assembly, and a stiffer frame. The previous lasercut-only design is available on this repository's [lasercut_frame branch](https://github.com/Karpova-Lab/syringe-pump/tree/lasercut_frame).
+- The design of this pump has been updated to use some 3D printed parts. This results in fewer parts, faster/easier assembly, and a stiffer frame. The previous lasercut-only design is available on this repository's [lasercut_frame branch](https://github.com/Karpova-Lab/syringe-pump/tree/lasercut_frame).
 
 # Features
 - Push and pull capable
-- Small footprint (330 mm x 140 mm x 100 mm)
+- Small footprint (33 cm x 14 cm x 10 cm)
 - Can be mounted vertically to [DIN rail](https://duckduckgo.com/?q=DIN+rail&t=hc&va=u&iax=images&ia=images)
 - Modular electronics can be swapped in and out to be compatible with whatever system you choose
 - Cost ~$200
