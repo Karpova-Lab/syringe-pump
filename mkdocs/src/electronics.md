@@ -49,7 +49,7 @@ If a cool new display or better motor driver IC becomes available, upgrading the
     Consider sharing in the [discussions](https://github.com/Karpova-Lab/syringe-pump/discussions) for others to benefit from. 
     I can add community design links and information to this documentation page!
 
-    To ensure compatibility with the existing [baseplate](frame.md#laser-cut-parts), your PCB should include a [7-pin header](https://www.digikey.com/en/products/detail/adam-tech/PH1RB-07-UA/9831064?s=N4IgTCBcDa4AwFYDsBaADgCwIwCcBGKcSIAugL5A) and a mounting hole (refer to the [pyControl SCB layout](#printed-circuit-board) below for dimensions).
+    To ensure compatibility with the existing [baseplate](mechanical.md#laser-cut-parts), your PCB should include a [7-pin header](https://www.digikey.com/en/products/detail/adam-tech/PH1RB-07-UA/9831064?s=N4IgTCBcDa4AwFYDsBaADgCwIwCcBGKcSIAugL5A) and a mounting hole (refer to the [pyControl SCB layout](#printed-circuit-board) below for dimensions).
     <!-- Of course everything is open source though, so you could modify the baseplate design to fit you needs.  -->
     <!-- Maybe you want to mount a large PCB with a touch display or mount multiple pumps to single baseplate. -->
 

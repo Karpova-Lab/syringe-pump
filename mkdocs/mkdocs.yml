@@ -19,6 +19,8 @@ theme:
     logo: assets/home.svg
     features:
         - navigation.footer
+        - navigation.instant
+
 
 plugins:
     - git-revision-date-localized
