@@ -1,9 +1,13 @@
 # Mechanics
-![labeled](mechanical/labeled.png)
-![iso photo](mechanical/iso_photo.jpg)
-![all parts](mechanical/all_parts.jpg)
 
 ## Hardware BOM
+
+=== "Diagram"
+	![labeled](mechanical/labeled.png)
+=== "Assembly"
+	![iso photo](mechanical/iso_photo.jpg)
+=== "Parts"
+	![all parts](mechanical/all_parts.jpg)
 
 | QTY | Description                    | Part Number                                                                                                                                                                 | Supplier      | 
 |-----|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -92,6 +96,7 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 
 
 ## Assembly
+
 
 ### Video
 
