@@ -29,7 +29,7 @@
 Small footprint operate horizontally or be mounted vertically to DIN rail
 
 <a href="readme_media/vertical_render.gif">
-  <img src="readme_media/vertical_render.gif" style = "width:25%" >
+  <img src="readme_media/vertical_render.gif">
   </img>
 </a>
 <a href="readme_media/iso_views.png">
