@@ -36,3 +36,7 @@ manufacturing.zip
 other projects
 *.zip
 pcb/syringe_board.kicad_prl
+specs
+pcb/syringe_board-backups
+pcb/manufacturing
+docs

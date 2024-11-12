@@ -1,6 +1,3 @@
 [submodule "pcb/libs"]
 	path = pcb/libs
 	url = git@github.com:alustig3/kicad-libraries.git
-[submodule "hugo/themes/book"]
-	path = hugo/themes/book
-	url = https://github.com/alustig3/hugo-book.git
