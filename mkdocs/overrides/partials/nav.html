@@ -1,0 +1,101 @@
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+{% import "partials/nav-item.html" as item with context %}
+
+<!-- Determine classes -->
+{% set class = "md-nav md-nav--primary" %}
+{% if "navigation.tabs" in features %}
+  {% set class = class ~ " md-nav--lifted" %}
+{% endif %}
+{% if "toc.integrate" in features %}
+  {% set class = class ~ " md-nav--integrated" %}
+{% endif %}
+
+<!-- Navigation -->
+<nav
+  class="{{ class }}"
+  aria-label="{{ lang.t('nav') }}"
+  data-md-level="0"
+>
+
+  <!-- Site title -->
+  <label class="md-nav__title" for="__drawer">
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="md-nav__button md-logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+    {{ config.site_name }}
+  </label>
+
+  <!-- Repository information -->
+  {% if config.repo_url %}
+    <div class="md-nav__source">
+      {% include "partials/source.html" %}
+    </div>
+  {% endif %}
+
+  <!-- Navigation list -->
+  <ul class="md-nav__list" data-md-scrollfix>
+    {% for nav_item in nav %}
+      {% set path = "__nav_" ~ loop.index %}
+      {{ item.render(nav_item, path, 1) }}
+    {% endfor %}
+  </ul>
+  <br>
+    
+  {% if config.extra.discussion_url or config.extra.issues_url %}
+  <hr style="border-top: 2px solid lightgray;">
+    <div style="padding-left:12px;font-size:.6rem;">
+        <br>
+        {% if config.extra.discussion_url %}
+          <p class="nav_label">Questions? Feedback? Ideas?</p>
+          <a href="{{ config.extra.discussion_url }}" class="nav_button">
+            <span style="vertical-align: middle;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="height:13px"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+                <path d="M416 176C416 78.8 322.9 0 208 0S0 78.8 0 176c0 39.57 15.62 75.96 41.67 105.4-16.39 32.76-39.23 57.32-39.59 57.68-2.1 2.205-2.67 5.475-1.441 8.354C1.9 350.3 4.602 352 7.66 352c38.35 0 70.76-11.12 95.74-24.04C134.2 343.1 169.8 352 208 352c114.9 0 208-78.8 208-176zm183.6 267.7C624.8 413.9 640 376.6 640 336c0-97.2-86-176-192-176-.315 0-.62.041-.934.043C447.5 165.3 448 170.6 448 176c0 98.62-79.68 181.2-186.1 202.5C282.7 455.1 357.1 512 448 512c33.69 0 65.32-8.008 92.85-21.98C565.2 502 596.1 512 632.3 512c3.059 0 5.76-1.725 7.02-4.605 1.229-2.879.658-6.148-1.441-8.354C637.6 498.7 615.9 475.3 599.6 443.7z"/>
+              </svg>
+            </span>
+            Add to discussions
+          </a>
+        {% endif %}
+
+        {% if config.extra.issues_url %}
+        <p class="nav_label">Issues? Corrections?</p>
+        <a href="{{ config.extra.issues_url }}" class="nav_button">
+            <span style="vertical-align: middle;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="height:.6rem"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.-->
+                    <path d="M490.3 40.4c21.9 21.87 21.9 57.33 0 79.2l-30 30.1-98-97.98 30.1-30.06c21.9-21.873 57.3-21.873 79.2 0l18.7 18.74zM172.4 241.7 339.7 74.34l98 97.96-167.4 167.3c-6.1 6.2-13.6 10.8-21.9 13.6l-88.8 29.6c-9.5 2.8-18.1.6-24.6-6.7-6.4-5.6-8.6-15.1-5.8-23.7l29.6-88.8c2.8-8.3 7.4-15.8 13.6-21.9zM192 63.1c17.7 0 32 15.23 32 32 0 18.6-14.3 32-32 32H96c-17.67 0-32 15.2-32 32V416c0 17.7 14.33 32 32 32h256c17.7 0 32-14.3 32-32v-96.9c0-16.8 14.3-32 32-32s32 15.2 32 32V416c0 53-43 96-96 96H96c-53.02 0-96-43-96-96V159.1c0-53 42.98-96 96-96h96z"/>
+                </svg>
+            </span>
+            Submit an issue 
+        </a>
+        {% endif %}
+    </div>
+    <br>
+  {% endif %}
+</nav>
