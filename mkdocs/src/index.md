@@ -49,7 +49,7 @@ Below is a comparison between this DIY syringe pump and a commercial [Harvard Ap
 
 - [Open-source syringe pump](http://www.mass-spec.ru/projects/diy/syringe_pump/eng/) by Moscow State University's Mass Spectrometry Lab
 - [Open-source syringe pump](http://www.appropedia.org/Open-source_syringe_pump)  by Michigan Tech's Open Sustainability Technology Lab
-- [Low cost laser cut syringe pump](http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/) by Jakob Voigts
+- [Low cost laser cut syringe pump](https://web.archive.org/web/20211129184027/http://jvoigts.scripts.mit.edu/blog/low-cost-syringe-pump/#expand) by Jakob Voigts
 - [Poisedon](https://pachterlab.github.io/poseidon/) by the Pachter Lab
 - [3D Printed Syringe Pump Rack](https://hackaday.com/2015/05/29/pump-up-the-volume-with-the-3d-printed-syringe-pump-rack/) by aldricnegrier
 - [DIY Syringe Pump](https://hackaday.com/2017/02/26/diy-syringe-pump-saves-big-bucks-for-hackers-lab/)  by Naroom

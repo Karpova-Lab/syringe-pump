@@ -21,22 +21,10 @@ fp-info-cache
 # Ignore sketch files
 *.sketch
 *.vscode
-videos
-Documentation Source/source/images/frame_assembly/originals
-Documentation Source/source/images/PCB/original
-Documentation Source/source/images/renders/original
-3D CAD/animations
-2D CAD/10 mL
-resolution calculation.Rmd
-syringe_diameters.png
-702000 01 PHD222000 Rev H.pdf
-syringe comparison.png
-syringe data.xlsx
-manufacturing.zip
-other projects
 *.zip
-pcb/syringe_board.kicad_prl
-specs
 pcb/syringe_board-backups
-pcb/manufacturing
-docs
+specs
+videos
+*.kicad_prl
+Software/resolution calculation.Rmd
+Software/syringe_diameters.png
