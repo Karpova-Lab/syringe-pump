@@ -1,0 +1,31 @@
+# pages are from TMC5041 DATASHEET (Rev. 1.16 / 2023-FEB-21)
+
+# p.19
+GCONF = 0x00
+
+# p.21
+RAMPMODE = 0x20
+XACTUAL = 0x21
+A1 = 0x24
+V1 = 0x25
+AMAX = 0x26
+VMAX = 0x27
+DMAX = 0x28
+D1 = 0x2A
+VSTOP = 0x2B
+XTARGET = 0x2D
+
+# p.23
+IHOLD_IRUN = 0x30
+VCOOLTHRS = 0x31
+VHIGH = 0x32
+
+# p.25
+SW_MODE = 0x34
+RAMP_STAT = 0x35
+
+# p.30
+CHOP_CONF = 0x6C
+
+# p.34
+PWM_CONF = 0x10

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "asl_symbols_new")(type "KiCad")(uri "${KIPRJMOD}/libs/asl_symbols_new.kicad_sym")(options "")(descr ""))
+)

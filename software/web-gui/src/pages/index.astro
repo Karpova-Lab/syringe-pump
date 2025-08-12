@@ -1,0 +1,22 @@
+---
+import ConnectButton from "../components/ConnectButton.astro";
+import Layout from "../layouts/Layout.astro";
+import PumpCard from "../components/PumpCard.astro";
+---
+
+<Layout>
+    <div class="grid grid-cols-1 px-4">
+        <ConnectButton />
+        <div
+            class="grid justify-center grid-cols-1 gap-2 m-4 mx-auto opacity-50 pointer-events-none md:grid-cols-4 w-fit"
+            id="pump_cards_container"
+        >
+            <PumpCard pumpId="l2" pumpLabel="Left Pump 2" />
+            <PumpCard pumpId="l1" pumpLabel="Left Pump 1" />
+            <PumpCard pumpId="r1" pumpLabel="Right Pump 1" />
+            <PumpCard pumpId="r2" pumpLabel="Right Pump 2" />
+        </div>
+    </div>
+</Layout>
+
+<script src="../scripts/serial.js"></script>

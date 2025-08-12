@@ -1,5 +1,5 @@
 
-# Hardware documenation template
+# Hardware documentation template
 This is a template for creating documentation for hardware projects. It is built on top of the following projects:
 
 - [MkDocs](https://github.com/mkdocs/mkdocs) - a static website generator

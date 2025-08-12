@@ -1,0 +1,47 @@
+---
+const { min, max, step, value, unit } = Astro.props;
+const { pumpId } = Astro.props;
+const id = pumpId + "-" + unit;
+const { slider = false } = Astro.props;
+---
+
+
+<input
+    class="px-1 text-right border rounded"
+    type="number"
+    id={id}
+    min={min}
+    max={max}
+    step={step}
+    value={value}
+/>
+<span class="px-1 py-1 rounded justify-self-start align-self-bottom"
+    >{unit}</span
+>
+{
+    slider && (
+        <input
+            class="col-span-2 mb-4"
+            type="range"
+            id={`${id}-slider`}
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            oninput={`document.getElementById('${id}').value = this.value`}
+        />
+    )
+}
+
+<script define:vars={{ id }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+</script>

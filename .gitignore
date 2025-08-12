@@ -1,6 +1,3 @@
-Software/.ipynb_checkpoints
-Documentation Source/build
-
 # from https://github.com/github/gitignore/blob/master/KiCad.gitignore
 # Temporary files
 *.000
@@ -16,15 +13,16 @@ _autosave-*
 
 # Footprint cache
 fp-info-cache
+*.kicad_prl
 
+**/*-backups/*.zip
 
-# Ignore sketch files
-*.sketch
 *.vscode
-*.zip
-pcb/syringe_board-backups
 specs
 videos
-*.kicad_prl
-Software/resolution calculation.Rmd
-Software/syringe_diameters.png
+ecad/bom
+Software/_sync-software.sh
+mkdocs/src/hardware/cad/_sync-cad.sh
+ecad/controller-backups
+mkdocs/src/software/api_table.xlsx
+ecad/old_zips

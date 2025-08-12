@@ -1,0 +1,26 @@
+---
+interface Props {
+    pumpId: string;
+    action: 'get' | 'set' | 'home' | 'infuse' | 'retract';
+    text?: string;
+    className?: string;
+}
+
+const { pumpId, action, text, className = "" } = Astro.props;
+const buttonStyles = {
+    get: "col-span-2 bg-amber-500 hover:bg-amber-600 text-white",
+    set: "col-span-2 bg-violet-500 hover:bg-violet-600 text-white",
+    infuse: "bg-emerald-500 hover:bg-emerald-600 text-white", 
+    retract: "bg-red-600 hover:bg-red-700 text-white",
+    home: "col-span-2 bg-sky-500 hover:bg-sky-600 text-white",
+    stop: "col-span-2 bg-gray-500 hover:bg-gray-600 text-white",
+};
+
+---
+
+<button
+    id={`${pumpId}-${action}`}
+    class={`px-4 py-2 rounded ${buttonStyles[action]} ${action}-btn ${className}`}
+>
+    {text || action.charAt(0).toUpperCase() + action.slice(1)}
+</button> 

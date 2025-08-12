@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syringe Pump Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Layout containers */
+        .main-controls {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .main-controls.enabled {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <section class="p-6">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Connection Controls -->
+            <div class="text-center">
+                <div class="flex justify-center">
+                    <button id="connectButton" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Connect</button>
+                </div>
+            </div>
+
+            <!-- Main Controls -->
+            <div class="main-controls p-8" id="mainControls">
+                <!-- Setup Controls -->
+                <div class="max-w-6xl mx-auto" id="pumpControls">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-2 mb-4 w-fit mx-auto" id="pumpGrid">
+                        <!-- Pump divs will be generated here -->
+                    </div>
+                    <div class="text-center">
+                        <button id="retractButton" class="px-6 py-3 bg-rose-500 text-white text-lg rounded-lg hover:bg-rose-600">Retract all</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Global variables
+        let port;
+        const textDecoder = new TextDecoder();
+        const pumps = ['LP2', 'LP1', 'RP1', 'RP2'];
+
+        // DOM elements
+        const connectButton = document.getElementById('connectButton');
+        const mainControls = document.getElementById('mainControls');
+        const pumpGrid = document.getElementById('pumpGrid');
+
+        function createPumpDiv(pumpId) {
+            const pumpNames = {
+                'LP2': 'Left Pump 2',
+                'LP1': 'Left Pump 1', 
+                'RP1': 'Right Pump 1',
+                'RP2': 'Right Pump 2'
+            };
+
+            const div = document.createElement('div');
+            div.className = 'grid grid-cols-2 gap-2 bg-white p-6 rounded-lg shadow';
+            div.innerHTML = `
+                <h3 class="text-lg font-semibold mb-4 text-center col-span-2">${pumpNames[pumpId]}</h3>
+                <h4 class="col-span-2">Configure</h4>
+                ${createInputField(pumpId, 'steps-per-rev', 'steps/rev', 10, 400, 1, 200)}
+                ${createInputField(pumpId, 'syringe-id', 'mm ID', 1, 50, 0.1, 26.7)}
+                ${createInputField(pumpId, 'lead', 'mm lead', 1, 8, 1, 2)}
+                ${createInputField(pumpId, 'accel', 'steps/s² acceleration', 500, 6000, 500, 5000)}
+                ${createInputField(pumpId, 'max-vel', 'steps/s max velocity', 5000, 200000, 5000, 180000)}
+                <button id="${pumpId}-get" class="px-3 py-1 bg-sky-500 text-white rounded hover:bg-sky-600 mb-2">Get</button>
+                <button id="${pumpId}-set" class="px-3 py-1 bg-teal-500 text-white rounded hover:bg-teal-600 mb-2">Set</button>
+                <h4 class="col-span-2">Move</h4>
+                <input class="px-2 py-1 border rounded text-right" type="number" id="${pumpId}-volume" min="0" max="60" step="1" value="10">
+                <button id="${pumpId}-infuse" class="px-3 py-1 bg-pink-500 text-white rounded hover:bg-pink-600">Infuse</button>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-right">mL</span>
+                <button id="${pumpId}-retract" class="px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600">Retract</button>
+            `;
+            return div;
+        }
+
+        function createInputField(pumpId, fieldId, label, min, max, step, value) {
+            return `
+                <input class="px-2 py-1 border rounded text-right justify-self-end" type="number" id="${pumpId}-${fieldId}" min="${min}" max="${max}" step="${step}" value="${value}">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded justify-self-start text-sm">${label}</span>
+            `;
+        }
+
+        async function updatePump(pumpId) {
+            const steps = document.getElementById(`${pumpId}-steps-per-rev`).value;
+            const id = document.getElementById(`${pumpId}-syringe-id`).value;
+            const lead = document.getElementById(`${pumpId}-lead`).value;
+            const accel = document.getElementById(`${pumpId}-accel`).value;
+            const maxvel = document.getElementById(`${pumpId}-max-vel`).value;
+            
+            try {
+                const writer = port.writable.getWriter();
+                const data = new TextEncoder().encode(
+                    `eval,${pumpId.toLowerCase()}.configure(${steps}, ${id}, ${lead}, ${accel}, ${maxvel})\n`
+                );
+                await writer.write(data);
+                writer.releaseLock();
+            } catch (err) {
+                console.error('Error:', err);
+            }
+        }
+
+        async function readSerialData() {
+            if (!port?.readable) {
+                console.error('Port is not open or readable');
+                return;
+            }
+
+            const reader = port.readable.getReader();
+            let buffer = '';
+
+            try {
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    if (value) {
+                        buffer += textDecoder.decode(value);
+                        const newlineIndex = buffer.indexOf('\n');
+                        
+                        if (newlineIndex !== -1) {
+                            const response = buffer.slice(0, newlineIndex);
+                            buffer = buffer.slice(newlineIndex + 1);
+                            
+                            console.log("response: ", response);
+                            if(response.includes(':')){
+                                const [pump, configStr] = response.split(':');
+                                const [steps, id, lead, accel, maxvel] = configStr
+                                    .replace(/[()]/g, '')
+                                    .split(',')
+                                    .map(x => parseFloat(x.trim()));
+                                document.getElementById(`${pump}-steps-per-rev`).value = steps;
+                                document.getElementById(`${pump}-syringe-id`).value = id;
+                                document.getElementById(`${pump}-lead`).value = lead;
+                                document.getElementById(`${pump}-accel`).value = accel;
+                                document.getElementById(`${pump}-max-vel`).value = maxvel;
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error reading serial:', error);
+            } finally {
+                reader.releaseLock();
+            }
+        }
+
+        // Event listeners
+        const filters = [
+            { usbVendorId: 0x10C4, usbProductId: 0xEA60 } // CP2102N USB-to-UART Bridge Controller
+        ];
+
+        const originalRequestPort = navigator.serial.requestPort;
+        navigator.serial.requestPort = function() {
+            return originalRequestPort.call(this, { filters });
+        };
+
+        connectButton.addEventListener('click', async () => {
+            if (!port) {
+                try {
+                    port = await navigator.serial.requestPort();
+                    await port.open({ 
+                        baudRate: 115200,
+                        dataBits: 8,
+                        stopBits: 1,
+                        parity: 'none'
+                    });
+
+                    connectButton.textContent = "Disconnect";
+                    connectButton.classList.replace("bg-blue-500", "bg-red-500");
+                    connectButton.classList.replace("hover:bg-blue-600", "hover:bg-red-600");
+                    mainControls.classList.add('enabled');
+                    readSerialData();
+                } catch (err) {
+                    alert('Failed to connect to syringe pump. Please check that it is plugged in and no other programs are using it.');
+                    console.error('Error:', err);
+                }
+            } else {
+                try {
+                    await port.close();
+                    port = null;
+                    connectButton.textContent = "Connect";
+                    connectButton.classList.replace("bg-red-500", "bg-blue-500");
+                    connectButton.classList.replace("hover:bg-red-600", "hover:bg-blue-600");
+                    mainControls.classList.remove('enabled');
+                } catch (err) {
+                    console.error('Error:', err);
+                }
+            }
+        });
+
+        retractButton.addEventListener('click', async () => {
+            try {
+                const writer = port.writable.getWriter();
+                await writer.write(new TextEncoder().encode('retract_all,\n'));
+                writer.releaseLock();
+            } catch (err) {
+                console.error('Error:', err);
+            }
+        });
+
+        pumps.forEach(pump => {
+            const pumpDiv = createPumpDiv(pump);
+            pumpGrid.appendChild(pumpDiv);
+
+            const volumeInput = document.getElementById(`${pump}-volume`);
+            const infuseButton = document.getElementById(`${pump}-infuse`);
+            const retractButton = document.getElementById(`${pump}-retract`);
+            const setButton = document.getElementById(`${pump}-set`);
+            const getButton = document.getElementById(`${pump}-get`);
+            
+            getButton.addEventListener('click', async () => {
+                try {
+                    const command = `eval,${pump.toLowerCase()}.get_config()\n`;
+                    const writer = port.writable.getWriter();
+                    await writer.write(new TextEncoder().encode(command));
+                    console.log("sent command: ", command);
+                    writer.releaseLock();
+                } catch (err) {
+                    console.error('Error:', err);
+                }
+            });
+
+            setButton.addEventListener('click', async () => {
+                updatePump(pump);
+            });
+
+            infuseButton.addEventListener('click', async () => {
+                try {
+                    const volume = volumeInput.value * 1000;
+                    const command = `eval,${pump.toLowerCase()}.dispense(${volume})\n`;
+                    const writer = port.writable.getWriter();
+                    await writer.write(new TextEncoder().encode(command));
+                    console.log("sent command: ", command);
+                    writer.releaseLock();
+                } catch (err) {
+                    console.error('Error:', err);
+                }
+            });
+
+            retractButton.addEventListener('click', async () => {
+                try {
+                    const volume = -1 * volumeInput.value * 1000;
+                    const command = `eval,${pump.toLowerCase()}.dispense(${volume})\n`;
+                    const writer = port.writable.getWriter();
+                    await writer.write(new TextEncoder().encode(command));
+                    console.log("sent command: ", command);
+                    writer.releaseLock();
+                } catch (err) {
+                    console.error('Error:', err);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

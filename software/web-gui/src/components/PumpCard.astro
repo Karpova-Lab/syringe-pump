@@ -1,0 +1,51 @@
+---
+import Button from "./Button.astro";
+import Setting from "./Setting.astro";
+
+const { pumpLabel, pumpId } = Astro.props;
+---
+
+<div
+	class="grid grid-cols-2 gap-1 p-6 border-2 border-gray-300 shadow-2xl rounded-2xl w-fit"
+>
+	<h1 class="col-span-2 mb-2 text-2xl font-bold text-center">{pumpLabel}</h1>
+
+	<h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">
+		Settings
+	</h2>
+	<Button pumpId={pumpId} action="get" />
+	<Setting
+		pumpId={pumpId}
+		unit="mm inner diameter"
+		min="0"
+		max="100"
+		step="1"
+		value="26.7"
+	/>
+	<Setting
+		pumpId={pumpId}
+		unit="mL/min flow rate"
+		min="0"
+		max="170"
+		step="1"
+		value="170"
+		slider="true"
+	/>
+	<Button pumpId={pumpId} action="set" />
+	<div></div>
+
+	<h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">Move</h2>
+	<Setting
+		pumpId={pumpId}
+		unit="mL"
+		min="0"
+		max="60"
+		step="5"
+		value="10"
+		slider="true"
+	/>
+	<Button pumpId={pumpId} action="infuse" />
+	<Button pumpId={pumpId} action="retract" />
+	<Button pumpId={pumpId} action="home" />
+	<Button pumpId={pumpId} action="stop" />
+</div>
