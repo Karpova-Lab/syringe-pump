@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.0.3"><title>Syringe Pump Control</title><style>*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content: ""}html,:host{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.col-span-2{grid-column:span 2 / span 2}.m-4{margin:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mt-4{margin-top:1rem}.grid{display:grid}.w-fit{width:-moz-fit-content;width:fit-content}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.justify-center{justify-content:center}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.justify-self-start{justify-self:start}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-gray-300{--tw-border-opacity: 1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.bg-amber-500{--tw-bg-opacity: 1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity: 1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity: 1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-gray-500{--tw-bg-opacity: 1;background-color:rgb(107 114 128 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity: 1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity: 1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity: 1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-violet-500{--tw-bg-opacity: 1;background-color:rgb(139 92 246 / var(--tw-bg-opacity, 1))}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-50{opacity:.5}.shadow-2xl{--tw-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);--tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:bg-amber-600:hover{--tw-bg-opacity: 1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-600:hover{--tw-bg-opacity: 1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity: 1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-600:hover{--tw-bg-opacity: 1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.hover\:bg-red-700:hover{--tw-bg-opacity: 1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-600:hover{--tw-bg-opacity: 1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-600:hover{--tw-bg-opacity: 1;background-color:rgb(124 58 237 / var(--tw-bg-opacity, 1))}@media (min-width: 768px){.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style></head> <body class="">  <div class="grid grid-cols-1 px-4"> <button id="connectButton" class="m-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+Connect to syringe pump controller
+</button> <div class="grid justify-center grid-cols-1 gap-2 m-4 mx-auto opacity-50 pointer-events-none md:grid-cols-4 w-fit" id="pump_cards_container"> <div class="grid grid-cols-2 gap-1 p-6 border-2 border-gray-300 shadow-2xl rounded-2xl w-fit"> <h1 class="col-span-2 mb-2 text-2xl font-bold text-center">Left Pump 2</h1> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">
+Settings
+</h2> <button id="l2-get" class="px-4 py-2 rounded col-span-2 bg-amber-500 hover:bg-amber-600 text-white get-btn "> Get </button> <input class="px-1 text-right border rounded" type="number" id="l2-mm inner diameter" min="0" max="100" step="1" value="26.7"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mm inner diameter</span>  <script>(function(){const id = "l2-mm inner diameter";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <input class="px-1 text-right border rounded" type="number" id="l2-mL/min flow rate" min="0" max="170" step="1" value="170"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL/min flow rate</span> <input class="col-span-2 mb-4" type="range" id="l2-mL/min flow rate-slider" min="0" max="170" step="1" value="170" oninput="document.getElementById('l2-mL/min flow rate').value = this.value"> <script>(function(){const id = "l2-mL/min flow rate";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="l2-set" class="px-4 py-2 rounded col-span-2 bg-violet-500 hover:bg-violet-600 text-white set-btn "> Set </button> <div></div> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">Move</h2> <input class="px-1 text-right border rounded" type="number" id="l2-mL" min="0" max="60" step="5" value="10"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL</span> <input class="col-span-2 mb-4" type="range" id="l2-mL-slider" min="0" max="60" step="5" value="10" oninput="document.getElementById('l2-mL').value = this.value"> <script>(function(){const id = "l2-mL";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="l2-infuse" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-600 text-white infuse-btn "> Infuse </button> <button id="l2-retract" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white retract-btn "> Retract </button> <button id="l2-home" class="px-4 py-2 rounded col-span-2 bg-sky-500 hover:bg-sky-600 text-white home-btn "> Home </button> <button id="l2-stop" class="px-4 py-2 rounded col-span-2 bg-gray-500 hover:bg-gray-600 text-white stop-btn "> Stop </button> </div> <div class="grid grid-cols-2 gap-1 p-6 border-2 border-gray-300 shadow-2xl rounded-2xl w-fit"> <h1 class="col-span-2 mb-2 text-2xl font-bold text-center">Left Pump 1</h1> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">
+Settings
+</h2> <button id="l1-get" class="px-4 py-2 rounded col-span-2 bg-amber-500 hover:bg-amber-600 text-white get-btn "> Get </button> <input class="px-1 text-right border rounded" type="number" id="l1-mm inner diameter" min="0" max="100" step="1" value="26.7"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mm inner diameter</span>  <script>(function(){const id = "l1-mm inner diameter";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <input class="px-1 text-right border rounded" type="number" id="l1-mL/min flow rate" min="0" max="170" step="1" value="170"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL/min flow rate</span> <input class="col-span-2 mb-4" type="range" id="l1-mL/min flow rate-slider" min="0" max="170" step="1" value="170" oninput="document.getElementById('l1-mL/min flow rate').value = this.value"> <script>(function(){const id = "l1-mL/min flow rate";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="l1-set" class="px-4 py-2 rounded col-span-2 bg-violet-500 hover:bg-violet-600 text-white set-btn "> Set </button> <div></div> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">Move</h2> <input class="px-1 text-right border rounded" type="number" id="l1-mL" min="0" max="60" step="5" value="10"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL</span> <input class="col-span-2 mb-4" type="range" id="l1-mL-slider" min="0" max="60" step="5" value="10" oninput="document.getElementById('l1-mL').value = this.value"> <script>(function(){const id = "l1-mL";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="l1-infuse" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-600 text-white infuse-btn "> Infuse </button> <button id="l1-retract" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white retract-btn "> Retract </button> <button id="l1-home" class="px-4 py-2 rounded col-span-2 bg-sky-500 hover:bg-sky-600 text-white home-btn "> Home </button> <button id="l1-stop" class="px-4 py-2 rounded col-span-2 bg-gray-500 hover:bg-gray-600 text-white stop-btn "> Stop </button> </div> <div class="grid grid-cols-2 gap-1 p-6 border-2 border-gray-300 shadow-2xl rounded-2xl w-fit"> <h1 class="col-span-2 mb-2 text-2xl font-bold text-center">Right Pump 1</h1> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">
+Settings
+</h2> <button id="r1-get" class="px-4 py-2 rounded col-span-2 bg-amber-500 hover:bg-amber-600 text-white get-btn "> Get </button> <input class="px-1 text-right border rounded" type="number" id="r1-mm inner diameter" min="0" max="100" step="1" value="26.7"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mm inner diameter</span>  <script>(function(){const id = "r1-mm inner diameter";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <input class="px-1 text-right border rounded" type="number" id="r1-mL/min flow rate" min="0" max="170" step="1" value="170"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL/min flow rate</span> <input class="col-span-2 mb-4" type="range" id="r1-mL/min flow rate-slider" min="0" max="170" step="1" value="170" oninput="document.getElementById('r1-mL/min flow rate').value = this.value"> <script>(function(){const id = "r1-mL/min flow rate";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="r1-set" class="px-4 py-2 rounded col-span-2 bg-violet-500 hover:bg-violet-600 text-white set-btn "> Set </button> <div></div> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">Move</h2> <input class="px-1 text-right border rounded" type="number" id="r1-mL" min="0" max="60" step="5" value="10"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL</span> <input class="col-span-2 mb-4" type="range" id="r1-mL-slider" min="0" max="60" step="5" value="10" oninput="document.getElementById('r1-mL').value = this.value"> <script>(function(){const id = "r1-mL";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="r1-infuse" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-600 text-white infuse-btn "> Infuse </button> <button id="r1-retract" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white retract-btn "> Retract </button> <button id="r1-home" class="px-4 py-2 rounded col-span-2 bg-sky-500 hover:bg-sky-600 text-white home-btn "> Home </button> <button id="r1-stop" class="px-4 py-2 rounded col-span-2 bg-gray-500 hover:bg-gray-600 text-white stop-btn "> Stop </button> </div> <div class="grid grid-cols-2 gap-1 p-6 border-2 border-gray-300 shadow-2xl rounded-2xl w-fit"> <h1 class="col-span-2 mb-2 text-2xl font-bold text-center">Right Pump 2</h1> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">
+Settings
+</h2> <button id="r2-get" class="px-4 py-2 rounded col-span-2 bg-amber-500 hover:bg-amber-600 text-white get-btn "> Get </button> <input class="px-1 text-right border rounded" type="number" id="r2-mm inner diameter" min="0" max="100" step="1" value="26.7"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mm inner diameter</span>  <script>(function(){const id = "r2-mm inner diameter";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <input class="px-1 text-right border rounded" type="number" id="r2-mL/min flow rate" min="0" max="170" step="1" value="170"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL/min flow rate</span> <input class="col-span-2 mb-4" type="range" id="r2-mL/min flow rate-slider" min="0" max="170" step="1" value="170" oninput="document.getElementById('r2-mL/min flow rate').value = this.value"> <script>(function(){const id = "r2-mL/min flow rate";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="r2-set" class="px-4 py-2 rounded col-span-2 bg-violet-500 hover:bg-violet-600 text-white set-btn "> Set </button> <div></div> <h2 class="col-span-2 mt-4 mb-2 text-xl font-bold text-gray-700">Move</h2> <input class="px-1 text-right border rounded" type="number" id="r2-mL" min="0" max="60" step="5" value="10"> <span class="px-1 py-1 rounded justify-self-start align-self-bottom">mL</span> <input class="col-span-2 mb-4" type="range" id="r2-mL-slider" min="0" max="60" step="5" value="10" oninput="document.getElementById('r2-mL').value = this.value"> <script>(function(){const id = "r2-mL";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const numberInput = document.getElementById(id);
+        const sliderInput = document.getElementById(`${id}-slider`);
+
+        if (sliderInput) {
+            numberInput.addEventListener("input", () => {
+                sliderInput.value = numberInput.value;
+            });
+        }
+    });
+})();</script> <button id="r2-infuse" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-600 text-white infuse-btn "> Infuse </button> <button id="r2-retract" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white retract-btn "> Retract </button> <button id="r2-home" class="px-4 py-2 rounded col-span-2 bg-sky-500 hover:bg-sky-600 text-white home-btn "> Home </button> <button id="r2-stop" class="px-4 py-2 rounded col-span-2 bg-gray-500 hover:bg-gray-600 text-white stop-btn "> Stop </button> </div> </div> </div>  </body></html> <script type="module">let i;const a=document.getElementById("connectButton"),g=document.getElementById("pump_cards_container"),y=new TextDecoder,f=[{usbVendorId:4292,usbProductId:6e4}],w=navigator.serial.requestPort;navigator.serial.requestPort=function(){return w.call(this,{filters:f})};async function o(t){try{const e=i.writable.getWriter();await e.write(new TextEncoder().encode(t)),console.log("Sent command:",t),e.releaseLock()}catch(e){console.error("Error writing serial:",e)}}function E(t,e){const[n,s,c,l]=e,m=[document.getElementById(`${t}-mm inner diameter`),document.getElementById(`${t}-mL/min flow rate`)],d=[s,n];m.forEach((r,u)=>{if(r){r.value=d[u];const p=document.getElementById(`${r.id}-slider`);p&&(p.value=d[u]),r.style.transition="border-color 0.2s",r.style.borderColor="#4f46e5",setTimeout(()=>{r.style.borderColor=""},500)}})}a.addEventListener("click",async()=>{try{i=await navigator.serial.requestPort(),await i.open({baudRate:115200,dataBits:8,stopBits:1,parity:"none"}),v(),a.textContent="Connected",a.classList.replace("bg-blue-500","bg-green-500"),a.classList.remove("hover:bg-blue-600"),g.classList.remove("opacity-50","pointer-events-none"),a.style.display="none",await o(`settings;l2
+`),await o(`settings;l1
+`),await o(`settings;r1
+`),await o(`settings;r2
+`)}catch(t){alert("Failed to connect. Please check that the device is plugged in and no other programs are using it."),console.error("Error:",t)}});async function v(){if(!i?.readable){console.error("Port is not open or readable");return}const t=i.readable.getReader();let e="";try{for(;;){const{value:n,done:s}=await t.read();if(s)break;if(n){e+=y.decode(n);const c=e.indexOf(`
+`);if(c!==-1){const l=e.slice(0,c);if(e=e.slice(c+1),console.log("Response:",l),l.includes("=")){const[m,d]=l.split("="),r=JSON.parse(d.replace(/'/g,'"').replace(/None/g,"null")),u=[r.flow_rate,r.syringe_id_mm,r.steps_per_rev,r.lead_mm];E(m,u)}}}}}catch(n){console.error("Error reading serial:",n)}finally{t.releaseLock()}}function b(){document.querySelectorAll(".infuse-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0],n=document.getElementById(`${e}-mL`).value*1e3;await o(`dispense;${e};${n}
+`)})}),document.querySelectorAll(".retract-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0],n=document.getElementById(`${e}-mL`).value*-1e3;await o(`dispense;${e};${n}
+`)})}),document.querySelectorAll(".home-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0];await o(`dispense;${e};-60000
+`)})}),document.querySelectorAll(".set-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0],n=document.getElementById(`${e}-mm inner diameter`).value,s=document.getElementById(`${e}-mL/min flow rate`).value;await o(`diameter;${e};${n}
+`),await o(`flow_rate;${e};${s}
+`)})}),document.querySelectorAll(".get-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0];await o(`settings;${e}
+`)})}),document.querySelectorAll(".stop-btn").forEach(t=>{t.addEventListener("click",async()=>{const e=t.id.split("-")[0];await o(`stop;${e}
+`)})})}b();</script>

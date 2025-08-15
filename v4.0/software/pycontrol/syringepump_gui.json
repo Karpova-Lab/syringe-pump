@@ -1,0 +1,103 @@
+{
+    "Syringe pump controls": {
+        "left_id_mm": {
+            "widget": "spinbox",
+            "label": "Left inner diameter",
+            "hint": "",
+            "min": 10,
+            "max": 26.7,
+            "step": 0.1,
+            "suffix": "mm"
+        },
+        "left_flow_rate": {
+            "widget": "slider",
+            "label": "Left flow rate",
+            "hint": "",
+            "min": 50,
+            "max": 170,
+            "step": 5,
+            "suffix": "mL/min"
+        },
+        "right_id_mm": {
+            "widget": "spinbox",
+            "label": "Right inner diameter",
+            "hint": "",
+            "min": 10,
+            "max": 26.7,
+            "step": 0.1,
+            "suffix": "mm"
+        },
+        "right_flow_rate": {
+            "widget": "slider",
+            "label": "Right flow rate",
+            "hint": "",
+            "min": 50,
+            "max": 170,
+            "step": 5,
+            "suffix": "mL/min"
+        },
+        "configure_pumps": {
+            "widget": "button",
+            "label": "Update conifgurations",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        },
+        "sep_0": {
+            "widget": "separator",
+            "label": "",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        },
+        "infusion_volume": {
+            "widget": "spinbox",
+            "label": "Volume",
+            "hint": "a negative value will retract the pump",
+            "min": -60000,
+            "max": 60000,
+            "step": 500,
+            "suffix": "\u00b5L"
+        },
+        "left_infuse": {
+            "widget": "button",
+            "label": "Left infuse",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        },
+        "right_infuse": {
+            "widget": "button",
+            "label": "Right infuse",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        },
+        "both_infuse": {
+            "widget": "button",
+            "label": "Both infuse",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        },
+        "full_retract": {
+            "widget": "button",
+            "label": "\u2b07\ufe0fFull Retract \u2b07\ufe0f",
+            "hint": "",
+            "min": null,
+            "max": null,
+            "step": null,
+            "suffix": ""
+        }
+    }
+}
