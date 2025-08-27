@@ -1,7 +1,9 @@
+# !!! Please see an updated version of this pump at https://www.github.com/Karpova-Lab/syringe-pump !!!
+
 # Open Syringe Pump
 
 
-- Full documentation: [https://karpova-lab.github.io/syringe-pump/](https://karpova-lab.github.io/syringe-pump/)
+- Full documentation: [https://karpova-lab.github.io/syringe-pump/v3.0/](https://karpova-lab.github.io/syringe-pump/v3.0/)
 - Demo video: [https://vimeo.com/543307158](https://vimeo.com/543307158)
 - The design of this pump has been updated to use some 3D printed parts. This results in fewer parts, faster/easier assembly, and a stiffer frame. The previous lasercut-only design is available on this repository's [lasercut_frame branch](https://github.com/Karpova-Lab/syringe-pump/tree/lasercut_frame).
 
