@@ -81,7 +81,7 @@ These components are printed in Nylon PA 12 using an HP Multi-Jet-Fusion printer
 ---
 
 ### Carriage
-[:material-file-download: carriage.step](hardware/cad/carriage_v81.step)
+[:material-file-download: carriage.step](hardware/cad/carriage_v82.step)
 
 ![](hardware/cad/carriage_1.png){ width=33% }
 ![](hardware/cad/carriage_2.png){ width=33% }
