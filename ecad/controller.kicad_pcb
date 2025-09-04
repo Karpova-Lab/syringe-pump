@@ -12078,7 +12078,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -12124,7 +12124,7 @@
 		(path "/6279be80-ea83-45c6-bd69-de79489f4fb5")
 		(sheetname "/")
 		(sheetfile "controller.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 1.33 -1.27)
 			(end -1.33 -1.27)
@@ -13134,7 +13134,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -13180,7 +13180,7 @@
 		(path "/7c8ff9dd-865b-4d52-b862-4953ea1f663d")
 		(sheetname "/")
 		(sheetfile "controller.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 1.33 -1.27)
 			(end -1.33 -1.27)
@@ -13441,7 +13441,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "PEC14SBAN"
+		(property "Value" "PH1RB-14-UA"
 			(at 4.385 -35.29 0)
 			(layer "B.Fab")
 			(uuid "ee096681-582e-4336-948a-90bd36b42121")
@@ -13453,7 +13453,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PEC14SBAN/860103?s=N4IgTCBcDaIM4EYlgKYFoEBYQF0C+QA"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/adam-tech/PH1RB-14-UA/9831063?s=N4IgTCBcDa4AwFYDsBaACgCQIwCUBCKWALCgKoCCKAcgCIgC6AvkA"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -15576,7 +15576,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -15622,7 +15622,7 @@
 		(path "/9058a6ad-c202-4282-8db6-d7527a8f1088")
 		(sheetname "/")
 		(sheetfile "controller.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 1.33 -1.27)
 			(end -1.33 -1.27)

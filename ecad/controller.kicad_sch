@@ -344,7 +344,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_01x10_Socket"
+		(symbol "Connector:Conn_01x12_Socket"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -353,15 +353,15 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 12.7 0)
+				(at 0 15.24 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Conn_01x10_Socket"
-				(at 0 -15.24 0)
+			(property "Value" "Conn_01x12_Socket"
+				(at 0 -17.78 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -386,7 +386,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x10, script generated"
+			(property "Description" "Generic connector, single row, 01x12, script generated"
 				(at 0 0 0)
 				(effects
 					(font
@@ -421,7 +421,19 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x10_Socket_1_1"
+			(symbol "Conn_01x12_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 12.7) (xy -0.508 12.7)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy -1.27 10.16) (xy -0.508 10.16)
@@ -534,6 +546,30 @@
 					(pts
 						(xy -1.27 -12.7) (xy -0.508 -12.7)
 					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -15.24) (xy -0.508 -15.24)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 12.192)
+					(mid -0.5058 12.7)
+					(end 0 13.208)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -662,8 +698,20 @@
 						(type none)
 					)
 				)
+				(arc
+					(start 0 -15.748)
+					(mid -0.5058 -15.24)
+					(end 0 -14.732)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at -5.08 10.16 0)
+					(at -5.08 12.7 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -681,7 +729,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 7.62 0)
+					(at -5.08 10.16 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -699,7 +747,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 5.08 0)
+					(at -5.08 7.62 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -717,7 +765,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 2.54 0)
+					(at -5.08 5.08 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -735,7 +783,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_5"
 						(effects
@@ -753,7 +801,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -2.54 0)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_6"
 						(effects
@@ -771,7 +819,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -5.08 0)
+					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "Pin_7"
 						(effects
@@ -789,7 +837,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -7.62 0)
+					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "Pin_8"
 						(effects
@@ -807,7 +855,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -10.16 0)
+					(at -5.08 -7.62 0)
 					(length 3.81)
 					(name "Pin_9"
 						(effects
@@ -825,7 +873,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -12.7 0)
+					(at -5.08 -10.16 0)
 					(length 3.81)
 					(name "Pin_10"
 						(effects
@@ -835,6 +883,42 @@
 						)
 					)
 					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -15.24 0)
+					(length 3.81)
+					(name "Pin_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -10360,6 +10444,103 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x12_Socket")
+		(at 116.84 168.91 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "27343717-5bc6-455c-ac14-933a76416e47")
+		(property "Reference" "J6"
+			(at 118.11 164.8163 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PPTC121LFBN-RC"
+			(at 118.11 167.2406 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PPTC121LFBN-RC/807231"
+			(at 116.84 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "12-pin female header"
+			(at 116.84 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b59cfcf-1427-43c3-84b3-63989b1145fe")
+		)
+		(pin "2"
+			(uuid "476f47ed-6933-47d4-9a81-9fe5ffa0a81f")
+		)
+		(pin "4"
+			(uuid "3a3fdc06-897f-4f6e-bbd4-72adc3addb60")
+		)
+		(pin "5"
+			(uuid "2c5cbba2-a9eb-4fa2-96f6-e35f90111519")
+		)
+		(pin "6"
+			(uuid "ccb4ace6-9e64-43b7-a3a7-9f6fe7d8c38c")
+		)
+		(pin "7"
+			(uuid "10b513a4-67b8-46c3-9c11-b35f984366c2")
+		)
+		(pin "8"
+			(uuid "68e28bc2-b8d9-4486-8a70-51f56679c9b4")
+		)
+		(pin "9"
+			(uuid "44960806-9aef-4e12-bb36-a64b62778026")
+		)
+		(pin "10"
+			(uuid "110c1ba8-0664-4840-aea2-b81dd14e9c5d")
+		)
+		(pin "11"
+			(uuid "b0dd3eaa-99ec-46eb-ab02-8edf9c3d3f0d")
+		)
+		(pin "12"
+			(uuid "af8616ad-19d1-4e79-a91a-220ea6b1ac75")
+		)
+		(pin "3"
+			(uuid "700b0cfc-daef-4977-ba8d-80559b92e6f9")
+		)
+		(instances
+			(project ""
+				(path "/c5d11359-d95e-4186-8c82-8e7791451f5a"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
 		(at 86.36 88.265 90)
@@ -11174,99 +11355,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x10_Socket")
-		(at 111.76 169.545 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4fab6ea5-4397-40e8-85dc-b8c16c93bc49")
-		(property "Reference" "J6"
-			(at 112.395 165.735 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PPPC101LFBN-RC"
-			(at 121.92 168.275 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 169.545 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PPPC101LFBN-RC/810182?s=N4IgTCBcDaIM4HYAMAWAzCAugXyA"
-			(at 111.76 169.545 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "10-pin female header"
-			(at 111.76 169.545 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ed07bf1-58b3-4ada-baee-2a40970fb58a")
-		)
-		(pin "10"
-			(uuid "19d6d532-ae90-4d0e-896e-046f16e2f632")
-		)
-		(pin "8"
-			(uuid "63ba5add-fb6d-4c38-b36c-79788644df56")
-		)
-		(pin "9"
-			(uuid "3e52ee13-abb0-45ad-9d59-83399ce8ccd5")
-		)
-		(pin "4"
-			(uuid "d1324622-7035-40ea-b7b1-56d33a456fc0")
-		)
-		(pin "2"
-			(uuid "ff81e249-d497-4605-82c2-0218643d60df")
-		)
-		(pin "6"
-			(uuid "08a291f0-4dd0-4a6b-b228-e0837038317c")
-		)
-		(pin "7"
-			(uuid "16599a3a-4d61-45cc-a598-ceea22c49ba0")
-		)
-		(pin "3"
-			(uuid "04c28e6e-d1ee-4392-b2f0-db45fdc7ffaf")
-		)
-		(pin "5"
-			(uuid "25875b7c-d28e-4954-94be-51f6c2f1e0ee")
-		)
-		(instances
-			(project ""
-				(path "/c5d11359-d95e-4186-8c82-8e7791451f5a"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 106.045 20.955 0)
 		(mirror x)
@@ -11758,7 +11846,7 @@
 		(at 249.555 131.445 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "6279be80-ea83-45c6-bd69-de79489f4fb5")
@@ -12876,7 +12964,7 @@
 		(at 249.555 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -13208,7 +13296,7 @@
 		(at 250.19 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
