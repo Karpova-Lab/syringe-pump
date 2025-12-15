@@ -40,7 +40,7 @@ Refer to the [official guide](https://learn.adafruit.com/esp32-s3-reverse-tft-fe
 The CircuitPython code examples below demonstrate the controller's ability to receive and send serial UART messages, respond to button presses and knob rotations, and display information on the screen.
 You can modify and build on these examples or write your own custom solution from scratch.
 
-The same microcontroller software is used for all the examples below.
+The same microcontroller firmware is used for all the examples below.
 
 - Download and unzip [:material-file-download: basic-firmware.zip](software/basic-firmware.zip)
 - Move the contents onto the `CIRCUITPY` drive.
@@ -84,7 +84,7 @@ The serial connection is configured as follows:
 - no flow control
 
 
-A message consists of a command and value(s), separated by a semicolons and ending with a newline character.
+A message consists of a command and value(s), separated by semicolons and ending with a newline character.
 
 The available pump IDs are `l1`, `r1`, `l2`, `r2`.
 #### Read commands
@@ -108,9 +108,8 @@ The available pump IDs are `l1`, `r1`, `l2`, `r2`.
 | Return to pre-session state     | `'end\n'`                 |
 
 
-### Interface examples
 
-#### pyControl interface
+## pyControl
 
 !!! success "pyControl Module"
 	![rj45 connection](software/rj45_connection.jpg)
@@ -122,16 +121,21 @@ The available pump IDs are `l1`, `r1`, `l2`, `r2`.
 	- For [Breakout board 1.2](https://pycontrol.readthedocs.io/en/latest/user-guide/pump/#breakout-boards), this can be ports 1, 3 or 4.
 	- For [D-series Breakout Board 1.6](https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#), this can be ports 8, 10, 11 or 12.
 
-The following example assumes that the syringe pump is plugged into port 4 of [Breakout board 1.2](https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-boards). Edit the code to use the correct board and port for your setup.
+The following example assumes that the syringe pump is plugged into **port 4** of [Breakout board 1.2](https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-boards). Edit the code to use the correct board and port for your setup.
 
-1. Download [:material-file-download: pump_controller.py](software/pycontrol/pump_controller.py) and [:material-file-download: uart_handler.py](software/pycontrol/uart_handler.py) and place them in your `devices` directory. 
-2. Download [:material-file-download: syringe_demo.py](software/pycontrol/syringe_demo.py) and place it in your `tasks` directory. 
-3. Download [:material-file-download: syringepump_gui.json](software/pycontrol/syringepump_gui.json) and place it in your `controls_dialogs` directory. 
-4. Open up pyControl GUI
-5. Connect to your board
-6. Click the `Config` button and then click `Load framework`. This will ensure the `pump_controller.py` and `uart_handler.py` are transferred onto the pyBoard microcontroller. 
-7. Run the syringe_demo task
-8. Click the `Controls` button to open the controls dialog and send commands to the pump. Updates to the settings will be reflected in the controller's display.
+Download the following files and place them in their respective directories:
+
+| **Description**                   | **File**                                                                                          | **Destination Folder**      |
+|:----------------------------------|:--------------------------------------------------------------------------------------------------|:---------------------------|
+| Pump controller class/driver      | [:material-file-download: `pump_controller.py`](software/pycontrol/pump_controller.py)            | `devices/`                 |
+| Demo task                        | [:material-file-download: `syringe_demo.py`](software/pycontrol/syringe_demo.py)                  | `tasks/`                   |
+| GUI for demo task                 | [:material-file-download: `syringepump_gui.json`](software/pycontrol/syringepump_gui.json)        | `controls_dialogs/`        |
+
+
+1. Connect to your board
+2. Click the `Config` button and then click `Load framework`. This will ensure the device files are transferred onto the pyBoard microcontroller. 
+3. Upload and run the syringe_demo task
+4. Click the `Controls` button to open the controls dialog and send commands to the pump. Updates to the settings will be reflected in the controller's display.
 
 ![pyControl GUI](software/pycontrol/controls_gui.png)
 /// caption
@@ -146,7 +150,7 @@ Send commands to update pump settings and extend/retract the plunger using the c
 	![usb and power connection](software/usb_and_power.jpg)
 
 
-#### CoolTerm
+## CoolTerm
 Below is an example of how to set up [CoolTerm](https://freeware.the-meiers.org/) to communicate with the syringe pump.
 
 
@@ -168,7 +172,7 @@ Left: typing in settings command. Right: after command is sent, the terminal ech
 ///
 
 
-#### Web interface
+## Web interface
 Below is a demonstration of creating a custom GUI for sending and receiving serial commands.
 Click below to launch a web interface.
 It only uses client-side code (HTML, CSS, JavaScript) that runs in the browser, no server-side code is required.

@@ -9,7 +9,7 @@ class PumpController:
         self.uart = UART(port.UART)
         self.uart.init(115200, bits=8, parity=None, stop=1, timeout=100, rxbuf=130)
 
-        handler = UART_handler(event_name, first_char_interrupt=pybv1)
+        handler = UART_handler(event_name)
         self.uart.irq(trigger=UART.IRQ_RXIDLE, handler=handler.ISR)
 
         # default pump settings
