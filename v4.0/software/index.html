@@ -452,17 +452,35 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#interface-examples" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pycontrol" class="md-nav__link">
     <span class="md-ellipsis">
-      Interface examples
+      pyControl
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#coolterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      CoolTerm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web interface
+    </span>
+  </a>
   
 </li>
       
@@ -595,17 +613,35 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#interface-examples" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pycontrol" class="md-nav__link">
     <span class="md-ellipsis">
-      Interface examples
+      pyControl
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#coolterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      CoolTerm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web interface
+    </span>
+  </a>
   
 </li>
       
@@ -664,7 +700,7 @@ The microcontroller will automatically restart and run the new code, no recompil
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">#</a></h2>
 <p>The CircuitPython code examples below demonstrate the controller's ability to receive and send serial UART messages, respond to button presses and knob rotations, and display information on the screen.
 You can modify and build on these examples or write your own custom solution from scratch.</p>
-<p>The same microcontroller software is used for all the examples below.</p>
+<p>The same microcontroller firmware is used for all the examples below.</p>
 <ul>
 <li>Download and unzip <a href="basic-firmware.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> basic-firmware.zip</a></li>
 <li>Move the contents onto the <code>CIRCUITPY</code> drive.</li>
@@ -700,7 +736,7 @@ You can download a <a href="https://learn.sparkfun.com/tutorials/terminal-basics
 <li>no parity</li>
 <li>no flow control</li>
 </ul>
-<p>A message consists of a command and value(s), separated by a semicolons and ending with a newline character.</p>
+<p>A message consists of a command and value(s), separated by semicolons and ending with a newline character.</p>
 <p>The available pump IDs are <code>l1</code>, <code>r1</code>, <code>l2</code>, <code>r2</code>.</p>
 <h4 id="read-commands">Read commands<a class="headerlink" href="#read-commands" title="Permanent link">#</a></h4>
 <table>
@@ -767,8 +803,7 @@ You can download a <a href="https://learn.sparkfun.com/tutorials/terminal-basics
 </tr>
 </tbody>
 </table>
-<h3 id="interface-examples">Interface examples<a class="headerlink" href="#interface-examples" title="Permanent link">#</a></h3>
-<h4 id="pycontrol-interface">pyControl interface<a class="headerlink" href="#pycontrol-interface" title="Permanent link">#</a></h4>
+<h2 id="pycontrol">pyControl<a class="headerlink" href="#pycontrol" title="Permanent link">#</a></h2>
 <div class="admonition success">
 <p class="admonition-title">pyControl Module</p>
 <p><img alt="rj45 connection" src="rj45_connection.jpg" />
@@ -782,15 +817,38 @@ When paired with a <a href="../controller/#pycontrol-module">pyControl module</a
 <li>For <a href="https://karpova-lab.github.io/pyControl-D-Series-Breakout/index.html#">D-series Breakout Board 1.6</a>, this can be ports 8, 10, 11 or 12.</li>
 </ul>
 </div>
-<p>The following example assumes that the syringe pump is plugged into port 4 of <a href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-boards">Breakout board 1.2</a>. Edit the code to use the correct board and port for your setup.</p>
+<p>The following example assumes that the syringe pump is plugged into <strong>port 4</strong> of <a href="https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/#breakout-boards">Breakout board 1.2</a>. Edit the code to use the correct board and port for your setup.</p>
+<p>Download the following files and place them in their respective directories:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>File</strong></th>
+<th style="text-align: left;"><strong>Destination Folder</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pump controller class/driver</td>
+<td style="text-align: left;"><a href="pycontrol/pump_controller.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> <code>pump_controller.py</code></a></td>
+<td style="text-align: left;"><code>devices/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Demo task</td>
+<td style="text-align: left;"><a href="pycontrol/syringe_demo.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> <code>syringe_demo.py</code></a></td>
+<td style="text-align: left;"><code>tasks/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">GUI for demo task</td>
+<td style="text-align: left;"><a href="pycontrol/syringepump_gui.json"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> <code>syringepump_gui.json</code></a></td>
+<td style="text-align: left;"><code>controls_dialogs/</code></td>
+</tr>
+</tbody>
+</table>
 <ol>
-<li>Download <a href="pycontrol/pump_controller.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> pump_controller.py</a> and <a href="pycontrol/uart_handler.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> uart_handler.py</a> and place them in your <code>devices</code> directory. </li>
-<li>Download <a href="pycontrol/syringe_demo.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> syringe_demo.py</a> and place it in your <code>tasks</code> directory. </li>
-<li>Download <a href="pycontrol/syringepump_gui.json"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.11 0-2 .89-2 2v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8zm-2 17-4-4h2.5v-3h3v3H16zm1-10V3.5L18.5 9z"/></svg></span> syringepump_gui.json</a> and place it in your <code>controls_dialogs</code> directory. </li>
-<li>Open up pyControl GUI</li>
 <li>Connect to your board</li>
-<li>Click the <code>Config</code> button and then click <code>Load framework</code>. This will ensure the <code>pump_controller.py</code> and <code>uart_handler.py</code> are transferred onto the pyBoard microcontroller. </li>
-<li>Run the syringe_demo task</li>
+<li>Click the <code>Config</code> button and then click <code>Load framework</code>. This will ensure the device files are transferred onto the pyBoard microcontroller. </li>
+<li>Upload and run the syringe_demo task</li>
 <li>Click the <code>Controls</code> button to open the controls dialog and send commands to the pump. Updates to the settings will be reflected in the controller's display.</li>
 </ol>
 <figure>
@@ -806,7 +864,7 @@ When paired with a <a href="../controller/#pycontrol-module">pyControl module</a
 Provide 12V power and a USB connection to the controller.
 <img alt="usb and power connection" src="usb_and_power.jpg" /></p>
 </div>
-<h4 id="coolterm">CoolTerm<a class="headerlink" href="#coolterm" title="Permanent link">#</a></h4>
+<h2 id="coolterm">CoolTerm<a class="headerlink" href="#coolterm" title="Permanent link">#</a></h2>
 <p>Below is an example of how to set up <a href="https://freeware.the-meiers.org/">CoolTerm</a> to communicate with the syringe pump.</p>
 <ul>
 <li>Change terminal mode to <code>Line Mode</code></li>
@@ -826,7 +884,7 @@ Provide 12V power and a USB connection to the controller.
 <p>Left: typing in settings command. Right: after command is sent, the terminal echos the command and displays the returned pump settings that were sent back from the microcontroller.</p>
 </figcaption>
 </figure>
-<h4 id="web-interface">Web interface<a class="headerlink" href="#web-interface" title="Permanent link">#</a></h4>
+<h2 id="web-interface">Web interface<a class="headerlink" href="#web-interface" title="Permanent link">#</a></h2>
 <p>Below is a demonstration of creating a custom GUI for sending and receiving serial commands.
 Click below to launch a web interface.
 It only uses client-side code (HTML, CSS, JavaScript) that runs in the browser, no server-side code is required.
